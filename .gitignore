@@ -1,0 +1,11 @@
+node_modules
+*.log*
+.nitro
+.nuxt
+.dist
+.cache
+.output
+.env
+.wwebjs_auth
+.wwebjs_cache
+temp

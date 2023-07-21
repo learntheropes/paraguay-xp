@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs",
+    "prod": "nuxi build && nuxi start",
+    "kill": "sudo kill -9 `sudo lsof -t -i:3000`"
+  },
+  "devDependencies": {
+    "@nuxtjs/i18n": "^8.0.0-beta.12",
+    "@sidebase/nuxt-auth": "^0.6.0-beta.3",
+    "nuxt": "latest",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2"
+  },
+  "dependencies": {
+    "@oruga-ui/oruga-next": "^0.6.0",
+    "@oruga-ui/theme-bulma": "^0.2.11",
+    "@vee-validate/i18n": "^4.10.6",
+    "@vee-validate/rules": "^4.10.6",
+    "faunadb": "^4.8.0",
+    "lodash.find": "^4.6.0",
+    "mongoose": "^7.3.2",
+    "nodemailer": "^6.9.3",
+    "qrcode": "^1.5.3",
+    "telegraf": "^4.12.2",
+    "vee-validate": "^4.10.6",
+    "whatsapp-web.js": "^1.21.0",
+    "wwebjs-mongo": "^1.1.0"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "error": {
+    "pageNotFound": "Esta página no se pudo encontrar",
+    "unauthorized": "No autorizado",
+    "unauthenticated": "No autenticado",
+    "somethingWentWrong": "Algo salió mal",
+    "backToTheHomePage": "Volver a la página de inicio"
+  },
+  "auth": {
+    "logoutEmail": "Salir",
+    "loginEmail": "Iniciar sesión",
+    "sendWhatsapp": "Enviar código por whatsapp",
+    "verifyCode": "Comprueba el código enviado a través de whatsapp",
+    "magicLinkInstructions": "No se requiere contraseña.\n\nLe enviaremos un código para iniciar sesión por whatsapp.",
+    "messageContent": "Su código de acceso es:"
+  }
+}
