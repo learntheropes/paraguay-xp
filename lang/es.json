@@ -4,11 +4,17 @@
     "unauthorized": "No autorizado",
     "unauthenticated": "No autenticado",
     "somethingWentWrong": "Algo salió mal",
-    "backToTheHomePage": "Volver a la página de inicio"
+    "backToTheHomePage": "Volver a la página de inicio",
+    "configuration": "Hay un problema con la configuración del servidor.\n\nConsulte los registros del servidor para obtener más información.",
+    "accessDenied": "No tiene permiso para iniciar sesión.",
+    "verification": "El código de inicio de sesión ya no es válido.\n\nEs posible que ya se haya utilizado o que haya caducado.",
+    "generic": "Generic login error."
   },
   "auth": {
     "logoutEmail": "Salir",
-    "loginEmail": "Iniciar sesión",
+    "loginPrefix": "Código pais",
+    "loginNumber": "Iniciar sesión",
+    "loginCode": "Código",
     "sendWhatsapp": "Enviar código por whatsapp",
     "verifyCode": "Comprueba el código enviado a través de whatsapp",
     "magicLinkInstructions": "No se requiere contraseña.\n\nLe enviaremos un código para iniciar sesión por whatsapp.",

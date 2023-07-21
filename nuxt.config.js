@@ -23,6 +23,16 @@ export default defineNuxtConfig({
     }
   },
 
+  css: [
+    '~/assets/scss/main.scss',
+  ],
+
+  components: [{
+    path: '~/components',
+    pathPrefix: false,
+    global: true
+  }],
+
   modules: [
     '@nuxtjs/i18n',
     '@sidebase/nuxt-auth'

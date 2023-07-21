@@ -1,5 +1,6 @@
 <script setup>
 definePageMeta({
+  layout: 'auth',
   auth: {
     unauthenticatedOnly: true,
     navigateAuthenticatedTo: `/dashboard`,
@@ -7,26 +8,26 @@ definePageMeta({
 });
 const { query: { error } } = useRoute();
 
+const { t } = useI18n();
+
 let message
 switch(error) {
   case 'Configuration':
-    message = 'There is a problem with the server configuration.\n\nCheck the server logs for more information.'
+    message = t('error.configuration')
     break;
   case 'AccessDenied':
-    message = 'You do not have permission to sign in.'
+    message = t('error.accessDenied')
     break;
   case 'Verification':
-    message = 'The sign in link is no longer valid.\n\nIt may have been used already or it may have expired.'
+    message = t('error.verification')
     break;
   default:
-    message = 'Generic login error'
+    message = t('error.generic')
 }
 </script>
 
 <template>
   <NuxtLayout>
-    <div>
-      <pre>{{ message }}</pre>
-    </div>
+    <div>{{ message }}</div>
   </NuxtLayout>
 </template>

@@ -4,11 +4,17 @@
     "unauthorized": "Unauthorized",
     "unauthenticated": "Unauthenticated",
     "somethingWentWrong": "Something went wrong",
-    "backToTheHomePage": "Back to the home page"
+    "backToTheHomePage": "Back to the home page",
+    "configuration": "There is a problem with the server configuration.\n\nCheck the server logs for more information.",
+    "accessDenied": "You do not have permission to sign in.",
+    "verification": "The sign in code is no longer valid.\n\nIt may have been used already or it may have expired.",
+    "generic": "Generic login error."
   },
   "auth": {
     "logoutEmail": "Sign out",
-    "loginEmail": "Sign in",
+    "loginPrefix": "Country code",
+    "loginNumber": "Sign in",
+    "loginCode": "Code",
     "sendWhatsapp": "Send the code by whatsapp",
     "verifyCode": "Verify code sent by whatsapp",
     "magicLinkInstructions": "No password is required.\n\nWe will send you a code to login by whatsapp.",

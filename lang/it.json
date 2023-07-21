@@ -4,11 +4,17 @@
     "unauthorized": "Non autorizzato",
     "unauthenticated": "Non autenticato",
     "somethingWentWrong": "Qualcosa è andato storto",
-    "backToTheHomePage": "Tornare alla pagina principale"
+    "backToTheHomePage": "Tornare alla pagina principale",
+    "configuration": "Si è verificato un problema con la configurazione del server.\n\nPer ulteriori informazioni, controllare i registri del server.",
+    "accessDenied": "Non si dispone dell'autorizzazione per accedere.",
+    "verification": "Il codice di accesso non è più valido.\n\nPotrebbe essere già stato utilizzato o essere scaduto.",
+    "generic": "Error de inicio de sesión genérico."
   },
   "auth": {
     "logoutEmail": "Esci",
-    "loginEmail": "Accesso",
+    "loginPrefix": "Codice paese",
+    "loginNumber": "Accesso",
+    "loginCode": "Codice",
     "sendWhatsapp": "Invia codice di accesso su whatsapp",
     "verifyCode": "Verifica il codice inviato via whatsapp",
     "magicLinkInstructions": "Non è richiesta alcuna password.\n\nTi invieremo un codice di accesso su whtsapp.",
