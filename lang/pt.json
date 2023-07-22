@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "publish": "Publique",
+    "logout": "Sair"
+  },
   "error": {
     "pageNotFound": "Pagina non trovata",
     "unauthorized": "Non autorizzato",
@@ -11,7 +15,7 @@
     "generic": "Error de inicio de sesión genérico."
   },
   "auth": {
-    "logoutEmail": "Esci",
+    "logoutEmail": "Sair",
     "loginPrefix": "Codice paese",
     "loginNumber": "Accesso",
     "loginCode": "Codice",
@@ -199,8 +203,6 @@
   "backToTheHomePage": "Voltar a página inicial",
   "home": "Pagina inicial",
   "history": "Novidades",
-  "publish": "Publique",
-  "logout": "Sair",
   "account": "Conta",
   "legal": "Jurídico",
   "allRightReserved": "Todos os direitos reservados",

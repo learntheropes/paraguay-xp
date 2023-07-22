@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "publish": "Publish",
+    "logout": "Logout"
+  },
   "error": {
     "pageNotFound": "This page could not be found",
     "unauthorized": "Unauthorized",
@@ -199,8 +203,6 @@
   "backToTheHomePage": "Back to the home page",
   "home": "Home page",
   "history": "News",
-  "publish": "Publish",
-  "logout": "Logout",
   "account": "Account",
   "legal": "Legal",
   "allRightReserved": "All rights reserved",

@@ -70,7 +70,7 @@ if (!store.init) {
 
 <template>
   <div class="is-tall">
-    <!-- <LayoutNavbar /> -->
+    <LayoutNavbar />
     <main class="is-tall-container">
       <slot />
     </main>

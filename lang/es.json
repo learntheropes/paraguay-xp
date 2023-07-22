@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "publish": "Publica",
+    "logout": "Cerrar sesión"
+  },
   "error": {
     "pageNotFound": "Esta página no se pudo encontrar",
     "unauthorized": "No autorizado",
@@ -198,8 +202,6 @@
   "backToTheHomePage": "Volver a la página de inicio",
   "home": "Página de inicio",
   "history": "Novedades",
-  "publish": "Publica",
-  "logout": "Cerrar sesión",
   "account": "Cuenta",
   "legal": "Legales",
   "allRightReserved": "Todos los derechos reservados",

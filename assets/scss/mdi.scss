@@ -22,12 +22,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.mdi-close::before {
-  content: "\F0156";
+.mdi-home-outline::before {
+  content: "\F06A1";
 }
 
-.mdi-loading::before {
-  content: "\F0772";
+.mdi-magnify::before {
+  content: "\F0349";
+}
+
+.mdi-magnify-close::before {
+  content: "\F0980";
+}
+
+.mdi-account::before {
+  content: "\F0004";
+}
+
+.mdi-account-outline::before {
+  content: "\F0013";
+}
+
+.mdi-whatsapp::before {
+  content: "\F05A3";
+}
+
+.mdi-translate::before {
+  content: "\F05CA";
+}
+
+.mdi-menu::before {
+  content: "\F035C";
 }
 
 .mdi-close::before {
@@ -38,6 +62,34 @@
   content: "\F0159";
 }
 
+.mdi-plus::before {
+  content: "\F0415";
+}
+
+.mdi-plus-circle::before {
+  content: "\F0417";
+}
+
+.mdi-play::before {
+  content: "\F040A";
+}
+
+.mdi-pencil::before {
+  content: "\F03EB";
+}
+
+.mdi-star::before {
+  content: "\F04CE";
+}
+
+.mdi-history::before {
+  content: "\F02DA";
+}
+
+.mdi-star-outline::before {
+  content: "\F04D2";
+}
+
 .mdi-chevron-left::before {
   content: "\F0141";
 }
@@ -46,12 +98,20 @@
   content: "\F0142";
 }
 
+.mdi-chevron-up::before {
+  content: "\F0143";
+}
+
+.mdi-phone::before {
+  content: "\F03F2";
+}
+
 .mdi-emoticon::before {
   content: "\F0C68";
 }
 
-.mdi-content-copy::before {
-  content: "\F018F";
+.mdi-logout-variant::before {
+  content: "\F05FD";
 }
 
 .mdi-18px.mdi-set, .mdi-18px.mdi:before {
@@ -68,35 +128,4 @@
 
 .mdi-48px.mdi-set, .mdi-48px.mdi:before {
   font-size: 48px;
-}
-
-// Animated
-// From Font Awesome
-$mdi-css-prefix: mdi !default;
-
-.#{$mdi-css-prefix}-spin:before {
-  -webkit-animation: #{$mdi-css-prefix}-spin 2s infinite linear;
-          animation: #{$mdi-css-prefix}-spin 2s infinite linear;
-}
-
-@-webkit-keyframes #{$mdi-css-prefix}-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg);
-  }
-}
-
-@keyframes #{$mdi-css-prefix}-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg);
-  }
 }
