@@ -3,6 +3,13 @@
     "publish": "Publish",
     "logout": "Logout"
   },
+  "footer": {
+    "legal": "Legal",
+    "history": "News",
+    "bookmarks": "Favorites",
+    "admin": "Admin",
+    "allRightReserved": "All rights reserved"
+  }, 
   "error": {
     "pageNotFound": "This page could not be found",
     "unauthorized": "Unauthorized",
@@ -202,10 +209,7 @@
   "somethingWentWrong": "Something went wrong",
   "backToTheHomePage": "Back to the home page",
   "home": "Home page",
-  "history": "News",
   "account": "Account",
-  "legal": "Legal",
-  "allRightReserved": "All rights reserved",
   "publications": "Advertisements",
   "payments": "Payments",
   "ageMessage": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.",
@@ -236,7 +240,6 @@
   "previous": "Previous",
   "next": "Next",
   "indipendents": "Indipendents",
-  "bookmarks": "Favorites",
   "bookmarksDescription": "your favorites escorts",
   "addBookmarksMessage1": "You don have any favorite escorts yet. You can add favorite to the list clicking on the",
   "addBookmarksMessage2": "icon on the escort page.",

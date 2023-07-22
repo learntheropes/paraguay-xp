@@ -3,6 +3,13 @@
     "publish": "Publica",
     "logout": "Cerrar sesión"
   },
+  "footer": {
+    "legal": "Legales",
+    "history": "Novedades",
+    "bookmarks": "Favoritas",
+    "admin": "Administrador",
+    "allRightReserved": "Todos los derechos reservados"
+  }, 
   "error": {
     "pageNotFound": "Esta página no se pudo encontrar",
     "unauthorized": "No autorizado",
@@ -201,10 +208,7 @@
   "somethingWentWrong": "Algo salió mal",
   "backToTheHomePage": "Volver a la página de inicio",
   "home": "Página de inicio",
-  "history": "Novedades",
   "account": "Cuenta",
-  "legal": "Legales",
-  "allRightReserved": "Todos los derechos reservados",
   "publications": "Anuncios",
   "payments": "Pagos",
   "ageMessage": "Por ley, tenemos que verificar que tienes al menos 18 años para publicar tu anuncio.",

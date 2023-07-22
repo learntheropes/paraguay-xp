@@ -79,7 +79,7 @@ if (!store.init) {
         <b-icon icon="chevron-up" type="is-black" size="is-medium" @click.native="scrollToTop"></b-icon>
       </b-tooltip>
     </div> -->
-    <!-- <LayoutFooter /> -->
+    <LayoutFooter />
   </div>
 </template>
 

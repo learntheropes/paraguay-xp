@@ -3,6 +3,13 @@
     "publish": "Publique",
     "logout": "Sair"
   },
+  "footer": {
+    "legal": "Jurídico",
+    "history": "Novidades",
+    "bookmarks": "Favoritas",
+    "admin": "Gerente",
+    "allRightReserved": "Todos os direitos reservados"
+  }, 
   "error": {
     "pageNotFound": "Pagina non trovata",
     "unauthorized": "Non autorizzato",
@@ -202,10 +209,7 @@
   "somethingWentWrong": "Algo deu errado",
   "backToTheHomePage": "Voltar a página inicial",
   "home": "Pagina inicial",
-  "history": "Novidades",
   "account": "Conta",
-  "legal": "Jurídico",
-  "allRightReserved": "Todos os direitos reservados",
   "publications": "Anúncios",
   "payments": "Pagamentos",
   "ageMessage": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.",
