@@ -17,11 +17,10 @@ export const locales = [
     validate: 'es',  
   },
   {
-    code: 'it',
-    file: 'it.json',
-    iso: 'it-IT',
-    name: 'Italiano',
-    validate: 'it',
+    code: 'pt',
+    iso: 'pt-BR',
+    file: 'pt.js',
+    name: 'Brasileiro',
   }
 ];
 

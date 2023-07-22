@@ -10,6 +10,8 @@
   "devDependencies": {
     "@nuxtjs/i18n": "^8.0.0-beta.12",
     "@sidebase/nuxt-auth": "^0.6.0-beta.3",
+    "@mdi/font": "^7.2.96",
+    "@nuxt/content": "^2.5.2",
     "nuxt": "latest",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2"
