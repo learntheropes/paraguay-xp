@@ -8,10 +8,10 @@
     "kill": "sudo kill -9 `sudo lsof -t -i:3000`"
   },
   "devDependencies": {
-    "@nuxtjs/i18n": "^8.0.0-beta.12",
-    "@sidebase/nuxt-auth": "^0.6.0-beta.3",
     "@mdi/font": "^7.2.96",
     "@nuxt/content": "^2.5.2",
+    "@nuxtjs/i18n": "^8.0.0-beta.12",
+    "@sidebase/nuxt-auth": "^0.6.0-beta.3",
     "nuxt": "latest",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2"
@@ -19,14 +19,19 @@
   "dependencies": {
     "@oruga-ui/oruga-next": "^0.6.0",
     "@oruga-ui/theme-bulma": "^0.2.11",
+    "@pinia/nuxt": "^0.4.11",
     "@vee-validate/i18n": "^4.10.6",
     "@vee-validate/rules": "^4.10.6",
     "faunadb": "^4.8.0",
     "i18n-iso-countries": "^7.6.0",
     "lodash.find": "^4.6.0",
+    "lodash.maxby": "^4.6.0",
+    "lodash.minby": "^4.6.0",
+    "lodash.shuffle": "^4.2.0",
     "lodash.sortby": "^4.7.0",
     "mongoose": "^7.3.2",
     "nodemailer": "^6.9.3",
+    "pinia": "^2.1.4",
     "qrcode": "^1.5.3",
     "telegraf": "^4.12.2",
     "vee-validate": "^4.10.6",
@@ -35,5 +40,8 @@
   },
   "engines": {
     "node": "16.x"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

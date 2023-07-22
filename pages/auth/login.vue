@@ -15,9 +15,9 @@ definePageMeta({
   }
 });
 
-  const {
-    $i18nCountries
-  } = useNuxtApp();
+const {
+  $i18nCountries
+} = useNuxtApp();
 
 const phoneValidationSchema = {
   loginPrefix: {

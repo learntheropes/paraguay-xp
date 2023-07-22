@@ -2,11 +2,13 @@
 definePageMeta({
   auth: false,
 });
+const escorts = useEscortsStore();
 </script>
 
 <template>
   <NuxtLayout>
-    <h1>This is the home page</h1>
+    <pre>{{ escorts.steps }}</pre>
+    <pre>{{ escorts.list }}</pre>
     <NuxtLink :to="localePath('/dashboard')">Go to dashboard</NuxtLink>
   </NuxtLayout>
 </template>

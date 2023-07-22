@@ -16,8 +16,11 @@ export default defineNuxtPlugin(nuxtApp => {
   // build the localization object
   const localizeMessages = locales.reduce((obj, locale) => {
 
-    obj[locale.code] = JSON.parse(modules[`../node_modules/@vee-validate/i18n/dist/locale/${locale.validate}.json`])
-    return obj
+    const module = modules[`../node_modules/@vee-validate/i18n/dist/locale/${locale.code}.json`]
+      || modules[`../node_modules/@vee-validate/i18n/dist/locale/${locale.iso.replace('-','_')}.json`];
+
+    obj[locale.code] = JSON.parse(module);
+    return obj;
   }, {});
 
   // configure localized messages

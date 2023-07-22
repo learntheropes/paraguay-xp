@@ -7,6 +7,7 @@ const deploymentDomain = process.env.AUTH_ORIGIN || 'http://localhost:3000';
 import {
   locales,
   defaultLocale,
+  routeRules
 } from './assets/js/locales';
 
 export default defineNuxtConfig({
@@ -23,6 +24,11 @@ export default defineNuxtConfig({
     }
   },
 
+  $production: {
+
+    routeRules
+  },
+
   css: [
     '~/assets/scss/main.scss',
     '~/assets/scss/mdi.scss',
@@ -36,7 +42,9 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxtjs/i18n',
-    '@sidebase/nuxt-auth'
+    '@nuxt/content',
+    '@sidebase/nuxt-auth',
+    '@pinia/nuxt',
   ],
 
   i18n: {
@@ -69,6 +77,16 @@ export default defineNuxtConfig({
       allow404WithoutAuth: true,
       addDefaultCallbackUrl: true
     },
+  },
+
+  pinia: {
+    autoImports: [
+      'defineStore'
+    ],
+  },
+
+  imports: {
+    dirs: ['stores'],
   },
 
   nitro: {
