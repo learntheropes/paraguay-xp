@@ -103,6 +103,7 @@ export default defineNuxtConfig({
     'nuxt-content-git',
     '@sidebase/nuxt-auth',
     '@pinia/nuxt',
+    '@nuxt/image'
   ],
 
   i18n: {
@@ -121,6 +122,7 @@ export default defineNuxtConfig({
   content: {
     locales: localeCodes,
     defaultLocale,
+    // This crashes npm run build
     // navigation: false,
     ignores: [
       '/back-links/',
@@ -152,6 +154,32 @@ export default defineNuxtConfig({
 
   imports: {
     dirs: ['stores'],
+  },
+
+  image: {
+    provider: 'ipx',
+    format: [
+      'webp',
+      'png'
+    ],
+    dir: 'assets/media',
+    screens: {
+      preview: 288,
+    },
+    presets: {
+      preview: {
+        modifiers: {
+          width: 288,
+          height: 288,
+          quality: 50
+        }
+      },
+      modal: {
+        modifiers: {
+          quality: 70
+        }
+      }
+    }
   },
 
   nitro: {
