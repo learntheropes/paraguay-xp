@@ -161,9 +161,6 @@ export default defineNuxtConfig({
       'webp',
       'png'
     ],
-    // screens: {
-    //   preview: 288,
-    // },
     presets: {
       preview: {
         modifiers: {
@@ -191,6 +188,7 @@ export default defineNuxtConfig({
       db: {
         driver: 'github',
         repo: process.env.GITHUB_REPO,
+        token: process.env.GITHUB_TOKEN,
         branch: 'main',
         dir: '/lang',
       }
