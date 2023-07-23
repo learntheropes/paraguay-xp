@@ -17,4 +17,4 @@ Our activity is focused on keeping online the hosting, the design, the accuracy 
 
 Our publication rate is based on the time that the advertisement remains online and is in no way linked to the amount of work that the advertiser performs.
 
-Any questions that there may be in this regard or extension by mail to info@ParaguayXP
+Any questions that there may be in this regard or extension by mail to info@paraguayxp.com

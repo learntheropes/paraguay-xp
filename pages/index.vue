@@ -6,7 +6,7 @@ definePageMeta({
 const store = useEscortsStore();
 const levels = store.levels
 const escorts = store.list
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 
 const {
   title,
@@ -14,6 +14,27 @@ const {
 } = await queryContent('home', 'clients')
   .locale(locale.value)
   .findOne();
+
+  useHead({
+  title: t('index.title'),
+  meta: [
+    {
+      id: 'description',
+      name: 'description',
+      content: t('index.description')
+    },
+    {
+      id: 'og:title',
+      name: 'og:title',
+      content: t('index.title')
+    },
+    {
+      id: 'og:description',
+      name: 'og:description',
+      content: t('index.description')
+    },
+  ],
+});
 </script>
 
 <template>

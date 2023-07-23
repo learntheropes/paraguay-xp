@@ -17,4 +17,4 @@ A nossa atividade está focada em manter online o alojamento, o design, a exatid
 
 Nossa taxa de publicação é baseada no tempo que o anúncio permanece online e não está de forma alguma vinculada à quantidade de trabalho que o anunciante realiza.
 
-Qualquer dúvida que possa haver a este respeito ou extensão por correio para info@ParaguayXP
+Qualquer dúvida que possa haver a este respeito ou extensão por correio para info@paraguayxp.com

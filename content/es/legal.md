@@ -17,4 +17,4 @@ Nuestra actividad se concentra en mantener online el hosting, el diseño, la exa
 
 Nuestra tasa de publicación se basa en el tiempo que el anuncio permanece en línea y no está vinculada de ninguna manera a la cantidad de trabajo que realiza el anunciante.
 
-Cualquier duda que pudiera haber al respecto o ampliación por mail a info@ParaguayXP
+Cualquier duda que pudiera haber al respecto o ampliación por mail a info@paraguayxp.com
