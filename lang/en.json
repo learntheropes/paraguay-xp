@@ -6,7 +6,6 @@
   "footer": {
     "legal": "Legal",
     "history": "News",
-    "bookmarks": "Favorites",
     "admin": "Admin",
     "allRightReserved": "All rights reserved"
   },
@@ -176,9 +175,6 @@
   "Objects": "Objects",
   "Symbols": "Symbols",
   "Flags": "Flags",
-  "removeBookmark": "Remove from favorites",
-  "addBookmark": "Add to favorites",
-  "bookmarksLimitReached": "You can't have more then 10 favorite escorts",
   "aboutMe": "About me",
   "showOriginal": "Show original",
   "showTransaltion": "Show transaltion",
@@ -249,9 +245,6 @@
   "previous": "Previous",
   "next": "Next",
   "indipendents": "Indipendents",
-  "bookmarksDescription": "your favorites escorts",
-  "addBookmarksMessage1": "You don have any favorite escorts yet. You can add favorite to the list clicking on the",
-  "addBookmarksMessage2": "icon on the escort page.",
   "published": "Published",
   "viewAll": "View All",
   "toc": "Table of content",

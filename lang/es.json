@@ -6,7 +6,6 @@
   "footer": {
     "legal": "Legales",
     "history": "Novedades",
-    "bookmarks": "Favoritas",
     "admin": "Administrador",
     "allRightReserved": "Todos los derechos reservados"
   },
@@ -175,9 +174,6 @@
   "Objects": "Objetos",
   "Symbols": "Simbolos",
   "Flags": "Banderas",
-  "emoveBookmark": "Quitar de favoritas",
-  "addBookmark": "Agregar a las favoritas",
-  "bookmarksLimitReached": "No puedes tener más de 10 acompañantes favoritas",
   "aboutMe": "Sobre mi",
   "showOriginal": "Mostrar original",
   "showTransaltion": "Mostrar traducción",
@@ -248,10 +244,6 @@
   "previous": "Anterior",  
   "next": "Siguiente",
   "indipendents": "Independientes",
-  "bookmarks": "Favoritas",
-  "bookmarksDescription": "Tus escort favoritas",
-  "addBookmarksMessage1": "Todavía no tienes ningún acompañante favorita. Puede agregar favoritos a la lista haciendo clic en el ",
-  "addBookmarksMessage2": "icono en la página del acompañante.",
   "published": "Publicado",
   "viewAll": "Ver Todas",
   "toc": "Tabla de contenidos",

@@ -6,7 +6,6 @@
   "footer": {
     "legal": "Jurídico",
     "history": "Novidades",
-    "bookmarks": "Favoritas",
     "admin": "Gerente",
     "allRightReserved": "Todos os direitos reservados"
   },
@@ -176,9 +175,6 @@
   "Objects": "Objetos",
   "Symbols": "Símbolos",
   "Flags": "Bandeiras",
-  "removeBookmark": "Remover dos favoritas",
-  "addBookmark": "Adicionar aos favoritas",
-  "bookmarksLimitReached": "Você não pode ter mais de 10 acompanhantes favoritas",
   "aboutMe": "Sobre mim",
   "showOriginal": "Mostrar original",
   "showTransaltion": "Mostrar tradução",
@@ -249,10 +245,6 @@
   "previous": "Anterior",  
   "next": "Próximo",
   "indipendents": "Independentes",
-  "bookmarks": "Favoritas",
-  "bookmarksDescription": "Seus acompanhantes avoritas",
-  "addBookmarksMessage1": "Você ainda não tem nenhum acompanhante favorita. Você pode adicionar favoritos à lista clicando no",
-  "addBookmarksMessage2": "ícone na página do acompanhante.",
   "published": "Publicados",
   "viewAll": "Ver Tudo",
   "toc": "Sumário",

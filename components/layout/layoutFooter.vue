@@ -18,14 +18,6 @@
         </div>
         <div class="level-item">
           <OButton
-            :to="localePath('/bookmarks')"
-            tag="router-link"
-            variant="primary"
-            inverted
-          >{{ $t('footer.bookmarks') }}</OButton>
-        </div>
-        <div class="level-item">
-          <OButton
             :to="localePath('/history')"
             tag="router-link"
             variant="primary"

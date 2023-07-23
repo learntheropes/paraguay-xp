@@ -19,7 +19,6 @@ const {
   name
 } = useRoute();
 
-const isBookmarks = name === `bookmarks___${locale.value}`;
 const isHistory = name === `history___${locale.value}`;
 const isArea = name === `area-slug___${locale.value}`;
 
@@ -43,20 +42,14 @@ const {
             height="288"
           />
         </figure>
-
-        <div v-if="!isBookmarks" class="card-content is-overlay is-overlay-top-right is-hidden-mobile">
-          <span class="tag is-success">{{ $numberWithDots(escort.rate) }} {{ $t('index.PYG')}}</span>
+        <div class="card-content is-overlay is-overlay-top-right">
+          <span class="tag is-success is-hidden-mobile">{{ $numberWithDots(escort.rate) }} {{ $t('index.PYG')}}</span>
+          <span class="tag is-success is-hidden-tablet is-smaller-top">{{ $numberWithDots(escort.rate) }} {{ $t('index.PYG')}}</span>
         </div>
-        <div v-if="!isBookmarks" class="card-content is-overlay is-overlay-top-right is-hidden-tablet is-smaller-top">
-          <span class="tag is-success">{{ $numberWithDots(escort.rate) }} {{ $t('index.PYG')}}</span>
+        <div v-if="!isArea" class="card-content is-overlay is-overlay-bottom-right">
+          <span class="tag is-success is-hidden-mobile">{{ escort.area }}</span>
+          <span class="tag is-success is-hidden-tablet is-smaller-bottom">{{ escort.area }}</span>
         </div>
-        <div v-if="!isBookmarks && !isArea" class="card-content is-overlay is-overlay-bottom-right is-hidden-mobile">
-          <span class="tag is-success">{{ escort.area }}</span>
-        </div>
-        <div v-if="!isBookmarks && !isArea" class="card-content is-overlay is-overlay-bottom-right is-hidden-tablet is-smaller-bottom">
-          <span class="tag is-success">{{ escort.area }}</span>
-        </div>
-
       </NuxtLink>
     </div>
     <div class="card-content">
