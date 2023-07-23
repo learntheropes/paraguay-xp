@@ -3,6 +3,21 @@ import maxBy from 'lodash.maxby'
 import minBy from 'lodash.minby'
 import shuffle from 'lodash.shuffle'
 
+const i18nHead = useLocaleHead({})
+useHead({
+  htmlAttrs: {
+    lang: (i18nHead) ? i18nHead.value.htmlAttrs.lang : null
+  },
+  link: [...(i18nHead.value.link || [])],
+  meta: [...(i18nHead.value.meta || [])]
+})
+
+const head = useLocaleHead({
+  addDirAttribute: true,
+  identifierAttribute: 'id',
+  addSeoAttributes: true
+})
+
 const store = useEscortsStore();
 
 if (!store.init) {
@@ -83,18 +98,30 @@ if (!store.init) {
 </script>
 
 <template>
-  <div class="full-body">
-    <LayoutNavbar />
-    <main class="main-content">
-      <slot />
-    </main>
-    <!-- <div v-if="showChevron" class="is-hidden-mobile is-bottom-right">
-      <b-tooltip :label="$t('scrollToTop')" position="is-left">
-        <b-icon icon="chevron-up" type="is-black" size="is-medium" @click.native="scrollToTop"></b-icon>
-      </b-tooltip>
-    </div> -->
-    <LayoutFooter />
-  </div>
+  <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir">
+    <Head>
+      <template v-for="link in head.link" :key="link.id">
+        <Link :id="link.id" :rel="link.rel" :href="link.href" :hreflang="link.hreflang" />
+      </template>
+      <template v-for="meta in head.meta" :key="meta.id">
+        <Meta :id="meta.id" :property="meta.property" :content="meta.content" />
+      </template>
+    </Head>
+    <Body>
+      <div class="full-body">
+        <LayoutNavbar />
+        <main class="main-content">
+          <slot />
+        </main>
+        <!-- <div v-if="showChevron" class="is-hidden-mobile is-bottom-right">
+          <b-tooltip :label="$t('scrollToTop')" position="is-left">
+            <b-icon icon="chevron-up" type="is-black" size="is-medium" @click.native="scrollToTop"></b-icon>
+          </b-tooltip>
+        </div> -->
+        <LayoutFooter />
+      </div>
+    </Body>
+  </Html>
 </template>
 
 <!-- <script>
