@@ -19,9 +19,9 @@ const {
   name
 } = useRoute();
 
-const isBookmarks = name === `bookmarks___${locale}`;
-const isHistory = name === `history___${locale}`;
-const isArea = name === `area-slug___${locale}`;
+const isBookmarks = name === `bookmarks___${locale.value}`;
+const isHistory = name === `history___${locale.value}`;
+const isArea = name === `area-slug___${locale.value}`;
 
 const {
   $numberWithDots,
@@ -70,7 +70,7 @@ const {
           </nuxt-link>
         </h3>
         <div v-if="isHistory" class="subtitle is-7">
-          {{ $dayjs(escort.createdAt).toNow() }}
+          {{ $dayjs(escort.updatedAt).fromNow() }}
         </div>
         <div v-else class="subtitle is-7">
           {{ escort.head[locale] }}

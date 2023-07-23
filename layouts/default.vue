@@ -21,7 +21,7 @@ if (!store.init) {
     'travel', 
     'area', 
     'blur', 
-    'createdAt', 
+    'updatedAt', 
     'extra', 
     'head'
   ])

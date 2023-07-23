@@ -44,6 +44,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
     '@nuxt/content',
+    'nuxt-content-git',
     '@sidebase/nuxt-auth',
     '@pinia/nuxt',
   ],

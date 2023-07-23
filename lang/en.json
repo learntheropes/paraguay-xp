@@ -17,6 +17,10 @@
     "levelName": "{level} level",
     "PYG": "PYG"
   },
+  "history": {
+    "title": "New escorts Paraguay",
+    "description": "The latest added escorts in Paraguay"
+  },
   "error": {
     "pageNotFound": "This page could not be found",
     "unauthorized": "Unauthorized",
@@ -283,8 +287,6 @@
   "seo": {
     "name": "🫦\uFE0F | Paraguay XP",
     "tags": "Paraguay Escort. Py Escort",
-    "titleHistory": "New escorts Paraguay",
-    "descriptionHistory": "The latest added escorts in Paraguay",
     "titleIndipendent": "Indipendent escorts",
     "descriptionIndipendent": "Indipendent escort in Paraguay",
     "titleAgency": "Escorts of {agency} agency",

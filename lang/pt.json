@@ -17,6 +17,10 @@
     "levelName": "Nível {level}",
     "PYG": "PYG"
   }, 
+  "history": {
+    "title": "Novidades acompanhantes Paraguai",
+    "description": "Últimas novidades cerca las acompanhantes no Paraguai"
+  },
   "error": {
     "pageNotFound": "Página não encontrada",
     "unauthorized": "Não autorizado",
@@ -284,8 +288,6 @@
   "seo": {
     "name": "🫦\uFE0F | Paraguay XP",
     "tags": "Acompanhantes Paraguai. Acompanhantes Py",
-    "titleHistory": "Novidades acompanhantes Paraguai",
-    "descriptionHistory": "Últimas novidades cerca las acompanhantes no Paraguai",
     "titleIndipendent": "Acompanhantes independentes",
     "descriptionIndipendent": "Acompanhantes independentes no Paraguai",
     "titleAgency": "Acompanhantes da agência {agency}",
