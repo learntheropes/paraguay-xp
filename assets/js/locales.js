@@ -32,44 +32,44 @@ export const routeRules = locales.reduce((obj, locale) => {
   obj[`/${locale.code}`] = {
     static: true,
     headers: {
-      'Cache-Control': `s-maxage=${60 * 60 * 24 * 365}`
+      'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   }
   obj[`/${locale.code}/escort/**`] = {
     static: true,
     headers: {
-      'Cache-Control': `s-maxage=${60 * 60 * 24 * 365}`
+      'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
   obj[`/${locale.code}/blog/**`] = {
     static: true,
     headers: {
-      'Cache-Control': `s-maxage=${60 * 60 * 24 * 365}`
+      'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
   obj[`/${locale.code}/area/**`] = {
     static: true,
     headers: {
-      'Cache-Control': `s-maxage=${60 * 60 * 24 * 365}`
+      'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
   obj[`/${locale.code}/agency/**`] = {
     static: true,
     headers: {
-      'Cache-Control': `s-maxage=${60 * 60 * 24 * 365}`
+      'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
   obj[`/${locale.code}/extra/**`] = {
     static: true,
     headers: {
-      'Cache-Control': `s-maxage=${60 * 60 * 24 * 365}`
+      'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   }
   return obj
 }, {
   '/img/**': {
     headers: {
-      'Cache-Control': `s-maxage=${60 * 60 * 24 * 365}`
+      'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   }
 })
