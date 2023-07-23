@@ -67,7 +67,7 @@ export const routeRules = locales.reduce((obj, locale) => {
   }
   return obj
 }, {
-  '_ipx/**': {
+  '/img/**': {
     headers: {
       'Cache-Control': `s-maxage=${60 * 60 * 24 * 365}`
     }
