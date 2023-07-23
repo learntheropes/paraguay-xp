@@ -5,7 +5,7 @@ import {
   locales,
   defaultLocale,
 } from '~/assets/js/locales';
-import phoneCodes from '~/assets/js/country-phone-codes'
+import phoneCodes from '~/assets/js/countryPhoneCodes'
 
 definePageMeta({
   layout: "auth",

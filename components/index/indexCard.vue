@@ -12,8 +12,11 @@ const {
 escort.cover = find(escort.media, { fileType: 'image' });
 
 const {
-  locale
+  locale,
+  t
 } = useI18n();
+
+const agency = (escort.agency === 'indipendent') ? t('indipendent') : escort.agency;
 
 const {
   name
@@ -56,18 +59,19 @@ const {
     <div class="card-content">
       <div class="content">
         <h3 class="title is-6 is-capitalized">
-          <nuxt-link :to="localePath({ name: 'escort-slug', params: { slug: escort.slug }})">
-            {{ escort.name }}&nbsp;
-            <span class="is-hidden-mobile">
-              ({{ $dayjs(new Date()).diff(escort.birthTime, 'years') }})
-            </span>
-          </nuxt-link>
+          {{ escort.name }}&nbsp;
+          <span class="is-hidden-mobile">
+            ({{ $dayjs(new Date()).diff(escort.birthTime, 'years') }})
+          </span>
         </h3>
-        <div v-if="isHistory" class="subtitle is-7">
+        <div v-if="isHistory" class="is-7">
           {{ $dayjs(escort.updatedAt).fromNow() }}
         </div>
-        <div v-else class="subtitle is-7">
+        <div v-else class="is-7">
           {{ escort.head[locale] }}
+        </div>
+        <div class="is-7 has-text-weight-semibold is-capitalized">
+          {{ agency }}
         </div>
       </div>
     </div>

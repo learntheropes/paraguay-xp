@@ -1,5 +1,5 @@
 import countries from "i18n-iso-countries"
-import countryPhoneCodes from '~/assets/js/country-phone-codes'
+import countryPhoneCodes from '~/assets/js/countryPhoneCodes'
 import sortBy from 'lodash.sortby'
 
 export default defineNuxtPlugin(nuxtApp => {

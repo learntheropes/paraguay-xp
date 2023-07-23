@@ -26,6 +26,7 @@
     "dayjs": "^1.11.9",
     "faunadb": "^4.8.0",
     "i18n-iso-countries": "^7.6.0",
+    "lodash.camelcase": "^4.3.0",
     "lodash.find": "^4.6.0",
     "lodash.maxby": "^4.6.0",
     "lodash.minby": "^4.6.0",
