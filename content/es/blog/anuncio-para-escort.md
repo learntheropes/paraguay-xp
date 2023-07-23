@@ -5,7 +5,7 @@ target: escort
 keywords: publicar anuncio, anuncio exitoso, trabajar como escort 
 ---
 ## Publicar tu anuncio
-Publicar su anuncio en {{ process.env.URL }} es muy simple. Haga click en "Publicar" encima de cada página a la derecha, inicie sesión en su cuenta con su número de WhatsApp laboral y inicie el proceso de publicación.
+Publicar su anuncio en ParaguayXP es muy simple. Haga click en "Publicar" encima de cada página a la derecha, inicie sesión en su cuenta con su número de WhatsApp laboral y inicie el proceso de publicación.
 Si bien al ingresar tendrà disponible nuestro whatsapp por qualquier duda, el proceso es totalmente automatico y puedes publicar en autonomia sin necesariamente entrar en contacto con nosotros.
 Una vez publicado el anuncio podras editarlo en qualquier momento, para modificar tu detalles o para aportar mas contenidos como fotos y video.
 

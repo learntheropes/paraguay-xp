@@ -7,8 +7,25 @@ const store = useEscortsStore();
 
 if (!store.init) {
 
-  const escorts = await queryContent('/escorts')
-  .only(['type', 'name', 'slug', 'media', 'birthTime', 'agency', 'rate', 'apartment', 'hotel', 'dinner', 'travel', 'area', 'blur', 'createdAt', 'extra', 'head'])
+  const escorts = await queryContent('escorts')
+  .only([
+    'type', 
+    'name', 
+    'slug', 
+    'media', 
+    'birthTime', 
+    'agency', 
+    'rate', 
+    'apartment', 
+    'hotel', 
+    'dinner', 
+    'travel', 
+    'area', 
+    'blur', 
+    'createdAt', 
+    'extra', 
+    'head'
+  ])
   .find();
 
   const min = minBy(escorts, 'rate').rate;
@@ -28,7 +45,7 @@ if (!store.init) {
     $numberWithDots
   } = useNuxtApp();
 
-  store.setSteps([
+  store.setLevels([
     {
       value: `${diamondRate}-999999999`,
       name: `diamond`,
@@ -64,8 +81,6 @@ if (!store.init) {
   });
   store.setInit();
 }
-
-
 </script>
 
 <template>
@@ -84,17 +99,6 @@ if (!store.init) {
 </template>
 
 <!-- <script>
-import maxBy from 'lodash.maxby'
-import minBy from 'lodash.minby'
-import shuffle from 'lodash.shuffle'
-import layoutNavbar from '~/components/layout/navbar'
-import layoutFooter from '~/components/layout/footer'
-export default {
-  name: 'Default',
-  components: {
-    layoutNavbar,
-    layoutFooter
-  },
   head() {
     return {
         meta: [
@@ -129,58 +133,6 @@ export default {
   async fetch () {
     
     if (!this.$store.state.escorts.init) {
-      const now = new Date().toISOString()
-      const escorts = await this.$content('escorts')
-        .where({ approved: true, until: { $gte: now} })
-        .only(['type', 'name', 'name1', 'name2', 'slug', 'media', 'birthTime', 'birthTime1', 'birthTime2', 'agency', 'rate', 'apartment', 'hotel', 'dinner', 'travel', 'area', 'blur', 'createdAt', 'extra', 'head'])
-        .fetch()
-      const min = minBy(escorts, 'rate').rate
-      const max = maxBy(escorts, 'rate').rate
-      const deltaStep = (max - min) / 5
-      const esmeraldRate = Math.ceil((min + deltaStep) / 100000) * 100000
-      const platinumRate = Math.ceil((min + (deltaStep * 2)) / 100000) * 100000
-      const palladiumRate = Math.ceil((min + (deltaStep * 3)) / 100000) * 100000
-      const diamondRate = Math.ceil((min + (deltaStep * 4)) / 100000) * 100000
-      const goldEscorts = escorts.filter(escort => escort.rate < esmeraldRate)
-      const esmeraldEscorts = escorts.filter(escort => escort.rate >= esmeraldRate && escort.rate < platinumRate)
-      const platinumEscorts = escorts.filter(escort => escort.rate >= platinumRate && escort.rate < palladiumRate)
-      const palladiumEscorts = escorts.filter(escort => escort.rate >= palladiumRate && escort.rate < diamondRate)
-      const diamondEscorts = escorts.filter(escort => escort.rate >= diamondRate)
-      this.$store.commit('escorts/setSteps', [
-        {
-          value: `${diamondRate}-999999999`,
-          name: `diamond`,
-          range: `${this.$utils.numberWithDots(diamondRate)} +`
-        },
-        {
-          value: `${palladiumRate}-${diamondRate}`,
-          name: `palladium`,
-          range: `${this.$utils.numberWithDots(palladiumRate)} - ${this.$utils.numberWithDots(diamondRate)}`
-        },
-        {
-          value: `${platinumRate}-${palladiumRate}`,
-          name: `platinum`,
-          range: `${this.$utils.numberWithDots(platinumRate)} - ${this.$utils.numberWithDots(palladiumRate)}`
-        },
-        {
-          value: `${esmeraldRate}-${platinumRate}`,
-          name: `esmerald`,
-          range: `${this.$utils.numberWithDots(esmeraldRate)} - ${this.$utils.numberWithDots(platinumRate)}`
-        },
-        {
-          value: `0-${esmeraldRate}`,
-          name: `gold`,
-          range: `- ${this.$utils.numberWithDots(esmeraldRate)}`
-        },
-      ])
-      this.$store.commit('escorts/setList', {
-        gold: shuffle(goldEscorts),
-        esmerald: shuffle(esmeraldEscorts),
-        platinum: shuffle(platinumEscorts),
-        palladium: shuffle(palladiumEscorts),
-        diamond: shuffle(diamondEscorts)
-      })
-      this.$store.commit('escorts/setInit', true)
       this.$store.commit('filter/setRate', [min, max])
       this.$store.commit('filter/setDefaultRate', [min, max])
 
@@ -243,37 +195,16 @@ export default {
   bottom: 20px;
   right: 20px;
 }
-</style>
-
-<!-- <style lang="scss">
-.nuxt-content {
-  p {
-    a {
-      text-decoration: underline;
-    } 
-  }
-  ul {
-    li {
-      a {
-        text-decoration: underline;
-      }  
-    }
-  }
-  h2 {
-    font-size: large;
-    a{ 
-      span {
-        display: none;
-      }
-    }
-  }
-  h3 {
-    font-size: medium;
-    a{ 
-      span {
-        display: none;
-      }
-    }
-  }
+p a {
+  text-decoration: underline;
 }
-</style> -->
+li a {
+  text-decoration: underline;
+}
+.content h2 {
+  font-size: 1.25rem;
+}
+.content h3 {
+  font-size: 1rem;
+}
+</style>

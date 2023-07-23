@@ -1,11 +1,12 @@
 const isDeployed = (
-  process.env.AUTH_ORIGIN === 'http://localhost:3000'
-  || !process.env.AUTH_ORIGIN
+  process.env.NEXTAUTH_URL === 'http://localhost:3000'
+  || !process.env.NEXTAUTH_URL
 ) ? false : true;
-const deploymentDomain = process.env.AUTH_ORIGIN || 'http://localhost:3000';
+const deploymentDomain = process.env.NEXTAUTH_URL || 'http://localhost:3000';
 
 import {
   locales,
+  localeCodes,
   defaultLocale,
   routeRules
 } from './assets/js/locales';
@@ -62,6 +63,17 @@ export default defineNuxtConfig({
       redirectOnRoot: true,
       alwaysRedirect: true,
     }
+  },
+
+  content: {
+    locales: localeCodes,
+    defaultLocale,
+    navigation: false,
+    ignores: [
+      '/back-links/',
+      '/competitors/',
+      '/notes/'
+    ]
   },
 
   auth: {

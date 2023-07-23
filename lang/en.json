@@ -9,7 +9,14 @@
     "bookmarks": "Favorites",
     "admin": "Admin",
     "allRightReserved": "All rights reserved"
-  }, 
+  },
+  "index": {
+    "title": "Vip escorts in Paraguay",
+    "description": "Your best escorts in Paraguay and Asunción. High level companions for you",
+    "noEscort": "No escort found",
+    "levelName": "{level} level",
+    "PYG": "PYG"
+  },
   "error": {
     "pageNotFound": "This page could not be found",
     "unauthorized": "Unauthorized",
@@ -175,8 +182,6 @@
   "indipendent": "Indipendent",
   "fotoOf": "Photo of",
   "videoOf": "Video of",
-  "noEscort": "No escort found",
-  "levelName": "{level} level",
   "comments": "Comments",
   "leaveYourComment": "Leave your comment",
   "nameLabel": "Name",
@@ -265,7 +270,6 @@
   "travel": "Travels",
   "filter": "Filter",
   "removeFilter": "Remove Filters",
-  "PYG": "PYG",
   "diamond": "Diamond",
   "palladium": "Palladium",
   "platinum": "Platinum",
@@ -279,8 +283,6 @@
   "seo": {
     "name": "🫦\uFE0F | Paraguay XP",
     "tags": "Paraguay Escort. Py Escort",
-    "indexTitle": "Vip escorts in Paraguay",
-    "indexDescription": "Your best escorts in Paraguay and Asunción. High level companions for you",
     "titleHistory": "New escorts Paraguay",
     "descriptionHistory": "The latest added escorts in Paraguay",
     "titleIndipendent": "Indipendent escorts",

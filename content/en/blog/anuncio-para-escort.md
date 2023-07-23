@@ -5,7 +5,7 @@ target: escort
 keywords: publish advertisement, successfull advertisement, work as an escort 
 ---
 ## Publish your ad
-Post your ad in {{process.env.url}} is very simple. Click on "Publish" on top of each page to the right, log in to your account number of work WhatsApp and start the publication process.
+Post your ad in ParaguayXP is very simple. Click on "Publish" on top of each page to the right, log in to your account number of work WhatsApp and start the publication process.
 While when entering our WhatsApp will have available for any doubt, the process is totally automatic and you can publish in autonomy without necessarily coming into contact with us.
 Once the announcement can be published you can edit it at any time, to modify your details or to provide more content such as photos and video.
 

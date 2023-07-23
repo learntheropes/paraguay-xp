@@ -9,6 +9,13 @@
     "bookmarks": "Favoritas",
     "admin": "Administrador",
     "allRightReserved": "Todos los derechos reservados"
+  },
+  "index": {
+    "title": "Las mejores escort en Paraguay",
+    "description": "Tus acompañantes en Paraguay. Las mejores escorts de Asunción. Chicas compañía de alto nivel para ti",
+    "noEscort": "No se encontró ninguna escort",
+    "levelName": "Nivel {level}",
+    "PYG": "Gs"
   }, 
   "error": {
     "pageNotFound": "Esta página no se pudo encontrar",
@@ -174,8 +181,6 @@
   "indipendent": "Independiente",
   "fotoOf": "Foto de",
   "videoOf": "Video de",
-  "noEscort": "No se encontró ninguna escort",
-  "levelName": "Nivel {level}",
   "comments": "Comentarios",
   "leaveYourComment": "Dejá tu comentario",
   "nameLabel": "Nombre",
@@ -265,7 +270,6 @@
   "travel": "Viajes",
   "filter": "Filtrar",
   "removeFilter": "Eliminar Filtros",
-  "PYG": "Gs",
   "diamond": "Diamante",
   "palladium": "Paladio",
   "platinum": "Platino",
@@ -279,8 +283,6 @@
   "seo": {
     "name": "🫦\uFE0F | Paraguay XP",
     "tags": "Escort Paraguay. Escort Py",
-    "indexTitle": "Las mejores escort en Paraguay",
-    "indexDescription": "Tus acompañantes en Paraguay. Las mejores escorts de Asunción. Chicas compañía de alto nivel para ti",
     "titleHistory": "Novedades escort Paraguay",
     "descriptionHistory": "Las últimas novedades cerca las escort en Paraguay",
     "titleIndipendent": "Escort indipendientes",

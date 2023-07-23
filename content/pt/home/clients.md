@@ -12,15 +12,15 @@ As acompanhantes são frequentemente procuradas por sua beleza e altas habilidad
 Se você quer ter um acompanhante no seu lugar preferido, é muito fácil. Basta ligar e combinar com eles, o que é muito fácil. A única complicação é escolher entre todas as opções disponíveis. Mas não se preocupe, se você não estiver satisfeito com sua escolha, você sempre pode ligar de volta e tentar outra garota. Dessa forma, você pode encontrar o favorito dela.
 
 ### Acompanhantes independentes
-Todas as garotas independentes anunciadas em {{ process.env.URL }} passaram por um rigoroso processo de triagem para garantir que sejam reais, sérias e profissionais. Suas idades e fotos são verificadas. Isso nos permite garantir que {{ process.env.URL }} continue sendo o melhor catálogo de acompanhantes do Paraguai.
+Todas as garotas independentes anunciadas em ParaguayXP passaram por um rigoroso processo de triagem para garantir que sejam reais, sérias e profissionais. Suas idades e fotos são verificadas. Isso nos permite garantir que ParaguayXP continue sendo o melhor catálogo de acompanhantes do Paraguai.
 
 ### Acompanhantes da agência
-Além de garotas independentes, você também pode encontrar garotas de agência no Paraguai. {{ process.env.URL }} não é responsável pela relação entre o acompanhante e a agência. O agente geralmente poderá ajudá-lo a escolher a melhor garota para suas necessidades em seu portfólio.
+Além de garotas independentes, você também pode encontrar garotas de agência no Paraguai. ParaguayXP não é responsável pela relação entre o acompanhante e a agência. O agente geralmente poderá ajudá-lo a escolher a melhor garota para suas necessidades em seu portfólio.
 
 ### Nós e os acompanhantes
-Você também deve saber que {{ process.env.URL }} não cobra nenhuma comissão ou taxa pelos acordos que você possa ter com uma de nossas acompanhantes. O negócio é direto com eles, permitindo que você chegue a acordos econômicos. Cada uma das meninas oferecerá imensa alegria e tratamento excepcional.
+Você também deve saber que ParaguayXP não cobra nenhuma comissão ou taxa pelos acordos que você possa ter com uma de nossas acompanhantes. O negócio é direto com eles, permitindo que você chegue a acordos econômicos. Cada uma das meninas oferecerá imensa alegria e tratamento excepcional.
 A nossa parte no processo limita-se ao desenvolvimento da página que permite, por um lado, à acompanhante apresentar-se ao seu público na sua máxima expressão e, por outro, ao cliente encontrar a rapariga mais adequada às suas necessidades. .
-Caso queira mais detalhes sobre os acompanhantes, sugerimos que entre em contato diretamente com eles e os conheça melhor. No perfil de cada garota você encontrará informações detalhadas como idade, altura e uma breve descrição que o ajudará a decidir se elas são do seu interesse. Poderá também ver fotografias exclusivas que lhe permitirão conhecer melhor cada um dos acompanhantes VIP de {{ process.env.URL }}.
+Caso queira mais detalhes sobre os acompanhantes, sugerimos que entre em contato diretamente com eles e os conheça melhor. No perfil de cada garota você encontrará informações detalhadas como idade, altura e uma breve descrição que o ajudará a decidir se elas são do seu interesse. Poderá também ver fotografias exclusivas que lhe permitirão conhecer melhor cada um dos acompanhantes VIP de ParaguayXP.
 Você pode ler mais sobre este tópico em nossas <a href="/pt/legal" rel="nofollow">notas legais</a>
 
 ### Guias de postagem
@@ -29,4 +29,4 @@ Criamos guias para ajudá-lo na busca pelo acompanhante ideal e no posterior enc
 - [Dicas para um encontro ideal com acompanhante](/pt/blog/consejos-cita-optimal)
 
 ### Conclusão
-Em resumo, os acompanhantes VIP de {{ process.env.URL }} são os melhores acompanhantes que você pode encontrar no Paraguai. São mulheres lindas e atraentes que estão dispostas a te agradar e tornar sua experiência inesquecível. Desfrute de uma experiência discreta e de alta qualidade que certamente o deixará com vontade de repetir.
+Em resumo, os acompanhantes VIP de ParaguayXP são os melhores acompanhantes que você pode encontrar no Paraguai. São mulheres lindas e atraentes que estão dispostas a te agradar e tornar sua experiência inesquecível. Desfrute de uma experiência discreta e de alta qualidade que certamente o deixará com vontade de repetir.

@@ -5,7 +5,7 @@ target: escort
 keywords: publicar anúncio, anúncio bem -sucedido, trabalho como escolta
 ---
 ## publique seu anúncio
-Publique seu anúncio em {{process.env.url}} é muito simples. Clique em "Publish" na parte superior de cada página à direita, faça login no número da sua conta do trabalho WhatsApp e inicie o processo de publicação.
+Publique seu anúncio em ParaguayXP é muito simples. Clique em "Publish" na parte superior de cada página à direita, faça login no número da sua conta do trabalho WhatsApp e inicie o processo de publicação.
 Enquanto ao entrar no nosso WhatsApp disponível para qualquer dúvida, o processo é totalmente automático e você pode publicar em autonomia sem necessariamente entrar em contato conosco.
 Depois que o anúncio puder ser publicado, você pode editá -lo a qualquer momento, para modificar seus detalhes ou fornecer mais conteúdo, como fotos e vídeos.
 

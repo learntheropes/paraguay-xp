@@ -1,15 +1,15 @@
 export const useEscortsStore = defineStore('escorts', {
   state: () => ({
     init: false,
-    steps: [],
+    levels: [],
     list: {}
   }),
   actions: {
     setInit() {
       this.init = true;
     },
-    setSteps(steps) {
-      this.steps = steps;
+    setLevels(levels) {
+      this.levels = levels;
     },
     setList(escorts) {
       this.list = escorts;
