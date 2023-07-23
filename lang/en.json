@@ -57,6 +57,7 @@
     "unauthenticated": "Unauthenticated",
     "somethingWentWrong": "Something went wrong",
     "backToTheHomePage": "Back to the home page",
+    "tryAgain": "Try again",
     "configuration": "There is a problem with the server configuration.\n\nCheck the server logs for more information.",
     "accessDenied": "You do not have permission to sign in.",
     "verification": "The sign in code is no longer valid.\n\nIt may have been used already or it may have expired.",

@@ -6,28 +6,42 @@ definePageMeta({
     navigateAuthenticatedTo: `/dashboard`,
   }
 });
-const { query: { error } } = useRoute();
+const {
+  query: {
+    error
+  }
+} = useRoute();
 
 const { t } = useI18n();
 
-let message
+let translatedErrorMessage;
 switch(error) {
   case 'Configuration':
-    message = t('error.configuration')
+    translatedErrorMessage = t('error.configuration')
     break;
   case 'AccessDenied':
-    message = t('error.accessDenied')
+    translatedErrorMessage = t('error.accessDenied')
     break;
   case 'Verification':
-    message = t('error.verification')
+    translatedErrorMessage = t('error.verification')
     break;
   default:
-    message = t('error.generic')
+    translatedErrorMessage = t('error.generic')
+};
+
+const goBack = () => {
+  const router = useRouter();
+  router.back();
 }
 </script>
 
 <template>
-  <NuxtLayout>
-    <div>{{ message }}</div>
-  </NuxtLayout>
+  <div class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="title">{{ translatedErrorMessage }}</p>
+        <button @click="goBack" class="button is-primary is-outlined">{{ $t('error.tryAgain') }}</button>
+      </div>
+    </div>
+  </div>
 </template>

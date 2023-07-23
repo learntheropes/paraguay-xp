@@ -57,6 +57,7 @@
     "unauthenticated": "Não autenticado",
     "somethingWentWrong": "Algo deu errado",
     "backToTheHomePage": "Voltar à página principal",
+    "tryAgain": "Tentar novamente",
     "configuration": "Há um problema com a configuração do servidor.\n\nVerifique os logs do servidor para obter mais informações.",
     "accessDenied": "Você não tem permissão para fazer login.",
     "verification": "A senha não é mais válida.\n\nPode já ter sido usada ou expirado.",

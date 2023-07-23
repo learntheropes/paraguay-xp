@@ -64,7 +64,10 @@ export const routeRules = locales.reduce((obj, locale) => {
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
+  },
+  obj[`/${locale.code}/auth/**`] = {
+    ssr: false
   }
-  return obj
+  return obj;
 })
 

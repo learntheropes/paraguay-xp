@@ -57,6 +57,7 @@
     "unauthenticated": "No autenticado",
     "somethingWentWrong": "Algo salió mal",
     "backToTheHomePage": "Volver a la página de inicio",
+    "tryAgain": "Vuelve a intentarlo",
     "configuration": "Hay un problema con la configuración del servidor.\n\nConsulte los registros del servidor para obtener más información.",
     "accessDenied": "No tiene permiso para iniciar sesión.",
     "verification": "El código de inicio de sesión ya no es válido.\n\nEs posible que ya se haya utilizado o que haya caducado.",

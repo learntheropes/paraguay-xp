@@ -59,9 +59,9 @@ const {
 
 const { signIn } = useAuth();
 
-const { data }= await useFetch('https://api.country.is/')
-const { value: { country: userCountryCode }} = data
-const userDealCode = find(phoneCodes, { code: userCountryCode}).dial_code
+const { data }= await useFetch('https://api.country.is/');
+const { value: { country: userCountryCode }} = data;
+const userDealCode = find(phoneCodes, { code: userCountryCode }).dial_code;
 
 const phone = ref({
   prefix: userDealCode,
