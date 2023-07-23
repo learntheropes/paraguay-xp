@@ -66,7 +66,7 @@
   "auth": {
     "logoutEmail": "Sign out",
     "loginPrefix": "Country code",
-    "loginNumber": "Sign in",
+    "loginNumber": "Phone number",
     "loginCode": "Code",
     "sendWhatsapp": "Send the code by whatsapp",
     "verifyCode": "Verify code sent by whatsapp",

@@ -127,12 +127,14 @@ const verifyCode = () => {
                 :key="phoneCode.code"
                 :value="phoneCode.dial_code"
                 class="is-hidden-tablet"
+                expanded
               >{{ phoneCode.dial_code }}</option>
               <option
                 v-for="country of $i18nCountries.list()"
                 :key="country.countryCode"
                 :value="country.dialCode"
                 class="is-hidden-mobile"
+                expanded
               >{{ country.countryName }} {{ country.dialCode }}</option>
             </OSelect>
           </OField>
@@ -153,7 +155,6 @@ const verifyCode = () => {
               @update:modelValue="handleChange"
               @change="handleChange"
               @blur="handleBlur"
-              placeholder="992261076"
               expanded
             />
           </OField>

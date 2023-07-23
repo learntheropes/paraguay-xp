@@ -22,6 +22,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.mdi-loading::before {
+  content: "\F0772";
+}
+
 .mdi-home-outline::before {
   content: "\F06A1";
 }
