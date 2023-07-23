@@ -25,6 +25,62 @@ export default defineNuxtConfig({
     }
   },
 
+  app: {
+    head: {
+      meta: [
+        {
+          charset: 'utf-8'
+        },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1"
+        },
+        {
+          id: 'googlebot',
+          name: 'googlebot',
+          content: 'notranslate'
+        },
+        {
+          id: 'og:type',
+          name: 'og:type',
+          content: 'website'
+        },
+        {
+          id: 'og:url',
+          name: 'og:url',
+          content: deploymentDomain
+        },
+        {
+          id: 'og:site_name',
+          name: 'og:site_name',
+          content: 'ParaguayXP'
+        },
+        {
+          id: 'og:image',
+          name: 'og:image',
+          content: `${deploymentDomain}/favicon/favicon.png`
+        },
+        {
+          id: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary'
+        },
+        {
+          id: 'twitter:image',
+          name: 'twitter:image',
+          content: `${deploymentDomain}/favicon/favicon.png`
+        },
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon/favicon.ico'
+        },
+      ]
+    },
+  },
+
   $production: {
 
     routeRules
