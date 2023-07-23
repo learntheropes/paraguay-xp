@@ -84,9 +84,10 @@ const sendWhatsapp = async () => {
     navigateTo(`/${locale}/auth/error`)
   }
 };
+
 const verifyCode = () => {
 
-  const route = `/api/auth/callback/whatsapp?callbackUrl=${encodeURIComponent(query.callbackUrl)}&token=${encodeURIComponent(token.value)}&email=${encodeURIComponent(phone.value)}`;
+  const route = `/api/auth/callback/whatsapp?callbackUrl=${encodeURIComponent(query.callbackUrl)}&token=${encodeURIComponent(token.value)}&email=${encodeURIComponent(phone.value.prefix + phone.value.number)}`;
   
   navigateTo(`${deploymentDomain}${route}`, {
     external: true,
@@ -169,7 +170,7 @@ const verifyCode = () => {
         v-else
         name="code"
         :validation-schema="codeValidationSchema"
-        @submit="sendWhatsapp"
+        @submit="verifyCode"
       >
         <VField
           name="loginCode"

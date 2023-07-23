@@ -11,7 +11,7 @@ export default eventHandler(async event => {
 
   try {
     const response = await client.sendMessage(whatsapp, message);
-
+    
     if (response.id.fromMe) {
       return {
         status:'success',
