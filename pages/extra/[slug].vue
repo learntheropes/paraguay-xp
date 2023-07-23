@@ -12,12 +12,9 @@ const extra = camelCase(slug);
 
 if (!(extras.includes(extra))) throw createError({ statusCode: 404 });
 
-const {
-  locale,
-  t
-} = useI18n();
+const { t } = useI18n();
 
-const title = t('extra.title', { extra: t(`extra.${extra}`) });
+const title = t('extra.title', { extra: t(`extra.${extra}`).toLowerCase() });
 
 const description = t('extra.description', { extra: t(`extra.${extra}`).toLowerCase() });
 
