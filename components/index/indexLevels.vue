@@ -1,24 +1,14 @@
 <script setup>
-const {
-  levels,
-  escorts
-} = defineProps({
-  levels: {
-    type: Array,
-    required: true
-  },
-  escorts: {
-    type: Object,
-    required: true
-  }
-})
+const store = useEscortsStore();
+const levels = store.levels
+const escorts = store.list
 </script>
 
 <template>
-  <div v-if="![].concat(escorts.diamond, escorts.palladium, escorts.platinum, escorts.esmerald, escorts.gold).length">{{ $t('index.noEscort') }}</div>
-  <div v-else>
+  <div>
+    <div v-if="![].concat(escorts.diamond, escorts.palladium, escorts.platinum, escorts.esmerald, escorts.gold).length">{{ $t('index.noEscort') }}</div>
     <div v-for="level of levels" :key="level.name" class="block">
-      <div v-if="escorts[level.name] && escorts[level.name].length">
+      <div v-if="escorts[level.name].length">
         <h2 class="title is-5 is-capitalized">{{ $t('index.levelName', { level: $t(level.name) }) }} ({{ escorts[level.name].length }})</h2>
         <p class="subtitle is-7">{{ level.range }} {{ $t('index.PYG') }}</p>
         <div class="columns is-mobile is-multiline">
@@ -27,8 +17,7 @@ const {
             :key="escort.slug"
             class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd"
           >
-            <pre>{{ escort }}</pre>
-            <!-- <index-card :escort="escort" class="card-equal-height" /> -->
+            <IndexCard :escort="escort" class="card-equal-height" />
           </div>  
         </div>
       </div>

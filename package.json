@@ -22,6 +22,7 @@
     "@pinia/nuxt": "^0.4.11",
     "@vee-validate/i18n": "^4.10.6",
     "@vee-validate/rules": "^4.10.6",
+    "dayjs": "^1.11.9",
     "faunadb": "^4.8.0",
     "i18n-iso-countries": "^7.6.0",
     "lodash.find": "^4.6.0",

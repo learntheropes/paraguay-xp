@@ -1,7 +1,6 @@
 {
   "approved": true,
   "slug": "vittoria-595992261076",
-  "type": "individual",
   "birthTime": "1994-12-15T23:00:00.000Z",
   "birthDate": "16-12-1994",
   "dateMatch": true,
@@ -10,8 +9,6 @@
   "category": "agency",
   "agency": "foo bar",
   "nationality": "BR",
-  "nationality1": "PY",
-  "nationality2": "PY",
   "virtual": true,
   "apartment": true,
   "hotel": true,
@@ -40,14 +37,14 @@
   },
   "media": [
     {
-      "fileId": "632fc3b33226066c5c4e6739",
-      "fileName": "a374fe14-8bc2-4e10-93cd-e370dbc06494.jpg",
-      "fileType": "image"
-    },
-    {
       "fileId": "632fc3be3226066c5c4e73fb",
       "fileName": "c56b45bf-bef6-41e2-b778-b4240e65ba45.mp4",
       "fileType": "non-image"
+    },
+    {
+      "fileId": "632fc3b33226066c5c4e6739",
+      "fileName": "a374fe14-8bc2-4e10-93cd-e370dbc06494.jpg",
+      "fileType": "image"
     }
   ],
   "blur": false,

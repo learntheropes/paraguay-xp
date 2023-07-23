@@ -1,6 +1,12 @@
+<script setup>
+const {
+  path
+} = useRoute();
+</script>
+
 <template>
   <div>
-    <NuxtPage />
+    <NuxtPage :key="path" />
   </div>
 </template>
 

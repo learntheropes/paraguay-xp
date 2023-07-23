@@ -9,7 +9,6 @@ if (!store.init) {
 
   const escorts = await queryContent('escorts')
   .only([
-    'type', 
     'name', 
     'slug', 
     'media', 
@@ -84,9 +83,9 @@ if (!store.init) {
 </script>
 
 <template>
-  <div class="is-tall">
+  <div class="full-body">
     <LayoutNavbar />
-    <main class="is-tall-container">
+    <main class="main-content">
       <slot />
     </main>
     <!-- <div v-if="showChevron" class="is-hidden-mobile is-bottom-right">
@@ -163,12 +162,19 @@ if (!store.init) {
 </script> -->
 
 <style>
-.is-tall {
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.full-body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
-.is-tall-container {
+.main-content {
   flex: 1;
 }
 .card {
