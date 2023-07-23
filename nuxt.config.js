@@ -53,7 +53,7 @@ export default defineNuxtConfig({
         {
           id: 'og:site_name',
           name: 'og:site_name',
-          content: 'ParaguayXP'
+          content: 'Paraguay XP'
         },
         {
           id: 'og:image',
@@ -157,15 +157,13 @@ export default defineNuxtConfig({
   },
 
   image: {
-    provider: 'ipx',
     format: [
       'webp',
       'png'
     ],
-    dir: 'assets/media',
-    screens: {
-      preview: 288,
-    },
+    // screens: {
+    //   preview: 288,
+    // },
     presets: {
       preview: {
         modifiers: {
