@@ -51,6 +51,16 @@
     "descriptionNeighbourhood": "Escorts for incall in the {area} neighbourhood of Asunción",
     "descriptionCity": "Escorts for incall in the {area} city of Paraguay"
   },
+  "blog": {
+    "published": "Published",
+    "viewAll": "View All",
+    "toc": "Table of content",
+    "forEscorts": "for escorts",
+    "forClients": "for clients",
+    "similarPosts": "Related Posts",
+    "bannerEscortTitle": "The web of the luxury escorts",
+    "bannerEscortDescription": "Publica tu anuncio an la pagina de las escort mas exitosa de Paraguay"
+  },
   "error": {
     "pageNotFound": "This page could not be found",
     "unauthorized": "Unauthorized",
@@ -265,14 +275,6 @@
   "previous": "Previous",
   "next": "Next",
   "indipendents": "Indipendents",
-  "published": "Published",
-  "viewAll": "View All",
-  "toc": "Table of content",
-  "forEscorts": "for escorts",
-  "forClients": "for clients",
-  "similarPosts": "Related Posts",
-  "heroTitle": "The web of the luxury escorts",
-  "heroSubtitle": "Publica tu anuncio an la pagina de las escort mas exitosa de Paraguay",
   "byNeighborhood": "Neighborhood",
   "byPrice": "Price",
   "byService": "Service",

@@ -51,6 +51,16 @@
     "descriptionNeighbourhood": "Acompanhantes com seu próprio apartamento no bairro {area} em Assunção",
     "descriptionCity": "Acompanhantes com apartamento próprio na cidade de {area} no Paraguai"
   },
+  "blog": {
+    "published": "Publicados",
+    "viewAll": "Ver Tudo",
+    "toc": "Sumário",
+    "forEscorts": "para acompanhantes",
+    "forClients": "para clientes",
+    "similarPosts": "Postagens relacionadas",
+    "bannerEscortTitle": "A página de acompanhantes de sucesso",
+    "bannerEscortDescription": "Publique seu anúncio na página de acompanhante mais atraente do Paraguai"
+  },
   "error": {
     "pageNotFound": "Página não encontrada",
     "unauthorized": "Não autorizado",
@@ -265,14 +275,6 @@
   "previous": "Anterior",  
   "next": "Próximo",
   "indipendents": "Independentes",
-  "published": "Publicados",
-  "viewAll": "Ver Tudo",
-  "toc": "Sumário",
-  "forEscorts": "para acompanhantes",
-  "forClients": "para clientes",
-  "similarPosts": "Postagens relacionadas",
-  "heroTitle": "A página de acompanhantes de sucesso",
-  "heroSubtitle": "Publique seu anúncio na página de acompanhante mais atraente do Paraguai",
   "byNeighborhood": "Bairro",
   "byPrice": "Preço",
   "byService": "Serviço",

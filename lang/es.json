@@ -51,6 +51,16 @@
     "descriptionNeighbourhood": "Escort y acompañantes con departmanento proprio en el barrio de {area} en Asunción",
     "descriptionCity": "Escort y acompañantes con departmanento proprio en la ciudad de {area} en Paraguay"
   },
+  "blog": {
+    "published": "Publicado",
+    "viewAll": "Ver Todas",
+    "toc": "Tabla de contenidos",
+    "forEscorts": "para escort",
+    "forClients": "para clientes",
+    "similarPosts": "Artículos Relacionados",
+    "bannerEscortTitle": "La página de las escort exitosas",
+    "bannerEscortDescription": "Publica tu anuncio en la página de las escort mas atractiva de Paraguay"
+  },
   "error": {
     "pageNotFound": "Esta página no se pudo encontrar",
     "unauthorized": "No autorizado",
@@ -264,14 +274,6 @@
   "previous": "Anterior",  
   "next": "Siguiente",
   "indipendents": "Independientes",
-  "published": "Publicado",
-  "viewAll": "Ver Todas",
-  "toc": "Tabla de contenidos",
-  "forEscorts": "para escort",
-  "forClients": "para clientes",
-  "similarPosts": "Artículos Relacionados",
-  "heroTitle": "La página de las escort exitosas",
-  "heroSubtitle": "Publica tu anuncio en la página de las escort mas atractiva de Paraguay",
   "byNeighborhood": "Ubicación",
   "byPrice": "Precio",
   "byService": "Servicio",
