@@ -22,7 +22,7 @@
     "description": "The latest added escorts in Paraguay"
   },
   "extra": {
-    "_": "Special services",
+    "plural": "Special services",
     "title": "Escorts with {extra} service",
     "description": "Escorts that offer {extra} service in Paraguay",
     "kiss": "Kisses",
@@ -37,14 +37,18 @@
     "whatAbout": "What is it about?"
   },
   "agency": {
-    "_": "Agency",
+    "singolar": "Agency",
+    "plural": "Agencies",
+    "indipendents": "Indipendents",
     "title": "Escorts of {agency} agency",
     "description": "Escorts provided by the agency {agency} in Paraguay for you",
     "titleIndipendent": "Indipendent escorts",
     "descriptionIndipendent": "Indipendent escort in Paraguay"
   },
   "area": {
-    "_": "Area",
+    "singolar": "Area",
+    "plural": "Neighbourhoods and Cities",
+    "outcallOnly": "only outcall",
     "titleOutcallOnly": "Escorts outcall only",
     "descriptionOutcallOnly": "Escorts for hotel visits in Paraguay",
     "titleArea": "Escorts in {area}",
@@ -236,9 +240,6 @@
   "tapToEnlarge": "Tap to enlarge",
   "details": "Details",
   "sendWhatsapp": "Send Whatsapp",
-  "agencies": "Agencies",
-  "areas": "Neighbourhoods and Cities",
-  "outcallOnly": "only outcall",
   "pageNotFound": "This page could not be found",
   "unauthorized": "Unauthorized",
   "somethingWentWrong": "Something went wrong",
@@ -274,7 +275,6 @@
   "paymentInstructions2": "You can pay by bank transfer or cash deposit.",
   "previous": "Previous",
   "next": "Next",
-  "indipendents": "Indipendents",
   "byNeighborhood": "Neighborhood",
   "byPrice": "Price",
   "byService": "Service",

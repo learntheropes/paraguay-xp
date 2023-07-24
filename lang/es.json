@@ -24,7 +24,7 @@
   "extra": {
     "title": "Escort con servicio {extra}",
     "description": "Escort y acompañantes que ofrecen el servicio de {extra} en Paraguay",
-    "_": "Servicios especiales",
+    "plural": "Servicios especiales",
     "kiss": "Besos reales",
     "couple": "Atención a parejas",
     "bdsm": "BDSM",
@@ -37,14 +37,18 @@
     "whatAbout": "¿De qué se trata?"
   },
   "agency": {
-    "_": "Agencia",
+    "singolar": "Agencia",
+    "plural": "Agencias",
+    "indipendents": "Independientes",
     "title": "Escort agencia {agency}",
     "description": "Escort y acompañantes de la agencia {agency} en Paraguay",
     "titleIndipendent": "Escort indipendientes",
     "descriptionIndipendent": "Escort y acompañantes indipendientes en Paraguay"
   },
   "area": {
-    "_": "Barrio",
+    "singolar": "Barrio",
+    "plural": "Barrios y Ciudades",
+    "outcallOnly": "solo salida",
     "titleOutcallOnly": "Escort solo salida",
     "descriptionOutcallOnly": "Escort y acompañantes para salidas en hotel y moteles en Paraguay",
     "titleArea": "Escort en {area}",
@@ -235,9 +239,6 @@
   "tapToEnlarge": "Toque para agrandar",
   "details": "Detalles",
   "sendWhatsapp": "Enviar Whatsapp",
-  "agencies": "Agencias",
-  "areas": "Barrios y Ciudades",
-  "outcallOnly": "solo salida",
   "pageNotFound": "Esta página no se pudo encontrar",
   "unauthorized": "No autorizado",
   "somethingWentWrong": "Algo salió mal",
@@ -273,7 +274,6 @@
   "paymentInstructions2": "Puedes abonar con transferencia bancaria o deposito en efectivo.",
   "previous": "Anterior",  
   "next": "Siguiente",
-  "indipendents": "Independientes",
   "byNeighborhood": "Ubicación",
   "byPrice": "Precio",
   "byService": "Servicio",

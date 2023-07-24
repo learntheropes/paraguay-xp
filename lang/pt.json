@@ -22,7 +22,7 @@
     "description": "Últimas novidades cerca las acompanhantes no Paraguai"
   },
   "extra": {
-    "_": "Serviços especiais",
+    "plural": "Serviços especiais",
     "title": "Acompanhantes com serviço {extra}",
     "description": "Acompanhantes que oferecem o serviço de {extra} no Paraguai",
     "kiss": "Beijos",
@@ -37,14 +37,18 @@
     "whatAbout": "Sobre o que é isso?"
   },
   "agency": {
-    "_": "Agência",
+    "singolar": "Agência",
+    "plural": "Agências",
+    "indipendents": "Independentes",
     "title": "Acompanhantes independentes",
     "description": "Acompanhantes independentes no Paraguai",
     "titleAgency": "Acompanhantes da agência {agency}",
     "descriptionAgency": "Acompanhantes fornecidos pela agência {agency} no Paraguai para voce"
   },
   "area": {
-    "_": "Bairro",
+    "singolar": "Bairro",
+    "plural": "Bairros e Cidades",
+    "outcallOnly": "chamada externa apenas",
     "titleOutcallOnly": "Apenas chamada externa",
     "descriptionOutcallOnly": "Acompanhantes para visitas ao hotel no Paraguai",
     "titleArea": "Acompanhantes em {area}",
@@ -236,9 +240,6 @@
   "tapToEnlarge": "Toque para ampliar",
   "details": "Detalhes",
   "sendWhatsapp": "Enviar Whatsapp",
-  "agencies": "Agências",
-  "areas": "Bairros e Cidades",
-  "outcallOnly": "chamada externa apenas",
   "pageNotFound": "Esta página não foi encontrada",
   "unauthorized": "Não autorizado",
   "somethingWentWrong": "Algo deu errado",
@@ -274,7 +275,6 @@
   "paymentInstructions2": "Você pode pagar por transferência bancária ou depósito em dinheiro.",
   "previous": "Anterior",  
   "next": "Próximo",
-  "indipendents": "Independentes",
   "byNeighborhood": "Bairro",
   "byPrice": "Preço",
   "byService": "Serviço",

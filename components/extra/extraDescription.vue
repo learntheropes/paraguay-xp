@@ -18,8 +18,8 @@ const {
 </script>
 
 <template>
-  <div>
+  <section class="section">
     <h2 class="title is-5">{{ $t('extra.whatAbout') }}</h2>
     <ContentRendererMarkdown :value="{ body }" class="content"/>
-  </div>
+  </section>
 </template>

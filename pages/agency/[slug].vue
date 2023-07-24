@@ -40,11 +40,10 @@ useHead({
 <template>
   <NuxtLayout>
     <div class="container">
-      <section id="collection" class="section">
-        <h1 class="title is-4">{{ title }}</h1>
-        <div class="subtitle is-6">{{ description }}</div>
-        <AgencyLevels :agency="agency" />
-      </section>
+      <h1 class="title is-4">{{ title }}</h1>
+      <div class="subtitle is-6">{{ description }}</div>
+      <AgencyLevels :agency="agency" />
+      <CollectionNavigator :slug="slug" />
     </div>
   </NuxtLayout>
 </template>

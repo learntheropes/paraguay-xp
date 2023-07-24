@@ -37,9 +37,8 @@ const {
       <section class="section">
         <ContentRendererMarkdown :value="{ body }" class="content"/>
       </section>
-      <section class="section">
-        <SimilarPosts :target="target" :_path="_path" />
-      </section>
+      <SimilarPosts :target="target" :_path="_path" />
+      <CollectionNavigator />
     </div>
   </NuxtLayout>
 </template>

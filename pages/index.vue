@@ -33,6 +33,7 @@ useHead({
       <h1 class="title is-3">{{ $t('index.title') }}</h1>
       <div class="subtitle is-5">{{ $t('index.subtitle') }}</div>
       <IndexLevels />
+      <CollectionNavigator />
       <IndexInstructions />
     </div>
   </NuxtLayout>

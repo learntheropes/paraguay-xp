@@ -15,7 +15,7 @@ const {
 </script>
 
 <template>
-  <div>
+  <section class="section">
     <div v-if="![].concat(escorts.diamond, escorts.palladium, escorts.platinum, escorts.esmerald, escorts.gold).length">{{ $t('index.noEscort') }}</div>
     <div v-for="level of levels" :key="level.name" class="block">
       <div v-if="escorts[level.name].length">
@@ -32,5 +32,5 @@ const {
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
