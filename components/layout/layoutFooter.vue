@@ -9,28 +9,26 @@
     <nav class="level">
       <div class="level-left">
         <div class="level-item">
-          <OButton
-            :to="localePath('/legal')"
-            tag="router-link"
-            variant="primary"
-            inverted
-          >{{ $t('footer.legal') }}</OButton>
-        </div>
-        <div class="level-item">
-          <OButton
-            :to="localePath('/history')"
-            tag="router-link"
-            variant="primary"
-            inverted
-          >{{ $t('footer.history') }}</OButton>
-        </div>
-        <div class="level-item">
-          <OButton
-            :to="localePath('/admin')"
-            tag="router-link"
-            variant="primary"
-            inverted
-          >{{ $t('footer.admin') }}</OButton>
+          <div class="buttons">
+            <OButton
+              :to="localePath('/legal')"
+              tag="router-link"
+              variant="primary"
+              inverted
+            >{{ $t('footer.legal') }}</OButton>
+            <OButton
+              :to="localePath('/history')"
+              tag="router-link"
+              variant="primary"
+              inverted
+            >{{ $t('footer.history') }}</OButton>
+            <OButton
+              :to="localePath('/admin')"
+              tag="router-link"
+              variant="primary"
+              inverted
+            >{{ $t('footer.admin') }}</OButton>
+          </div>
         </div>
       </div>
       <div class="level-right">
