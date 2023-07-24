@@ -47,12 +47,16 @@ const {
           />
         </figure>
         <div class="card-content is-overlay is-overlay-top-right">
-          <span class="tag is-success is-hidden-mobile">{{ $numberWithDots(escort.rate) }} {{ $t('index.PYG')}}</span>
-          <span class="tag is-success is-hidden-tablet is-smaller-top">{{ $numberWithDots(escort.rate) }} {{ $t('index.PYG')}}</span>
+          <span class="tag is-success is-hidden-mobile">{{ $numberWithDots(escort.rate) }} {{ $t('index.PYG') }}</span>
+          <span class="tag is-success is-hidden-tablet is-smaller-top-right">{{ $numberWithDots(escort.rate) }} {{ $t('index.PYG') }}</span>
+        </div>
+        <div class="card-content is-overlay is-overlay-bottom-left">
+          <span class="tag is-success is-hidden-mobile is-capitalized">{{ agency }}</span>
+          <span class="tag is-success is-hidden-tablet is-smaller-bottom-left is-capitalized">{{ agency }}</span>
         </div>
         <div v-if="!isArea" class="card-content is-overlay is-overlay-bottom-right">
-          <span class="tag is-success is-hidden-mobile">{{ escort.area }}</span>
-          <span class="tag is-success is-hidden-tablet is-smaller-bottom">{{ escort.area }}</span>
+          <span class="tag is-success is-hidden-mobile is-capitalized">{{ escort.area }}</span>
+          <span class="tag is-success is-hidden-tablet is-smaller-bottom-right is-capitalized">{{ escort.area }}</span>
         </div>
       </NuxtLink>
     </div>
@@ -64,14 +68,11 @@ const {
             ({{ $dayjs(new Date()).diff(escort.birthTime, 'years') }})
           </span>
         </h3>
-        <div v-if="isHistory" class="is-7">
+        <div v-if="isHistory" class="subtitle is-7">
           {{ $dayjs(escort.updatedAt).fromNow() }}
         </div>
-        <div v-else class="is-7">
+        <div v-else class="subtitle is-7">
           {{ escort.head[locale] }}
-        </div>
-        <div class="is-7 has-text-weight-semibold is-capitalized">
-          {{ agency }}
         </div>
       </div>
     </div>
@@ -84,16 +85,24 @@ const {
   justify-content: right;
   display: flex;
 }
+.is-overlay-bottom-left {
+  align-items: flex-end;
+  display: flex;
+}
 .is-overlay-bottom-right {
   align-items: flex-end;
   justify-content: right;
   display: flex;
 }
-.is-smaller-top {
+.is-smaller-top-right {
   transform: scale(0.7);
   transform-origin: 100% 0%;
 }
-.is-smaller-bottom {
+.is-smaller-bottom-left {
+  transform: scale(0.7);
+  transform-origin: 0% 100%;
+}
+.is-smaller-bottom-right {
   transform: scale(0.7);
   transform-origin: 100% 100%;
 }

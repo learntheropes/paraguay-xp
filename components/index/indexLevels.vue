@@ -17,7 +17,7 @@ const escorts = store.list;
             :key="escort.slug"
             class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd"
           >
-            <IndexCard :escort="escort" class="card-equal-height" />
+            <CollectionCard :escort="escort" class="card-equal-height" />
           </div>  
         </div>
       </div>
