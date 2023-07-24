@@ -23,6 +23,11 @@ const store = useEscortsStore();
 if (!store.init) {
 
   const escorts = await queryContent('escorts')
+  .where({
+    until:{
+      $gte: new Date()
+    }
+  })
   .only([
     'name', 
     'slug', 

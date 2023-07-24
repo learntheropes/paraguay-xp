@@ -33,7 +33,7 @@ const posts = await queryContent('blog')
 </script>
 
 <template>
-    <nav v-if="posts.length" class="block">
+  <nav v-if="posts.length" class="section">
     <div class="title is-5 is-capitalized">{{ $t('blog.similarPosts') }}</div>
     <ul class="columns is-multiline is-mobile">
       <li v-for="post in posts" :key="post._path" class="column is-narrow">
