@@ -105,6 +105,7 @@ export default defineNuxtConfig({
     '@sidebase/nuxt-auth',
     '@pinia/nuxt',
     '@nuxt/image',
+    'nuxt-delay-hydration',
   ],
 
   i18n: {
@@ -197,4 +198,15 @@ export default defineNuxtConfig({
       }
     },
   },
+
+  delayHydration: {
+    mode: 'init',
+    exclude: [
+      '/en/auth/**',
+      '/es/auth/**',
+      '/pt/auth/**'
+    ],
+    // enables nuxt-delay-hydration in dev mode for testing
+    debug: process.env.NODE_ENV === 'development'
+  }
 });
