@@ -55,36 +55,40 @@ const {
 
 const { signIn } = useAuth();
 
-const { data }= await useFetch('https://api.country.is/');
-const { value: { country: userCountryCode }} = data;
-const userDealCode = find(phoneCodes, { code: userCountryCode }).dial_code;
-
 const phone = ref({
-  prefix: userDealCode,
+  prefix: null,
   number: null
 });
 const showPhone = ref(true);
 const token = ref(null);
 
+onMounted(async () => {
+  const { country } = await $fetch('https://api.country.is/');
+  phone.value.prefix = find(phoneCodes, { code: country }).dial_code;
+})
+
 const sendWhatsapp = async () => {
-  console.log('sendWhatsapp')
-  // try {
+  // console.log('sendWhatsapp temporarly disabled')
+  try {
 
-  //   await signIn('whatsapp', {
-  //     email: phone.value.prefix + phone.value.number,
-  //     redirect: false,
-  //     callbackUrl: `/${locale}/dashboard`,
-  //   });
+    await signIn('whatsapp', {
+      email: phone.value.prefix + phone.value.number,
+      redirect: false,
+      callbackUrl: `/${locale}/dashboard`,
+    });
 
-  //   showPhone.value = false
-  // } catch (error) {
-  //   navigateTo(`/${locale}/auth/error`)
-  // }
+    showPhone.value = false
+  } catch (error) {
+    navigateTo(`/${locale}/auth/error`)
+  }
 };
 
 const verifyCode = () => {
 
-  const route = `/api/auth/callback/whatsapp?callbackUrl=${encodeURIComponent(query.callbackUrl)}&token=${encodeURIComponent(token.value)}&email=${encodeURIComponent(phone.value.prefix + phone.value.number)}`;
+  const route = `/api/auth/callback/whatsapp?callbackUrl=`
+    + `${encodeURIComponent(query.callbackUrl)}`
+    + `&token=${encodeURIComponent(token.value)}` 
+    + `&email=${encodeURIComponent(phone.value.prefix + phone.value.number)}`;
   
   navigateTo(`${deploymentDomain}${route}`, {
     external: true,

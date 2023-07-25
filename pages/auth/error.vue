@@ -6,13 +6,23 @@ definePageMeta({
     navigateAuthenticatedTo: `/dashboard`,
   }
 });
+
 const {
   query: {
     error
   }
 } = useRoute();
 
-const { t } = useI18n();
+const {
+  public: {
+    deploymentDomain
+  }
+} = useRuntimeConfig();
+
+const {
+  locale,
+  t
+} = useI18n();
 
 let translatedErrorMessage;
 switch(error) {
@@ -29,9 +39,16 @@ switch(error) {
     translatedErrorMessage = t('error.generic')
 };
 
-const goBack = () => {
-  const router = useRouter();
-  router.back();
+const tryAgain = async () => {
+  // const router = useRouter();
+  // router.back();
+  await navigateTo({
+  path: `/${locale.value}/auth/login`,
+  query: {
+    callbackUrl: `${deploymentDomain}/${locale.value}/dashboard`,
+    // error: 'undefined'
+  }
+})
 }
 </script>
 
@@ -39,8 +56,8 @@ const goBack = () => {
   <div class="hero is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <p class="title">{{ translatedErrorMessage }}</p>
-        <button @click="goBack" class="button is-primary is-outlined">{{ $t('error.tryAgain') }}</button>
+        <p class="content">{{ translatedErrorMessage }}</p>
+        <button @click="tryAgain" class="button is-primary is-outlined">{{ $t('error.tryAgain') }}</button>
       </div>
     </div>
   </div>

@@ -66,7 +66,7 @@ export const routeRules = locales.reduce((obj, locale) => {
     }
   },
   obj[`/${locale.code}/auth/**`] = {
-    ssr: false
+    static: true
   }
   return obj;
 })
