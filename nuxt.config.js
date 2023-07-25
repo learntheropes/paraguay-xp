@@ -8,7 +8,8 @@ import {
   locales,
   localeCodes,
   defaultLocale,
-  routeRules
+  routeRules,
+  excludeDelayHydration
 } from './assets/js/locales';
 
 export default defineNuxtConfig({
@@ -201,12 +202,7 @@ export default defineNuxtConfig({
 
   delayHydration: {
     mode: 'init',
-    exclude: [
-      '/en/auth/**',
-      '/es/auth/**',
-      '/pt/auth/**'
-    ],
-    // enables nuxt-delay-hydration in dev mode for testing
+    exclude: excludeDelayHydration,
     debug: process.env.NODE_ENV === 'development'
   }
 });

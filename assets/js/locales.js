@@ -28,46 +28,53 @@ export const localeCodes = locales.map(locale => locale.code);
 
 export const defaultLocale = find(locales, { default: true }).code;
 
-export const routeRules = locales.reduce((obj, locale) => {
-  obj[`/${locale.code}`] = {
+export const routeRules = localeCodes.reduce((obj, code) => {
+  obj[`/${code}`] = {
     static: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   }
-  obj[`/${locale.code}/escort/**`] = {
+  obj[`/${code}/escort/**`] = {
     static: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
-  obj[`/${locale.code}/blog/**`] = {
+  obj[`/${code}/blog/**`] = {
     static: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
-  obj[`/${locale.code}/area/**`] = {
+  obj[`/${code}/area/**`] = {
     static: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
-  obj[`/${locale.code}/agency/**`] = {
+  obj[`/${code}/agency/**`] = {
     static: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
-  obj[`/${locale.code}/extra/**`] = {
+  obj[`/${code}/extra/**`] = {
     static: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
-  obj[`/${locale.code}/auth/**`] = {
+  obj[`/${code}/auth/**`] = {
     static: true
   }
   return obj;
-})
+}, {});
+
+export const excludeDelayHydration = localeCodes.reduce((arr, code) => {
+  ['auth', 'dashboard', 'admin'].map(endpoint => {
+    arr.push(`/${code}/${endpoint}/**`);
+  });
+  return arr;
+}, []);
 
