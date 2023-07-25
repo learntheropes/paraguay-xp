@@ -17,7 +17,7 @@ const {
 <template>
   <section class="section">
     <div v-if="![].concat(escorts.diamond, escorts.palladium, escorts.platinum, escorts.esmerald, escorts.gold).length">{{ $t('index.noEscort') }}</div>
-    <div v-for="level of levels" :key="level.name" class="block">
+    <div v-for="(level, index) of levels" :key="level.name" class="block">
       <div v-if="escorts[level.name].length">
         <h2 class="title is-5 is-capitalized">{{ $t('index.levelName', { level: $t(level.name) }) }} ({{ escorts[level.name].length }})</h2>
         <p class="subtitle is-7">{{ level.range }} {{ $t('index.PYG') }}</p>
@@ -27,7 +27,7 @@ const {
             :key="escort.slug"
             class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd"
           >
-            <CollectionCard :escort="escort" class="card-equal-height" />
+            <CollectionCard :escort="escort" :index="index" class="card-equal-height" />
           </div>  
         </div>
       </div>

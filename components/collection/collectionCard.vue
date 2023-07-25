@@ -2,9 +2,14 @@
 import find from 'lodash.find'
 const {
   escort,
+  index
 } = defineProps({
   escort: {
     type: Object,
+    required: true
+  },
+  index: {
+    type: Number,
     required: true
   }
 });
@@ -41,7 +46,7 @@ const {
             :src="('/media/preview/' + escort.cover.fileName).split('.')[0] + '.webp'"
             :alt="$t('fotoOf')+' '+ escort.name"
             :title="$t('fotoOf')+' '+ escort.name"
-            loading="lazy"
+            :loading="(index == 0) ? 'eager' : 'lazy'"
             width="288"
             height="288"
           />
