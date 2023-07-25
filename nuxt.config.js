@@ -104,7 +104,8 @@ export default defineNuxtConfig({
     'nuxt-content-git',
     '@sidebase/nuxt-auth',
     '@pinia/nuxt',
-    '@nuxt/image'
+    '@nuxt/image',
+    'nuxt-speedkit'
   ],
 
   i18n: {
@@ -177,6 +178,71 @@ export default defineNuxtConfig({
           quality: 70
         }
       }
+    }
+  },
+  
+  speedkit: {
+
+    detection: {
+      performance: true,
+      browserSupport: true
+    },
+
+    performanceMetrics: {
+      device: {
+        hardwareConcurrency: { min: 2, max: 48 },
+        deviceMemory: { min: 2 }
+      },
+      timing: {
+        fcp: 800,
+        dcl: 1200
+      }
+    },
+
+    fonts: [{
+      family: 'Font A',
+      locals: ['Font A'],
+      fallback: ['Arial', 'sans-serif'],
+      variances: [
+        {
+          style: 'normal',
+          weight: 400,
+          sources: [
+            { src: '@/assets/fonts/font-a-regular.woff', type:'woff' },
+            { src: '@/assets/fonts/font-a-regular.woff2', type:'woff2' }
+          ]
+        }, {
+          style: 'italic',
+          weight: 400,
+          sources: [
+            { src: '@/assets/fonts/font-a-regularItalic.woff', type:'woff' },
+            { src: '@/assets/fonts/font-a-regularItalic.woff2', type:'woff2' }
+          ]
+        }, {
+          style: 'normal',
+          weight: 700,
+          sources: [
+            { src: '@/assets/fonts/font-a-700.woff', type:'woff' },
+            { src: '@/assets/fonts/font-a-700.woff2', type:'woff2' }
+          ]
+        }
+      ]
+    }],
+
+    targetFormats: ['webp', 'avif', 'jpg|jpeg|png|gif'],
+
+    componentAutoImport: false,
+    componentPrefix: undefined,
+
+    // lazyOffset: {
+    //   component: '0%',
+    //   asset: '0%'
+    // },
+
+    loader: {
+      dataUri: null,
+      size: '100px',
+      backgroundColor: 'grey'
     }
   },
 
