@@ -21,7 +21,8 @@ export default defineNuxtConfig({
     telegramChatId: process.env.TELEGRAM_CHAT_ID,
     public: {
       isDeployed,
-      deploymentDomain
+      deploymentDomain,
+      whatsappAdmin: process.env.WHATSAPP_ADMIN
     }
   },
 
@@ -116,6 +117,8 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: false,
       redirectOnRoot: true,
+      redirectOn: 'root',
+      // alwaysRedirect: true
     }
   },
 

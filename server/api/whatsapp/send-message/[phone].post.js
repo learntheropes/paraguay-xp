@@ -2,6 +2,28 @@ import { getClient } from '~/server/plugins/1.whatsappClient'
 
 export default eventHandler(async event => {
 
+  const {
+    nextAuthSecret,
+  } = useRuntimeConfig();
+
+  const authorization = getHeader(event, 'authorization');
+  const token = authorization && authorization.split(' ')[1];
+
+  if (!authorization || !token) {
+    throw createError({
+      statusMessage: 'Unauthenticated',
+      statusCode: 401,
+    });
+  };
+
+  if (token !== nextAuthSecret) {
+
+    throw createError({
+      statusMessage: 'Unauthorized',
+      statusCode: 403,
+    });
+  }
+
   const sleep = ms => new Promise(r => setTimeout(r, ms));
 
   const client = getClient();

@@ -16,7 +16,7 @@ const head = useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: 'id',
   addSeoAttributes: true
-})
+});
 
 const store = useEscortsStore();
 

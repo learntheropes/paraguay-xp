@@ -15,6 +15,10 @@ definePageMeta({
   }
 });
 
+const { data } = await useFetch('/api/whatsapp/get-state');
+
+const isWhatsappConnected = data.value.state === 'CONNECTED';
+
 const {
   $i18nCountries
 } = useNuxtApp();
@@ -45,8 +49,10 @@ const locale = (
   ? query.callbackUrl.split('/')[3]
   : defaultLocale;
   
-if (locale !== 'en' && path === '/en/auth/login') navigateTo(fullPath.replace(`/en/auth/login`, `/${locale}/auth/login`));
+if (locale !== 'en' && path === '/en/auth/login') await navigateTo(fullPath.replace(`/en/auth/login`, `/${locale}/auth/login`));
 
+const userLocale = useCookie('userLocale', { maxAge: 60 * 10 });
+userLocale.value = locale;
 const {
   public: {
     deploymentDomain
@@ -68,7 +74,6 @@ onMounted(async () => {
 })
 
 const sendWhatsapp = async () => {
-  // console.log('sendWhatsapp temporarly disabled')
   try {
 
     await signIn('whatsapp', {
@@ -99,7 +104,7 @@ const verifyCode = () => {
 
 <template>
   <NuxtLayout>
-    <div class="">
+    <div v-if="isWhatsappConnected">
       <VForm
         v-if="showPhone"
         name="phone"
@@ -207,5 +212,6 @@ const verifyCode = () => {
         <div class="ltr-has-new-line">{{  $t('auth.magicLinkInstructions') }}</div>
       </section>
     </div>
+    <AuthDisconnected v-else />
   </NuxtLayout>
 </template>

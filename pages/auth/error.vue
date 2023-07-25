@@ -8,6 +8,8 @@ definePageMeta({
 });
 
 const {
+  path,
+  fullPath,
   query: {
     error
   }
@@ -23,6 +25,13 @@ const {
   locale,
   t
 } = useI18n();
+
+const userLocale = useCookie('userLocale', { maxAge: 60 * 10 });
+ 
+if (locale.value !== userLocale.value && path !== `/${userLocale.value}/auth/error`) {
+
+  await navigateTo(fullPath.replace(`/${locale.value}/auth/error`, `/${userLocale.value}/auth/error`))
+}
 
 let translatedErrorMessage;
 switch(error) {
@@ -40,25 +49,18 @@ switch(error) {
 };
 
 const tryAgain = async () => {
-  // const router = useRouter();
-  // router.back();
   await navigateTo({
-  path: `/${locale.value}/auth/login`,
-  query: {
-    callbackUrl: `${deploymentDomain}/${locale.value}/dashboard`,
-    // error: 'undefined'
-  }
-})
+    path: `/${locale.value}/auth/login`,
+    query: {
+      callbackUrl: `${deploymentDomain}/${locale.value}/dashboard`
+    }
+  })
 }
 </script>
 
 <template>
-  <div class="hero is-fullheight">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <p class="content">{{ translatedErrorMessage }}</p>
-        <button @click="tryAgain" class="button is-primary is-outlined">{{ $t('error.tryAgain') }}</button>
-      </div>
-    </div>
-  </div>
+  <NuxtLayout>
+      <div class="content ltr-has-new-line">{{ translatedErrorMessage }}</div>
+      <OButton @click="tryAgain" variant="primary" outlined>{{ $t('error.tryAgain') }}</OButton> 
+  </NuxtLayout>
 </template>

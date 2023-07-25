@@ -75,7 +75,9 @@
     "configuration": "Há um problema com a configuração do servidor.\n\nVerifique os logs do servidor para obter mais informações.",
     "accessDenied": "Você não tem permissão para fazer login.",
     "verification": "A senha não é mais válida.\n\nPode já ter sido usada ou expirado.",
-    "generic": "Falha no logon genérico."
+    "generic": "Falha no logon genérico.",
+    "disconnected": "O login está temporariamente desativado para manutenção.\n\nPor favor, tente novamente mais tarde ou entre em contato conosco no Whatsapp em"
+
   },
   "auth": {
     "logoutEmail": "Sair",
@@ -85,7 +87,8 @@
     "sendWhatsapp": "Enviar código de acesso no whatsapp",
     "verifyCode": "Confira o código enviado via whatsapp",
     "magicLinkInstructions": "Nenhuma senha é necessária.\n\nEnviaremos uma senha no whatsapp.",
-    "messageContent": "Seu código de acesso é:"
+    "messageContent": "Seu código de acesso é:",
+    "goBack": "Voltar"
   },
   "and": "e",
   "birthDate": "Data de nascimento",

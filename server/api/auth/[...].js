@@ -25,7 +25,7 @@ export default NuxtAuthHandler({
   secret: nextAuthSecret,
   pages: {
     signIn: `/auth/login`,
-    error: '/auth/error'
+    error: `/auth/error`
   },
   theme: {
     colorScheme: 'light'

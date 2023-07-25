@@ -75,7 +75,8 @@
     "configuration": "There is a problem with the server configuration.\n\nCheck the server logs for more information.",
     "accessDenied": "You do not have permission to sign in.",
     "verification": "The sign in code is no longer valid.\n\nIt may have been used already or it may have expired.",
-    "generic": "Generic login error."
+    "generic": "Generic login error.",
+    "disconnected": "Login is temporarily disabled for maintenance.\n\nPlease try again later or contact us on Whatsapp at"
   },
   "auth": {
     "logoutEmail": "Sign out",
@@ -85,7 +86,8 @@
     "sendWhatsapp": "Send the code by whatsapp",
     "verifyCode": "Verify code sent by whatsapp",
     "magicLinkInstructions": "No password is required.\n\nWe will send you a code to login by whatsapp.",
-    "messageContent": "Your login code is:"
+    "messageContent": "Your login code is:",
+    "goBack": "Go back"
   },
   "and": "&",
   "birthDate": "Date of birth",
