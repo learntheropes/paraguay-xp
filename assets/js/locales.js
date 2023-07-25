@@ -67,6 +67,11 @@ export const routeRules = locales.reduce((obj, locale) => {
   },
   obj[`/${locale.code}/auth/**`] = {
     static: true
+  },
+  obj['/_nuxt/**'] = {
+    headers: {
+      'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
+    } 
   }
   return obj;
 })
