@@ -120,6 +120,7 @@ export default defineNuxtConfig({
       useCookie: false,
       redirectOnRoot: true,
       redirectOn: 'root',
+      // This one doesn´t work
       // alwaysRedirect: true
     }
   },
@@ -171,12 +172,12 @@ export default defineNuxtConfig({
         modifiers: {
           width: 288,
           height: 288,
-          quality: 50
+          quality: 30
         }
       },
       modal: {
         modifiers: {
-          quality: 70
+          quality: 50
         }
       }
     }
