@@ -20,9 +20,6 @@ const {
 } = useNuxtApp();
 
 const phoneValidationSchema = {
-  loginPrefix: {
-    required: true
-  },
   loginNumber: {
     required: true,
   }
@@ -31,7 +28,6 @@ const phoneValidationSchema = {
 const codeValidationSchema = {
   loginCode: {
     required: true,
-    // code: true
   }
 };
 
@@ -71,18 +67,19 @@ const showPhone = ref(true);
 const token = ref(null);
 
 const sendWhatsapp = async () => {
-  try {
+  console.log('sendWhatsapp')
+  // try {
 
-    await signIn('whatsapp', {
-      email: phone.value.prefix + phone.value.number,
-      redirect: false,
-      callbackUrl: `/${locale}/dashboard`,
-    });
+  //   await signIn('whatsapp', {
+  //     email: phone.value.prefix + phone.value.number,
+  //     redirect: false,
+  //     callbackUrl: `/${locale}/dashboard`,
+  //   });
 
-    showPhone.value = false
-  } catch (error) {
-    navigateTo(`/${locale}/auth/error`)
-  }
+  //   showPhone.value = false
+  // } catch (error) {
+  //   navigateTo(`/${locale}/auth/error`)
+  // }
 };
 
 const verifyCode = () => {
@@ -141,6 +138,7 @@ const verifyCode = () => {
         </VField>
         <VField
           name="loginNumber"
+          :label="$t('auth.loginNumber')"
           v-slot="{ handleChange, handleBlur, value, errors }"
           v-model="phone.number"
         >

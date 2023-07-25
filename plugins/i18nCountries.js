@@ -2,17 +2,17 @@ import countries from "i18n-iso-countries"
 import countryPhoneCodes from '~/assets/js/countryPhoneCodes'
 import sortBy from 'lodash.sortby'
 
+import * as en from 'i18n-iso-countries/langs/en';
+import * as es from 'i18n-iso-countries/langs/es';
+import * as pt from 'i18n-iso-countries/langs/pt';
+
+countries.registerLocale(en);
+countries.registerLocale(es);
+countries.registerLocale(pt);
+
 export default defineNuxtPlugin(nuxtApp => {
 
   const { locale } = nuxtApp.$i18n;
-
-  const modules = import.meta.glob('../node_modules/i18n-iso-countries/langs/*.json',  {
-    import: 'default',
-    as: 'raw',
-    eager: true
-  });
-
-  countries.registerLocale(JSON.parse(modules[`../node_modules/i18n-iso-countries/langs/${locale.value}.json`]))
 
   return {
     provide: {

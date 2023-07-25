@@ -49,8 +49,5 @@
   },
   "engines": {
     "node": "16.x"
-  },
-  "overrides": {
-    "vue": "latest"
   }
 }
