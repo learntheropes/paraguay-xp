@@ -69,7 +69,7 @@ const showPhone = ref(true);
 const token = ref(null);
 
 onMounted(async () => {
-  const { country } = await $fetch('https://api.country.is/');
+  const { country } = await $fetch('https://api.country.is');
   phone.value.prefix = find(phoneCodes, { code: country }).dial_code;
 })
 
@@ -112,40 +112,6 @@ const verifyCode = () => {
         @submit="sendWhatsapp"
       >        
         <VField
-          name="loginPrefix"
-          :label="$t('auth.loginPrefix')"
-          v-slot="{ handleChange, handleBlur, value, errors }"
-          v-model="phone.prefix"
-        >
-          <OField
-          :label="$t('auth.loginPrefix')"
-          :variant="errors[0] ? 'danger' : null"
-          :message="errors[0] ? errors[0] : ''"
-          >
-            <OSelect
-              :model-value="value"
-              @update:modelValue="handleChange"
-              @change="handleChange"
-              @blur="handleBlur"
-            >
-              <option
-                v-for="phoneCode of sortBy(phoneCodes, 'dial_code')"
-                :key="phoneCode.code"
-                :value="phoneCode.dial_code"
-                class="is-hidden-tablet"
-                expanded
-              >{{ phoneCode.dial_code }}</option>
-              <option
-                v-for="country of $i18nCountries.list()"
-                :key="country.countryCode"
-                :value="country.dialCode"
-                class="is-hidden-mobile"
-                expanded
-              >{{ country.countryName }} {{ country.dialCode }}</option>
-            </OSelect>
-          </OField>
-        </VField>
-        <VField
           name="loginNumber"
           :label="$t('auth.loginNumber')"
           v-slot="{ handleChange, handleBlur, value, errors }"
@@ -156,6 +122,26 @@ const verifyCode = () => {
             :variant="errors[0] ? 'danger' : null"
             :message="errors[0] ? errors[0] : ''"
           >
+            <OSelect
+              v-model="phone.prefix"
+              class="is-hidden-tablet"
+            >
+              <option
+                v-for="phoneCode of sortBy(phoneCodes, 'dial_code')"
+                :key="phoneCode.code"
+                :value="phoneCode.dial_code"
+              >{{ phoneCode.dial_code }}</option>
+            </OSelect>
+            <OSelect
+              v-model="phone.prefix"
+              class="is-hidden-mobile"
+            >
+              <option
+                v-for="country of $i18nCountries.list()"
+                :key="country.countryCode"
+                :value="country.dialCode"
+              >{{ country.countryName }} | {{ country.dialCode }}</option>
+            </OSelect>
             <OInput
               :label="$t('auth.loginNumber')"
               :model-value="value"

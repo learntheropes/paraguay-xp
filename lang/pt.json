@@ -81,7 +81,6 @@
   },
   "auth": {
     "logoutEmail": "Sair",
-    "loginPrefix": "Código do país",
     "loginNumber": "Número de telefone",
     "loginCode": "Código",
     "sendWhatsapp": "Enviar código de acesso no whatsapp",

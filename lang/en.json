@@ -80,7 +80,6 @@
   },
   "auth": {
     "logoutEmail": "Sign out",
-    "loginPrefix": "Country code",
     "loginNumber": "Phone number",
     "loginCode": "Code",
     "sendWhatsapp": "Send the code by whatsapp",
