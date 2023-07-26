@@ -10,7 +10,16 @@ import pt from '@vee-validate/i18n/dist/locale/pt_BR.json';
 
 export default defineNuxtPlugin(nuxtApp => {
 
+  const { t } = nuxtApp.$i18n;
+
   defineRule('required', required);
+
+  defineRule('code', value => {
+    const num = parseInt(value)
+    const isCode = Number.isInteger(num) && num >= 100000 && num <= 999999;
+    if (!isCode) return t('auth.notValidCode', { value })
+    else return true;
+  });
 
   const { locale } = nuxtApp.$i18n;
 

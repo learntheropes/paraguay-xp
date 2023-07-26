@@ -87,7 +87,8 @@
     "verifyCode": "Confira o código enviado via whatsapp",
     "magicLinkInstructions": "Nenhuma senha é necessária.\n\nEnviaremos uma senha no whatsapp.",
     "messageContent": "Seu código de acesso é:",
-    "goBack": "Voltar"
+    "goBack": "Voltar",
+    "notValidCode": "{value} não é um código válido"
   },
   "and": "e",
   "birthDate": "Data de nascimento",

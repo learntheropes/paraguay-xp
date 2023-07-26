@@ -32,6 +32,7 @@ const phoneValidationSchema = {
 const codeValidationSchema = {
   loginCode: {
     required: true,
+    code: true
   }
 };
 

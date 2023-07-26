@@ -86,7 +86,8 @@
     "verifyCode": "Verify code sent by whatsapp",
     "magicLinkInstructions": "No password is required.\n\nWe will send you a code to login by whatsapp.",
     "messageContent": "Your login code is:",
-    "goBack": "Go back"
+    "goBack": "Go back",
+    "notValidCode": "{value} is not a valid code"
   },
   "and": "&",
   "birthDate": "Date of birth",
