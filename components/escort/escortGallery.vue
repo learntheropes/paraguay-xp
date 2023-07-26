@@ -13,8 +13,8 @@ const { gallery } = escort;
 
 <template>
   <section v-if="gallery && gallery.length" class="section">
-    <h2 class="title is-5 is-capitalized">{{ $t('gallery') }}</h2>
-    <div class="subtitle is-6">{{ $t('tapToEnlarge') }}</div>
+    <h2 class="title is-5 is-capitalized">{{ $t('escort.gallery.title') }}</h2>
+    <div class="subtitle is-6">{{ $t('escort.gallery.tapToEnlarge') }}</div>
     <EscortGalleryPreview :escort="escort" />
     <EscortGalleryModal />
   </section>

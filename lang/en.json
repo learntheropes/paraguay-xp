@@ -55,6 +55,13 @@
     "descriptionNeighbourhood": "Escorts for incall in the {area} neighbourhood of Asunción",
     "descriptionCity": "Escorts for incall in the {area} city of Paraguay"
   },
+  "escort": {
+    "gallery": {
+      "title": "Photos & videos",
+      "tapToEnlarge": "Tap to enlarge",
+      "mediaOf": "Photo or video of"
+    }
+  },
   "blog": {
     "published": "Published",
     "viewAll": "View All",
@@ -191,7 +198,6 @@
   "toHour": "To hour",
   "selectHour": "Select a time",
   "nudeMessage": "Photos and video with nudity will be removed.",
-  "gallery": "Photos & Videos",
   "blurPhoto": "Blur face on photos",
   "videoNotBlurred": "Only images are blurred. Videos are not.",
   "yes": "Yes",
@@ -216,8 +222,6 @@
   "showTransaltion": "Show transaltion",
   "swipeToBrowse": "Swipe to browse",
   "indipendent": "Indipendent",
-  "fotoOf": "Photo of",
-  "videoOf": "Video of",
   "comments": "Comments",
   "leaveYourComment": "Leave your comment",
   "nameLabel": "Name",
@@ -238,7 +242,6 @@
   "invalidWhatsappCode": "Invalid Whatsapp code",
   "commentPublished": "Comment saved. It now needs admin approval.",
   "call": "Call",
-  "tapToEnlarge": "Tap to enlarge",
   "details": "Details",
   "sendWhatsapp": "Send Whatsapp",
   "pageNotFound": "This page could not be found",

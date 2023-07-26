@@ -55,6 +55,13 @@
     "descriptionNeighbourhood": "Acompanhantes com seu próprio apartamento no bairro {area} em Assunção",
     "descriptionCity": "Acompanhantes com apartamento próprio na cidade de {area} no Paraguai"
   },
+  "escort": {
+    "gallery": {
+      "title": "Fotos e vídeos",
+      "tapToEnlarge": "Toque para ampliar",
+      "mediaOf": "Foto o video de"
+    }
+  },
   "blog": {
     "published": "Publicados",
     "viewAll": "Ver Tudo",
@@ -192,7 +199,6 @@
   "toHour": "Para hora",
   "selectHour": "Selecione um horário",
   "nudeMessage": "Fotos e vídeos com nudez serão removidos.",
-  "gallery": "Fotos e vídeos",
   "blurPhoto": "Ocultar rosto nas fotos",
   "videoNotBlurred": "Apenas as imagens estão ocultadas. Os vídeos não são",
   "yes": "Sim",
@@ -217,8 +223,6 @@
   "showTransaltion": "Mostrar tradução",
   "swipeToBrowse": "Deslize para navegar",
   "indipendent": "Independente",
-  "fotoOf": "Foto de",
-  "videoOf": "Vídeo de",
   "comments": "Comentários",
   "leaveYourComment": "Deixe o seu comentário",
   "nameLabel": "Nome",
@@ -239,7 +243,6 @@
   "invalidWhatsappCode": "Código Whatsapp inválido",
   "commentPublished": "Comentário salvo. Agora precisa de aprovação do administrador.",
   "call": "Ligar",
-  "tapToEnlarge": "Toque para ampliar",
   "details": "Detalhes",
   "sendWhatsapp": "Enviar Whatsapp",
   "pageNotFound": "Esta página não foi encontrada",

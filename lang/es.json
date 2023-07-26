@@ -55,6 +55,13 @@
     "descriptionNeighbourhood": "Escort y acompañantes con departmanento proprio en el barrio de {area} en Asunción",
     "descriptionCity": "Escort y acompañantes con departmanento proprio en la ciudad de {area} en Paraguay"
   },
+  "escort": {
+    "gallery": {
+      "title": "Fotos y videos",
+      "tapToEnlarge": "Toque para agrandar",
+      "mediaOf": "Foto u video de"
+    }
+  },
   "blog": {
     "published": "Publicado",
     "viewAll": "Ver Todas",
@@ -190,7 +197,6 @@
   "toHour": "Hasta la hora",
   "selectHour": "Seleccione una orario",
   "nudeMessage": "Se eliminarán las fotos y videos con desnudos.",
-  "gallery": "Fotos y Videos",
   "blurPhoto": "Ocultar rostro en fotos",
   "videoNotBlurred": "Solo las imágenes están ocultadas. Los vídeos no.",
   "yes": "Sí",
@@ -215,8 +221,6 @@
   "showTransaltion": "Mostrar traducción",
   "swipeToBrowse": "Deslizar para navegar",
   "indipendent": "Independiente",
-  "fotoOf": "Foto de",
-  "videoOf": "Video de",
   "comments": "Comentarios",
   "leaveYourComment": "Dejá tu comentario",
   "nameLabel": "Nombre",
@@ -237,7 +241,6 @@
   "invalidWhatsappCode": "Código de Whatsapp no ​​válido",
   "commentPublished": "Comentario guardado. Ahora necesita la aprobación del administrador.",
   "call": "Llamar",
-  "tapToEnlarge": "Toque para agrandar",
   "details": "Detalles",
   "sendWhatsapp": "Enviar Whatsapp",
   "pageNotFound": "Esta página no se pudo encontrar",
