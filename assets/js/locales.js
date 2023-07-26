@@ -7,14 +7,14 @@ export const locales = [
     iso: 'en-US',
     name: 'English',
     validate: 'en',
-    default: true
   }, 
   {
     code: 'es',
     file: 'es.json',
     iso: 'es-419',
     name: 'Español',
-    validate: 'es',  
+    validate: 'es', 
+    default: true 
   },
   {
     code: 'pt',

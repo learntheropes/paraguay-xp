@@ -100,6 +100,7 @@ export default defineNuxtConfig({
   }],
 
   modules: [
+    'nuxt-simple-robots',
     '@nuxtjs/i18n',
     '@nuxt/content',
     'nuxt-content-git',
@@ -108,6 +109,10 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-delay-hydration',
   ],
+
+  robots: {
+    disallow: ['/'],
+  },
 
   i18n: {
     baseUrl: deploymentDomain,
