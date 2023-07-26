@@ -31,7 +31,7 @@ if (!store.init) {
   .only([
     'name', 
     'slug', 
-    'media', 
+    'gallery', 
     'birthTime', 
     'agency', 
     'rate', 

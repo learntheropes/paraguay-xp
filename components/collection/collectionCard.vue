@@ -14,7 +14,7 @@ const {
   }
 });
 
-escort.cover = find(escort.media, { fileType: 'image' });
+escort.cover = find(escort.gallery, { fileType: 'image' });
 
 const {
   locale,
@@ -43,7 +43,7 @@ const {
         <figure :style="'background-color:grey;'" class="image is-square">
           <NuxtImg
             preset="preview"
-            :src="('/media/preview/' + escort.cover.fileName).split('.')[0] + '.webp'"
+            :src="('/gallery/preview/' + escort.cover.fileName).split('.')[0] + '.webp'"
             :alt="$t('fotoOf')+' '+ escort.name"
             :title="$t('fotoOf')+' '+ escort.name"
             :loading="(index == 0) ? 'eager' : 'lazy'"

@@ -35,10 +35,15 @@
     "pt": "TESTE ANÚNCIO 💗\nTESTE ANÚNCIO 💗\nTESTE ANÚNCIO 💗",
     "es": "PUBLICIDAD DE PRUEBA 💗\nPUBLICIDAD DE PRUEBA 💗\nPUBLICIDAD DE PRUEBA 💗"
   },
-  "media": [
+  "gallery": [
     {
       "fileId": "632fc3be3226066c5c4e73fb",
       "fileName": "c56b45bf-bef6-41e2-b778-b4240e65ba45.mp4",
+      "fileType": "non-image"
+    },
+    {
+      "fileId": "632fc3be3226066c5c4e73fc",
+      "fileName": "027e9c47-90dd-407f-b2ee-f8d2f5932f5f.mp4",
       "fileType": "non-image"
     },
     {

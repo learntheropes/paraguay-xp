@@ -39,6 +39,7 @@
     "lodash.startcase": "^4.4.0",
     "lodash.uniq": "^4.5.0",
     "lodash.uniqby": "^4.7.0",
+    "mitt": "^3.0.1",
     "mongoose": "^7.3.2",
     "nodemailer": "^6.9.3",
     "nuxt-content-git": "^3.0.32",

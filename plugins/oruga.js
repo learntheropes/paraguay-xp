@@ -5,10 +5,11 @@ import {
   OSelect,
   OButton,
   OIcon,
-  OLoading
+  OLoading,
+  OModal
   // Config,
 } from '@oruga-ui/oruga-next';
-import { bulmaConfig } from '@oruga-ui/theme-bulma';
+// import { bulmaConfig } from '@oruga-ui/theme-bulma';
 
 // const myConfig = Object.assign(bulmaConfig, {
 //   notification: {
@@ -24,5 +25,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OButton', OButton);
   nuxtApp.vueApp.component('OIcon', OIcon);
   nuxtApp.vueApp.component('OLoading', OLoading);
+  nuxtApp.vueApp.component('OModal', OModal);
   // nuxtApp.vueApp.use(Config, myConfig);
 });

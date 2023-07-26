@@ -8,10 +8,14 @@ const {
     slug
   }
 } = useRoute();
+
+const escort = await queryContent('escorts', slug).findOne();
 </script>
 
 <template>
   <NuxtLayout>
-    <div>{{ slug }}</div>
+    <div class="container">
+      <EscortGallery :escort="escort" />
+    </div>
   </NuxtLayout>
 </template>
