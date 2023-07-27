@@ -58,15 +58,6 @@
           @click.native="navigatePrevious"
         />
       </div>
-      <div class="ltr-is-bottom-left is-hidden-tablet">
-        <OIcon 
-          icon="chevron-left"
-          size="large"
-          variant="info"
-          @click.native="navigatePrevious"
-        />
-      </div>
-
       <div class="is-overlay ltr-is-center-center">
         <OIcon
           v-if="isLoading"
@@ -77,7 +68,14 @@
           spin
         />
       </div>
-
+      <div class="ltr-is-fixed-bottom-left is-hidden-tablet">
+        <OIcon 
+          icon="chevron-left"
+          size="large"
+          variant="info"
+          @click.native="navigatePrevious"
+        />
+      </div>
       <div class="ltr-is-center-center">
         <figure 
           v-if="modalType === 'image'"
@@ -106,7 +104,6 @@
           <source :src="'/gallery/modal/' + modalMedia" />
         </video>
       </div>
-
       <div class="ltr-is-center-right is-hidden-mobile">
         <OIcon
           icon="chevron-right"
@@ -115,7 +112,7 @@
           @click.native="navigateNext"
         />
       </div>
-      <div class="ltr-is-bottom-right is-hidden-tablet">
+      <div class="ltr-is-fixed-bottom-right is-hidden-tablet">
         <OIcon 
           icon="chevron-right" 
           size="large" 

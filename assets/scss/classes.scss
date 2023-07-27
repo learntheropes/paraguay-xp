@@ -15,9 +15,20 @@
   max-width: 100%;
   max-height: 85vh;
   min-height: 80vh;
+    // max-width: 100%;
+    // max-height: 90%;
+    // bottom: 0;
+    // left: 0;
+    // margin: auto;
+    // overflow: auto;
+    // position: fixed;
+    // right: 0;
+    // top: 0;
+    // -o-object-fit: contain;
+    // object-fit: contain;
 }
 
-// Overlays at position
+// Overlays at flex position
 .ltr-is-center-center {
   align-items: center;
   justify-content: center;
@@ -64,6 +75,20 @@
 .ltr-is-smaller-bottom-right {
   transform: scale(0.7);
   transform-origin: 100% 100%;
+}
+
+// Fixed position for modal
+.ltr-is-fixed-bottom-left {
+  background: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+.ltr-is-fixed-bottom-right {
+  background: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 // Image preview focus on over
