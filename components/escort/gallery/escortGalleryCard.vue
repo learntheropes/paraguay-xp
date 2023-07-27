@@ -26,7 +26,7 @@ const openModal = (gallery, index) => {
 <template>
   <div class="card">
     <div class="card-image">
-      <figure :style="'background-color:grey;'" class="image is-square">
+      <figure :style="'background-color:black;'" class="image is-square">
         <img
           @click.native="openModal(gallery, index)"
           :src="('/gallery/preview/' + media.fileName).split('.')[0] + '.webp'"
