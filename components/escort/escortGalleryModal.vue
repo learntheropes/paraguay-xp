@@ -4,7 +4,6 @@
   const modalType = ref(null)
   const modalIndex = ref(0);
   const modalMedia = ref(null);
-  const videoControls = ref(false)
   const { $listen } = useNuxtApp();
 
   $listen('openModal', ({ gallery, index }) => {
@@ -16,36 +15,41 @@
     modalMedia.value = gallery[index].fileName;
   });
 
-  const showControls = () => {
-    videoControls.value = true
-  }
+  const isLoading = ref(true);
+
+  const changeLoading = (value) => {
+    isLoading.value = value
+  };
 
   const navigatePrevious = () => {
 
+    changeLoading(true);
     modalIndex.value = (modalIndex.value - 1 < 0) ? modalGallery.value.length - 1 : modalIndex.value - 1; 
     modalType.value = modalGallery.value[modalIndex.value].fileType
     modalMedia.value = modalGallery.value[modalIndex.value].fileName;
     if (modalType.value !== 'image') {
-      var video = document.getElementById('video');
-      video.load();
+      const video = document.getElementById('video');
+      if (video) video.load();
     }
+
   };
 
   const navigateNext = () => {
 
+    changeLoading(true);
     modalIndex.value = (modalIndex.value + 1 >  modalGallery.value.length - 1) ? 0:  modalIndex.value + 1;
     modalType.value = modalGallery.value[modalIndex.value].fileType
     modalMedia.value = modalGallery.value[modalIndex.value].fileName;
     if (modalType.value !== 'image') {
-      var video = document.getElementById('video');
-      video.load();
+      const video = document.getElementById('video');
+      if (video) video.load();
     }
   };
 </script>
 
 <template>
   <div>
-    <OModal v-model:active="isModalActive">
+    <OModal v-model:active="isModalActive" :onCancel="changeLoading(true)">
       <div class="ltr-is-center-left is-hidden-mobile">
         <OIcon 
           icon="chevron-left" 
@@ -62,30 +66,47 @@
           @click.native="navigatePrevious"
         />
       </div>
-      <figure 
-        v-if="modalType === 'image'"
-        class="image ltr-corner-rounded"
-      >
-        <NuxtImg
-          preset="modal"
-          :src="'/gallery/modal/' + modalMedia"
-          class="ltr-fit"
+
+      <div class="is-overlay ltr-is-center-center">
+        <OIcon
+          v-if="isLoading"
+          pack="mdi"
+          icon="loading"
+          size="large"
+          variant="info"
+          spin
         />
-      </figure>
-      <!-- @canplay="showControls"
-        :controls="videoControls" -->
-      <video
-        v-else
-        id="video"
-        class="has-rounded-corners ltr-fit"
-        autoplay
-        muted
-        playsInline
-      >
-        <source
-          :src="'/gallery/modal/' + modalMedia"
-        />
-      </video>
+      </div>
+
+      <div class="ltr-is-center-center">
+        <figure 
+          v-if="modalType === 'image'"
+          class="image ltr-corner-rounded"
+        >
+          <NuxtImg
+            id="image"
+            preset="modal"
+            loading="lazy"
+            :src="'/gallery/modal/' + modalMedia"
+            class="ltr-fit"
+            @load="changeLoading(false)"
+          />
+        </figure>
+        <video
+          v-else
+          id="video"
+          class="has-rounded-corners ltr-fit"
+          @canplay="changeLoading(false)"
+          :controls="false"
+          autoplay
+          loop
+          muted
+          playsInline
+        >
+          <source :src="'/gallery/modal/' + modalMedia" />
+        </video>
+      </div>
+
       <div class="ltr-is-center-right is-hidden-mobile">
         <OIcon
           icon="chevron-right"
@@ -106,10 +127,9 @@
   </div>
 </template>
 
-<style>
-.ltr-is-48by48-white svg {
-  color: white;
-  min-width: 32px;
-  min-height: 32px;
+<style scoped>
+.ltr-is-center-center {
+  min-height: 100px;
+  min-width: 100px;
 }
 </style>

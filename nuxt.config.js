@@ -107,7 +107,7 @@ export default defineNuxtConfig({
     '@sidebase/nuxt-auth',
     '@pinia/nuxt',
     '@nuxt/image',
-    'nuxt-delay-hydration',
+    // 'nuxt-delay-hydration',
   ],
 
   robots: {
@@ -206,9 +206,9 @@ export default defineNuxtConfig({
     },
   },
 
-  delayHydration: {
-    mode: 'init',
-    exclude: excludeDelayHydration,
-    debug: process.env.NODE_ENV === 'development'
-  }
+  // delayHydration: {
+  //   mode: 'init',
+  //   exclude: excludeDelayHydration,
+  //   debug: process.env.NODE_ENV === 'development'
+  // }
 });

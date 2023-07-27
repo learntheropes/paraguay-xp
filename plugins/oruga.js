@@ -1,4 +1,3 @@
-import { defineNuxtPlugin } from '#app';
 import {
   OField,
   OInput,
@@ -6,16 +5,21 @@ import {
   OButton,
   OIcon,
   OLoading,
-  OModal
+  OModal,
   // Config,
 } from '@oruga-ui/oruga-next';
-// import { bulmaConfig } from '@oruga-ui/theme-bulma';
+import { bulmaConfig } from '@oruga-ui/theme-bulma';
 
 // const myConfig = Object.assign(bulmaConfig, {
-//   notification: {
-//       ...bulmaConfig.notification,
-//       position: 'bottom-right'
+
+//   modal: {
+//     ...bulmaConfig.modal,
+//     scroll: 'clip'
 //   }
+// //   notification: {
+// //       ...bulmaConfig.notification,
+// //       position: 'bottom-right'
+// //   }
 // })
 
 export default defineNuxtPlugin((nuxtApp) => {
