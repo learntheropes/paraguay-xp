@@ -10,22 +10,20 @@
   overflow: hidden;
 }
 
-// Fit on the screen
-.ltr-fit {
-  max-width: 100%;
-  max-height: 85vh;
-  min-height: 80vh;
-    // max-width: 100%;
-    // max-height: 90%;
-    // bottom: 0;
-    // left: 0;
-    // margin: auto;
-    // overflow: auto;
-    // position: fixed;
-    // right: 0;
-    // top: 0;
-    // -o-object-fit: contain;
-    // object-fit: contain;
+// Fit modal on the screen
+.ltr-fit-mobile {
+
+  max-height: 80vh !important;
+  width: 95% !important;
+  object-fit: contain !important;
+  margin: auto;
+}
+
+.ltr-fit-tablet {
+  height: 85vh !important;
+  max-width: 95% !important;
+  object-fit: contain !important;
+  margin: auto;
 }
 
 // Overlays at flex position

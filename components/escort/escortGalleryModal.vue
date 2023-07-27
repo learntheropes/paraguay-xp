@@ -76,24 +76,25 @@
           @click.native="navigatePrevious"
         />
       </div>
-      <div class="ltr-is-center-center">
+
+      <div class="ltr-is-center-center is-hidden-tablet">
         <figure 
           v-if="modalType === 'image'"
-          class="image ltr-corner-rounded"
+          class="image"
         >
           <NuxtImg
             id="image"
             preset="modal"
             loading="lazy"
             :src="'/gallery/modal/' + modalMedia"
-            class="ltr-fit"
+            class="ltr-fit-mobile"
             @load="changeLoading(false)"
           />
         </figure>
         <video
           v-else
           id="video"
-          class="has-rounded-corners ltr-fit"
+          class="ltr-fit-mobile"
           @canplay="changeLoading(false)"
           :controls="false"
           autoplay
@@ -104,6 +105,36 @@
           <source :src="'/gallery/modal/' + modalMedia" />
         </video>
       </div>
+
+      <div class="ltr-is-center-center is-hidden-mobile">
+        <figure 
+          v-if="modalType === 'image'"
+          class="image ltr-fit-tablet"
+        >
+          <NuxtImg
+            id="image"
+            preset="modal"
+            loading="lazy"
+            :src="'/gallery/modal/' + modalMedia"
+            class="ltr-fit-tablet"
+            @load="changeLoading(false)"
+          />
+        </figure>
+        <video
+          v-else
+          id="video"
+          class="ltr-fit-tablet"
+          @canplay="changeLoading(false)"
+          :controls="false"
+          autoplay
+          loop
+          muted
+          playsInline
+        >
+          <source :src="'/gallery/modal/' + modalMedia" />
+        </video>
+      </div>
+
       <div class="ltr-is-center-right is-hidden-mobile">
         <OIcon
           icon="chevron-right"
