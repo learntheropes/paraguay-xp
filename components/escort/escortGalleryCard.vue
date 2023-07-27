@@ -30,8 +30,8 @@ const openModal = (gallery, index) => {
         <img
           @click.native="openModal(gallery, index)"
           :src="('/gallery/preview/' + media.fileName).split('.')[0] + '.webp'"
-          :alt="$t('escort.gallery.mediaOf')+' '+ escort.name"
-          :title="$t('escort.gallery.mediaOf') +' ' + escort.name"
+          :alt="$t('escort.gallery.previewOf')+' '+ escort.name"
+          :title="$t('escort.gallery.previewOf') +' ' + escort.name"
           loading="eager"
           width="288"
           height="288"

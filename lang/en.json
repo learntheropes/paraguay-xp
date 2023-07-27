@@ -59,7 +59,7 @@
     "gallery": {
       "title": "Photos & videos",
       "tapToEnlarge": "Tap to enlarge",
-      "mediaOf": "Photo or video of"
+      "previewOf": "Preview of"
     }
   },
   "blog": {

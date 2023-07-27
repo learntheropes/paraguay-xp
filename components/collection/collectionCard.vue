@@ -44,8 +44,8 @@ const {
           <NuxtImg
             preset="preview"
             :src="('/gallery/preview/' + escort.cover.fileName).split('.')[0] + '.webp'"
-            :alt="$t('escort.gallery.mediaOf') + ' ' + escort.name"
-            :title="$t('escort.gallery.mediaOf') + ' ' + escort.name"
+            :alt="$t('escort.gallery.previewOf') + ' ' + escort.name"
+            :title="$t('escort.gallery.previewOf') + ' ' + escort.name"
             :loading="(index == 0) ? 'eager' : 'lazy'"
             width="288"
             height="288"

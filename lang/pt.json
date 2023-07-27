@@ -59,7 +59,7 @@
     "gallery": {
       "title": "Fotos e vídeos",
       "tapToEnlarge": "Toque para ampliar",
-      "mediaOf": "Foto o video de"
+      "previewOf": "Pré-visualização de"
     }
   },
   "blog": {
