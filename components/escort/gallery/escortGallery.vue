@@ -8,7 +8,9 @@ const {
   }
 });
 
-const { gallery } = escort;
+const {
+  gallery
+} = escort;
 </script>
 
 <template>
