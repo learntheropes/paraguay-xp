@@ -36,12 +36,12 @@ const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phone.replace('+',''
         <p class="subtitle is-5 is-capitalized">{{ agency }}</p>
       </div>
       <div class="column is-narrow is-justify-content-right has-text-righ">
-        <a :href="'tel:' + phone">
+        <a :href="'tel:' + phone" aria-label="phone">
           <OIcon customSize="mdi-72px" icon="phone"></OIcon>
         </a>
       </div>
       <div class="column is-narrow is-justify-content-right has-text-righ">
-        <a :href="whatsappUrl" target="_blank">
+        <a :href="whatsappUrl" target="_blank" aria-label="whatsapp">
           <OIcon customSize="mdi-72px" icon="whatsapp"></OIcon>
         </a>
       </div>
