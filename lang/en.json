@@ -99,6 +99,9 @@
       "friday": "Friday",
       "saturday": "Saturday",
       "sunday": "Sunday"
+    },
+    "rate": {
+      "title": "Hourly rate"
     }
   },
   "blog": {
@@ -173,7 +176,6 @@
   "name": "Name",
   "indipendentOrAgency": "Indipendent or Agency",
   "selectArea": "Select your area",
-  "rate": "Hourly rate",
   "selectServices": "Select offered services",
   "body": "Figure",
   "extraFreeWorning": "To get a free lifetime advertisement you still have to select {missingExtra} special services.",

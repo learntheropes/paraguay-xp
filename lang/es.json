@@ -99,6 +99,9 @@
       "friday": "Viernes",
       "saturday": "Sábado",
       "sunday": "Domingo"
+    },
+    "rate": {
+      "title": "Tarifa oraria"
     }
   },
   "blog": {
@@ -173,7 +176,6 @@
   "name": "Nombre",
   "indipendentOrAgency": "Independiente o Agencia",
   "selectArea": "Selecciona tu barrio",
-  "rate": "Tarifa oraria",
   "selectServices": "Seleccione los servicios ofrecidos",
   "body": "Figura",
   "extraFreeWorning": "Para aprovechar de una publicación gratis de por vida, aún te falta seleccionar {missingExtra} servicios especiales.",

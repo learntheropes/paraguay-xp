@@ -99,6 +99,9 @@
       "friday": "",
       "saturday": "",
       "sunday": ""
+    },
+    "rate": {
+      "title": "Taxa horária"
     }
   },
   "blog": {
@@ -174,7 +177,6 @@
   "name": "Nome",
   "indipendentOrAgency": "Independente ou Agência",
   "selectArea": "Selecione seu bairro",
-  "rate": "Taxa horária",
   "services": "Serviços",
   "selectServices": "Selecione os serviços oferecidos",
   "body": "Corpo",
