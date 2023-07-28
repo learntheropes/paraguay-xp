@@ -10,16 +10,19 @@ const {
 
 const { locale } = useI18n();
 
-let text
+let text;
 try {
+
   const {
-  body
-} = await queryContent('service', slug)
-  .locale(locale.value)
-  .findOne();
-text = body;
+    body
+  } = await queryContent('service', slug)
+    .locale(locale.value)
+    .findOne();
+
+  text = body;
 } catch (error) {
-  text = null
+
+  text = null;
 }
 </script>
 

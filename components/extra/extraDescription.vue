@@ -10,16 +10,26 @@ const {
 
 const { locale } = useI18n();
 
-const {
-  body
-} = await queryContent('extra', slug)
-  .locale(locale.value)
-  .findOne();
+let text
+try {
+
+  const {
+    body
+  } = await queryContent('extra', slug)
+    .locale(locale.value)
+    .findOne();
+
+  text = body;
+} catch (error) {
+  
+  text = null;
+}
+
 </script>
 
 <template>
-  <section v-if="body" class="section">
+  <section v-if="text" class="section">
     <h2 class="title is-5">{{ $t('extra.whatAbout') }}</h2>
-    <ContentRendererMarkdown :value="{ body }" class="content"/>
+    <ContentRendererMarkdown :value="{ text }" class="content"/>
   </section>
 </template>
