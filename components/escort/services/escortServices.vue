@@ -45,7 +45,7 @@ const {
         <div class="tags">      
           <span class="tag is-medium is-primary">{{ $t(`extra.${extra}`) }}</span>
         </div>
-      </div>      
+      </div>
     </div>
   </section>
 </template>

@@ -90,6 +90,15 @@
       "hotel": "Hotel, Motel e Domicílio",
       "dinner": "Jantares",
       "travel": "Viagens"
+    },
+    "availability": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
     }
   },
   "blog": {
