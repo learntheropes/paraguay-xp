@@ -82,6 +82,14 @@
       "breast": "Busto",
       "waist": "Cintura",
       "hips": "Caderas"
+    },
+    "services": {
+      "title": "Servicios",
+      "virtual": "Servicios Virtuales",
+      "apartment": "Depto Proprio",
+      "hotel": "Hotel, Motel y Domicilio",
+      "dinner": "Cenas",
+      "travel": "Viajes"
     }
   },
   "blog": {
@@ -157,7 +165,6 @@
   "indipendentOrAgency": "Independiente o Agencia",
   "selectArea": "Selecciona tu barrio",
   "rate": "Tarifa oraria",
-  "services": "Servicios",
   "selectServices": "Seleccione los servicios ofrecidos",
   "body": "Figura",
   "extraFreeWorning": "Para aprovechar de una publicación gratis de por vida, aún te falta seleccionar {missingExtra} servicios especiales.",
@@ -261,11 +268,6 @@
   "conventional": "Convencional",
   "complete": "Completo",
   "byActivity": "Actividad",
-  "virtual": "Servicios Virtuales",
-  "apartment": "Depto Proprio",
-  "hotel": "Hotel, Motel y Domicilio",
-  "dinner": "Cenas",
-  "travel": "Viajes",
   "filter": "Filtrar",
   "removeFilter": "Eliminar Filtros",
   "diamond": "Diamante",

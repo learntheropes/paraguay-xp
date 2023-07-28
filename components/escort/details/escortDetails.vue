@@ -79,28 +79,3 @@ const {
     </div>
   </section>
 </template>
-
-<!-- <script>
-export default {
-  props: [
-    'escort'
-  ],
-  computed: {
-    isIndividual () {
-      return this.$escort.isIndividual(this.escort)
-    },
-    isDuo () {
-      return this.$escort.isDuo(this.escort)
-    },
-    age () {
-      return this.$escort.age(this.escort)
-    },
-    age1 () {
-      return this.$escort.age1(this.escort)
-    },
-    age2 () {
-      return this.$escort.age2(this.escort)
-    },
-  }
-}
-</script> -->

@@ -82,6 +82,14 @@
       "breast": "Peito",
       "waist": "Cintura",
       "hips": "Quadril"
+    },
+    "services": {
+      "title": "Serviços",
+      "virtual": "Serviços Virtuais",
+      "apartment": "Departamento Próprio",
+      "hotel": "Hotel, Motel e Domicílio",
+      "dinner": "Jantares",
+      "travel": "Viagens"
     }
   },
   "blog": {
@@ -138,7 +146,7 @@
   "threeMonthsDescription": "Ao publicar seu anúncio antes de {limitDate}, você tem direito a três meses de publicidade gratuita.",
   "freePublicationTitle": "Postagem gratuita para sempre",
   "freePublicationFailed": "Se você deseja um anúncio gratuito vitalício, corrija os seguintes problemas",
-  "freePublicationSuccess": "Congraturation! By writing a description of {wordsCount} words, uploading {galleryCount} photos and videos and selecting {extraCount} extra services, you are eligible for a lifetime free advertisement.",
+  "freePublicationSuccess": "Parabéns! Ao escrever uma descrição das palavras {wordsCount}, carregar fotos e vídeos {galleryCount} e selecionar os serviços extras {extraCount}, você está qualificado para um anúncio gratuito vitalício.",
   "fixDescription": "- Você deve escrever pelo menos {minWords} palavras em sua descrição, você ainda tem {missingWords} restantes. Você pode verificar sua descrição",
   "fixGallery": "- Você deve fornecer pelo menos {minGallery} fotos e vídeos, ainda faltam {missingGallery}. Você pode adicionar mais",
   "fixExtra": "- Você precisa selecionar pelo menos {minExtra} serviços extras. Ainda faltam {missingExtra} deles. Você pode adicionar mais",
@@ -262,11 +270,6 @@
   "conventional": "Convencional",
   "complete": "Completo",
   "byActivity": "Atividade",
-  "virtual": "Serviços Virtuais",
-  "apartment": "Departamento Próprio",
-  "hotel": "Hotel, Motel e Domicílio",
-  "dinner": "Jantares",
-  "travel": "Viagens",
   "filter": "Filtro",
   "removeFilter": "Remover Filtros",
   "diamond": "Diamante",

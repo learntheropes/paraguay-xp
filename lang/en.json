@@ -82,6 +82,14 @@
       "breast": "Breast",
       "waist": "Waist",
       "hips": "Hips"
+    },
+    "services": {
+      "title": "Services",
+      "virtual": "Virtual Services",
+      "apartment": "Incall",
+      "hotel": "Outcall",
+      "dinner": "Dinners",
+      "travel": "Travels"
     }
   },
   "blog": {
@@ -157,7 +165,6 @@
   "indipendentOrAgency": "Indipendent or Agency",
   "selectArea": "Select your area",
   "rate": "Hourly rate",
-  "services": "Services",
   "selectServices": "Select offered services",
   "body": "Figure",
   "extraFreeWorning": "To get a free lifetime advertisement you still have to select {missingExtra} special services.",
@@ -261,11 +268,6 @@
   "conventional": "Conventional",
   "complete": "Complete",
   "byActivity": "Activity",
-  "virtual": "Virtual Services",
-  "apartment": "Incall",
-  "hotel": "Outcall",
-  "dinner": "Dinners",
-  "travel": "Travels",
   "filter": "Filter",
   "removeFilter": "Remove Filters",
   "diamond": "Diamond",
