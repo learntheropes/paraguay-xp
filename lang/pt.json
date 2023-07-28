@@ -56,6 +56,7 @@
     "descriptionCity": "Acompanhantes com apartamento próprio na cidade de {area} no Paraguai"
   },
   "escort": {
+    "title": "Acompanhante {escort}",
     "gallery": {
       "title": "Fotos e vídeos",
       "tapToEnlarge": "Toque para ampliar",
@@ -92,13 +93,13 @@
       "travel": "Viagens"
     },
     "availability": {
-      "monday": "",
-      "tuesday": "",
-      "wednesday": "",
-      "thursday": "",
-      "friday": "",
-      "saturday": "",
-      "sunday": ""
+      "monday": "Segunda-feira",
+      "tuesday": "Terça-feira",
+      "wednesday": "Quarta-feira",
+      "thursday": "Quinta-feira",
+      "friday": "Sexta-feira",
+      "saturday": "Sábado",
+      "sunday": "Domingo"
     },
     "rate": {
       "title": "Taxa horária"

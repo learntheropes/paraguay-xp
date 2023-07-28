@@ -20,7 +20,9 @@ const {
   }
 } = useRuntimeConfig();
 
-const title = $capitalize(escort.name);
+const { t } = useI18n();
+
+const title = t('escort.title', { escort: $capitalize(escort.name) });
 const description = escort.head[locale.value];
 
 useHead({

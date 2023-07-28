@@ -56,6 +56,7 @@
     "descriptionCity": "Escort y acompañantes con departmanento proprio en la ciudad de {area} en Paraguay"
   },
   "escort": {
+    "title": "Escort {escort}",
     "gallery": {
       "title": "Fotos y videos",
       "tapToEnlarge": "Toque para agrandar",
