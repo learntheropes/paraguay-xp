@@ -36,7 +36,6 @@
     "lodash.minby": "^4.6.0",
     "lodash.shuffle": "^4.2.0",
     "lodash.sortby": "^4.7.0",
-    "lodash.startcase": "^4.4.0",
     "lodash.uniq": "^4.5.0",
     "lodash.uniqby": "^4.7.0",
     "mitt": "^3.0.1",
