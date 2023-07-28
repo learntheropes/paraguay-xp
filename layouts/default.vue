@@ -116,7 +116,9 @@ if (!store.init) {
       <div class="full-body">
         <LayoutNavbar />
         <main class="main-content">
-          <slot />
+          <section class="section">
+            <slot />
+          </section>
         </main>
         <!-- <div v-if="showChevron" class="is-hidden-mobile is-bottom-right">
           <b-tooltip :label="$t('scrollToTop')" position="is-left">

@@ -25,11 +25,9 @@ const {
 <template>
   <NuxtLayout>
     <div class="container">
-      <section class="section">
-        <h1 class="title is-4">{{ title }}</h1>
-        <div class="subtitle is-6">{{ description }}</div>
-        <TableOfContent :toc="body.toc" />
-      </section>
+      <h1 class="title is-3">{{ title }}</h1>
+      <div class="subtitle is-5">{{ description }}</div>
+      <TableOfContent :toc="body.toc" />
     </div>
     <BannerClients v-if="target === 'client'" />
     <BannerEscorts v-if="target === 'escort'" />

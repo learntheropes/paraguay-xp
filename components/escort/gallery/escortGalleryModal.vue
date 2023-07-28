@@ -27,7 +27,9 @@
     modalIndex.value = (modalIndex.value - 1 < 0) ? modalGallery.value.length - 1 : modalIndex.value - 1; 
     modalType.value = modalGallery.value[modalIndex.value].fileType
     modalMedia.value = modalGallery.value[modalIndex.value].fileName;
+
     if (modalType.value !== 'image') {
+
       const video = document.getElementById('video');
       if (video) video.load();
     }
@@ -40,14 +42,16 @@
     modalIndex.value = (modalIndex.value + 1 >  modalGallery.value.length - 1) ? 0:  modalIndex.value + 1;
     modalType.value = modalGallery.value[modalIndex.value].fileType
     modalMedia.value = modalGallery.value[modalIndex.value].fileName;
+
     if (modalType.value !== 'image') {
+      
       const video = document.getElementById('video');
       if (video) video.load();
     }
   };
 
   const onSwipe = (direction) => {
-
+    console.log('direction', direction)
     if (direction === 'left') navigateNext();
     else if (direction === 'right') navigatePrevious();
   }

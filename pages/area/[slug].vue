@@ -59,8 +59,8 @@ if (!(areas.includes(area)) && (slug !== 'outcall-only')) throw createError({ st
 <template>
   <NuxtLayout>
     <div class="container">
-      <h1 class="title is-4">{{ title }}</h1>
-      <div class="subtitle is-6">{{ description }}</div>
+      <h1 class="title is-3">{{ title }}</h1>
+      <div class="subtitle is-5">{{ description }}</div>
       <AreaLevels :area="area" />
       <CollectionNavigator :slug="slug" />
     </div>
