@@ -60,6 +60,11 @@
       "title": "Fotos y videos",
       "tapToEnlarge": "Toque para agrandar",
       "previewOf": "Vista previa de"
+    },
+    "about": {
+      "title": "Sobre mi",
+      "showOriginal": "Mostrar texto original",
+      "showTransaltion": "Mostrar texto traduzido"
     }
   },
   "blog": {
@@ -216,9 +221,6 @@
   "Objects": "Objetos",
   "Symbols": "Simbolos",
   "Flags": "Banderas",
-  "aboutMe": "Sobre mi",
-  "showOriginal": "Mostrar original",
-  "showTransaltion": "Mostrar traducción",
   "swipeToBrowse": "Deslizar para navegar",
   "indipendent": "Independiente",
   "comments": "Comentarios",
