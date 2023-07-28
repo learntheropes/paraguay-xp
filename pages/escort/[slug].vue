@@ -60,6 +60,7 @@ useHead({
       <EscortHeader :escort="escort" />
       <EscortGallery :escort="escort" />
       <EscortAbout :escort="escort" />
+      <EscortDetails :escort="escort" />
     </div>
   </NuxtLayout>
 </template>
