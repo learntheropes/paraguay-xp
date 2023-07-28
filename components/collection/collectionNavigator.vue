@@ -12,6 +12,7 @@ const {
   <section class="section">
     <CollectionByAgency :slug="slug" />
     <CollectionByArea :slug="slug" />
+    <CollectionByService :slug="slug" />
     <CollectionByExtra :slug="slug" />
   </section>
 </template>

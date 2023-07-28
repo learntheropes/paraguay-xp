@@ -21,6 +21,16 @@
     "title": "Novidades acompanhantes Paraguai",
     "description": "Últimas novidades cerca las acompanhantes no Paraguai"
   },
+  "service": {
+    "plural": "Serviços",
+    "title": "Acompanhantes que oferecem serviço {service}",
+    "description": "Acompanhantes que oferecem serviço {service} no Paraguai",
+    "virtual": "virtual",
+    "apartment": "separtamento próprio",
+    "hotel": "hotel e motel",
+    "dinner": "jantares",
+    "travel": "viaja"
+  },
   "extra": {
     "plural": "Serviços especiais",
     "title": "Acompanhantes com serviço {extra}",

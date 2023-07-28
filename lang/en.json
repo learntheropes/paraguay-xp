@@ -21,9 +21,19 @@
     "title": "New escorts Paraguay",
     "description": "The latest added escorts in Paraguay"
   },
+  "service": {
+    "plural": "Services",
+    "title": "Escorts offering {service} service",
+    "description": "Escorts that offer {service} service in Paraguay",
+    "virtual": "virtuals",
+    "apartment": "incall",
+    "hotel": "outcall",
+    "dinner": "dinners",
+    "travel": "travels"
+  },
   "extra": {
     "plural": "Special services",
-    "title": "Escorts with {extra} service",
+    "title": "Escorts offering {extra} service",
     "description": "Escorts that offer {extra} service in Paraguay",
     "kiss": "Kisses",
     "couple": "Attention to couples",

@@ -21,6 +21,16 @@
     "title": "Novedades escort Paraguay",
     "description": "Las últimas novedades cerca las escort en Paraguay"
   },
+  "service": {
+    "plural": "Servicios",
+    "title": "Escorts que ofrecen servicio {service}",
+    "description": "Escort que ofrecen servicio {service} en Paraguay",
+    "virtual": "virtuales",
+    "apartment": "depto proprio",
+    "hotel": "hotel y motel",
+    "dinner": "cenas",
+    "travel": "viajes"
+  },
   "extra": {
     "title": "Escort con servicio {extra}",
     "description": "Escort y acompañantes que ofrecen el servicio de {extra} en Paraguay",
