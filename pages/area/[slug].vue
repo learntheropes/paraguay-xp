@@ -20,24 +20,16 @@ const {
   }
 } = useRuntimeConfig();
 
-const title = (slug === 'outcall-only') ? t('area.titleOutcallOnly') + seoTitle : t('area.titleArea', { area }) + seoTitle;
+const title = (slug === 'outcall-only') ? t('area.titleOutcallOnly') : t('area.titleArea', { area });
 
-const getDescription = () => {
-  if (slug === 'outcall-only') {
-    return t('area.descriptionOutcallOnly');
-  }
-  else if (neighbourhoods.includes(area)) {
-    return t('area.descriptionNeighbourhood', { area });
-  }
-  else {
-    return t('area.descriptionCity', { area });
-  }
-};
-
-const description = getDescription();
+const description = (slug === 'outcall-only')
+  ? t('area.descriptionOutcallOnly')
+  : (neighbourhoods.includes(area)) 
+    ? t('area.descriptionNeighbourhood', { area })
+    : t('area.descriptionCity', { area });
 
 useHead({
-  title,
+  title: title + seoTitle,
   meta: [
     {
       id: 'description',
@@ -47,7 +39,7 @@ useHead({
     {
       id: 'og:title',
       name: 'og:title',
-      content: title
+      content: title + seoTitle
     },
     {
       id: 'og:description',

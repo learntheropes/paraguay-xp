@@ -17,12 +17,12 @@ const {
   }
 } = useRuntimeConfig();
 
-const title = (agency === 'indipendent') ? t('agency.titleIndipendent') + seoTitle : t('agency.title', { agency }) + seoTitle;
+const title = (agency === 'indipendent') ? t('agency.titleIndipendent') : t('agency.title', { agency });
 
 const description = (agency === 'indipendent') ? t('agency.descriptionIndipendent') : t('agency.description', { agency });
 
 useHead({
-  title,
+  title: title + seoTitle,
   meta: [
     {
       id: 'description',
@@ -32,7 +32,7 @@ useHead({
     {
       id: 'og:title',
       name: 'og:title',
-      content: title
+      content: title + seoTitle
     },
     {
       id: 'og:description',

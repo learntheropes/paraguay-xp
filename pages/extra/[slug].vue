@@ -20,12 +20,12 @@ const {
   }
 } = useRuntimeConfig();
 
-const title = t('extra.title', { extra: t(`extra.${extra}`).toLowerCase() }) + seoTitle;
+const title = t('extra.title', { extra: t(`extra.${extra}`).toLowerCase() });
 
 const description = t('extra.description', { extra: t(`extra.${extra}`).toLowerCase() });
 
 useHead({
-  title,
+  title: title + seoTitle,
   meta: [
     {
       id: 'description',
@@ -35,7 +35,7 @@ useHead({
     {
       id: 'og:title',
       name: 'og:title',
-      content: title
+      content: title + seoTitle
     },
     {
       id: 'og:description',

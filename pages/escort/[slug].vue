@@ -20,11 +20,11 @@ const {
   }
 } = useRuntimeConfig();
 
-const title = $capitalize(escort.name) + seoTitle;
+const title = $capitalize(escort.name);
 const description = escort.head[locale.value];
 
 useHead({
-  title,
+  title: title + seoTitle,
   meta: [
     {
       id: 'description',
@@ -34,7 +34,7 @@ useHead({
     {
       id: 'og:title',
       name: 'og:title',
-      content: title
+      content: title + seoTitle
     },
     {
       id: 'og:description',

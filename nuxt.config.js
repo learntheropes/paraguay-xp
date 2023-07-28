@@ -61,7 +61,7 @@ export default defineNuxtConfig({
         {
           id: 'og:image',
           name: 'og:image',
-          content: `${deploymentDomain}/favicon/favicon.jpg`
+          content: `${deploymentDomain}/favicon/favicon.png`
         },
         {
           id: 'twitter:card',
@@ -71,7 +71,7 @@ export default defineNuxtConfig({
         {
           id: 'twitter:image',
           name: 'twitter:image',
-          content: `${deploymentDomain}/favicon/favicon.jpg`
+          content: `${deploymentDomain}/favicon/favicon.png`
         },
       ],
       link: [
