@@ -13,14 +13,15 @@ const escort = await queryContent('escorts', slug).findOne();
 const { locale } = useI18n();
 const { $capitalize } = useNuxtApp();
 
-const title = $capitalize(escort.name);
-const description = escort.head[locale.value];
-
 const {
   public: {
-    deploymentDomain
+    deploymentDomain,
+    seoTitle
   }
 } = useRuntimeConfig();
+
+const title = $capitalize(escort.name) + seoTitle;
+const description = escort.head[locale.value];
 
 useHead({
   title,

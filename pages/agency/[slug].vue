@@ -11,7 +11,13 @@ const { $capitalize } = useNuxtApp();
 
 const agency = (slug === 'indipendent') ? 'indipendent' : $capitalize(decodeURIComponent(slug).replace(/-/g,' '));
 
-const title = (agency === 'indipendent') ? t('agency.titleIndipendent') : t('agency.title', { agency });
+const {
+  public: {
+    seoTitle
+  }
+} = useRuntimeConfig();
+
+const title = (agency === 'indipendent') ? t('agency.titleIndipendent') + seoTitle : t('agency.title', { agency }) + seoTitle;
 
 const description = (agency === 'indipendent') ? t('agency.descriptionIndipendent') : t('agency.description', { agency });
 

@@ -20,6 +20,33 @@ const {
   body,
   _path
 } = await queryContent('blog', slug).locale(locale.value).findOne();
+
+const {
+  public: {
+    seoTitle
+  }
+} = useRuntimeConfig();
+
+useHead({
+  title: title + seoTitle,
+  meta: [
+    {
+      id: 'description',
+      name: 'description',
+      content: description
+    },
+    {
+      id: 'og:title',
+      name: 'og:title',
+      content: title + seoTitle
+    },
+    {
+      id: 'og:description',
+      name: 'og:description',
+      content: description
+    },
+  ],
+});
 </script>
 
 <template>

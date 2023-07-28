@@ -14,7 +14,13 @@ const { $capitalize } = useNuxtApp();
 
 const area = (slug === 'outcall-only') ? 'outcall-only' : $capitalize(decodeURIComponent(slug).replace(/-/g,' '));
 
-const title = (slug === 'outcall-only') ? t('area.titleOutcallOnly') : t('area.titleArea', { area });
+const {
+  public: {
+    seoTitle
+  }
+} = useRuntimeConfig();
+
+const title = (slug === 'outcall-only') ? t('area.titleOutcallOnly') + seoTitle : t('area.titleArea', { area }) + seoTitle;
 
 const getDescription = () => {
   if (slug === 'outcall-only') {

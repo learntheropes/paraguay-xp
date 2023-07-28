@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     telegramToken: process.env.TELEGRAM_TOKEN,
     telegramChatId: process.env.TELEGRAM_CHAT_ID,
     public: {
+      seoTitle: ' 🫦 Paraguay XP',
       isDeployed,
       deploymentDomain,
       whatsappAdmin: process.env.WHATSAPP_ADMIN

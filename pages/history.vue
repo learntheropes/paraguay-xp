@@ -5,8 +5,14 @@ definePageMeta({
 
 const { t } = useI18n();
 
+const {
+  public: {
+    seoTitle
+  }
+} = useRuntimeConfig();
+
 useHead({
-  title: t('history.title'),
+  title: t('history.title') + seoTitle,
   meta: [
     {
       id: 'description',
@@ -16,7 +22,7 @@ useHead({
     {
       id: 'og:title',
       name: 'og:title',
-      content: t('history.title')
+      content: t('history.title') + seoTitle
     },
     {
       id: 'og:description',

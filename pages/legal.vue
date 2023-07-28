@@ -6,6 +6,12 @@ definePageMeta({
 const { locale } = useI18n();
 
 const {
+  public: {
+    seoTitle
+  }
+} = useRuntimeConfig();
+
+const {
   title,
   body
 } = await queryContent('legal')
@@ -13,7 +19,7 @@ const {
   .findOne();
 
 useHead({
-  title
+  title: title + seoTitle
 });
 </script>
 

@@ -14,7 +14,13 @@ if (!(extras.includes(extra))) throw createError({ statusCode: 404 });
 
 const { t } = useI18n();
 
-const title = t('extra.title', { extra: t(`extra.${extra}`).toLowerCase() });
+const {
+  public: {
+    seoTitle
+  }
+} = useRuntimeConfig();
+
+const title = t('extra.title', { extra: t(`extra.${extra}`).toLowerCase() }) + seoTitle;
 
 const description = t('extra.description', { extra: t(`extra.${extra}`).toLowerCase() });
 
