@@ -1,7 +1,7 @@
 export default [
   'virtual',
-  'apartment',
-  'hotel',
+  'incall',
+  'outcall',
   'dinner',
   'travel'
 ]

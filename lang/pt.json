@@ -26,8 +26,8 @@
     "title": "Acompanhantes que oferecem serviço {service}",
     "description": "Acompanhantes que oferecem serviço {service} no Paraguai",
     "virtual": "virtual",
-    "apartment": "separtamento próprio",
-    "hotel": "hotel e motel",
+    "incall": "separtamento próprio",
+    "outcall": "hotel e motel",
     "dinner": "jantares",
     "travel": "viaja"
   },
@@ -97,8 +97,8 @@
     "services": {
       "title": "Serviços",
       "virtual": "Serviços Virtuais",
-      "apartment": "Departamento Próprio",
-      "hotel": "Hotel, Motel e Domicílio",
+      "incall": "Departamento Próprio",
+      "outcall": "Hotel, Motel e Domicílio",
       "dinner": "Jantares",
       "travel": "Viagens"
     },

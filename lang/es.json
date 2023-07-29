@@ -26,8 +26,8 @@
     "title": "Escorts que ofrecen servicio {service}",
     "description": "Escort que ofrecen servicio {service} en Paraguay",
     "virtual": "virtuales",
-    "apartment": "depto proprio",
-    "hotel": "hotel y motel",
+    "incall": "depto proprio",
+    "outcall": "hotel y motel",
     "dinner": "cenas",
     "travel": "viajes"
   },
@@ -97,8 +97,8 @@
     "services": {
       "title": "Servicios",
       "virtual": "Servicios Virtuales",
-      "apartment": "Depto Proprio",
-      "hotel": "Hotel, Motel y Domicilio",
+      "incall": "Depto Proprio",
+      "outcall": "Hotel, Motel y Domicilio",
       "dinner": "Cenas",
       "travel": "Viajes"
     },

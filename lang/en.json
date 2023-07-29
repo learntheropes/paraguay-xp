@@ -26,8 +26,8 @@
     "title": "Escorts offering {service} service",
     "description": "Escorts that offer {service} service in Paraguay",
     "virtual": "virtuals",
-    "apartment": "incall",
-    "hotel": "outcall",
+    "incall": "incall",
+    "outcall": "outcall",
     "dinner": "dinners",
     "travel": "travels"
   },
@@ -97,8 +97,8 @@
     "services": {
       "title": "Services",
       "virtual": "Virtual Services",
-      "apartment": "Incall",
-      "hotel": "Outcall",
+      "incall": "Incall",
+      "outcall": "Outcall",
       "dinner": "Dinners",
       "travel": "Travels"
     },

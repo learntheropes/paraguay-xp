@@ -22,7 +22,7 @@ const filteredServices = services.filter(service => escort[service])
           <NuxtLink :to="localePath({ name: 'service-slug', params: { slug: kebabCase(service) }})">
             <span class="tag is-medium is-primary">{{ $t(`escort.services.${service}`) }}</span>
           </NuxtLink>
-          <NuxtLink v-if="service === 'apartment'" :to="localePath({ name: 'area-slug', params: { slug: escort.area.replace(/\s/g,'-').toLowerCase() }})">
+          <NuxtLink v-if="service === 'incall'" :to="localePath({ name: 'area-slug', params: { slug: escort.area.replace(/\s/g,'-').toLowerCase() }})">
             <span class="tag is-medium">{{ escort.area }}</span>
           </NuxtLink>
         </div>
