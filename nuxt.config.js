@@ -102,6 +102,7 @@ export default defineNuxtConfig({
 
   modules: [
     'nuxt-simple-robots',
+    'nuxt-simple-sitemap',
     '@nuxtjs/i18n',
     '@nuxt/content',
     'nuxt-content-git',
@@ -113,6 +114,16 @@ export default defineNuxtConfig({
 
   robots: {
     disallow: ['/'],
+  },
+
+  sitemap: {
+    exclude: excludeDelayHydration,
+    // autoAlternativeLangPrefixes: true,
+    xslColumns: [
+      { label: 'URL', width: '50%' },
+      { label: 'Last Modified', select: 'sitemap:lastmod', width: '25%' },
+      { label: 'Hreflangs', select: 'count(xhtml)', width: '25%' },
+    ],
   },
 
   i18n: {
@@ -194,6 +205,10 @@ export default defineNuxtConfig({
       db: {
         driver: 'fs',
         base: './lang'
+      },
+      content: {
+        driver: 'fs',
+        base: './content'
       }
     },
     storage: {
@@ -203,7 +218,14 @@ export default defineNuxtConfig({
         token: process.env.GITHUB_TOKEN,
         branch: 'main',
         dir: '/lang',
-      }
+      },
+      content: {
+        driver: 'github',
+        repo: process.env.GITHUB_REPO,
+        token: process.env.GITHUB_TOKEN,
+        branch: 'main',
+        dir: '/content',
+      },
     },
   },
 

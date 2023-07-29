@@ -7,7 +7,7 @@
   "faceMatch": 99,
   "name": "vittoria",
   "category": "agency",
-  "agency": "foo bar",
+  "agency": "foo Bar",
   "nationality": "BR",
   "virtual": true,
   "incall": true,

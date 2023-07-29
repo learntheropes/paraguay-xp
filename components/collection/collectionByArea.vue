@@ -17,7 +17,7 @@ const all = []
   .concat(store.list.diamond, store.list.palladium, store.list.platinum, store.list.esmerald, store.list.gold)
   .filter(escort => escort.area && kebabCase(escort.area) !== kebabCase(slug));
 
-const names = sortBy(uniqBy(all, 'area'), 'area').map(escort => escort.area);
+const names = sortBy(uniqBy(all, 'area'), 'area').filter(escort => escort.area).map(escort => escort.area);
 </script>
 
 <template>
