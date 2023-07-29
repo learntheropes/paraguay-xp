@@ -1,0 +1,1 @@
+Por servicio virtual nos referimos a los servicios ofrecidos en línea como webcam o chat sexy.

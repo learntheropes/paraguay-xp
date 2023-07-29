@@ -29,6 +29,6 @@ try {
 <template>
   <section v-if="text" class="section">
     <h2 class="title is-5">{{ $t('extra.whatAbout') }}</h2>
-    <ContentRendererMarkdown :value="{ text }" class="content"/>
+    <ContentRendererMarkdown :value="{ body: text }" class="content"/>
   </section>
 </template>

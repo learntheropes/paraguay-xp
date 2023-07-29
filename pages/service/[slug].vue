@@ -1,6 +1,6 @@
 <script setup>
-import camelCase from 'lodash.camelcase';
 import services from '~/assets/js/services'
+import camelCase from 'lodash.camelcase';
 
 definePageMeta({
   auth: false,
@@ -10,7 +10,7 @@ const { params: { slug }} = useRoute();
 
 const service = camelCase(slug);
 
-if (!(services.includes(service))) throw createError({ statusCode: 404 });
+if (!services.includes(service)) throw createError({ statusCode: 404 });
 
 const { t } = useI18n();
 

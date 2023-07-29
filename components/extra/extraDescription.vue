@@ -10,7 +10,7 @@ const {
 
 const { locale } = useI18n();
 
-let text
+let text;
 try {
 
   const {
@@ -21,15 +21,14 @@ try {
 
   text = body;
 } catch (error) {
-  
+
   text = null;
 }
-
 </script>
 
 <template>
-  <section v-if="text" class="section">
+  <section v-if="body" class="section">
     <h2 class="title is-5">{{ $t('extra.whatAbout') }}</h2>
-    <ContentRendererMarkdown :value="{ text }" class="content"/>
+    <ContentRendererMarkdown :value="{ body: text }" class="content"/>
   </section>
 </template>
