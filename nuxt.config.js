@@ -14,6 +14,10 @@ import {
 
 export default defineNuxtConfig({
 
+  site: {
+    url: deploymentDomain,
+  },
+
   runtimeConfig: {
     nextAuthSecret: process.env.NEXTAUTH_SECRET,
     faunaSecret: process.env.FAUNA_SECRET,
