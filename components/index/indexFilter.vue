@@ -109,7 +109,7 @@ watch(filteredEscorts, filteredEscorts => {
             <OField>
               <OSelect v-model="service" :placeholder="$t('index.filter.byService')" expanded>
                 <option v-for="eachService in services" :key="eachService" :value="eachService">
-                  {{ $t(`service.${eachService}`) }}
+                  {{ $t(`escort.services.${eachService}`) }}
                 </option>
               </OSelect>
             </OField>
@@ -118,7 +118,7 @@ watch(filteredEscorts, filteredEscorts => {
         <OField v-else>
           <OSelect v-model="service" :placeholder="$t('index.filter.byService')">
             <option v-for="eachService in services" :key="eachService" :value="eachService">
-              {{ $t(`service.${eachService}`) }}
+              {{ $t(`escort.services.${eachService}`) }}
             </option>
           </OSelect>
         </OField>
