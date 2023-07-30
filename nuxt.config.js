@@ -117,7 +117,7 @@ export default defineNuxtConfig({
   ],
 
   robots: {
-    disallow: ['/', '/$'].concat(excludedRoutes),
+    disallow: ['/', '/$'].concat(excludedRoutes.map(route => route.replace('/**', ''))),
   },
 
   sitemap: {
@@ -184,6 +184,13 @@ export default defineNuxtConfig({
       'png'
     ],
     presets: {
+      navigator: {
+        modifiers: {
+          width: 48,
+          height: 48,
+          quality: 10
+        }
+      },
       preview: {
         modifiers: {
           width: 288,
