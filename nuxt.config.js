@@ -9,7 +9,7 @@ import {
   localeCodes,
   defaultLocale,
   routeRules,
-  excludeDelayHydration
+  excludedRoutes,
 } from './assets/js/locales';
 
 export default defineNuxtConfig({
@@ -113,17 +113,12 @@ export default defineNuxtConfig({
   ],
 
   robots: {
-    disallow: ['/'],
+    disallow: ['/', '/$'].concat(excludedRoutes),
   },
 
   sitemap: {
-    exclude: excludeDelayHydration,
-    // autoAlternativeLangPrefixes: true,
-    xslColumns: [
-      { label: 'URL', width: '50%' },
-      { label: 'Last Modified', select: 'sitemap:lastmod', width: '25%' },
-      { label: 'Hreflangs', select: 'count(xhtml)', width: '25%' },
-    ],
+    xsl: false,
+    exclude: excludedRoutes
   },
 
   i18n: {
@@ -231,7 +226,7 @@ export default defineNuxtConfig({
 
   delayHydration: {
     mode: 'init',
-    exclude: excludeDelayHydration,
+    exclude: excludedRoutes,
     debug: process.env.NODE_ENV === 'development'
   }
 });

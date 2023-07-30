@@ -71,7 +71,7 @@ export const routeRules = localeCodes.reduce((obj, code) => {
   return obj;
 }, {});
 
-export const excludeDelayHydration = localeCodes.reduce((arr, code) => {
+export const excludedRoutes = localeCodes.reduce((arr, code) => {
   ['auth', 'dashboard', 'admin'].map(endpoint => {
     arr.push(`/${code}/${endpoint}/**`);
   });
