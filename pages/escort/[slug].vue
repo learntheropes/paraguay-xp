@@ -68,6 +68,7 @@ useHead({
       <EscortAvailability :escort="escort" />
       <EscortRate :escort="escort" />
       <EscortNavigator :escort="escort" />
+      <CollectionNavigator />
     </div>
   </NuxtLayout>
 </template>
