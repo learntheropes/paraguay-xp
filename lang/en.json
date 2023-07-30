@@ -6,6 +6,7 @@
   "footer": {
     "legal": "Legal",
     "news": "News",
+    "blog": "Blog",
     "admin": "Admin",
     "allRightReserved": "All rights reserved"
   },
@@ -122,8 +123,8 @@
     "published": "Published",
     "viewAll": "View All",
     "toc": "Table of content",
-    "forEscorts": "for escorts",
-    "forClients": "for clients",
+    "forEscorts": "Posts for escorts",
+    "forClients": "Posts for clients",
     "similarPosts": "Related Posts",
     "bannerEscortTitle": "The web of the luxury escorts",
     "bannerEscortDescription": "Publica tu anuncio an la pagina de las escort mas exitosa de Paraguay"

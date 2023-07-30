@@ -6,6 +6,7 @@
   "footer": {
     "legal": "Jurídico",
     "news": "Novidades",
+    "blog": "Blogue",
     "admin": "Gerente",
     "allRightReserved": "Todos os direitos reservados"
   },
@@ -122,8 +123,8 @@
     "published": "Publicados",
     "viewAll": "Ver Tudo",
     "toc": "Sumário",
-    "forEscorts": "para acompanhantes",
-    "forClients": "para clientes",
+    "forEscorts": "Artigos para acompanhantes",
+    "forClients": "Artigos para clientes",
     "similarPosts": "Postagens relacionadas",
     "bannerEscortTitle": "A página de acompanhantes de sucesso",
     "bannerEscortDescription": "Publique seu anúncio na página de acompanhante mais atraente do Paraguai"

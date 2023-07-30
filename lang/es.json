@@ -6,6 +6,7 @@
   "footer": {
     "legal": "Legales",
     "news": "Novedades",
+    "blog": "Blog",
     "admin": "Administrador",
     "allRightReserved": "Todos los derechos reservados"
   },
@@ -122,8 +123,8 @@
     "published": "Publicado",
     "viewAll": "Ver Todas",
     "toc": "Tabla de contenidos",
-    "forEscorts": "para escort",
-    "forClients": "para clientes",
+    "forEscorts": "Artículos para escort",
+    "forClients": "Artículos para clientes",
     "similarPosts": "Artículos Relacionados",
     "bannerEscortTitle": "La página de las escort exitosas",
     "bannerEscortDescription": "Publica tu anuncio en la página de las escort mas atractiva de Paraguay"

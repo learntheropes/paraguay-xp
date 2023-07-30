@@ -23,6 +23,12 @@
               inverted
             >{{ $t('footer.news') }}</OButton>
             <OButton
+              :to="localePath('/blog')"
+              tag="router-link"
+              variant="primary"
+              inverted
+            >{{ $t('footer.blog') }}</OButton>
+            <OButton
               :to="localePath('/admin')"
               tag="router-link"
               variant="primary"
