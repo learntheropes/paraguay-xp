@@ -1,5 +1,6 @@
 <script setup>
 definePageMeta({
+  layout: 'blog',
   auth: false,
 });
 

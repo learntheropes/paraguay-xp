@@ -124,80 +124,11 @@ if (!store.init) {
             <slot />
           </section>
         </main>
-        <!-- <div v-if="showChevron" class="is-hidden-mobile is-bottom-right">
-          <b-tooltip :label="$t('scrollToTop')" position="is-left">
-            <b-icon icon="chevron-up" type="is-black" size="is-medium" @click.native="scrollToTop"></b-icon>
-          </b-tooltip>
-        </div> -->
         <LayoutFooter />
       </div>
     </Body>
   </Html>
 </template>
-
-<!-- <script>
-  head() {
-    return {
-        meta: [
-          {
-            hid: 'title',
-            name: 'title',
-            itemprop: 'title',
-            content: this.$t('seo.tags')
-          },
-          {
-            hid: 'description',
-            name: 'description',
-            itemprop: 'description',
-            content: `${this.$t('seo.indexDescription')}`
-          },
-          {
-            hid: 'og:title',
-            property: 'og:title',
-            content: this.$t('seo.tags')
-          },
-          {
-            hid: 'og:description',
-            property: 'og:description',
-            content: `${this.$t('seo.indexDescription')}`
-          }
-        ]
-      }
-  },
-  data: () => ({
-    showChevron: false
-  }),
-  async fetch () {
-    
-    if (!this.$store.state.escorts.init) {
-      this.$store.commit('filter/setRate', [min, max])
-      this.$store.commit('filter/setDefaultRate', [min, max])
-
-      const minAgeEscort = minBy(escorts, o =>  (o.type === 'individual') ? this.$escort.age(o) : Math.min(...[this.$escort.age1(o), this.$escort.age2(o)]) )
-      const maxAgeEscort = maxBy(escorts, o =>  (o.type === 'individual') ? this.$escort.age(o) : Math.max(...[this.$escort.age1(o), this.$escort.age2(o)]) )
-      const minAge = (minAgeEscort.type === 'individual') ? this.$escort.age(minAgeEscort) : Math.min(...[this.$escort.age1(minAgeEscort), this.$escort.age2(minAgeEscort)])
-      const maxAge = (maxAgeEscort.type === 'individual') ? this.$escort.age(maxAgeEscort) : Math.max(...[this.$escort.age1(maxAgeEscort), this.$escort.age2(maxAgeEscort)])
-      this.$store.commit('filter/setAge', [minAge, maxAge])
-      this.$store.commit('filter/setDefaultAge', [minAge, maxAge])
-    }
-  },
-  // mounted () {
-  //   if (!this.$store.state.bookmarks.init) {
-  //     const bookmarks = this.$auth.$storage.getCookie('bookmarks')
-  //     if (bookmarks && bookmarks.length) this.$store.commit('bookmarks/setList', bookmarks)
-  //     this.$store.commit('bookmarks/setInit', true)
-  //   }
-  //   setInterval(() => {
-  //     this.showChevron = (window.pageYOffset > 0) ? true : false
-  //   }, 1000)
-  // },
-  // methods: {
-  //   scrollToTop () {
-  //     if (process.client) window.scrollTo({ top: 0, behavior: 'smooth' })
-  //   }
-  // }
-}
-</script> -->
 
 <style>
 @media screen and (max-width: 768px) {
