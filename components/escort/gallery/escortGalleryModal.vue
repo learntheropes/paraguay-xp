@@ -39,7 +39,7 @@
   const navigateNext = () => {
 
     changeLoading(true);
-    modalIndex.value = (modalIndex.value + 1 >  modalGallery.value.length - 1) ? 0:  modalIndex.value + 1;
+    modalIndex.value = (modalIndex.value + 1 >=  modalGallery.value.length) ? 0:  modalIndex.value + 1;
     modalType.value = modalGallery.value[modalIndex.value].fileType
     modalMedia.value = modalGallery.value[modalIndex.value].fileName;
 

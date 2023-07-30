@@ -113,6 +113,9 @@
     },
     "rate": {
       "title": "Tarifa oraria"
+    },
+    "navigator": {
+      "title": "Explorar escorts {levelName}"
     }
   },
   "blog": {

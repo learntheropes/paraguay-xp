@@ -113,6 +113,9 @@
     },
     "rate": {
       "title": "Taxa horária"
+    },
+    "navigator": {
+      "title": "Procurar Escorts {levelName}"
     }
   },
   "blog": {

@@ -1,5 +1,6 @@
 <script setup>
-import find from 'lodash.find'
+import find from 'lodash.find';
+
 const {
   escort,
   index

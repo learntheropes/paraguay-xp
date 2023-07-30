@@ -113,6 +113,9 @@
     },
     "rate": {
       "title": "Hourly rate"
+    },
+    "navigator": {
+      "title": "Browse escort {levelName}"
     }
   },
   "blog": {
