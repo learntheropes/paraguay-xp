@@ -12,22 +12,22 @@ const {
 } = useRuntimeConfig();
 
 useHead({
-  title: t('history.title') + seoTitle,
+  title: t('news.title') + seoTitle,
   meta: [
     {
       id: 'description',
       name: 'description',
-      content: t('history.description')
+      content: t('news.description')
     },
     {
       id: 'og:title',
       name: 'og:title',
-      content: t('history.title') + seoTitle
+      content: t('news.title') + seoTitle
     },
     {
       id: 'og:description',
       name: 'og:description',
-      content: t('history.description')
+      content: t('news.description')
     },
   ],
 });
@@ -36,9 +36,9 @@ useHead({
 <template>
   <NuxtLayout>
     <div class="container">
-      <h1 class="title is-3">{{ $t('history.title') }}</h1>
-      <div class="subtitle is-5">{{ $t('history.description') }}</div>
-      <HistoryLevels />
+      <h1 class="title is-3">{{ $t('news.title') }}</h1>
+      <div class="subtitle is-5">{{ $t('news.description') }}</div>
+      <NewsLevels />
       <CollectionNavigator />
     </div>
   </NuxtLayout>

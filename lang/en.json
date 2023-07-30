@@ -5,7 +5,7 @@
   },
   "footer": {
     "legal": "Legal",
-    "history": "News",
+    "news": "News",
     "admin": "Admin",
     "allRightReserved": "All rights reserved"
   },
@@ -17,7 +17,7 @@
     "levelName": "{level} level",
     "PYG": "PYG"
   },
-  "history": {
+  "news": {
     "title": "New escorts Paraguay",
     "description": "The latest added escorts in Paraguay"
   },

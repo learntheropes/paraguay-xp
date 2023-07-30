@@ -17,11 +17,11 @@
               inverted
             >{{ $t('footer.legal') }}</OButton>
             <OButton
-              :to="localePath('/history')"
+              :to="localePath('/news')"
               tag="router-link"
               variant="primary"
               inverted
-            >{{ $t('footer.history') }}</OButton>
+            >{{ $t('footer.news') }}</OButton>
             <OButton
               :to="localePath('/admin')"
               tag="router-link"

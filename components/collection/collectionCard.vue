@@ -28,7 +28,7 @@ const {
   name
 } = useRoute();
 
-const isHistory = name === `history___${locale.value}`;
+const isNews = name === `news___${locale.value}`;
 const isArea = name === `area-slug___${locale.value}`;
 
 const {
@@ -74,7 +74,7 @@ const {
             ({{ $dayjs(new Date()).diff(escort.birthTime, 'years') }})
           </span>
         </h3>
-        <div v-if="isHistory" class="subtitle is-7">
+        <div v-if="isNews" class="subtitle is-7">
           {{ $dayjs(escort.updatedAt).fromNow() }}
         </div>
         <div v-else class="subtitle is-7">

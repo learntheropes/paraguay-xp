@@ -5,7 +5,7 @@
   },
   "footer": {
     "legal": "Jurídico",
-    "history": "Novidades",
+    "news": "Novidades",
     "admin": "Gerente",
     "allRightReserved": "Todos os direitos reservados"
   },
@@ -17,7 +17,7 @@
     "levelName": "Nível {level}",
     "PYG": "PYG"
   }, 
-  "history": {
+  "news": {
     "title": "Novidades acompanhantes Paraguai",
     "description": "Últimas novidades cerca las acompanhantes no Paraguai"
   },

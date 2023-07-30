@@ -5,7 +5,7 @@
   },
   "footer": {
     "legal": "Legales",
-    "history": "Novedades",
+    "news": "Novedades",
     "admin": "Administrador",
     "allRightReserved": "Todos los derechos reservados"
   },
@@ -17,7 +17,7 @@
     "levelName": "Nivel {level}",
     "PYG": "Gs"
   }, 
-  "history": {
+  "news": {
     "title": "Novedades escort Paraguay",
     "description": "Las últimas novedades cerca las escort en Paraguay"
   },

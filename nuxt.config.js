@@ -122,7 +122,8 @@ export default defineNuxtConfig({
 
   sitemap: {
     xsl: false,
-    exclude: excludedRoutes
+    exclude: excludedRoutes,
+    credits: false
   },
 
   i18n: {
