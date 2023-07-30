@@ -16,7 +16,13 @@
     "description": "The best escorts in Paraguay and Asunción. High level companions for you. Paraguay Escorts. Py Escorts.",
     "noEscort": "No escort found",
     "levelName": "{level} level",
-    "PYG": "PYG"
+    "PYG": "PYG",
+    "filter": {
+      "byService": "Service",
+      "byArea": "Area",
+      "byPrice": "Price",
+      "byAge": "Age"
+    }
   },
   "news": {
     "title": "New escorts Paraguay",
@@ -288,14 +294,8 @@
   "paymentInstructions2": "You can pay by bank transfer or cash deposit.",
   "previous": "Previous",
   "next": "Next",
-  "byNeighborhood": "Neighborhood",
-  "byPrice": "Price",
-  "byService": "Service",
   "conventional": "Conventional",
   "complete": "Complete",
-  "byActivity": "Activity",
-  "filter": "Filter",
-  "removeFilter": "Remove Filters",
   "diamond": "Diamond",
   "palladium": "Palladium",
   "platinum": "Platinum",

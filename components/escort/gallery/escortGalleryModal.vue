@@ -51,7 +51,7 @@
   };
 
   const onSwipe = (direction) => {
-    console.log('direction', direction)
+
     if (direction === 'left') navigateNext();
     else if (direction === 'right') navigatePrevious();
   }

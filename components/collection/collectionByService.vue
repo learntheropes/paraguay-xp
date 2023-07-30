@@ -19,7 +19,7 @@ const filteredServices = services.filter(service => service !== camelCase(slug))
   <nav class="block">
     <div class="title is-5 is-capitalized">{{$t('service.plural')}}</div>
     <ul class="columns is-multiline is-mobile">
-      <li v-for="service of filteredServices" :key="name" class="column is-narrow">
+      <li v-for="service of filteredServices" :key="service" class="column is-narrow">
         <OButton
           tag="router-link"
           :to="localePath({ 

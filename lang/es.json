@@ -16,7 +16,13 @@
     "description": "Acompañantes en Paraguay. Las mejores escorts de Asunción. Chicas de compañía de alto nivel para ti. Escort Paraguay. Escort Py.",
     "noEscort": "No se encontró ninguna escort",
     "levelName": "Nivel {level}",
-    "PYG": "Gs"
+    "PYG": "Gs",
+    "filter": {
+      "byService": "Servicio",
+      "byArea": "Ubicación",
+      "byPrice": "Precio",
+      "byAge": "Edad"
+    }
   }, 
   "news": {
     "title": "Novedades escort Paraguay",
@@ -288,14 +294,8 @@
   "paymentInstructions2": "Puedes abonar con transferencia bancaria o deposito en efectivo.",
   "previous": "Anterior",  
   "next": "Siguiente",
-  "byNeighborhood": "Ubicación",
-  "byPrice": "Precio",
-  "byService": "Servicio",
   "conventional": "Convencional",
   "complete": "Completo",
-  "byActivity": "Actividad",
-  "filter": "Filtrar",
-  "removeFilter": "Eliminar Filtros",
   "diamond": "Diamante",
   "palladium": "Paladio",
   "platinum": "Platino",

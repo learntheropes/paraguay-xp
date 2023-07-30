@@ -10,6 +10,21 @@ const logOut = async () => {
     callbackUrl: `/${locale.value}`
   });
 };
+
+const {
+  name
+} = useRoute();
+
+const isIndex = name === `index___${locale.value}`;
+
+const { $event } = useNuxtApp();
+
+const showFilter = ref(false)
+
+const toggleFilter = (bool) => {
+  showFilter.value = bool;
+  $event('toggleFilter', bool);
+};
 </script>
 
 <template>
@@ -27,6 +42,12 @@ const logOut = async () => {
     </div>
   </div>
   <div class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item">
+        <OIcon v-if="isIndex && !showFilter" @click.native="toggleFilter(true)" icon="magnify" variant="primary" />
+        <OIcon v-else="isIndex && showFilter" @click.native="toggleFilter(false)" icon="magnify-close" variant="primary" />
+      </div>
+    </div>
     <div class="navbar-end">
       <div v-if="status === 'unauthenticated'" class="navbar-item">
         <OButton
@@ -52,3 +73,11 @@ const logOut = async () => {
   </div>
 </nav>
 </template>
+
+<style scoped>
+.navbar-start{
+  flex-grow: 1;
+  justify-content: center;
+  text-align: center;
+}
+</style>

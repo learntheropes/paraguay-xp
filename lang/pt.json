@@ -16,7 +16,13 @@
     "description": "Seus melhores acompanhantes e escort no Paraguai e Assunção. Acompanhantes de alto nível para você. Acompanhantes Paraguai. Acompanhantes Py.",
     "noEscort": "Nenhum acompanhante encontrada",
     "levelName": "Nível {level}",
-    "PYG": "PYG"
+    "PYG": "PYG",
+    "filter": {
+      "byService": "Serviço",
+      "byArea": "Bairro",
+      "byPrice": "Preço",
+      "byAge": "Idade"
+    }
   }, 
   "news": {
     "title": "Novidades acompanhantes Paraguai",
@@ -290,14 +296,8 @@
   "paymentInstructions2": "Você pode pagar por transferência bancária ou depósito em dinheiro.",
   "previous": "Anterior",  
   "next": "Próximo",
-  "byNeighborhood": "Bairro",
-  "byPrice": "Preço",
-  "byService": "Serviço",
   "conventional": "Convencional",
   "complete": "Completo",
-  "byActivity": "Atividade",
-  "filter": "Filtro",
-  "removeFilter": "Remover Filtros",
   "diamond": "Diamante",
   "palladium": "Paládio",
   "platinum": "Platina",

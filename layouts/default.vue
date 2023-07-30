@@ -49,11 +49,15 @@ if (!store.init) {
 
   const min = minBy(escorts, 'rate').rate;
   const max = maxBy(escorts, 'rate').rate;
+  store.setMin(min);
+  store.setMax(max);
+  
   const deltaStep = (max - min) / 5;
   const esmeraldRate = Math.ceil((min + deltaStep) / 100000) * 100000;
   const platinumRate = Math.ceil((min + (deltaStep * 2)) / 100000) * 100000;
   const palladiumRate = Math.ceil((min + (deltaStep * 3)) / 100000) * 100000;
   const diamondRate = Math.ceil((min + (deltaStep * 4)) / 100000) * 100000;
+
   const goldEscorts = escorts.filter(escort => escort.rate < esmeraldRate);
   const esmeraldEscorts = escorts.filter(escort => escort.rate >= esmeraldRate && escort.rate < platinumRate);
   const platinumEscorts = escorts.filter(escort => escort.rate >= platinumRate && escort.rate < palladiumRate);

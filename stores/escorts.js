@@ -2,7 +2,9 @@ export const useEscortsStore = defineStore('escorts', {
   state: () => ({
     init: false,
     levels: [],
-    list: {}
+    list: {},
+    min: null,
+    max: null
   }),
   actions: {
     setInit() {
@@ -14,5 +16,11 @@ export const useEscortsStore = defineStore('escorts', {
     setList(escorts) {
       this.list = escorts;
     },
+    setMin(value) {
+      this.min = value
+    },
+    setMax(value) {
+      this.max = value
+    }
   },
 })
