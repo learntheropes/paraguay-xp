@@ -1,4 +1,11 @@
 {
+  "level": {
+    "diamond": "Diamante",
+    "palladium": "Paládio",
+    "platinum": "Platina",
+    "esmerald": "Esmeralda",
+    "gold": "Ouro"
+  },
   "navbar": {
     "publish": "Publique",
     "logout": "Sair"
@@ -298,11 +305,6 @@
   "next": "Próximo",
   "conventional": "Convencional",
   "complete": "Completo",
-  "diamond": "Diamante",
-  "palladium": "Paládio",
-  "platinum": "Platina",
-  "esmerald": "Esmeralda",
-  "gold": "Ouro",
   "instructions": "Instruções",
   "updated": "Atualizado",
   "loginDisabled": "Login temporariamente desativado",

@@ -1,4 +1,11 @@
 {
+  "level": {
+    "diamond": "Diamond",
+    "palladium": "Palladium",
+    "platinum": "Platinum",
+    "esmerald": "Emerald",
+    "gold": "Gold"
+  },
   "navbar": {
     "publish": "Publish",
     "logout": "Logout"
@@ -296,11 +303,6 @@
   "next": "Next",
   "conventional": "Conventional",
   "complete": "Complete",
-  "diamond": "Diamond",
-  "palladium": "Palladium",
-  "platinum": "Platinum",
-  "esmerald": "Emerald",
-  "gold": "Gold",
   "instructions": "Instructions",
   "updated": "Updated",
   "loginDisabled": "Login temporarily disabled",

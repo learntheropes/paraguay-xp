@@ -1,4 +1,11 @@
 {
+  "level": {
+    "diamond": "Diamante",
+    "palladium": "Paladio",
+    "platinum": "Platino",
+    "esmerald": "Esmeraldo",
+    "gold": "Oro"
+  },
   "navbar": {
     "publish": "Publica",
     "logout": "Cerrar sesión"
@@ -296,11 +303,6 @@
   "next": "Siguiente",
   "conventional": "Convencional",
   "complete": "Completo",
-  "diamond": "Diamante",
-  "palladium": "Paladio",
-  "platinum": "Platino",
-  "esmerald": "Esmeraldo",
-  "gold": "Oro",
   "instructions": "Instrucciones",
   "updated": "Actualizado",
   "loginDisabled": "Inicio de sesión temporalmente deshabilitado",
