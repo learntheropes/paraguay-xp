@@ -2,7 +2,7 @@ import uniqBy from 'lodash.uniqby';
 import uniq from 'lodash.uniq';
 import flatten from 'lodash.flatten';
 import kebabCase from 'lodash.kebabcase';
-import { defaultLocale, localeCodes } from '~/assets/js/locales';
+import { defaultLocale, locales } from '~/assets/js/locales';
 import services from '~/assets/js/services'
 
 export default defineEventHandler(async () => {
@@ -33,17 +33,35 @@ export default defineEventHandler(async () => {
 
   return endpoints.reduce((arr, endpoint) => {
 
-    arr.push({
-      loc: `/${defaultLocale}/${endpoint}`,
-      lastMod: new Date(),
-      alternatives: localeCodes
-        .filter (code => code !== defaultLocale)
-        .map(code => {
-          return {
-            hreflang: code,
-            href: `/${code}/${endpoint}`
-          }
-        })
+    let alternatives = [{
+      hreflang: 'x-default',
+      href: `/${defaultLocale}/${endpoint}`
+    }]
+    .concat(locales
+      // .filter (locale => locale.code !== defaultLocale)
+      .map(locale => {
+        return {
+          hreflang: locale.code,
+          href: `/${locale.code}/${endpoint}`
+        }
+      })
+    )
+    .concat(locales
+      .map(locale => {
+        return {
+          hreflang: locale.iso,
+          href: `/${locale.code}/${endpoint}`
+        }
+      })
+    )
+
+    locales.map(locale => {
+
+      arr.push({
+        loc: `/${locale.code}/${endpoint}`,
+        lastMod: new Date(),
+        alternatives
+      })
     });
 
     return arr;

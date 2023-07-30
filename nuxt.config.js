@@ -14,9 +14,9 @@ import {
 
 export default defineNuxtConfig({
 
-  site: {
-    url: deploymentDomain,
-  },
+  // site: {
+  //   url: deploymentDomain,
+  // },
 
   runtimeConfig: {
     nextAuthSecret: process.env.NEXTAUTH_SECRET,
@@ -107,6 +107,7 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-simple-robots',
     'nuxt-simple-sitemap',
+    '@nuxtjs/device',
     '@nuxtjs/i18n',
     '@nuxt/content',
     'nuxt-content-git',
@@ -123,7 +124,8 @@ export default defineNuxtConfig({
   sitemap: {
     xsl: false,
     exclude: excludedRoutes,
-    credits: false
+    credits: false,
+    // autoalternativelangprefixes: ['en-US', 'es-419', 'pt-BR']
   },
 
   i18n: {
