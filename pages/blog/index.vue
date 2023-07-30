@@ -32,32 +32,30 @@ const escortPosts = await queryContent('blog')
   <NuxtLayout>
     <div class="container">
       <h1 class="title is-3">{{ $t('footer.blog') }}</h1>
-      <nav class="block">
-        <div class="title is-5 is-capitalized">{{$t('blog.forClients')}}</div>
-        <ul class="columns is-multiline is-mobile">
-          <li v-for="post of clientPosts" :key="post._path" class="column is-narrow">
-            <OButton
-              tag="router-link"
-              :to="localePath(post._path)"
-              class="is-capitalized"
-              variant="primary"
-              outlined
-            >{{ post.title }}</OButton>
-          </li>
-        </ul>
-        <div class="title is-5 is-capitalized">{{$t('blog.forEscorts')}}</div>
-        <ul class="columns is-multiline is-mobile">
-          <li v-for="post of escortPosts" :key="post._path" class="column is-narrow">
-            <OButton
-              tag="router-link"
-              :to="localePath(post._path)"
-              class="is-capitalized"
-              variant="primary"
-              outlined
-            >{{ post.title }}</OButton>
-          </li>
-        </ul>
-      </nav>
+      <div class="title is-5 is-capitalized">{{$t('blog.forClients')}}</div>
+      <ul class="columns is-multiline is-mobile">
+        <li v-for="post of clientPosts" :key="post._path" class="column is-narrow">
+          <OButton
+            tag="router-link"
+            :to="localePath(post._path)"
+            class="is-capitalized"
+            variant="primary"
+            outlined
+          >{{ post.title }}</OButton>
+        </li>
+      </ul>
+      <div class="title is-5 is-capitalized">{{$t('blog.forEscorts')}}</div>
+      <ul class="columns is-multiline is-mobile">
+        <li v-for="post of escortPosts" :key="post._path" class="column is-narrow">
+          <OButton
+            tag="router-link"
+            :to="localePath(post._path)"
+            class="is-capitalized"
+            variant="primary"
+            outlined
+          >{{ post.title }}</OButton>
+        </li>
+      </ul>
     </div>
   </NuxtLayout>
 </template>
