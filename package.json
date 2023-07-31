@@ -38,6 +38,7 @@
     "lodash.flatten": "^4.4.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.maxby": "^4.6.0",
+    "lodash.merge": "^4.6.2",
     "lodash.minby": "^4.6.0",
     "lodash.shuffle": "^4.2.0",
     "lodash.sortby": "^4.7.0",
