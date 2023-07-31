@@ -10,7 +10,7 @@ const {
   <Body>
     <LayoutNavbar />
     <div class="container">
-      <div class="content has-text-centered">
+      <div class="notification is-warning content has-text-centered">
         <div class="block ltr-has-new-line">
           <span>{{ $t('dashboard.underDevelopment') }}</span>
           &nbsp;

@@ -167,7 +167,11 @@
     "notValidCode": "{value} no es un código valido"
   },
   "dashboard": {
-    "underDevelopment": "El panel aún está en construcción.\n\nPara colocar o editar su publicación, envíe un whatsapp a"
+    "title": "Panel de control",
+    "underDevelopment": "El panel aún está en construcción.\n\nPara colocar o editar su publicación, envíe un whatsapp a",
+    "publications": "Anuncios",
+    "payments": "Pagos",
+    "newPayment": "Nuevo pago"
   },
   "and": "y", 
   "birthDate": "Fecha de nacimiento",
@@ -275,8 +279,6 @@
   "backToTheHomePage": "Volver a la página de inicio",
   "home": "Página de inicio",
   "account": "Cuenta",
-  "publications": "Anuncios",
-  "payments": "Pagos",
   "ageMessage": "Por ley, tenemos que verificar que tienes al menos 18 años para publicar tu anuncio.",
   "documentPrivacy": "Su información y su documento nunca se compartirán con nadie a menos que las autoridades nos lo soliciten.",
   "duration": "Duración",
@@ -284,8 +286,7 @@
   "price": "Precio",
   "publication": "Anuncio",
   "selectPublication": "Seleccionar anuncio",
-  "selectDuration": "Seleccionar duración",
-  "newPayment": "Nuevo pago", 
+  "selectDuration": "Seleccionar duración", 
   "removePayment": "Borrar pago",
   "receiveDetailsByWa": "Recibir detalles por whatsapp",
   "markPaid": "Marcar como pagado", 

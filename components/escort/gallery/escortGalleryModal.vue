@@ -6,13 +6,13 @@
   const modalMedia = ref(null);
   const { $listen } = useNuxtApp();
 
-  $listen('openModal', ({ gallery, index }) => {
+  $listen('openModal', ({ medias, index }) => {
 
     isModalActive.value = true;
-    modalGallery.value = gallery;
-    modalType.value = gallery[index].fileType;
+    modalGallery.value = medias;
+    modalType.value = medias[index].fileType;
     modalIndex.value = index;
-    modalMedia.value = gallery[index].fileName;
+    modalMedia.value = medias[index].fileName;
   });
 
   const isLoading = ref(true);

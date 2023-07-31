@@ -1,59 +1,75 @@
 {
-  "approved": true,
-  "slug": "vittoria-595992261076",
-  "birthTime": "1994-12-15T23:00:00.000Z",
-  "birthDate": "16-12-1994",
-  "dateMatch": true,
-  "faceMatch": 99,
-  "name": "vittoria",
-  "category": "agency",
-  "agency": "foo Bar",
-  "nationality": "BR",
-  "virtual": true,
-  "incall": true,
-  "outcall": true,
-  "dinner": true,
-  "travel": true,
-  "area": "Las Carmelitas",
-  "rate": 1100000,
-  "height": "165",
-  "breast": "90",
-  "waist": "60",
-  "hips": "90",
-  "english": "intermediate",
-  "spanish": "advanced",
-  "portuguese": "native",
-  "head": {
-    "original": "Top mysterious escort en Paraguay ",
-    "en": "Top mysterious escort in Paraguay ",
-    "pt": "Top escort misteriosa Paraguay",
-    "es": "Escort misteriosa superior en Paraguay"
+  "age": {
+    "dateOfBirth": "1994-12-15T23:00:00.000Z",
+    "dateMatch": true,
+    "faceMatch": 99
   },
-  "about": {
-    "original": "TEST ADVERTISEMENT 💗\nTEST ADVERTISEMENT 💗\nTEST ADVERTISEMENT 💗",
-    "en": "TEST ADVERTISEMENT 💗\nTEST ADVERTISEMENT 💗\nTEST ADVERTISEMENT 💗",
-    "pt": "TESTE ANÚNCIO 💗\nTESTE ANÚNCIO 💗\nTESTE ANÚNCIO 💗",
-    "es": "PUBLICIDAD DE PRUEBA 💗\nPUBLICIDAD DE PRUEBA 💗\nPUBLICIDAD DE PRUEBA 💗"
-  },
-  "gallery": [
-    {
-      "fileId": "632fc3be3226066c5c4e73fb",
-      "fileName": "c56b45bf-bef6-41e2-b778-b4240e65ba45.mp4",
-      "fileType": "non-image"
+  "description": {
+    "head": {
+      "original": "Top mysterious escort en Paraguay ",
+      "en": "Top mysterious escort in Paraguay ",
+      "pt": "Top escort misteriosa Paraguay",
+      "es": "Escort misteriosa superior en Paraguay"
     },
-    {
-      "fileId": "632fc3b33226066c5c4e6739",
-      "fileName": "a374fe14-8bc2-4e10-93cd-e370dbc06494.jpg",
-      "fileType": "image"
+    "about": {
+      "original": "TEST ADVERTISEMENT 💗\nTEST ADVERTISEMENT 💗\nTEST ADVERTISEMENT 💗",
+      "en": "TEST ADVERTISEMENT 💗\nTEST ADVERTISEMENT 💗\nTEST ADVERTISEMENT 💗",
+      "pt": "TESTE ANÚNCIO 💗\nTESTE ANÚNCIO 💗\nTESTE ANÚNCIO 💗",
+      "es": "PUBLICIDAD DE PRUEBA 💗\nPUBLICIDAD DE PRUEBA 💗\nPUBLICIDAD DE PRUEBA 💗"
     }
-  ],
-  "blur": false,
-  "accept": true,
+  },
+  "registry": {
+    "availability": {
+      "fromDay": 1,
+      "toDay": 6,
+      "fromHour": 14,
+      "toHour": 23
+    },
+    "basic": {
+      "name": "vittoria",
+      "category": "agency",
+      "agency": "foo bar",
+      "nationality": "BR"
+    },
+    "body": {
+      "height": 165,
+      "breast": 90,
+      "waist": 60,
+      "hips": 90
+    },
+    "languages": {
+      "spanish": "advanced",
+      "english": "intermediate",
+      "portuguese": "native"
+    },
+    "rate": 1100000,
+    "services": {
+      "virtual": true,
+      "incall": true,
+      "outcall": true,
+      "dinner": true,
+      "travel": true,
+      "area": "Las Carmelitas"
+    },
+    "gallery": {
+      "blur": false,
+      "medias": [
+        {
+          "fileId": "632fc3be3226066c5c4e73fb",
+          "fileName": "c56b45bf-bef6-41e2-b778-b4240e65ba45.mp4",
+          "fileType": "non-image"
+        },
+        {
+          "fileId": "632fc3b33226066c5c4e6739",
+          "fileName": "a374fe14-8bc2-4e10-93cd-e370dbc06494.jpg",
+          "fileType": "image"
+        }
+      ]
+    }
+  },
   "phone": "+595992261076",
-  "until": "2023-11-26T03:05:12.093Z",
-  "availabilityDayFrom": 1,
-  "availabilityDayTo": 7,
-  "availabilityHourFrom": 0,
-  "availabilityHourTo": 24,
-  "session": false
+  "slug": "vittoria-595992261076",
+  "accept": true,
+  "approved": true,
+  "until": "2023-11-26T03:05:12.093Z"
 }

@@ -10,18 +10,34 @@ const {
   }
 });
 
-escort.cover = find(escort.gallery, { fileType: 'image' });
+const {
+  age: {
+    dateOfBirth
+  },
+  gallery: {
+    medias
+  },
+  registry: {
+    basic: {
+      name,
+      agency
+    }
+  },
+  slug
+} = escort;
+
+const cover = find(medias, { fileType: 'image' });
 
 const { t } = useI18n();
 
-const agency = (escort.agency === 'indipendent') ? t('indipendent') : escort.agency;
+const agencyName = (agency === 'indipendent') ? t('indipendent') : agency;
 
 const { $dayjs } = useNuxtApp();
 </script>
 
 <template>
   <NuxtLink
-    :to="localePath({ name: 'escort-slug', params: { slug: escort.slug }})"
+    :to="localePath({ name: 'escort-slug', params: { slug }})"
     class="columns is-mobile is-gapless is-vcentered"
   >
     <div class="column is-narrow">
@@ -31,9 +47,9 @@ const { $dayjs } = useNuxtApp();
       <figure :style="'background-color:black;'" class="image is-48x48 has-rounded-corners">
         <NuxtImg
           preset="navigator"
-          :src="('/gallery/preview/' + escort.cover.fileName).split('.')[0] + '.webp'"
-          :alt="$t('escort.gallery.previewOf') + ' ' + escort.name"
-          :title="$t('escort.gallery.previewOf') + ' ' + escort.name"
+          :src="('/gallery/preview/' + cover.fileName).split('.')[0] + '.webp'"
+          :alt="$t('escort.gallery.previewOf') + ' ' + name"
+          :title="$t('escort.gallery.previewOf') + ' ' + name"
           loading="lazy"
           width="48"
           height="48"
@@ -43,12 +59,12 @@ const { $dayjs } = useNuxtApp();
     <div class="column is-narrow">
       <div class="content margin-left">
         <p class="title is-4 is-capitalized">
-          {{ escort.name }}&nbsp;
+          {{ name }}&nbsp;
           <span class="is-hidden-mobile">
-            ({{ $dayjs(new Date()).diff(escort.birthTime, 'years') }})
+            ({{ $dayjs(new Date()).diff(dateOfBirth, 'years') }})
           </span>
         </p>
-        <p class="subtitle is-6 is-capitalized">{{ agency }}</p>
+        <p class="subtitle is-6 is-capitalized">{{ agencyName }}</p>
       </div>      
     </div>
   </NuxtLink>

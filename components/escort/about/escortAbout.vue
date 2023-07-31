@@ -9,7 +9,9 @@ const {
 });
 
 const {
-  about,
+  description: {
+    about
+  },
   updatedAt
 } = escort;
 

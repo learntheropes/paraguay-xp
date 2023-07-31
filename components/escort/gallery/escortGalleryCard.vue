@@ -13,13 +13,17 @@ const {
   }
 });
 
-const { gallery } = escort; 
-const media = gallery[index];
+const {
+  gallery: {
+    medias
+  }
+} = escort; 
+const media = medias[index];
 
 const { $event } = useNuxtApp();
 
-const openModal = (gallery, index) => {
-  $event('openModal', { gallery, index });
+const openModal = (medias, index) => {
+  $event('openModal', { medias, index });
 };
 </script>
 
@@ -28,7 +32,7 @@ const openModal = (gallery, index) => {
     <div class="card-image">
       <figure :style="'background-color:black;'" class="image is-square">
         <img
-          @click.native="openModal(gallery, index)"
+          @click.native="openModal(medias, index)"
           :src="('/gallery/preview/' + media.fileName).split('.')[0] + '.webp'"
           :alt="$t('escort.gallery.previewOf')+' '+ escort.name"
           :title="$t('escort.gallery.previewOf') +' ' + escort.name"
@@ -36,7 +40,7 @@ const openModal = (gallery, index) => {
           width="288"
           height="288"
         />
-        <div v-if="media.fileType !== 'image'" @click.native="openModal(gallery, index)" class="is-overlay is-center-center">
+        <div v-if="media.fileType !== 'image'" @click.native="openModal(medias, index)" class="is-overlay is-center-center">
           <OIcon icon="play" size="large" variant="info" />
         </div>
       </figure>

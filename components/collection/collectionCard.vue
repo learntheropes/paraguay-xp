@@ -71,7 +71,7 @@ const {
         <h3 class="title is-6 is-capitalized">
           {{ escort.name }}&nbsp;
           <span class="is-hidden-mobile">
-            ({{ $dayjs(new Date()).diff(escort.birthTime, 'years') }})
+            ({{ $dayjs(new Date()).diff(escort.dateOfBirth, 'years') }})
           </span>
         </h3>
         <div v-if="isNews" class="subtitle is-7">

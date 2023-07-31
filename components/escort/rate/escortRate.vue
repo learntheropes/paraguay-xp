@@ -8,7 +8,11 @@ const {
   }
 })
 
-const { rate } = escort;
+const { 
+  registry: {
+    rate
+  }
+ } = escort;
 
 const { $numberWithDots } = useNuxtApp();
 </script>

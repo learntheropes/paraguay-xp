@@ -29,26 +29,18 @@ if (!store.init) {
     }
   })
   .only([
-    'name', 
+    'registry', 
     'slug', 
     'gallery', 
-    'birthTime', 
-    'agency', 
-    'rate', 
-    'incall', 
-    'outcall', 
-    'dinner', 
-    'travel', 
-    'area', 
+    'age', 
     'blur', 
     'updatedAt', 
-    'extra', 
-    'head'
+    'description'
   ])
   .find();
 
-  const min = minBy(escorts, 'rate').rate;
-  const max = maxBy(escorts, 'rate').rate;
+  const min = minBy(escorts, e => e.registry.rate).registry.rate;
+  const max = maxBy(escorts, e.registry.rate).rate;
   store.setMin(min);
   store.setMax(max);
   
@@ -58,11 +50,11 @@ if (!store.init) {
   const palladiumRate = Math.ceil((min + (deltaStep * 3)) / 100000) * 100000;
   const diamondRate = Math.ceil((min + (deltaStep * 4)) / 100000) * 100000;
 
-  const goldEscorts = escorts.filter(escort => escort.rate < esmeraldRate);
-  const esmeraldEscorts = escorts.filter(escort => escort.rate >= esmeraldRate && escort.rate < platinumRate);
-  const platinumEscorts = escorts.filter(escort => escort.rate >= platinumRate && escort.rate < palladiumRate);
-  const palladiumEscorts = escorts.filter(escort => escort.rate >= palladiumRate && escort.rate < diamondRate);
-  const diamondEscorts = escorts.filter(escort => escort.rate >= diamondRate);
+  const goldEscorts = escorts.filter(escort => escort.registry.rate < esmeraldRate);
+  const esmeraldEscorts = escorts.filter(escort => escort.registry.rate >= esmeraldRate && escort.registry.rate < platinumRate);
+  const platinumEscorts = escorts.filter(escort => escort.registry.rate >= platinumRate && escort.registry.rate < palladiumRate);
+  const palladiumEscorts = escorts.filter(escort => escort.registry.rate >= palladiumRate && escort.registry.rate < diamondRate);
+  const diamondEscorts = escorts.filter(escort => escort.registry.rate >= diamondRate);
 
   const {
     $numberWithDots

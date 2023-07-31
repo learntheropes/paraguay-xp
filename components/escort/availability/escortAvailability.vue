@@ -6,7 +6,18 @@ const {
     type: Object,
     required: true
   }
-})
+});
+
+const {
+  registry: {
+    availability: {
+      fromDay,
+      toDay,
+      fromHour,
+      toHour
+    }
+  }
+} = escort
 
 const week = {
   1: 'monday',
@@ -51,15 +62,15 @@ const day = {
   <section class="section">
     <h2 class="title is-5">{{$t('availability')}}</h2>
     <span class="is-5">
-      {{ $t(`escort.availability.${week[escort.availabilityDayFrom]}`) }}
+      {{ $t(`escort.availability.${week[fromDay]}`) }}
       &nbsp;-&nbsp;
-      {{ $t(`escort.availability.${week[escort.availabilityDayTo]}`) }}
+      {{ $t(`escort.availability.${week[toDay]}`) }}
     </span>
     <br>
     <span class="is-5">
-      {{ day[escort.availabilityHourFrom] }}
+      {{ day[fromHour] }}
       &nbsp;-&nbsp;
-      {{ day[escort.availabilityHourTo] }}
+      {{ day[toHour] }}
     </span>
   </section>
 </template>

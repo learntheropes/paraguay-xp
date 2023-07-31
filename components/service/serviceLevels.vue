@@ -12,7 +12,7 @@ const store = useEscortsStore();
 const levels = store.levels;
 
 const escorts = Object.keys(store.list).reduce((obj, levelName) => {
-  obj[levelName] = store.list[levelName].filter(escort => escort[service]);
+  obj[levelName] = store.list[levelName].filter(escort => escort.registry.services[service]);
   return obj;
 }, {});
 </script>

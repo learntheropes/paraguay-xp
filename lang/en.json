@@ -167,7 +167,11 @@
     "notValidCode": "{value} is not a valid code"
   },
   "dashboard": {
-    "underDevelopment": "The dashboard is still under construction.\n\nTo place or edit your publication, please send a whatsapp to"
+    "title": "Dashboard",
+    "underDevelopment": "The dashboard is still under construction.\n\nTo place or edit your publication, please send a whatsapp to",
+    "publications": "Advertisements",
+    "payments": "Payments",
+    "newPayment": "New payment"
   },
   "and": "&",
   "birthDate": "Date of birth",
@@ -275,8 +279,6 @@
   "backToTheHomePage": "Back to the home page",
   "home": "Home page",
   "account": "Account",
-  "publications": "Advertisements",
-  "payments": "Payments",
   "ageMessage": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.",
   "documentPrivacy": "Your information and your document will be never shared with anyone unless we will be asked by the authorities.",
   "duration": "Duration",
@@ -285,7 +287,6 @@
   "publication": "Advertisement",
   "selectPublication": "Select advertisement",
   "selectDuration": "Select duration",
-  "newPayment": "New payment",
   "removePayment": "Delete payment",
   "receiveDetailsByWa": "Receive details by whatsapp",
   "markPaid": "Mark as paid",

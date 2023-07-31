@@ -1,6 +1,7 @@
 <script setup>
 import services from '~/assets/js/services';
 import kebabCase from 'lodash.kebabcase';
+
 const {
   escort,
 } = defineProps({
@@ -8,9 +9,9 @@ const {
     type: Object,
     required: true
   }
-})
+});
 
-const filteredServices = services.filter(service => escort[service])
+const filteredServices = services.filter(service => escort.registry[service])
 </script>
 
 <template>
@@ -23,13 +24,13 @@ const filteredServices = services.filter(service => escort[service])
             <span class="tag is-medium is-primary">{{ $t(`escort.services.${service}`) }}</span>
           </NuxtLink>
           <NuxtLink v-if="service === 'incall'" :to="localePath({ name: 'area-slug', params: { slug: escort.area.replace(/\s/g,'-').toLowerCase() }})">
-            <span class="tag is-medium">{{ escort.area }}</span>
+            <span class="tag is-medium">{{ escort.registry.services.area }}</span>
           </NuxtLink>
         </div>
       </div>
     </div>
     <div v-if="escort.extra && escort.extra.length" class="field is-grouped is-grouped-multiline">
-      <div v-for="extra in escort.extra" :key="extra" class="control">
+      <div v-for="extra in escort.registry.extra" :key="extra" class="control">
         <div class="tags">  
           <NuxtLink :to="localePath({ name: 'extra-slug', params: { slug: kebabCase(extra) }})">
             <span class="tag is-medium is-primary">{{ $t(`extra.${extra}`) }}</span>
