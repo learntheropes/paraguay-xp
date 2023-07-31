@@ -17,7 +17,10 @@ const all = []
   .concat(store.list.diamond, store.list.palladium, store.list.platinum, store.list.esmerald, store.list.gold)
   .filter(escort => kebabCase(escort.agency) !== slug);
 
-const paths = sortBy(uniqBy(all, 'agency'), 'agency').map(escort => escort.agency);
+const paths = sortBy(
+  uniqBy(all, a => a.registry.basic.agency),
+  a => a.registry.basic.agency
+).map(escort => escort.registry.basic.agency);
 </script>
 
 <template>

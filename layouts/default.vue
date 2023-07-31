@@ -40,7 +40,7 @@ if (!store.init) {
   .find();
 
   const min = minBy(escorts, e => e.registry.rate).registry.rate;
-  const max = maxBy(escorts, e.registry.rate).rate;
+  const max = maxBy(escorts, e => e.registry.rate).registry.rate;
   store.setMin(min);
   store.setMax(max);
   

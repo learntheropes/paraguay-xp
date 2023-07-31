@@ -50,22 +50,22 @@
       "dinner": true,
       "travel": true,
       "area": "Las Carmelitas"
-    },
-    "gallery": {
-      "blur": false,
-      "medias": [
-        {
-          "fileId": "632fc3be3226066c5c4e73fb",
-          "fileName": "c56b45bf-bef6-41e2-b778-b4240e65ba45.mp4",
-          "fileType": "non-image"
-        },
-        {
-          "fileId": "632fc3b33226066c5c4e6739",
-          "fileName": "a374fe14-8bc2-4e10-93cd-e370dbc06494.jpg",
-          "fileType": "image"
-        }
-      ]
     }
+  },
+  "gallery": {
+    "blur": false,
+    "medias": [
+      {
+        "fileId": "632fc3be3226066c5c4e73fb",
+        "fileName": "c56b45bf-bef6-41e2-b778-b4240e65ba45.mp4",
+        "fileType": "non-image"
+      },
+      {
+        "fileId": "632fc3b33226066c5c4e6739",
+        "fileName": "a374fe14-8bc2-4e10-93cd-e370dbc06494.jpg",
+        "fileType": "image"
+      }
+    ]
   },
   "phone": "+595992261076",
   "slug": "vittoria-595992261076",

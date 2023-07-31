@@ -26,7 +26,7 @@ const { locale } = useI18n();
 
 const editAdv = async () => {
 
-  const { data: age } = await useFetch(`api/account/age/${publication.slug}`);
+  const { data: age } = await useFetch(`api/dashboard/age/${publication.slug}`);
   const escort = await queryContent('escorts', publication.slug).findOne();
   const publication = merge(escort, age);
   const store = usePublicationStore();
@@ -56,7 +56,7 @@ const closeConfirm = () => {
     <div class="card card-equal-height">
       <div @click="editAdv" class="card-image">
         <figure :style="'background-color:black;'" class="image is-square">
-          <OLoading :is-full-page="false" v-model="isLoading" :can-cancel="false"></OLoading>
+          <OLoading :full-page="false" v-model:active="isLoading"></OLoading>
           <NuxtImg
             preset="preview"
             :src="('/gallery/preview/' + publication.cover.fileName).split('.')[0] + '.webp'"

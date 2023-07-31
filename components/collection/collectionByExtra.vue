@@ -17,7 +17,7 @@ const store = useEscortsStore();
 const all = []
   .concat(store.list.diamond, store.list.palladium, store.list.platinum, store.list.esmerald, store.list.gold)
 
-const names = uniq(flatten(all.map(escort => escort.extra))).filter(name => name && name !== camelCase(slug))
+const names = uniq(flatten(all.map(escort => escort.registry.extra))).filter(name => name && name !== camelCase(slug))
 </script>
 
 <template>

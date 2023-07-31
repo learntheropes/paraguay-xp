@@ -20,7 +20,13 @@ const showFilter = ref(false);
 
 const store = useEscortsStore();
 
-const all = [].concat(store.list.diamond, store.list.palladium, store.list.platinum, store.list.esmerald, store.list.gold);
+const all = [].concat(
+  store.list.diamond, 
+  store.list.palladium, 
+  store.list.platinum, 
+  store.list.esmerald, 
+  store.list.gold
+);
 
 const service = ref(null);
 const area = ref(null);
@@ -37,7 +43,12 @@ const defaultAge = [
 ];
 const age = ref([]);
 
-const areas = sortBy(uniqBy(all, a.registry.services.area), a.registry.services.area).filter(escort => escort.registry.services.area).map(escort => escort.registry.services.area);
+const areas = sortBy(
+  uniqBy(all, a => a.registry.services.area),
+  a => a.registry.services.area
+)
+.filter(escort => escort.registry.services.area)
+.map(escort => escort.registry.services.area);
 
 const isIncall = computed(() => service.value === 'incall')
 
