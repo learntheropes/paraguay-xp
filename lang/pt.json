@@ -167,6 +167,9 @@
     "goBack": "Voltar",
     "notValidCode": "{value} não é um código válido"
   },
+  "dashboard": {
+    "underDevelopment": "O painel ainda está em construção.\n\nPara colocar ou editar sua publicação, envie um whatsapp para"
+  },
   "and": "e",
   "birthDate": "Data de nascimento",
   "uploadFrontId": "Carregar a frente do ID",

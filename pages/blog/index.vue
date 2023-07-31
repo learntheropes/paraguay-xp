@@ -1,6 +1,5 @@
 <script setup>
 definePageMeta({
-  layout: 'blog',
   auth: false,
 });
 
@@ -57,6 +56,7 @@ const escortPosts = await queryContent('blog')
           >{{ post.title }}</OButton>
         </li>
       </ul>
+      <CollectionNavigator />
     </div>
   </NuxtLayout>
 </template>

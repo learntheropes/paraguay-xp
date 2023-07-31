@@ -1,6 +1,5 @@
 <script setup>
 definePageMeta({
-  layout: 'blog',
   auth: false,
 });
 
@@ -64,7 +63,7 @@ useHead({
         <ContentRendererMarkdown :value="{ body }" class="content"/>
       </section>
       <SimilarPosts :target="target" :_path="_path" />
-      <!-- <CollectionNavigator /> -->
+      <CollectionNavigator />
     </div>
   </NuxtLayout>
 </template>

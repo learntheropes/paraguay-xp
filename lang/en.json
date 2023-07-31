@@ -166,6 +166,9 @@
     "goBack": "Go back",
     "notValidCode": "{value} is not a valid code"
   },
+  "dashboard": {
+    "underDevelopment": "The dashboard is still under construction.\n\nTo place or edit your publication, please send a whatsapp to"
+  },
   "and": "&",
   "birthDate": "Date of birth",
   "uploadFrontId": "Upload ID front",

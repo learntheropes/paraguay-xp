@@ -43,20 +43,23 @@ const toggleFilter = (bool) => {
   </div>
   <div class="navbar-menu">
     <div class="navbar-start">
-      <div class="navbar-item">
-        <OIcon v-if="isIndex && !showFilter" @click.native="toggleFilter(true)" icon="magnify" variant="primary" />
-        <OIcon v-else="isIndex && showFilter" @click.native="toggleFilter(false)" icon="magnify-close" variant="primary" />
+      <div v-if="isIndex" class="navbar-item">
+        <OIcon 
+          v-if="!showFilter"
+          @click.native="toggleFilter(true)"
+          icon="magnify"
+          variant="primary"
+        />
+        <OIcon 
+          v-else
+          @click.native="toggleFilter(false)"
+          icon="magnify-close"
+          variant="primary"
+        />
       </div>
     </div>
     <div class="navbar-end">
-      <div v-if="status === 'unauthenticated'" class="navbar-item">
-        <OButton
-          :to="localePath('/dashboard')"
-          tag="router-link"
-          variant="primary"
-        >{{ $t('navbar.publish') }}</OButton>
-      </div>
-      <div v-else class="navbar-item">
+      <div v-if="status === 'authenticated'" class="navbar-item">
         <OButton
           :to="localePath('/dashboard')"
           tag="router-link"
@@ -65,19 +68,28 @@ const toggleFilter = (bool) => {
         >
           <OIcon pack="mdi" icon="account-outline" />
         </OButton>
+      </div>
+      <div v-if="status === 'authenticated'" class="navbar-item">
         <OButton
           @click="logOut"
         >{{ $t('navbar.logout') }}</OButton>
+      </div>
+      <div v-else class="navbar-item">
+        <OButton
+          :to="localePath('/dashboard')"
+          tag="router-link"
+          variant="primary"
+        >{{ $t('navbar.publish') }}</OButton>
       </div>
     </div>
   </div>
 </nav>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .navbar-start{
   flex-grow: 1;
   justify-content: center;
   text-align: center;
 }
-</style>
+</style> -->

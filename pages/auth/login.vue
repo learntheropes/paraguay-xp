@@ -107,7 +107,7 @@ const verifyCode = () => {
   <NuxtLayout>
     <div v-if="isWhatsappConnected">
       <VForm
-        v-if="showPhone"
+        v-show="showPhone"
         name="phone"
         :validation-schema="phoneValidationSchema"
         @submit="sendWhatsapp"
@@ -162,7 +162,7 @@ const verifyCode = () => {
       </VForm>
 
       <VForm
-        v-else
+        v-show="!showPhone"
         name="code"
         :validation-schema="codeValidationSchema"
         @submit="verifyCode"

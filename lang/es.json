@@ -166,6 +166,9 @@
     "goBack": "Volver",
     "notValidCode": "{value} no es un código valido"
   },
+  "dashboard": {
+    "underDevelopment": "El panel aún está en construcción.\n\nPara colocar o editar su publicación, envíe un whatsapp a"
+  },
   "and": "y", 
   "birthDate": "Fecha de nacimiento",
   "uploadFrontId": "Subir cédula frontal",
