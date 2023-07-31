@@ -3,7 +3,7 @@ const { data } = useAuth();
 
 const publications = await queryContent('escorts')
   .where({
-    phone: data.user.email
+    phone: data.value.user.email
   })
   .find();
 
@@ -11,7 +11,6 @@ const publications = await queryContent('escorts')
 
 <template>
   <div>
-    {{ data.user.email }}
     <div class="columns is-mobile is-multiline">
       <div v-for="publication in publications" :key="publication.slug" class="column is-full-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
         <DashboardExistingPublicationCard :publication="publication" class="card-equal-height" />

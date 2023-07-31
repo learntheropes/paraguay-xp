@@ -60,8 +60,13 @@ export const usePublicationStore = defineStore('publication', {
     blur: false
   },
   actions: {
-    setPublication(publication) {
-      this = publication;
+    setPublication({ age, description, registry, gallery }) {
+      this.age = age;
+      this.description = description;
+      this.registry = registry;
+      this.gallery = gallery;
+      // this.slug
+      // ....
     },
     setAge(age) {
       this.age = age;

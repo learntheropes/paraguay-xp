@@ -2,8 +2,6 @@
 definePageMeta({
   layout: "dashboard"
 });
-
-const { data } = useAuth();
 </script>
 
 <template>
@@ -11,6 +9,7 @@ const { data } = useAuth();
     <h1 class="title is-3 is-capitalized">{{ $t('dashboard.title') }}</h1>
     <section class="section">
       <h2 class="title is-5 is-capitalized">{{ $t('dashboard.publications') }}</h2>
+      <DashboardPublications />
     </section>
     <section class="section">
       <h2 class="title is-5 is-capitalized">{{ $t('dashboard.payments') }}</h2>
@@ -18,6 +17,5 @@ const { data } = useAuth();
     <section class="section">
       <h2 class="title is-5 is-capitalized">{{ $t('dashboard.newPayment') }}</h2>
     </section>
-    <pre>{{ data }}</pre>
   </NuxtLayout>
 </template>

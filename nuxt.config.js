@@ -238,6 +238,14 @@ export default defineNuxtConfig({
     },
   },
 
+  vite: {
+    resolve: {
+      alias: {
+        path: "path-browserify",
+      }
+    }
+  },
+
   delayHydration: {
     mode: 'init',
     exclude: excludedRoutes,

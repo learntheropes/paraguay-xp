@@ -6,20 +6,21 @@ import { NotificationProgrammatic } from "@oruga-ui/oruga-next";
 const {
   publication,
 } = defineProps({
-  punlication: {
+  publication: {
     type: String,
     required: true
   }
 });
 
-publication.cover = find(publication.gallery, { fileType: 'image' });
+publication.cover = find(publication.gallery.medias, { fileType: 'image' });
 
 const isLoading = ref(true);
 const isConfirmActive = ref(false);
 
 const onImgLoad = () => {
   isLoading.value = false;
-}
+};
+
 const { $dayjs } = useNuxtApp();
 
 const { locale } = useI18n();
@@ -56,7 +57,7 @@ const closeConfirm = () => {
     <div class="card card-equal-height">
       <div @click="editAdv" class="card-image">
         <figure :style="'background-color:black;'" class="image is-square">
-          <OLoading :full-page="false" v-model:active="isLoading"></OLoading>
+          <OLoading :full-page="false" v-model:active="isLoading" />
           <NuxtImg
             preset="preview"
             :src="('/gallery/preview/' + publication.cover.fileName).split('.')[0] + '.webp'"
@@ -65,18 +66,19 @@ const closeConfirm = () => {
             :loading="(index == 0) ? 'eager' : 'lazy'"
             width="288"
             height="288"
+            @load="onImgLoad"
           />
         </figure>
       </div>
       <div class="card-content">
         <div @click="editAdv" class="content">
           <p class="title is-5 is-capitalized">
-            {{ publication.name }}&nbsp;
+            {{ publication.registry.basic.name }}&nbsp;
             <span class="is-hidden-mobile">({{ $dayjs(new Date()).diff(publication.age.dateOfBirth, 'years') }})</span>
           </p>
           <p class="subtitle is-6 is-capitalized">
             {{$t('activeUntil')}} {{ $dayjs(publication.until).format('DD/MM/YY') }}<br>
-            ({{ $dayjs(publication.until).fromNow(true) }}
+            ({{ $dayjs(publication.until).fromNow(true) }})
           </p>
         </div>
       </div>
@@ -102,3 +104,9 @@ const closeConfirm = () => {
     </OModal>
   </div>
 </template>
+
+<style>
+.is-white {
+  color: white;
+}
+</style>

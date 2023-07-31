@@ -30,7 +30,7 @@ const filteredServices = services.filter(service => escort.registry.services[ser
         </div>
       </div>
     </div>
-    <div v-if="escort.registry.extra.length" class="field is-grouped is-grouped-multiline">
+    <div v-if="escort.registry.extra && escort.registry.extra.length" class="field is-grouped is-grouped-multiline">
       <div v-for="extra in escort.registry.extra" :key="extra" class="control">
         <div class="tags">  
           <NuxtLink :to="localePath({ name: 'extra-slug', params: { slug: kebabCase(extra) }})">
