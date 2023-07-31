@@ -23,7 +23,7 @@ const {
 const { t } = useI18n();
 
 const title = t('escort.title', { escort: $capitalize(escort.registry.basic.name) });
-const description = escort.description.head[locale.value];
+const description =  escort.description.head[locale.value];
 
 useHead({
   title: title + seoTitle,
@@ -46,12 +46,12 @@ useHead({
     {
       id: 'og:image',
       name: 'og:image',
-      content: `${deploymentDomain}/gallery/modal/${escort.gallery.media[0].fileName}`
+      content: `${deploymentDomain}/gallery/modal/${escort.gallery.medias[0].fileName}`
     },
     {
       id: 'twitter:image',
       name: 'twitter:image',
-      content: `${deploymentDomain}/gallery/modal/${escort.gallery.media[0].fileName}`
+      content: `${deploymentDomain}/gallery/modal/${escort.gallery.medias[0].fileName}`
     },
   ],
 });

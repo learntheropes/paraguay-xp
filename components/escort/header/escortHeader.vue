@@ -30,7 +30,7 @@ const {
 
 const age = $dayjs(new Date()).diff(dateOfBirth, 'years')
 
-const agencyName = (agency === 'indipendent') ? t('indipendent') : agency;
+const agencyName = (agency === 'indipendent') ? t('agency.indipendent') : agency;
 
 const message = encodeURIComponent(`Hola *${$capitalize(name)}*. He visto su anuncio en *ParaguayXP*. Me gustaria recibir mas informacion`);
 const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phone.replace('+','')}&text=${message}`;
@@ -57,7 +57,7 @@ const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phone.replace('+',''
     <div class="is-hidden-mobile columns is-vcentered">
       <div class="column is-half">
         <h1 class="title is-3 is-capitalized">{{ name }}<span class="is-hidden-mobile">&nbsp;({{ age }})</span></h1>
-        <p class="subtitle is-5 is-capitalized">{{ agency }}</p>
+        <p class="subtitle is-5 is-capitalized">{{ agencyName }}</p>
       </div>
       <div class="column is-half">
         <div class="columns is-mobile is-half is-justify-content-right is-vcentered">

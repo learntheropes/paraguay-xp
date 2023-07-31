@@ -11,7 +11,8 @@ const {
   }
 });
 
-const filteredServices = services.filter(service => escort.registry[service])
+const filteredServices = services.filter(service => escort.registry.services[service]);
+
 </script>
 
 <template>
@@ -23,13 +24,13 @@ const filteredServices = services.filter(service => escort.registry[service])
           <NuxtLink :to="localePath({ name: 'service-slug', params: { slug: kebabCase(service) }})">
             <span class="tag is-medium is-primary">{{ $t(`escort.services.${service}`) }}</span>
           </NuxtLink>
-          <NuxtLink v-if="service === 'incall'" :to="localePath({ name: 'area-slug', params: { slug: escort.area.replace(/\s/g,'-').toLowerCase() }})">
+          <NuxtLink v-if="service === 'incall'" :to="localePath({ name: 'area-slug', params: { slug: escort.registry.services.area.replace(/\s/g,'-').toLowerCase() }})">
             <span class="tag is-medium">{{ escort.registry.services.area }}</span>
           </NuxtLink>
         </div>
       </div>
     </div>
-    <div v-if="escort.extra && escort.extra.length" class="field is-grouped is-grouped-multiline">
+    <div v-if="escort.registry.extra.length" class="field is-grouped is-grouped-multiline">
       <div v-for="extra in escort.registry.extra" :key="extra" class="control">
         <div class="tags">  
           <NuxtLink :to="localePath({ name: 'extra-slug', params: { slug: kebabCase(extra) }})">

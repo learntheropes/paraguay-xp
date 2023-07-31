@@ -63,6 +63,7 @@
   "agency": {
     "singolar": "Agency",
     "plural": "Agencies",
+    "indipendent": "Indipendent",
     "indipendents": "Indipendents",
     "title": "Escorts of {agency} agency",
     "description": "Escorts provided by the agency {agency} in Paraguay for you",
@@ -251,7 +252,6 @@
   "Symbols": "Symbols",
   "Flags": "Flags",
   "swipeToBrowse": "Swipe to browse",
-  "indipendent": "Indipendent",
   "comments": "Comments",
   "leaveYourComment": "Leave your comment",
   "nameLabel": "Name",

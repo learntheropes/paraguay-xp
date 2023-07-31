@@ -49,7 +49,7 @@
     },
     "rate": 1200000,
     "services": {
-      "virtual": true,
+      "virtual": false,
       "incall": true,
       "outcall": true,
       "dinner": true,

@@ -63,6 +63,7 @@
   "agency": {
     "singolar": "Agência",
     "plural": "Agências",
+    "indipendent": "Independente",
     "indipendents": "Independentes",
     "title": "Acompanhantes independentes",
     "description": "Acompanhantes independentes no Paraguai",
@@ -253,7 +254,6 @@
   "Symbols": "Símbolos",
   "Flags": "Bandeiras",
   "swipeToBrowse": "Deslize para navegar",
-  "indipendent": "Independente",
   "comments": "Comentários",
   "leaveYourComment": "Deixe o seu comentário",
   "nameLabel": "Nome",
