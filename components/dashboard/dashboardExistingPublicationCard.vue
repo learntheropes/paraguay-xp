@@ -26,11 +26,9 @@ const { locale } = useI18n();
 
 const editAdv = async () => {
 
-  // const { data: age } = await this.$axios.get(`api/account/age`, {
-  //   params: { slug: this.escort.slug }
-  // })
+  const { data: age } = await useFetch(`api/account/age/${publication.slug}`);
   const escort = await queryContent('escorts', publication.slug).findOne();
-  const publication = merge(escort, {}) // age
+  const publication = merge(escort, age);
   const store = usePublicationStore();
   store.setPublication(publication);
   await navigateTo(`/${locale.value}/dashboard/publication?tab=1`);
@@ -62,8 +60,8 @@ const closeConfirm = () => {
           <NuxtImg
             preset="preview"
             :src="('/gallery/preview/' + publication.cover.fileName).split('.')[0] + '.webp'"
-            :alt="$t('escort.gallery.previewOf') + ' ' + publication.name"
-            :title="$t('escort.gallery.previewOf') + ' ' + publication.name"
+            :alt="$t('escort.gallery.previewOf') + ' ' + publication.registry.basic.name"
+            :title="$t('escort.gallery.previewOf') + ' ' + publication.registry.basic.name"
             :loading="(index == 0) ? 'eager' : 'lazy'"
             width="288"
             height="288"
@@ -74,11 +72,11 @@ const closeConfirm = () => {
         <div @click="editAdv" class="content">
           <p class="title is-5 is-capitalized">
             {{ publication.name }}&nbsp;
-            <span class="is-hidden-mobile">({{ $dayjs(new Date()).diff(publication.dateOfBirth, 'years') }})</span>
+            <span class="is-hidden-mobile">({{ $dayjs(new Date()).diff(publication.age.dateOfBirth, 'years') }})</span>
           </p>
           <p class="subtitle is-6 is-capitalized">
             {{$t('activeUntil')}} {{ $dayjs(publication.until).format('DD/MM/YY') }}<br>
-            ({{ $dayjs(escort.until).fromNow(true) }}
+            ({{ $dayjs(publication.until).fromNow(true) }}
           </p>
         </div>
       </div>
@@ -104,56 +102,3 @@ const closeConfirm = () => {
     </OModal>
   </div>
 </template>
-
-<script>
-import merge from 'lodash.merge'
-import { mapState, mapMutations } from 'vuex'
-export default {
-  props: [
-    'escort'
-  ],
-  computed: {
-    ...mapState({
-      publication: state => state.publication
-    }),
-  },
-  methods: {
-    ...mapMutations(['loadPublication']),
-    async editAdv () {
-      const { data: age } = await this.$axios.get(`api/account/age`, {
-        params: { slug: this.escort.slug }
-      })
-      const escort = await this.$content('escorts', this.escort.slug).fetch()
-      const publication = merge(escort, age)
-      this.loadPublication(publication)
-      this.$router.push(`/${this.$i18n.locale}/account/publication?tab=1`)
-    },
-    confirmRemoveAdv () {
-      this.isConfirmActive = true
-    },
-    async removeAdv () {
-      await this.$axios.delete(`/api/account/publication`, {
-        data: {
-          slug: this.escort.slug
-        }
-      })
-      this.isConfirmActive = false
-      this.$buefy.toast.open({
-        message: this.$t('publicationDelated'),
-        duration: 4000
-      })
-    },
-    closeConfirm () {
-      this.isConfirmActive = false
-    }
-  }
-}
-</script>
-
-<style scoped>
-  .is-center-center {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-  </style>
