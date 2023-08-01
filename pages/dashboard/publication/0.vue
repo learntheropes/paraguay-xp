@@ -5,11 +5,11 @@ definePageMeta({
   layout: 'empty'
 });
 
-const images = ref([])
+const images = ref([]);
 
 onMounted(async () => {
-  const canvas = document.getElementById("canvas")
 
+  const canvas = document.getElementById("canvas");
   const browse  = document.getElementById('browse');
 
   browse.addEventListener('change', event => {
@@ -59,7 +59,6 @@ onMounted(async () => {
               ctx.fillText(txt, -(i * offset), i * txtHeight);
             }
           }
-
           draw('Paraguay XP');
         })
         images.value.push(canvas.toDataURL());

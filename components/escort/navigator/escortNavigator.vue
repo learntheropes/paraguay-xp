@@ -27,7 +27,7 @@ const nextEscort = escorts[nextEscortIndex];
 
 <template>
   <section v-if="escorts.length > 1" class="section">
-    <h2 class="title is-5">{{ $t('escort.navigator.title', { levelName:  $capitalize($t(levelName)) }) }}</h2>
+    <h2 class="title is-5">{{ $t('escort.navigator.title', { levelName:  $capitalize($t(`level.${levelName}`)) }) }}</h2>
     <div class="columns is-12 is-vcentered">
       <div class="column is-half">
         <EscortNavigatorPrevious :escort="previousEscort" />
