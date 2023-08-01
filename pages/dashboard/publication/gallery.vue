@@ -12,6 +12,8 @@ const { t } = useI18n();
 
 const blurText = computed(() => (store.gallery.blur) ? t('yes') : t('no'));
 
+const isLoading = ref(false)
+
 onMounted(async () => {
 
   await faceapi.nets.tinyFaceDetector.loadFromUri('/faceApi/tiny_face_detector_model-weights_manifest.json');
@@ -21,6 +23,8 @@ onMounted(async () => {
   const input  = document.getElementById('input');
 
   input.addEventListener('change', event => {
+
+    isLoading.value = true
 
     const files = event.target.files;
 
@@ -84,6 +88,8 @@ onMounted(async () => {
           preview: preview.toDataURL(),
           type: 'image'
         });
+
+        isLoading.value = false
       }
     }
   })
@@ -93,6 +99,7 @@ onMounted(async () => {
 <template>
   <canvas id="modal" class="is-hidden-tablet is-hidden-mobile" /> 
   <canvas id="preview" class="is-hidden-tablet is-hidden-mobile" /> 
+  <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
   <div class="container">
     <section class="section">
       <div class="columns is-mobile is-multiline">
