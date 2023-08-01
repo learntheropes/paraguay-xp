@@ -67,106 +67,103 @@
 </script>
 
 <template>
-  <div>
-    <canvas id="canvas"></canvas>
-    <OModal v-model:active="isModalActive" :onCancel="closeModal" :canCancel="true">
-      <div class="ltr-is-center-left is-hidden-mobile">
-        <OIcon 
-          icon="chevron-left" 
-          size="large" 
-          variant="info" 
-          @click.native="navigatePrevious"
-        />
-      </div>
-      <div class="ltr-is-fixed-bottom-left is-hidden-tablet">
-        <OIcon 
-          icon="chevron-left"
-          size="large"
-          variant="info"
-          @click.native="navigatePrevious"
-        />
-      </div>
-      <div class="ltr-is-center-center" v-touch:swipe="onSwipe">
-        <OLoading
-          :full-page="false"
-          v-model:active="isLoading"
-          iconClass="ltr-is-white"
-          overlayClass="ltr-is-transparent"
-        />
-        <div class="is-hidden-tablet">
-          <figure 
-            v-if="modalType === 'image'"
-            class="image"
-          >
-            <img
-              preset="modal"
-              loading="lazy"
-              @load="onLoad"
-              :src="'/gallery/modal/' + modalSrc"
-              class="ltr-fit-mobile"
-            />
-          </figure>
-          <video
-            v-else
-            id="video"
+  <OModal v-model:active="isModalActive" :onCancel="closeModal" :canCancel="true">
+    <div class="ltr-is-center-left is-hidden-mobile">
+      <OIcon 
+        icon="chevron-left" 
+        size="large" 
+        variant="info" 
+        @click.native="navigatePrevious"
+      />
+    </div>
+    <div class="ltr-is-fixed-bottom-left is-hidden-tablet">
+      <OIcon 
+        icon="chevron-left"
+        size="large"
+        variant="info"
+        @click.native="navigatePrevious"
+      />
+    </div>
+    <div class="ltr-is-center-center" v-touch:swipe="onSwipe">
+      <OLoading
+        :full-page="false"
+        v-model:active="isLoading"
+        iconClass="ltr-is-white"
+        overlayClass="ltr-is-transparent"
+      />
+      <div class="is-hidden-tablet">
+        <figure 
+          v-if="modalType === 'image'"
+          class="image"
+        >
+          <img
+            preset="modal"
+            loading="lazy"
+            @load="onLoad"
+            :src="'/gallery/modal/' + modalSrc"
             class="ltr-fit-mobile"
-            @canplay="onLoad"
-            :controls="false"
-            autoplay
-            loop
-            muted
-            playsInline
-          >
-            <source :src="'/gallery/modal/' + modalSrc" />
-          </video>
-        </div>
-        <div class="is-hidden-mobile">
-          <figure 
-            v-if="modalType === 'image'"
-            class="image"
-          >
-            <img
-              id="image"
-              preset="modal"
-              loading="lazy"
-              @load="onLoad"
-              :src="'/gallery/modal/' + modalSrc"
-              class="ltr-fit-tablet"
-            />
-          </figure>
-          <video
-            v-else
-            id="video"
+          />
+        </figure>
+        <video
+          v-else
+          id="video"
+          class="ltr-fit-mobile"
+          @canplay="onLoad"
+          :controls="false"
+          autoplay
+          loop
+          muted
+          playsInline
+        >
+          <source :src="'/gallery/modal/' + modalSrc" />
+        </video>
+      </div>
+      <div class="is-hidden-mobile">
+        <figure 
+          v-if="modalType === 'image'"
+          class="image"
+        >
+          <img
+            id="image"
+            preset="modal"
+            loading="lazy"
+            @load="onLoad"
+            :src="'/gallery/modal/' + modalSrc"
             class="ltr-fit-tablet"
-            @canplay="onLoad"
-            :controls="false"
-            autoplay
-            loop
-            muted
-            playsInline
-          >
-            <source :src="'/gallery/modal/' + modalSrc" />
-          </video>
-        </div>
+          />
+        </figure>
+        <video
+          v-else
+          id="video"
+          class="ltr-fit-tablet"
+          @canplay="onLoad"
+          :controls="false"
+          autoplay
+          loop
+          muted
+          playsInline
+        >
+          <source :src="'/gallery/modal/' + modalSrc" />
+        </video>
       </div>
-      <div class="ltr-is-center-right is-hidden-mobile">
-        <OIcon
-          icon="chevron-right"
-          size="large"
-          variant="info"
-          @click.native="navigateNext"
-        />
-      </div>
-      <div class="ltr-is-fixed-bottom-right is-hidden-tablet">
-        <OIcon 
-          icon="chevron-right" 
-          size="large" 
-          variant="info" 
-          @click.native="navigateNext"
-        />
-      </div>
-    </OModal>
-  </div>
+    </div>
+    <div class="ltr-is-center-right is-hidden-mobile">
+      <OIcon
+        icon="chevron-right"
+        size="large"
+        variant="info"
+        @click.native="navigateNext"
+      />
+    </div>
+    <div class="ltr-is-fixed-bottom-right is-hidden-tablet">
+      <OIcon 
+        icon="chevron-right" 
+        size="large" 
+        variant="info" 
+        @click.native="navigateNext"
+      />
+    </div>
+  </OModal>
 </template>
 
 <style scoped>
