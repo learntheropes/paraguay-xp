@@ -99,6 +99,12 @@ export const usePublicationStore = defineStore('publication', {
     setGallery(gallery) {
       this.gallery = gallery;
     },
+    addOneMedia(media) {
+      this.gallery.medias.push(media);
+    },
+    removeOneMedia(index) {
+      this.gallery.medias.splice(index,1);
+    },
     setPhone(phone) {
       this.phone = phone;
     },

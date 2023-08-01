@@ -6,7 +6,8 @@ import {
   OIcon,
   OLoading,
   OModal,
-  OSlider
+  OSlider,
+  OSwitch
   // Config,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
@@ -32,5 +33,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OLoading', OLoading);
   nuxtApp.vueApp.component('OModal', OModal);
   nuxtApp.vueApp.component('OSlider', OSlider);
+  nuxtApp.vueApp.component('OSwitch', OSwitch);
   // nuxtApp.vueApp.use(Config, myConfig);
 });
