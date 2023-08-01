@@ -36,13 +36,6 @@
     modalIndex.value = (modalIndex.value - 1 < 0) ? modalGallery.value.length - 1 : modalIndex.value - 1; 
     modalType.value = modalGallery.value[modalIndex.value].fileType;
     modalSrc.value = modalGallery.value[modalIndex.value].fileName;
-
-    if (modalType.value !== 'image') {
-
-      const video = document.getElementById('video');
-      if (video) video.load();
-    }
-
   };
 
   const navigateNext = () => {
@@ -51,12 +44,6 @@
     modalIndex.value = (modalIndex.value + 1 >=  modalGallery.value.length) ? 0:  modalIndex.value + 1;
     modalType.value = modalGallery.value[modalIndex.value].fileType
     modalSrc.value = modalGallery.value[modalIndex.value].fileName;
-
-    if (modalType.value !== 'image') {
-      
-      const video = document.getElementById('video');
-      if (video) video.load();
-    }
   };
 
   const onSwipe = (direction) => {
@@ -93,7 +80,6 @@
       />
       <div class="is-hidden-tablet">
         <figure 
-          v-if="modalType === 'image'"
           class="image"
         >
           <img
@@ -104,23 +90,9 @@
             class="ltr-fit-mobile"
           />
         </figure>
-        <video
-          v-else
-          id="video"
-          class="ltr-fit-mobile"
-          @canplay="onLoad"
-          :controls="false"
-          autoplay
-          loop
-          muted
-          playsInline
-        >
-          <source :src="'/gallery/modal/' + modalSrc" />
-        </video>
       </div>
       <div class="is-hidden-mobile">
         <figure 
-          v-if="modalType === 'image'"
           class="image"
         >
           <img
@@ -132,19 +104,6 @@
             class="ltr-fit-tablet"
           />
         </figure>
-        <video
-          v-else
-          id="video"
-          class="ltr-fit-tablet"
-          @canplay="onLoad"
-          :controls="false"
-          autoplay
-          loop
-          muted
-          playsInline
-        >
-          <source :src="'/gallery/modal/' + modalSrc" />
-        </video>
       </div>
     </div>
     <div class="ltr-is-center-right is-hidden-mobile">

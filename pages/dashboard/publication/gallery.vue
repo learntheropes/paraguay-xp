@@ -114,7 +114,7 @@ onMounted(async () => {
               ref="input"
               style="display:none"
               type="file"
-              accept="image/*,video/mp4,video/x-m4v,video/mov,video/*,.mov"
+              accept="image/*"
               multiple
             >
           </OField>
@@ -131,7 +131,7 @@ onMounted(async () => {
         </div>
       </div>
     </section>
-    <OField :label="$t('blurPhoto')" :message="$t('videoNotBlurred')">
+    <OField :label="$t('blurPhoto')">
       <OSwitch v-model="store.gallery.blur">
         {{ $t(blurText) }}
       </OSwitch>

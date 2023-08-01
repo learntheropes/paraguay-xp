@@ -31,23 +31,7 @@ const remove = (index) => {
       <figure class="image is-square">
         <NuxtImg preset="preview" @load="onLoad" :src=image.preview />
       </figure>
-      <div class="card-content is-overlay ltr-is-center-center">
-        <OIcon v-if="image.type === 'video'" icon="play" size="large" variant="info" />
-        <div @click="remove(index)">
-          <OIcon icon="close-circle" size="large" variant="info" />
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
-<!-- <style scoped>
-
-.image img {
-    /* width: auto;
-    height: auto; */
-    /* max-width: 100%;
-    max-height: 100%; */
-    object-fit: contain;
-}
-</style> -->
