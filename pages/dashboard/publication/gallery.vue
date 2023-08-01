@@ -99,43 +99,49 @@ onMounted(async () => {
 <template>
   <canvas id="modal" class="is-hidden-tablet is-hidden-mobile" /> 
   <canvas id="preview" class="is-hidden-tablet is-hidden-mobile" /> 
-  <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
-  <div class="container">
-    <section class="section">
-      <div class="columns is-mobile is-multiline">
-        <div v-for="(image, index) in store.gallery.medias" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
-          <DashboardPublicationGalleryCard :image="image" :index="index" />
-        </div>
-        <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
-          <OField class="is-hidden-mobile is-hidden-tablet">
-            <input
-              :name="$t('media')"
-              id="input"
-              ref="input"
-              style="display:none"
-              type="file"
-              accept="image/*"
-              multiple
-            >
-          </OField>
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-square">
-                  <img src="/others/white.jpg">
-                </figure>
-                <div @click="$refs.input.click()" class="card-content is-overlay ltr-is-center-center">
-                  <OIcon icon="plus-circle" size="large" />
-                </div>
-              </div>
+  <div class="full-body">
+    <LayoutNavbar />
+    <main class="main-content">
+      <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
+      <div class="container">
+        <section class="section">
+          <div class="columns is-mobile is-multiline">
+            <div v-for="(image, index) in store.gallery.medias" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
+              <DashboardPublicationGalleryCard :image="image" :index="index" />
             </div>
-        </div>
+            <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
+              <OField class="is-hidden-mobile is-hidden-tablet">
+                <input
+                  :name="$t('media')"
+                  id="input"
+                  ref="input"
+                  style="display:none"
+                  type="file"
+                  accept="image/*"
+                  multiple
+                >
+              </OField>
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-square">
+                      <img src="/others/white.jpg">
+                    </figure>
+                    <div @click="$refs.input.click()" class="card-content is-overlay ltr-is-center-center">
+                      <OIcon icon="plus-circle" size="large" />
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <OField :label="$t('blurPhoto')">
+          <OSwitch v-model="store.gallery.blur">
+            {{ $t(blurText) }}
+          </OSwitch>
+        </OField>
       </div>
-    </section>
-    <OField :label="$t('blurPhoto')">
-      <OSwitch v-model="store.gallery.blur">
-        {{ $t(blurText) }}
-      </OSwitch>
-    </OField>
+    </main>
+    <LayoutFooter />
   </div>
 </template>
 
