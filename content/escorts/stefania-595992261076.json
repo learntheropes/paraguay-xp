@@ -1,4 +1,9 @@
 {
+  "phone": "+595992261076",
+  "slug": "stefania-595992261076",
+  "accept": true,
+  "approved": true,
+  "until": "2024-02-20T14:13:08.007Z",
   "age": {
     "dateOfBirth": "1995-12-15T23:00:00.000Z",
     "dateMatch": true,
@@ -54,8 +59,7 @@
       "incall": true,
       "outcall": true,
       "dinner": true,
-      "travel": true,
-      "area": "Villa Morra"
+      "travel": true
     }
   },
   "gallery": {
@@ -63,39 +67,28 @@
     "medias": [
       {
         "fileId": "62ef77ce4f4a680beb3c0f46",
-        "fileName": "03e5c1e4-211a-49c6-a7de-eecbb78532f1.jpg",
-        "fileType": "image"
+        "fileName": "03e5c1e4-211a-49c6-a7de-eecbb78532f1.jpg"
       },
       {
         "fileId": "62ef77ff4f4a6874dc3c0f9a",
-        "fileName": "4005f331-ad29-4942-80a6-6e8b75d5c659.jpg",
-        "fileType": "image"
+        "fileName": "4005f331-ad29-4942-80a6-6e8b75d5c659.jpg"
       },
       {
         "fileId": "62ef7819a536594385dafdfd",
-        "fileName": "95494b07-9eb9-401c-a4bb-dfd4b634a334.jpg",
-        "fileType": "image"
+        "fileName": "95494b07-9eb9-401c-a4bb-dfd4b634a334.jpg"
       },
       {
         "fileId": "62ef781e0cf52b1b84881e86",
-        "fileName": "066b3148-d806-4801-a094-2c8775d7a30f.jpg",
-        "fileType": "image"
+        "fileName": "066b3148-d806-4801-a094-2c8775d7a30f.jpg"
       },
       {
         "fileId": "638e4cf1e809dd54b006e606",
-        "fileName": "ca6de332-b8c1-4723-93af-1474267eaaa7.jpg",
-        "fileType": "image"
+        "fileName": "ca6de332-b8c1-4723-93af-1474267eaaa7.jpg"
       },
       {
         "fileId": "63a3c640e809dd54b05e6fa0",
-        "fileName": "16f45cb5-8f68-4d5c-9d25-f5aadd277c4b.jpg",
-        "fileType": "image"
+        "fileName": "16f45cb5-8f68-4d5c-9d25-f5aadd277c4b.jpg"
       }
     ]
-  },
-  "phone": "+595992261076",
-  "slug": "stefania-595992261076",
-  "accept": true,
-  "approved": true,
-  "until": "2024-02-20T14:13:08.007Z"
+  }
 }

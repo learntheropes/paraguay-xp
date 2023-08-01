@@ -26,7 +26,7 @@ const {
   slug
 } = escort;
 
-const cover = find(medias, { fileType: 'image' });
+const cover = medias[0];
 
 const { t } = useI18n();
 

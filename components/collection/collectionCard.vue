@@ -39,7 +39,7 @@ const {
   updatedAt
 } = escort;
 
-const cover = find(medias, { fileType: 'image' });
+const cover = medias[0];
 
 const {
   locale,

@@ -1,4 +1,9 @@
 {
+  "phone": "+595992261076",
+  "slug": "darina-595992261076",
+  "accept": true,
+  "approved": true,
+  "until": "2024-02-19T14:13:08.007Z",
   "age": {
     "dateOfBirth": "1992-12-15T23:00:00.000Z",
     "dateMatch": true,
@@ -62,39 +67,28 @@
     "medias": [
       {
         "fileId": "62efd19a4f4a68598a3c8d72",
-        "fileName": "457cca9e-e974-4afb-a2cb-0df4a0e86da8.jpg",
-        "fileType": "image"
+        "fileName": "457cca9e-e974-4afb-a2cb-0df4a0e86da8.jpg"
       },
       {
         "fileId": "62efd19fd16c39d127d2a682",
-        "fileName": "216d2bc8-2b4f-49e4-b5a6-87524a6ce051.jpg",
-        "fileType": "image"
+        "fileName": "216d2bc8-2b4f-49e4-b5a6-87524a6ce051.jpg"
       },
       {
         "fileId": "62efd1a288a0e982f45daa33",
-        "fileName": "c6478e57-3ac1-44b0-a75b-82d1fce7a0f9.jpg",
-        "fileType": "image"
+        "fileName": "c6478e57-3ac1-44b0-a75b-82d1fce7a0f9.jpg"
       },
       {
         "fileId": "63a40026e809dd54b0e11f9b",
-        "fileName": "f000a5fd-25b0-42b1-b727-8d49e654feb0.jpg",
-        "fileType": "image"
+        "fileName": "f000a5fd-25b0-42b1-b727-8d49e654feb0.jpg"
       },
       {
         "fileId": "63a40029e809dd54b0e1210e",
-        "fileName": "f3794376-7c64-4567-a267-405c07181d95.jpg",
-        "fileType": "image"
+        "fileName": "f3794376-7c64-4567-a267-405c07181d95.jpg"
       },
       {
         "fileId": "63a4002ce809dd54b0e12275",
-        "fileName": "48bf014b-1c5d-425d-8c48-20e7882bc264.jpg",
-        "fileType": "image"
+        "fileName": "48bf014b-1c5d-425d-8c48-20e7882bc264.jpg"
       }
     ]
-  },
-  "phone": "+595992261076",
-  "slug": "darina-595992261076",
-  "accept": true,
-  "approved": true,
-  "until": "2024-02-19T14:13:08.007Z"
+  }
 }

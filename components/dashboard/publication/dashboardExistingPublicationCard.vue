@@ -28,7 +28,7 @@ const {
   until
 } = publication;
 
-const cover = find(medias, { fileType: 'image' });
+const cover = medias[0];
 
 const isLoading = ref(true);
 const isConfirmActive = ref(false);
@@ -49,7 +49,7 @@ const editAdv = async () => {
   const escort = await queryContent('escorts', slug).findOne();
   const publication = merge(escort, { age: { ids }});
   store.setPublication(publication);
-  await navigateTo(`/${locale.value}/dashboard/publication/1`);
+  await navigateTo(`/${locale.value}/dashboard/publication/registry`);
 };
 
 const removeAdv = async () => {

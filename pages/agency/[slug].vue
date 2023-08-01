@@ -5,11 +5,15 @@ definePageMeta({
 
 const { t } = useI18n();
 
-const { params: { slug }} = useRoute();
+const {
+  params: {
+    slug
+  }
+} = useRoute();
 
 const { $capitalize } = useNuxtApp();
 
-const agency = (slug === 'indipendent') ? 'indipendent' : $capitalize(decodeURIComponent(slug).replace(/-/g,' '));
+const agency = (slug === 'indipendent') ? 'indipendent' : $capitalize(decodeURIComponent(slug).replace(/-/g,' ').toLowerCase());
 
 const {
   public: {
@@ -41,10 +45,14 @@ useHead({
     },
   ],
 });
+// const { phone } = await queryContent('escorts').where({ registr: { basic: { agency: decodeURIComponent(slug).replace(/-/g,' ')}}}).findOne();
+// const message = encodeURIComponent(`Hola *${$capitalize(title)}*. He visto su pagina en *ParaguayXP*. Me gustaria recibir mas informacion cerca las chicas`);
+// const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phone.replace('+','')}&text=${message}`;
 </script>
 
 <template>
   <NuxtLayout>
+    {{ phone }}
     <div class="container">
       <h1 class="title is-3">{{ title }}</h1>
       <div class="subtitle is-5">{{ description }}</div>

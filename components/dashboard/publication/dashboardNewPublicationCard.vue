@@ -6,7 +6,7 @@ const { locale } = useI18n();
 const setNewAdv = async () => {
 
   store.$reset();
-  await navigateTo(`/${locale.value}/dashboard/publication/0`);
+  await navigateTo(`/${locale.value}/dashboard/publication/age`);
 };
 
 </script>

@@ -1,4 +1,9 @@
 {
+  "phone": "+595992261076",
+  "slug": "vittoria-595992261076",
+  "accept": true,
+  "approved": true,
+  "until": "2023-11-26T03:05:12.093Z",
   "age": {
     "dateOfBirth": "1994-12-15T23:00:00.000Z",
     "dateMatch": true,
@@ -57,14 +62,8 @@
     "medias": [
       {
         "fileId": "632fc3b33226066c5c4e6739",
-        "fileName": "a374fe14-8bc2-4e10-93cd-e370dbc06494.jpg",
-        "fileType": "image"
+        "fileName": "a374fe14-8bc2-4e10-93cd-e370dbc06494.jpg"
       }
     ]
-  },
-  "phone": "+595992261076",
-  "slug": "vittoria-595992261076",
-  "accept": true,
-  "approved": true,
-  "until": "2023-11-26T03:05:12.093Z"
+  }
 }
