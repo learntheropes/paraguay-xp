@@ -152,7 +152,8 @@ export default defineNuxtConfig({
     ignores: [
       '/back-links/',
       '/competitors/',
-      '/notes/'
+      '/notes/',
+      '/age/'
     ]
   },
 
@@ -222,28 +223,20 @@ export default defineNuxtConfig({
     },
     storage: {
       db: {
-        driver: 'github',
+        driver: 'custom-github',
         repo: process.env.GITHUB_REPO,
         token: process.env.GITHUB_TOKEN,
         branch: 'main',
-        dir: '/lang',
+        base: 'lang',
       },
       content: {
-        driver: 'github',
+        driver: 'custom-github',
         repo: process.env.GITHUB_REPO,
         token: process.env.GITHUB_TOKEN,
         branch: 'main',
-        dir: '/content',
-      },
-    },
-  },
-
-  vite: {
-    resolve: {
-      alias: {
-        path: "path-browserify",
+        base: 'content',
       }
-    }
+    },
   },
 
   delayHydration: {
