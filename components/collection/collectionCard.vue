@@ -46,7 +46,7 @@ const {
   t
 } = useI18n();
 
-const agencyName = (agency === 'indipendent') ? t('indipendent') : agency;
+const agencyName = (agency === 'indipendent') ? t('agency.indipendent') : agency;
 
 const {
   name: routeName

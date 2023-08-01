@@ -72,10 +72,6 @@ import * as faceapi from 'face-api.js';
     else if (direction === 'right') navigatePrevious();
   };
 
-  const watermarkOptions = {
-    content: 'ParaguayXP'
-  };
-
   const isBlurred = ref(false);
 
   const blurImage = async () => {
@@ -185,33 +181,31 @@ import * as faceapi from 'face-api.js';
           </video>
         </div>
         <div class="is-hidden-mobile">
-          <!-- <Watermark :options="watermarkOptions"> -->
-            <figure 
-              v-if="modalType === 'image'"
-              class="image"
-            >
-              <img
-                id="image"
-                preset="modal"
-                loading="lazy"
-                @load="onLoad"
-                :src="'/gallery/modal/' + modalSrc"
-              />
-            </figure>
-            <video
-              v-else
-              id="video"
-              class="ltr-fit-tablet"
-              @canplay="onLoad"
-              :controls="false"
-              autoplay
-              loop
-              muted
-              playsInline
-            >
-              <source :src="'/gallery/modal/' + modalSrc" />
-            </video>
-          <!-- </Watermark> -->
+          <figure 
+            v-if="modalType === 'image'"
+            class="image"
+          >
+            <img
+              id="image"
+              preset="modal"
+              loading="lazy"
+              @load="onLoad"
+              :src="'/gallery/modal/' + modalSrc"
+            />
+          </figure>
+          <video
+            v-else
+            id="video"
+            class="ltr-fit-tablet"
+            @canplay="onLoad"
+            :controls="false"
+            autoplay
+            loop
+            muted
+            playsInline
+          >
+            <source :src="'/gallery/modal/' + modalSrc" />
+          </video>
         </div>
       </div>
       <div class="ltr-is-center-right is-hidden-mobile">

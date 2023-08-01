@@ -14,6 +14,11 @@ const {
 });
 
 const {
+  registry: {
+    basic: {
+      name
+    }
+  },
   gallery: {
     medias
   }
@@ -34,8 +39,8 @@ const openModal = (medias, index) => {
         <img
           @click.native="openModal(medias, index)"
           :src="('/gallery/preview/' + media.fileName).split('.')[0] + '.webp'"
-          :alt="$t('escort.gallery.previewOf')+' '+ escort.name"
-          :title="$t('escort.gallery.previewOf') +' ' + escort.name"
+          :alt="$t('escort.gallery.previewOf')+' '+ name"
+          :title="$t('escort.gallery.previewOf') +' ' + name"
           loading="eager"
           width="288"
           height="288"

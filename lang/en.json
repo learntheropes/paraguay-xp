@@ -172,7 +172,16 @@
     "underDevelopment": "The dashboard is still under construction.\n\nTo place or edit your publication, please send a whatsapp to",
     "publications": "Advertisements",
     "payments": "Payments",
-    "newPayment": "New payment"
+    "newPayment": "New payment",
+    "publication": {
+      "publicationDelated": "Your advertisement has been deleted. It now needs admin approval.",
+      "activeUntil": "Active until",
+      "deleteConfirm": "Do you really want to delete this publication?",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "newPublication": "New adv",
+      "addNewPublication": "Add new advertisement"
+    }
   },
   "and": "&",
   "birthDate": "Date of birth",
@@ -187,7 +196,6 @@
   "description": "Description",
   "descriptionPlaceholder": "Write your description here. You can add emoji using the icon on the right.",
   "descriptionFreeWorning": "To get a free lifetime advertisement you still miss {missingWords} words.",
-  "publicationDelated": "Your advertisement has been deleted. It now needs admin approval.",
   "ending": "Ending",
   "threeMonthsTitle": "Three months free advertisement",
   "threeMonthsDescription": "By publishing your advertisement before {limitDate} you are eligible for three months of free advertisement.",
@@ -202,12 +210,6 @@
   "acceptPubication": "By submitting this information you allow to publish the content on our website.",
   "errorAccept": "You must accept the publication terms",
   "publicationSaved": "Your advertisement has been saved. It now needs admin approval.",
-  "newPublication": "New adv",
-  "addNewPublication": "Add new adv",
-  "activeUntil": "Active until",
-  "deleteConfirm": "Do you really want to delete this publication?",
-  "cancel": "Cancel",
-  "confirm": "Confirm",
   "registry": "Registration",
   "name": "Name",
   "indipendentOrAgency": "Indipendent or Agency",

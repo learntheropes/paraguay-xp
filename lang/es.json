@@ -172,7 +172,16 @@
     "underDevelopment": "El panel aún está en construcción.\n\nPara colocar o editar su publicación, envíe un whatsapp a",
     "publications": "Anuncios",
     "payments": "Pagos",
-    "newPayment": "Nuevo pago"
+    "newPayment": "Nuevo pago",
+    "publication": {
+      "publicationDelated": "Su anuncio ha sido eliminado. Ahora necesita la aprobación del administrador.",
+      "activeUntil": "Activo hasta el",
+      "deleteConfirm": "¿Realmente quieres eliminar esta publicación??",
+      "cancel": "Borrar",
+      "confirm": "Confirmar",
+      "newPublication": "Nuevo anuncio",
+      "addNewPublication": "Anadir nuevo anuncio"
+    }
   },
   "and": "y", 
   "birthDate": "Fecha de nacimiento",
@@ -187,7 +196,6 @@
   "description": "Descripción",
   "descriptionPlaceholder": "Escribe tu descripción aquí. Puede agregar emoji usando el ícono a la derecha.",
   "descriptionFreeWorning": "Para aprovechar de una publicación gratis de por vida, aún te falta escibir {missingWords} palabras.",
-  "publicationDelated": "Su anuncio ha sido eliminado. Ahora necesita la aprobación del administrador.",
   "ending": "Finalización",
   "threeMonthsTitle": "Tres meses de publicación gratis",
   "threeMonthsDescription": "Al publicar tu anuncio antes del {limitDate} tienes derecho a 3 meses de publicación gratis.",
@@ -202,12 +210,6 @@
   "acceptPubication": "Al enviar esta información, usted permite publicar el contenido en nuestra página web.",  
   "errorAccept": "Debes aceptar las condiciones de publicación",
   "publicationSaved": "Su anuncio ha sido guardado. Ahora necesita la aprobación del administrador.",
-  "newPublication": "Nuevo anuncio",
-  "addNewPublication": "Anadir nuevo anuncio", 
-  "activeUntil": "Activo hasta el",
-  "deleteConfirm": "¿Realmente quieres eliminar esta publicación??",
-  "cancel": "Borrar",
-  "confirm": "Confirmar", 
   "registry": "Registro",
   "name": "Nombre",
   "indipendentOrAgency": "Independiente o Agencia",

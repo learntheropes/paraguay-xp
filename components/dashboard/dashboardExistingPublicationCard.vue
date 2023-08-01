@@ -7,12 +7,28 @@ const {
   publication,
 } = defineProps({
   publication: {
-    type: String,
+    type: Object,
     required: true
   }
 });
 
-publication.cover = find(publication.gallery.medias, { fileType: 'image' });
+const {
+  age: {
+    dateOfBirth
+  },
+  gallery: {
+    medias
+  },
+  registry: {
+    basic: {
+      name
+    }
+  },
+  slug,
+  until
+} = publication;
+
+const cover = find(medias, { fileType: 'image' });
 
 const isLoading = ref(true);
 const isConfirmActive = ref(false);
@@ -25,22 +41,23 @@ const { $dayjs } = useNuxtApp();
 
 const { locale } = useI18n();
 
+const store = usePublicationStore();
+
 const editAdv = async () => {
 
-  const { data: age } = await useFetch(`api/dashboard/age/${publication.slug}`);
-  const escort = await queryContent('escorts', publication.slug).findOne();
-  const publication = merge(escort, age);
-  const store = usePublicationStore();
+  const { data: ids } = await useFetch(`api/dashboard/age/${slug}`);
+  const escort = await queryContent('escorts', slug).findOne();
+  const publication = merge(escort, { age: {ids}});
   store.setPublication(publication);
-  await navigateTo(`/${locale.value}/dashboard/publication?tab=1`);
+  await navigateTo(`/${locale.value}/dashboard/publication/1`);
 };
 
 const removeAdv = async () => {
-  await useFetch(`/api/dashboard/publication/${publication.slug}`, {
+  await useFetch(`/api/dashboard/publication/${slug}`, {
     method: 'delete'
   });
   isConfirmActive.value = false;
-  NotificationProgrammatic.open(t('publicationDelated'));
+  NotificationProgrammatic.open(t('dashboard.publication.publicationDelated'));
 };
 
 const confirmRemoveAdv = () => {
@@ -60,10 +77,10 @@ const closeConfirm = () => {
           <OLoading :full-page="false" v-model:active="isLoading" />
           <NuxtImg
             preset="preview"
-            :src="('/gallery/preview/' + publication.cover.fileName).split('.')[0] + '.webp'"
-            :alt="$t('escort.gallery.previewOf') + ' ' + publication.registry.basic.name"
-            :title="$t('escort.gallery.previewOf') + ' ' + publication.registry.basic.name"
-            :loading="(index == 0) ? 'eager' : 'lazy'"
+            :src="('/gallery/preview/' + cover.fileName).split('.')[0] + '.webp'"
+            :alt="$t('escort.gallery.previewOf') + ' ' + name"
+            :title="$t('escort.gallery.previewOf') + ' ' + name"
+            loading="lazy"
             width="288"
             height="288"
             @load="onImgLoad"
@@ -73,12 +90,12 @@ const closeConfirm = () => {
       <div class="card-content">
         <div @click="editAdv" class="content">
           <p class="title is-5 is-capitalized">
-            {{ publication.registry.basic.name }}&nbsp;
-            <span class="is-hidden-mobile">({{ $dayjs(new Date()).diff(publication.age.dateOfBirth, 'years') }})</span>
+            {{ name }}&nbsp;
+            <span class="is-hidden-mobile">({{ $dayjs(new Date()).diff(dateOfBirth, 'years') }})</span>
           </p>
           <p class="subtitle is-6 is-capitalized">
-            {{$t('activeUntil')}} {{ $dayjs(publication.until).format('DD/MM/YY') }}<br>
-            ({{ $dayjs(publication.until).fromNow(true) }})
+            {{$t('dashboard.publication.activeUntil')}} {{ $dayjs(until).format('DD/MM/YY') }}<br>
+            ({{ $dayjs(until).fromNow(true) }})
           </p>
         </div>
       </div>
@@ -94,11 +111,11 @@ const closeConfirm = () => {
     <OModal v-model="isConfirmActive" :width="200" scroll="keep">
       <div class="card">
         <div class="card-content">
-          <div class="content">{{ $t('deleteConfirm')}}</div>
+          <div class="content">{{ $t('dashboard.publication.deleteConfirm')}}</div>
         </div>
         <footer class="card-footer">
-          <div @click="closeConfirm" class="card-footer-item">{{ $t('cancel')}}</div>
-          <div @click="removeAdv" class="card-footer-item">{{ $t('confirm')}}</div>
+          <div @click="closeConfirm" class="card-footer-item">{{ $t('dashboard.publication.cancel')}}</div>
+          <div @click="removeAdv" class="card-footer-item">{{ $t('dashboard.publication.confirm')}}</div>
         </footer>      
       </div>
     </OModal>
