@@ -47,7 +47,7 @@ const editAdv = async () => {
 
   const { data: ids } = await useFetch(`api/dashboard/age/${slug}`);
   const escort = await queryContent('escorts', slug).findOne();
-  const publication = merge(escort, { age: {ids}});
+  const publication = merge(escort, { age: { ids }});
   store.setPublication(publication);
   await navigateTo(`/${locale.value}/dashboard/publication/1`);
 };
