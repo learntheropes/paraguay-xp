@@ -35,7 +35,7 @@ const { $dayjs } = useNuxtApp();
 <template>
   <section class="section">
     <h2 class="title is-5">{{ $t('escort.about.title') }}</h2>
-    <div class="subtitle is-6">{{$t('blog.published')}} {{ $dayjs(updatedAt).fromNow() }} ({{ $dayjs(updatedAt).format('DD/MM/YYYY') }})</div>
+    <div class="subtitle is-6">{{$t('blog.published')}} {{ $dayjs(updatedAt).fromNow() }}</div>
     <div v-if="translated">
         <div class="content has-new-line">{{ about[locale] }}</div>
         <OButton

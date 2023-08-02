@@ -65,10 +65,10 @@
     "plural": "Agencias",
     "indipendent": "Independiente",
     "indipendents": "Independientes",
-    "title": "Escort agencia {agency}",
-    "description": "Escort y acompañantes de la agencia {agency} en Paraguay",
-    "titleIndipendent": "Escort indipendientes",
-    "descriptionIndipendent": "Escort y acompañantes indipendientes en Paraguay"
+    "titleAgency": "Agencia {agency}",
+    "descriptionAgency": "Escort y acompañantes de la agencia {agency} en Paraguay",
+    "title": "Escort indipendientes",
+    "description": "Escort y acompañantes indipendientes en Paraguay"
   },
   "area": {
     "singolar": "Barrio",

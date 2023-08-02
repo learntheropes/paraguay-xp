@@ -67,8 +67,8 @@
     "indipendents": "Independentes",
     "title": "Acompanhantes independentes",
     "description": "Acompanhantes independentes no Paraguai",
-    "titleAgency": "Acompanhantes da agência {agency}",
-    "descriptionAgency": "Acompanhantes fornecidos pela agência {agency} no Paraguai para voce"
+    "titleAgency": "Agência {agency}",
+    "descriptionAgency": "Acompanhantes fornecidos pela agência {agency} no Paraguai"
   },
   "area": {
     "singolar": "Bairro",

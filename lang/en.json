@@ -65,10 +65,10 @@
     "plural": "Agencies",
     "indipendent": "Indipendent",
     "indipendents": "Indipendents",
-    "title": "Escorts of {agency} agency",
-    "description": "Escorts provided by the agency {agency} in Paraguay for you",
-    "titleIndipendent": "Indipendent escorts",
-    "descriptionIndipendent": "Indipendent escort in Paraguay"
+    "titleAgency": "{agency} agency",
+    "descriptionAgency": "Escorts provided by the agency {agency} in Paraguay for you",
+    "title": "Indipendent escorts",
+    "description": "Indipendent escort in Paraguay"
   },
   "area": {
     "singolar": "Area",
