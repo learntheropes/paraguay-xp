@@ -35,10 +35,10 @@ onMounted(async () => {
 
       image.onload = async () => {
 
-        let ctx = modal.getContext('2d');
+        let ctxModal = modal.getContext('2d');
         modal.width = image.width;
         modal.height = image.height;
-        ctx.drawImage(image, 0,0, modal.width, modal.height);
+        ctxModal.drawImage(image, 0,0, modal.width, modal.height);
 
         const detections = await faceapi.detectAllFaces(image, new faceapi.TinyFaceDetectorOptions());
 
@@ -54,25 +54,25 @@ onMounted(async () => {
               height: parseInt(detection.box.height.toString())
             }
 
-            ctx.filter = 'blur('+ box.spread +'px)';
-            ctx.drawImage(modal, box.x, box.y, box.width, box.height, box.x, box.y, box.width, box.height);
-            ctx.filter = 'none';
-            ctx.fillStyle = 'rgba(255,255,255,0.2)';
-            ctx.fillRect(box.x, box.y, box.width, box.height);
+            ctxModal.filter = 'blur('+ box.spread +'px)';
+            ctxModal.drawImage(modal, box.x, box.y, box.width, box.height, box.x, box.y, box.width, box.height);
+            ctxModal.filter = 'none';
+            ctxModal.fillStyle = 'rgba(255,255,255,0.2)';
+            ctxModal.fillRect(box.x, box.y, box.width, box.height);
           });
         }
 
         const applyWatermark = (txt) => {
-          ctx.translate(- modal.width, 0);
-          ctx.rotate( - Math.PI / 4);
-          ctx.font = "20px Arial";
-          ctx.fillStyle = 'rgba(128, 128, 128, 0.5)';
+          ctxModal.translate(- modal.width, 0);
+          ctxModal.rotate( - Math.PI / 4);
+          ctxModal.font = "20px Arial";
+          ctxModal.fillStyle = 'rgba(128, 128, 128, 0.5)';
           var txtHeight = 25;
           var offset = 25;
-          var w = Math.ceil(ctx.measureText(txt).width);
+          var w = Math.ceil(ctxModal.measureText(txt).width);
           var txt = new Array(w * 10).join(txt + '     ');
           for (var i = 0; i < Math.ceil(modal.height * 2 / txtHeight); i++) {
-            ctx.fillText(txt, -(i * offset), i * txtHeight);
+            ctxModal.fillText(txt, -(i * offset), i * txtHeight);
           }
         }
         applyWatermark('ParaguayXP');
