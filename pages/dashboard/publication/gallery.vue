@@ -10,7 +10,7 @@ const store = usePublicationStore();
 
 const { t } = useI18n();
 
-const blurText = computed(() => (store.gallery.blur) ? t('yes') : t('no'));
+const blurText = computed(() => (store.gallery.blur) ? t('dashboard.gallery.yes') : t('dashboard.gallery.no'));
 
 const isLoading = ref(false)
 
@@ -75,7 +75,7 @@ onMounted(async () => {
             ctx.fillText(txt, -(i * offset), i * txtHeight);
           }
         }
-        applyWatermark('Paraguay XP');
+        applyWatermark('ParaguayXP');
 
         const ctxPreview = preview.getContext("2d");
         preview.width = 288;
@@ -134,7 +134,7 @@ onMounted(async () => {
             </div>
           </div>
         </section>
-        <OField :label="$t('blurPhoto')">
+        <OField :label="$t('dashboard.gallery.blur')">
           <OSwitch v-model="store.gallery.blur">
             {{ $t(blurText) }}
           </OSwitch>

@@ -181,6 +181,11 @@
       "confirm": "Confirm",
       "newPublication": "New adv",
       "addNewPublication": "Add new advertisement"
+    },
+    "gallery": {
+      "blur": "Blur face on photos",
+      "yes": "Yes",
+      "no": "No"
     }
   },
   "and": "&",
@@ -233,9 +238,6 @@
   "fromHour": "From hour",
   "toHour": "To hour",
   "selectHour": "Select a time",
-  "blurPhoto": "Blur face on photos",
-  "yes": "Yes",
-  "no": "No",
   "bookSession": "Book a photo session",
   "galleryFreeWorning": "To get a free lifetime advertisement you still miss {missingGallery} photos.",
   "type": "Advertisement type",

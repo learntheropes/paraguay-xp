@@ -181,6 +181,11 @@
       "confirm": "Confirmar",
       "newPublication": "Nuevo anuncio",
       "addNewPublication": "Anadir nuevo anuncio"
+    },
+    "gallery": {
+      "blur": "Ocultar rostro en fotos",
+      "yes": "Sí",
+      "no": "No"
     }
   },
   "and": "y", 
@@ -233,9 +238,6 @@
   "fromHour": "Desde la hora",
   "toHour": "Hasta la hora",
   "selectHour": "Seleccione una orario",
-  "blurPhoto": "Ocultar rostro en fotos",
-  "yes": "Sí",
-  "no": "No",
   "bookSession": "Reserva una sesión de foto",
   "galleryFreeWorning": "Para aprovechar de una publicación gratis de por vida, aún te falta cargar {missingGallery} fotos.",
   "type": "Tipo de anuncio",
