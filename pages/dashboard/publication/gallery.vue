@@ -97,59 +97,53 @@ onMounted(async () => {
 </script>
 
 <template>
-  <canvas id="modal" class="is-hidden-tablet is-hidden-mobile" /> 
-  <canvas id="preview" class="is-hidden-tablet is-hidden-mobile" /> 
-  <div class="full-body">
-    <LayoutNavbar />
-    <main class="main-content">
-      <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
-      <div class="container">
-        <section class="section">
-          <div class="columns is-mobile is-multiline">
-            <div v-for="(image, index) in store.gallery.medias" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
-              <DashboardPublicationGalleryCard :image="image" :index="index" />
-            </div>
-            <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
-              <OField class="is-hidden-mobile is-hidden-tablet">
-                <input
-                  :name="$t('media')"
-                  id="input"
-                  ref="input"
-                  style="display:none"
-                  type="file"
-                  accept="image/*"
-                  multiple
-                >
-              </OField>
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-square">
-                      <img src="/others/white.jpg">
-                    </figure>
-                    <div @click="$refs.input.click()" class="card-content is-overlay ltr-is-center-center">
-                      <OIcon icon="plus-circle" size="large" />
+  <NuxtLayout>
+    <canvas id="modal" class="is-hidden-tablet is-hidden-mobile" /> 
+    <canvas id="preview" class="is-hidden-tablet is-hidden-mobile" /> 
+    <div class="full-body">
+      <LayoutNavbar />
+      <main class="main-content">
+        <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
+        <div class="container">
+          <section class="section">
+            <OField :label="$t('dashboard.gallery.blur')">
+              <OSwitch v-model="store.gallery.blur">
+                {{ $t(blurText) }}
+              </OSwitch>
+            </OField>
+            <div class="columns is-mobile is-multiline">
+              <div v-for="(image, index) in store.gallery.medias" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
+                <DashboardPublicationGalleryCard :image="image" :index="index" />
+              </div>
+              <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
+                <OField class="is-hidden-mobile is-hidden-tablet">
+                  <input
+                    :name="$t('media')"
+                    id="input"
+                    ref="input"
+                    style="display:none"
+                    type="file"
+                    accept="image/*"
+                    multiple
+                  >
+                </OField>
+                  <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-square">
+                        <img src="/others/white.jpg">
+                      </figure>
+                      <div @click="$refs.input.click()" class="card-content is-overlay ltr-is-center-center">
+                        <OIcon icon="plus-circle" size="large" />
+                      </div>
                     </div>
                   </div>
-                </div>
+              </div>
             </div>
-          </div>
-        </section>
-        <OField :label="$t('dashboard.gallery.blur')">
-          <OSwitch v-model="store.gallery.blur">
-            {{ $t(blurText) }}
-          </OSwitch>
-        </OField>
-      </div>
-    </main>
-    <LayoutFooter />
-  </div>
+          </section>
+        </div>
+      </main>
+      <LayoutFooter />
+    </div>
+  </NuxtLayout>
 </template>
 
-<style scoped>
-@media screen and (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-</style>
