@@ -2,8 +2,9 @@ export const usePublicationStore = defineStore('publication', {
   state: () => ({
     age: {
       dateOfBirth: null,
-      dateMatch: false,
-      faceMatch: 0
+      idFront: null,
+      idBack: null,
+      dateMatch: false
     },
     description: {
       head: {
@@ -86,6 +87,12 @@ export const usePublicationStore = defineStore('publication', {
       this.accept = accept;
       this.approved = approved;
       this.until = until;
+    },
+    setIdFront(base64) {
+      this.age.idFront = base64
+    },
+    setIdBack(base64) {
+      this.age.idBack = base64
     },
     setAge(age) {
       this.age = age;

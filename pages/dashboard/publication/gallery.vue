@@ -127,16 +127,16 @@ onMounted(async () => {
                     multiple
                   >
                 </OField>
-                  <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-square">
-                        <img src="/others/white.jpg">
-                      </figure>
-                      <div @click="$refs.input.click()" class="card-content is-overlay ltr-is-center-center">
-                        <OIcon icon="plus-circle" size="large" />
-                      </div>
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-square">
+                      <img src="/others/white.jpg">
+                    </figure>
+                    <div @click="$refs.input.click()" class="card-content is-overlay ltr-is-center-center">
+                      <OIcon icon="plus-circle" size="large" />
                     </div>
                   </div>
+                </div>
               </div>
             </div>
           </section>

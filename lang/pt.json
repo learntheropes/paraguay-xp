@@ -181,8 +181,16 @@
       "cancel": "Cancelar",
       "confirm": "Confirme",
       "newPublication": "Novo anúncio",
-      "addNewPublication": "Adicionar novo anúncio"
+      "addNewPublication": "Adicionar novo anúncio",
+      "previous": "Anterior",  
+      "next": "Próximo"
     },
+    "age": {
+      "warning": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.\n\nYour information and your document will be never shared with anyone unless we will be asked by the authorities.",
+      "birthDate": "Fecha de nacimiento",
+      "idFront": "Frente do ID",
+      "idBack": "Volta do ID"
+    }, 
     "gallery": {
       "blur": "Ocultar rosto nas fotos",
       "yes": "Sim",
@@ -190,13 +198,6 @@
     }
   },
   "and": "e",
-  "birthDate": "Data de nascimento",
-  "uploadFrontId": "Carregar a frente do ID",
-  "uploadBackId": "Carregar ID de volta",
-  "uploadSelfie": "Carregar selfie",
-  "idFrontInput": "Frente de ID",
-  "idBackInput": "ID de volta",
-  "selfieInput": "Selfie",
   "head": "Título",
   "headPlaceholder": "Escreva sua título aqui.",
   "description": "Descrição",
@@ -283,8 +284,6 @@
   "backToTheHomePage": "Voltar a página inicial",
   "home": "Pagina inicial",
   "account": "Conta",
-  "ageMessage": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.",
-  "documentPrivacy": "Your information and your document will be never shared with anyone unless we will be asked by the authorities.",
   "duration": "Duração",
   "until": "Até",
   "price": "Preço",
@@ -307,8 +306,6 @@
   "photoSession": "O primeiro pagamento inclui uma sessão de foto com um fotógrafo glamoroso!",
   "paymentInstructions1": "Em algumas horas enviaremos os dados para o pagamento para o seu WhatsApp.",
   "paymentInstructions2": "Você pode pagar por transferência bancária ou depósito em dinheiro.",
-  "previous": "Anterior",  
-  "next": "Próximo",
   "conventional": "Convencional",
   "complete": "Completo",
   "instructions": "Instruções",

@@ -180,22 +180,23 @@
       "cancel": "Borrar",
       "confirm": "Confirmar",
       "newPublication": "Nuevo anuncio",
-      "addNewPublication": "Anadir nuevo anuncio"
+      "addNewPublication": "Anadir nuevo anuncio",
+      "previous": "Anterior",  
+      "next": "Siguiente"
     },
+    "age": {
+      "warning": "Por ley, tenemos que verificar que tienes al menos 18 años para publicar tu anuncio.\n\nSu información y su documento nunca se compartirán con nadie a menos que las autoridades nos lo soliciten.",
+      "birthDate": "Fecha de nacimiento",
+      "idFront": "Cédula frontal",
+      "idBack": "Cédula posterior"
+    }, 
     "gallery": {
       "blur": "Ocultar rostro en fotos",
       "yes": "Sí",
       "no": "No"
     }
   },
-  "and": "y", 
-  "birthDate": "Fecha de nacimiento",
-  "uploadFrontId": "Subir cédula frontal",
-  "uploadBackId": "Subir cédula posterior",
-  "uploadSelfie": "Subir selfie",
-  "idFrontInput": "Cédula frontal",
-  "idBackInput": "Cédula posterior",
-  "selfieInput": "Selfie",  
+  "and": "y",  
   "head": "Título",
   "headPlaceholder": "Escribe tu título aquí",
   "description": "Descripción",
@@ -281,8 +282,6 @@
   "backToTheHomePage": "Volver a la página de inicio",
   "home": "Página de inicio",
   "account": "Cuenta",
-  "ageMessage": "Por ley, tenemos que verificar que tienes al menos 18 años para publicar tu anuncio.",
-  "documentPrivacy": "Su información y su documento nunca se compartirán con nadie a menos que las autoridades nos lo soliciten.",
   "duration": "Duración",
   "until": "Hasta",
   "price": "Precio",
@@ -305,8 +304,6 @@
   "photoSession": "El primer pago incluye una sesión de foto con un fotógrafo de glamour!",
   "paymentInstructions1": "En unas horas te vamos a enviar a tu whatsapp los datos por el pago.",
   "paymentInstructions2": "Puedes abonar con transferencia bancaria o deposito en efectivo.",
-  "previous": "Anterior",  
-  "next": "Siguiente",
   "conventional": "Convencional",
   "complete": "Completo",
   "instructions": "Instrucciones",

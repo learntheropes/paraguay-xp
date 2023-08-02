@@ -180,8 +180,16 @@
       "cancel": "Cancel",
       "confirm": "Confirm",
       "newPublication": "New adv",
-      "addNewPublication": "Add new advertisement"
+      "addNewPublication": "Add new advertisement",
+      "previous": "Previous",
+      "next": "Next"
     },
+    "age": {
+      "warning": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.\n\nYour information and your document will be never shared with anyone unless we will be asked by the authorities.",
+      "birthDate": "Date of birth",
+      "idFront": "ID front",
+      "idBack": "ID back"
+    }, 
     "gallery": {
       "blur": "Blur face on photos",
       "yes": "Yes",
@@ -189,13 +197,6 @@
     }
   },
   "and": "&",
-  "birthDate": "Date of birth",
-  "uploadFrontId": "Upload ID front",
-  "uploadBackId": "Upload ID back",
-  "uploadSelfie": "Upload selfie",
-  "idFrontInput": "ID front",
-  "idBackInput": "ID back",
-  "selfieInput": "Selfie",
   "head": "Title",
   "headPlaceholder": "Write your title here",
   "description": "Description",
@@ -281,8 +282,6 @@
   "backToTheHomePage": "Back to the home page",
   "home": "Home page",
   "account": "Account",
-  "ageMessage": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.",
-  "documentPrivacy": "Your information and your document will be never shared with anyone unless we will be asked by the authorities.",
   "duration": "Duration",
   "until": "Until",
   "price": "Price",
@@ -305,8 +304,6 @@
   "photoSession": "The first payment includes a photo session with a glamour photographer!",
   "paymentInstructions1": "In a few hours we will send you the data for the payment to your WhatsApp.",
   "paymentInstructions2": "You can pay by bank transfer or cash deposit.",
-  "previous": "Previous",
-  "next": "Next",
   "conventional": "Conventional",
   "complete": "Complete",
   "instructions": "Instructions",
