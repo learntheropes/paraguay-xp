@@ -68,27 +68,27 @@ export const usePublicationStore = defineStore('publication', {
   }),
 
   actions: {
-    // setPublication({ 
-    //   age, 
-    //   description, 
-    //   registry, 
-    //   gallery, 
-    //   phone, 
-    //   slug, 
-    //   accept, 
-    //   approved, 
-    //   until
-    // }) {
-    //   this.age = age;
-    //   this.description = description;
-    //   this.registry = registry;
-    //   this.gallery = gallery;
-    //   this.phone = phone
-    //   this.slug = slug;
-    //   this.accept = accept;
-    //   this.approved = approved;
-    //   this.until = until;
-    // },
+    setPublication({ 
+      phone,
+      slug,
+      accept,
+      approved,
+      until,
+      age, 
+      description, 
+      registry, 
+      gallery
+    }) {
+      this.age = age;
+      this.description = description;
+      this.registry = registry;
+      this.gallery = gallery;
+      this.phone = phone
+      this.slug = slug;
+      this.accept = accept;
+      this.approved = approved;
+      this.until = until;
+    },
     setIdFront(base64) {
       this.age.idFront = base64
     },
