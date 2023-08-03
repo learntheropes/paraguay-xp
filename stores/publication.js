@@ -1,5 +1,10 @@
 export const usePublicationStore = defineStore('publication', {
   state: () => ({
+    phone: null,
+    slug: null,
+    accept: false,
+    approved: false,
+    until: null,
     age: {
       dateOfBirth: null,
       idFront: null,
@@ -30,9 +35,9 @@ export const usePublicationStore = defineStore('publication', {
       },
       basic: {
         name: null,
-        category: null,
-        agency: null,
-        nationality: null,
+        category: 'indipendent',
+        agency: 'indipendent',
+        nationality: 'PY',
       },
       body: {
         height: null,
@@ -54,12 +59,7 @@ export const usePublicationStore = defineStore('publication', {
         outcall: false,
         dinner: false,
         travel: false
-      },
-      phone: null,
-      slug: null,
-      accept: false,
-      approved: false,
-      until: null
+      }
     },
     gallery: {
       medias: [],
@@ -96,13 +96,20 @@ export const usePublicationStore = defineStore('publication', {
       this.age.idBack = base64
     },
     setAgeAtRegistration(dateOfBirth) {
-      this.ageAtRegistration = dateOfBirth.toLocaleDateString();
+      const { $dayjs } = useNuxtApp();
+      this.ageAtRegistration = $dayjs(new Date()).diff(dateOfBirth, 'years');
     },
     setDateMatch(dateOfBirth, textFront, textBack) {
       const arr = dateOfBirth.toLocaleDateString().split('/');
       const dateFront = `${arr[1]}-${arr[0]}-${arr[2]}`;
       const dateBack = `${arr[2].substring(2, 4)}${arr[0]}${arr[1]}`;
       this.dateMatch = (textFront.includes(dateFront) || textBack.includes(dateBack)) ? true : false;
+    },
+    setCategory(category) {
+      this.registry.basic.category = category;
+    },
+    setAgency(agency) {
+      this.registry.basic.agency = agency;
     },
     // setAge(age) {
     //   this.age = age;

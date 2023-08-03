@@ -155,7 +155,6 @@
     "verification": "A senha não é mais válida.\n\nPode já ter sido usada ou expirado.",
     "generic": "Falha no logon genérico.",
     "disconnected": "O login está temporariamente desativado para manutenção.\n\nPor favor, tente novamente mais tarde ou entre em contato conosco no Whatsapp em"
-
   },
   "auth": {
     "logoutEmail": "Sair",
@@ -191,6 +190,13 @@
       "idFront": "Frente do ID",
       "idBack": "Volta do ID"
     }, 
+    "registry": {
+      "basic": {
+        "title": "Cadastro",
+        "name": "Nome",
+        "category": "Independente ou Agência"
+      }
+    },
     "gallery": {
       "blur": "Ocultar rosto nas fotos",
       "yes": "Sim",
@@ -217,9 +223,6 @@
   "acceptPubication": "Ao enviar essas informações, você permite a publicação do conteúdo em nosso site.",
   "errorAccept": "Você deve aceitar os termos de publicação", 
   "publicationSaved": "Seu anúncio foi salvo. Agora precisa de aprovação do administrador.",  
-  "registry": "Cadastro",
-  "name": "Nome",
-  "indipendentOrAgency": "Independente ou Agência",
   "selectArea": "Selecione seu bairro",
   "services": "Serviços",
   "selectServices": "Selecione os serviços oferecidos",

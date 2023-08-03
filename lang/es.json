@@ -190,6 +190,13 @@
       "idFront": "Cédula frontal",
       "idBack": "Cédula posterior"
     }, 
+    "registry": {
+      "basic": {
+        "title": "Registro",
+        "name": "Nombre",
+        "category": "Independiente o Agencia"
+      }
+    },
     "gallery": {
       "blur": "Ocultar rostro en fotos",
       "yes": "Sí",
@@ -216,9 +223,6 @@
   "acceptPubication": "Al enviar esta información, usted permite publicar el contenido en nuestra página web.",  
   "errorAccept": "Debes aceptar las condiciones de publicación",
   "publicationSaved": "Su anuncio ha sido guardado. Ahora necesita la aprobación del administrador.",
-  "registry": "Registro",
-  "name": "Nombre",
-  "indipendentOrAgency": "Independiente o Agencia",
   "selectArea": "Selecciona tu barrio",
   "selectServices": "Seleccione los servicios ofrecidos",
   "body": "Figura",

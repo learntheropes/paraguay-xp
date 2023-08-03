@@ -189,7 +189,14 @@
       "birthDate": "Date of birth",
       "idFront": "ID front",
       "idBack": "ID back"
-    }, 
+    },
+    "registry": {
+      "basic": {
+        "title": "Registration",
+        "name": "Name",
+        "category": "Indipendent or Agency"
+      }
+    },
     "gallery": {
       "blur": "Blur face on photos",
       "yes": "Yes",
@@ -216,9 +223,6 @@
   "acceptPubication": "By submitting this information you allow to publish the content on our website.",
   "errorAccept": "You must accept the publication terms",
   "publicationSaved": "Your advertisement has been saved. It now needs admin approval.",
-  "registry": "Registration",
-  "name": "Name",
-  "indipendentOrAgency": "Indipendent or Agency",
   "selectArea": "Select your area",
   "selectServices": "Select offered services",
   "body": "Figure",

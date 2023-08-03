@@ -88,7 +88,6 @@ const goNext = async () => {
     <div class="notification is-warning has-text-centered">
       <div class="content ltr-has-new-line">{{$t('dashboard.age.warning')}}</div>
     </div>
-    <pre v-if="store.age.dateOfBirth">{{ store.age.dateOfBirth.toLocaleDateString() }} - {{ $dayjs(new Date()).diff(store.age.dateOfBirth, 'years') }}</pre>
     <VForm
       name="age"
       :validation-schema="validationSchema"
@@ -198,8 +197,8 @@ const goNext = async () => {
           <div class="level-item">
             <OField>
               <OButton
-                variant="primary"
                 native-type="submit"
+                variant="primary"
                 outlined
               >{{  $t('dashboard.publication.next') }}</OButton>
             </OField>
