@@ -45,7 +45,7 @@ export const usePublicationStore = defineStore('publication', {
         waist: null,
         hips: null
       },
-      extra: [],
+      extra: ['rolePlay'],
       languages: {
         spanish: null,
         spanish: null,
@@ -110,6 +110,13 @@ export const usePublicationStore = defineStore('publication', {
     },
     setAgency(agency) {
       this.registry.basic.agency = agency;
+    },
+    setOneExtra(value) {
+      this.registry.extra.push(value)
+    },
+    removeOneExtra(value) {
+      const index = this.registry.extra.indexOf(value);
+      this.registry.extra.splice(index,1);
     },
     // setAge(age) {
     //   this.age = age;
