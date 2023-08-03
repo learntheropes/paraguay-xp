@@ -72,16 +72,15 @@ const idBack = computed({
   }
 });
 
-const isLoading = ref(false)
+const isLoading = ref(false);
 
 const goNext = async () => {
+  
   isLoading.value = true
-  const arr = store.age.dateOfBirth.toLocaleDateString().split('/');
-  const dateFront = `${arr[1]}-${arr[0]}-${arr[2]}`;
-  const dateBack = `${arr[2].substring(2, 4)}${arr[0]}${arr[1]}`;
   const { data: { text: textFront } } = await Tesseract.recognize(store.age.idFront, 'spa');
   const { data: { text: textBack } } = await Tesseract.recognize(store.age.idBack, 'spa');
-  store.age.dateMatch = (textFront.includes(dateFront) || textBack.includes(dateBack)) ? true : false;
+  store.setDateMatch(store.age.dateOfBirth, textFront, textBack);
+  store.setAgeAtRegistration(store.age.dateOfBirth);
   isLoading.value = false
   await navigateTo(`/${locale.value}/dashboard/publication/registry`);
 }
@@ -194,7 +193,6 @@ const goNext = async () => {
           </VField>
         </div>
       </div>
-
       <div class="level is-mobile">
         <div class="level-left">
           <div class="level-item">

@@ -4,7 +4,8 @@ export const usePublicationStore = defineStore('publication', {
       dateOfBirth: null,
       idFront: null,
       idBack: null,
-      dateMatch: false
+      dateMatch: false,
+      ageAtRegistration: null
     },
     description: {
       head: {
@@ -67,65 +68,74 @@ export const usePublicationStore = defineStore('publication', {
   }),
 
   actions: {
-    setPublication({ 
-      age, 
-      description, 
-      registry, 
-      gallery, 
-      phone, 
-      slug, 
-      accept, 
-      approved, 
-      until
-    }) {
-      this.age = age;
-      this.description = description;
-      this.registry = registry;
-      this.gallery = gallery;
-      this.phone = phone
-      this.slug = slug;
-      this.accept = accept;
-      this.approved = approved;
-      this.until = until;
-    },
+    // setPublication({ 
+    //   age, 
+    //   description, 
+    //   registry, 
+    //   gallery, 
+    //   phone, 
+    //   slug, 
+    //   accept, 
+    //   approved, 
+    //   until
+    // }) {
+    //   this.age = age;
+    //   this.description = description;
+    //   this.registry = registry;
+    //   this.gallery = gallery;
+    //   this.phone = phone
+    //   this.slug = slug;
+    //   this.accept = accept;
+    //   this.approved = approved;
+    //   this.until = until;
+    // },
     setIdFront(base64) {
       this.age.idFront = base64
     },
     setIdBack(base64) {
       this.age.idBack = base64
     },
-    setAge(age) {
-      this.age = age;
+    setAgeAtRegistration(dateOfBirth) {
+      this.ageAtRegistration = dateOfBirth.toLocaleDateString();
     },
-    setDescription(description) {
-      this.description = description;
+    setDateMatch(dateOfBirth, textFront, textBack) {
+      const arr = dateOfBirth.toLocaleDateString().split('/');
+      const dateFront = `${arr[1]}-${arr[0]}-${arr[2]}`;
+      const dateBack = `${arr[2].substring(2, 4)}${arr[0]}${arr[1]}`;
+      this.dateMatch = (textFront.includes(dateFront) || textBack.includes(dateBack)) ? true : false;
     },
-    setRegistry(registry) {
-      this.registry = registry;
-    },
-    setGallery(gallery) {
-      this.gallery = gallery;
-    },
+    // setAge(age) {
+    //   this.age = age;
+    // },
+    // setDescription(description) {
+    //   this.description = description;
+    // },
+    // setRegistry(registry) {
+    //   this.registry = registry;
+    // },
+    // setGallery(gallery) {
+    //   this.gallery = gallery;
+    // },
     addOneMedia(media) {
       this.gallery.medias.push(media);
     },
     removeOneMedia(index) {
       this.gallery.medias.splice(index,1);
     },
-    setPhone(phone) {
-      this.phone = phone;
-    },
-    setSlug(slug) {
-      this.slug = slug;
-    },
-    setAccept(accept) {
-      this.accept = accept;
-    },
-    setApproved(approved) {
-      this.approved = approved;
-    },
-    setUntil(until) {
-      this.until = until;
-    }
+    // setPhone(phone) {
+    //   this.phone = phone;
+    // },
+    // setSlug(slug) {
+    //   this.slug = slug;
+    // },
+    // setAccept(accept) {
+    //   this.accept = accept;
+    // },
+    // setApproved(approved) {
+    //   this.approved = approved;
+    // },
+    // setUntil(until) {
+    //   this.until = until;
+    // }
   }
 })
