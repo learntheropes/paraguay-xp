@@ -194,9 +194,17 @@
       "basic": {
         "title": "Registration",
         "name": "Name",
-        "category": "Indipendent or Agency",
-        "languages": "Languages"
-
+        "category": "Indipendent or Agency"
+      },
+      "languages": {
+        "title": "Languages"
+      },
+      "availability": {
+        "title": "Availability",
+        "fromDay": "From week day",
+        "toDay": "To week day",
+        "fromHour": "From time",
+        "toHour": "To time"
       },
       "body": {
         "title": "Figure"
@@ -232,7 +240,6 @@
   "selectServices": "Select offered services",
   "extraFreeWorning": "To get a free lifetime advertisement you still have to select {missingExtra} special services.",
   "selectLevel": "Select your level",
-  "availability": "Availability",
   "selectHour": "Select a time",
   "bookSession": "Book a photo session",
   "galleryFreeWorning": "To get a free lifetime advertisement you still miss {missingGallery} photos.",

@@ -28,10 +28,10 @@ export const usePublicationStore = defineStore('publication', {
     },
     registry: {
       availability: {
-        fromDay: null,
-        toDay: null,
-        fromHour: null,
-        toHour: null
+        fromDay: 0,
+        toDay: 6,
+        fromHour: 0,
+        toHour: 24
       },
       basic: {
         name: null,

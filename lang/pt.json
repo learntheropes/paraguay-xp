@@ -194,8 +194,17 @@
       "basic": {
         "title": "Cadastro",
         "name": "Nome",
-        "category": "Independente ou Agência",
-        "languages": "Línguas"
+        "category": "Independente ou Agência"
+      },
+      "languages": {
+        "title": "Línguas"
+      },
+      "availability": {
+        "title": "Disponibilidade",
+        "fromDay": "A partir do dia",
+        "toDay": "Até o dia",
+        "fromHour": "A partir do momento",
+        "toHour": "Até a hora"
       },
       "body": {
         "title": "Corpo"
@@ -232,7 +241,6 @@
   "selectServices": "Selecione os serviços oferecidos",
   "extraFreeWorning": "Para aproveitar uma publicação gratuita vitalícia, você ainda precisa selecionar {missingExtra} serviços especiais.",
   "selectLevel": "Selecione seu nível",
-  "availability": "Disponibilidade",
   "selectHour": "Selecione um horário",
   "bookSession": "Agende uma sessão de foto",
   "galleryFreeWorning": "Para aproveitar uma publicação gratuita vitalícia, você ainda precisa enviar {missingMedia} fotos.",

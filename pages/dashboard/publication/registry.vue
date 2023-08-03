@@ -103,6 +103,44 @@ const providedExtras = extras.map((extra, index) => computed({
 
 const extraText = (extra) => store.registry.extra.indexOf(extra) >= 0 ? t('dashboard.gallery.yes') : t('dashboard.gallery.no');
 
+const week = [
+  'monday',
+  'tuesday',
+  'wednesday',
+  'thursday',
+  'friday',
+  'saturday',
+  'sunday'
+]
+
+const day = [
+  '00:00',
+  '01:00',
+  '02:00',
+  '03:00',
+  '04:00',
+  '05:00',
+  '06:00',
+  '07:00',
+  '08:00',
+  '09:00',
+  '10:00',
+  '11:00',
+  '12:00',
+  '13:00',
+  '14:00',
+  '15:00',
+  '16:00',
+  '17:00',
+  '18:00',
+  '19:00',
+  '20:00',
+  '21:00',
+  '22:00',
+  '23:00',
+  '24:00',
+]
+
 const goPrevious = async () => {
   await navigateTo(`/${locale.value}/dashboard/publication/age`)
 }
@@ -120,7 +158,7 @@ const goNext = async () => {
       @submit="goNext"
     >
       <div class="columns is-centered">
-        <div class="column is-one-quarter">
+        <div class="column is-one-fifth">
           <div class="box">
             <h2 class="title is-4">{{ $t('dashboard.registry.basic.title') }}</h2>
             <VField
@@ -201,7 +239,11 @@ const goNext = async () => {
                 </OSelect>
               </OField>
             </VField>
-            <h2 class="title is-4">{{ $t('dashboard.registry.basic.languages') }}</h2>
+          </div>
+        </div>
+        <div class="column in-one-fifth">
+          <div class="box">
+            <h2 class="title is-4">{{ $t('dashboard.registry.languages.title') }}</h2>
             <OField
               v-for="language of languages"
               :key="language"
@@ -220,7 +262,7 @@ const goNext = async () => {
             </OField>
           </div>
         </div>
-        <div class="column is-one-quarter">
+        <div class="column is-one-fifth">
           <div class="box">
             <h2 class="title is-4">{{ $t('dashboard.registry.body.title') }}</h2>
             <VField
@@ -313,7 +355,7 @@ const goNext = async () => {
             </VField>
           </div>
         </div>
-        <div class="column is-one-quarter">
+        <div class="column is-one-fifth">
           <div class="box">
             <h2 class="title is-4">{{ $t('escort.services.title') }}</h2>
             <OField
@@ -396,6 +438,115 @@ const goNext = async () => {
                   expanded
                 />
                 <OInput disabled v-model="pyg" class="cm"/>
+              </OField>
+            </VField>
+          </div>
+        </div>
+        <div class="column is-one-fifth">
+          <div class="box">
+            <h2 class="title is-4">{{ $t('dashboard.registry.availability.title') }}</h2>
+            <VField
+              name="fromDay"
+              :label="$t('dashboard.registry.availability.fromDay')"
+              v-slot="{ handleChange, handleBlur, value, errors }"
+              v-model="store.registry.availability.fromDay"
+            >
+              <OField
+                :label="$t('dashboard.registry.availability.fromDay')"
+                :variant="errors[0] ? 'danger' : null"
+                :message="errors[0] ? errors[0] : ''"
+              >
+              <OSelect
+                  :model-value="value"
+                  @update:modelValue="handleChange"
+                  @change="handleChange"
+                  @blur="handleBlur"
+                  expanded
+                >
+                  <option
+                    v-for="(day, index) of week"
+                    :key="day"
+                    :value="index"
+                  >{{ $t(`escort.availability.${day}`) }}</option>
+                </OSelect>
+              </OField>
+            </VField>
+            <VField
+              name="toDay"
+              :label="$t('dashboard.registry.availability.toDay')"
+              v-slot="{ handleChange, handleBlur, value, errors }"
+              v-model="store.registry.availability.toDay"
+            >
+              <OField
+                :label="$t('dashboard.registry.availability.toDay')"
+                :variant="errors[0] ? 'danger' : null"
+                :message="errors[0] ? errors[0] : ''"
+              >
+              <OSelect
+                  :model-value="value"
+                  @update:modelValue="handleChange"
+                  @change="handleChange"
+                  @blur="handleBlur"
+                  expanded
+                >
+                  <option
+                    v-for="(day, index) of week"
+                    :key="day"
+                    :value="index"
+                  >{{ $t(`escort.availability.${day}`) }}</option>
+                </OSelect>
+              </OField>
+            </VField>
+            <VField
+              name="fromHour"
+              :label="$t('dashboard.registry.availability.fromHour')"
+              v-slot="{ handleChange, handleBlur, value, errors }"
+              v-model="store.registry.availability.fromHour"
+            >
+              <OField
+                :label="$t('dashboard.registry.availability.fromHour')"
+                :variant="errors[0] ? 'danger' : null"
+                :message="errors[0] ? errors[0] : ''"
+              >
+              <OSelect
+                  :model-value="value"
+                  @update:modelValue="handleChange"
+                  @change="handleChange"
+                  @blur="handleBlur"
+                  expanded
+                >
+                  <option
+                    v-for="(hour, index) of day"
+                    :key="hour"
+                    :value="index"
+                  >{{ day[index] }}</option>
+                </OSelect>
+              </OField>
+            </VField>
+            <VField
+              name="toHour"
+              :label="$t('dashboard.registry.availability.toHour')"
+              v-slot="{ handleChange, handleBlur, value, errors }"
+              v-model="store.registry.availability.toHour"
+            >
+              <OField
+                :label="$t('dashboard.registry.availability.toHour')"
+                :variant="errors[0] ? 'danger' : null"
+                :message="errors[0] ? errors[0] : ''"
+              >
+              <OSelect
+                  :model-value="value"
+                  @update:modelValue="handleChange"
+                  @change="handleChange"
+                  @blur="handleBlur"
+                  expanded
+                >
+                  <option
+                    v-for="(hour, index) of day"
+                    :key="hour"
+                    :value="index"
+                  >{{ day[index] }}</option>
+                </OSelect>
               </OField>
             </VField>
           </div>

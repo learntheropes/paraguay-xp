@@ -25,8 +25,8 @@
   },
   "registry": {
     "availability": {
-      "fromDay": 1,
-      "toDay": 6,
+      "fromDay": 0,
+      "toDay": 5,
       "fromHour": 14,
       "toHour": 23
     },
