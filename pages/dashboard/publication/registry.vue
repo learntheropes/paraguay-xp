@@ -3,6 +3,7 @@ import services from '~/assets/js/services';
 import extras from '~/assets/js/extras'
 import neighbourhoods from '~/assets/js/neighbourhoods';
 import cities from '~/assets/js/cities';
+import { languages, levels } from '~/assets/js/languages';
 
 definePageMeta({
   layout: 'dashboard'
@@ -54,7 +55,7 @@ const validationSchema = computed(() => {
       }
     },
     area: {
-      required: (store.registry.services.incall) ? true : false
+      required: store.registry.services.incall
     },
     rate: {
       required: true,
@@ -92,13 +93,15 @@ const serviceText = (service) => store.registry.services[service] ? t('dashboard
 
 const providedExtras = extras.map((extra, index) => computed({
   get() {
-    return store.registry.extra.indexOf(extra) >= 0 ? true: false
+    return store.registry.extra.indexOf(extra) >= 0;
   },
   set(value) {
     if (value) store.setOneExtra(extras[index])
-    else store.removeOneExtra(extras[index])
+    else store.removeOneExtra(extras[index]);
   }
 }));
+
+const extraText = (extra) => store.registry.extra.indexOf(extra) >= 0 ? t('dashboard.gallery.yes') : t('dashboard.gallery.no');
 
 const goPrevious = async () => {
   await navigateTo(`/${locale.value}/dashboard/publication/age`)
@@ -198,6 +201,23 @@ const goNext = async () => {
                 </OSelect>
               </OField>
             </VField>
+            <h2 class="title is-4">{{ $t('dashboard.registry.basic.languages') }}</h2>
+            <OField
+              v-for="language of languages"
+              :key="language"
+              :label="$t(`escort.details.${language}`)"
+            >
+              <OSelect
+                v-model="store.registry.languages[language]"
+                expanded
+              >
+                <option
+                  v-for="level of levels"
+                  :key="level"
+                  :value="level"
+                >{{ $t(`escort.details.${level}`) }}</option>
+              </OSelect>
+            </OField>
           </div>
         </div>
         <div class="column is-one-quarter">
@@ -353,7 +373,7 @@ const goNext = async () => {
             >
               <OSwitch
                 v-model="providedExtras[index]"
-              >{{ serviceText(service) }}</OSwitch>
+              >{{ extraText(extra) }}</OSwitch>
             </OField>
 
             <VField

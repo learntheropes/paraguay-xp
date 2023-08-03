@@ -194,7 +194,8 @@
       "basic": {
         "title": "Registro",
         "name": "Nombre",
-        "category": "Independiente o Agencia"
+        "category": "Independiente o Agencia",
+        "languages": "Idiomas"
       },
       "body": {
         "title": "Figura"
@@ -229,7 +230,6 @@
   "selectArea": "Selecciona tu barrio",
   "selectServices": "Seleccione los servicios ofrecidos",
   "extraFreeWorning": "Para aprovechar de una publicación gratis de por vida, aún te falta seleccionar {missingExtra} servicios especiales.",
-  "languages": "Idiomas",
   "selectLevel": "Selecciona tu nivel",
   "availability": "Disponibilidad",
   "selectHour": "Seleccione una orario",

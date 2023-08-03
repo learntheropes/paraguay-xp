@@ -1,8 +1,8 @@
-import { createStorage, defineDriver } from "unstorage";
-import { $fetch } from "ofetch";
-import merge from 'lodash.merge';
-import isArray from 'lodash.isarray';
-import isPlainObject from 'lodash.isplainobject';
+const { createStorage, defineDriver } = import("unstorage");
+const { $fetch } = import("ofetch");
+const merge = import('lodash.merge');
+const isArray = import('lodash.isarray');
+const isPlainObject = import('lodash.isplainobject');
 
 const defaultOptions = {
   repo: "",

@@ -194,7 +194,9 @@
       "basic": {
         "title": "Registration",
         "name": "Name",
-        "category": "Indipendent or Agency"
+        "category": "Indipendent or Agency",
+        "languages": "Languages"
+
       },
       "body": {
         "title": "Figure"
@@ -229,7 +231,6 @@
   "selectArea": "Select your area",
   "selectServices": "Select offered services",
   "extraFreeWorning": "To get a free lifetime advertisement you still have to select {missingExtra} special services.",
-  "languages": "Languages",
   "selectLevel": "Select your level",
   "availability": "Availability",
   "selectHour": "Select a time",

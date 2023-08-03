@@ -45,10 +45,10 @@ export const usePublicationStore = defineStore('publication', {
         waist: null,
         hips: null
       },
-      extra: ['rolePlay'],
+      extra: [],
       languages: {
-        spanish: null,
-        spanish: null,
+        spanish: 'native',
+        english: null,
         portuguese: null
       },
       rate: null,

@@ -12,6 +12,9 @@ import {
   excludedRoutes,
 } from './assets/js/locales';
 
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
 export default defineNuxtConfig({
 
   // site: {
@@ -221,22 +224,28 @@ export default defineNuxtConfig({
         base: './content'
       }
     },
-    storage: {
-      db: {
-        driver: 'custom-github',
-        repo: process.env.GITHUB_REPO,
-        token: process.env.GITHUB_TOKEN,
-        branch: 'main',
-        base: 'lang',
-      },
-      content: {
-        driver: 'custom-github',
-        repo: process.env.GITHUB_REPO,
-        token: process.env.GITHUB_TOKEN,
-        branch: 'main',
-        base: 'content',
-      }
-    },
+    // storage: {
+    //   'custom-github': {
+    //     driver: resolve(
+    //       dirname(fileURLToPath(import.meta.url)),
+    //       "assets/js/customGithubDriver.js"
+    //     )
+    //   },
+    //   db: {
+    //     driver: 'custom-github',
+    //     repo: process.env.GITHUB_REPO,
+    //     token: process.env.GITHUB_TOKEN,
+    //     branch: 'main',
+    //     base: 'lang',
+    //   },
+    //   content: {
+    //     driver: 'custom-github',
+    //     repo: process.env.GITHUB_REPO,
+    //     token: process.env.GITHUB_TOKEN,
+    //     branch: 'main',
+    //     base: 'content',
+    //   }
+    // },
   },
 
   delayHydration: {

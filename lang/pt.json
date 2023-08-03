@@ -194,7 +194,8 @@
       "basic": {
         "title": "Cadastro",
         "name": "Nome",
-        "category": "Independente ou Agência"
+        "category": "Independente ou Agência",
+        "languages": "Línguas"
       },
       "body": {
         "title": "Corpo"
@@ -230,7 +231,6 @@
   "services": "Serviços",
   "selectServices": "Selecione os serviços oferecidos",
   "extraFreeWorning": "Para aproveitar uma publicação gratuita vitalícia, você ainda precisa selecionar {missingExtra} serviços especiais.",
-  "languages": "Línguas",
   "selectLevel": "Selecione seu nível",
   "availability": "Disponibilidade",
   "selectHour": "Selecione um horário",
