@@ -195,6 +195,9 @@
         "title": "Registro",
         "name": "Nombre",
         "category": "Independiente o Agencia"
+      },
+      "body": {
+        "title": "Figura"
       }
     },
     "gallery": {
@@ -225,7 +228,6 @@
   "publicationSaved": "Su anuncio ha sido guardado. Ahora necesita la aprobación del administrador.",
   "selectArea": "Selecciona tu barrio",
   "selectServices": "Seleccione los servicios ofrecidos",
-  "body": "Figura",
   "extraFreeWorning": "Para aprovechar de una publicación gratis de por vida, aún te falta seleccionar {missingExtra} servicios especiales.",
   "languages": "Idiomas",
   "selectLevel": "Selecciona tu nivel",

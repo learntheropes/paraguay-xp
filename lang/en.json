@@ -195,6 +195,9 @@
         "title": "Registration",
         "name": "Name",
         "category": "Indipendent or Agency"
+      },
+      "body": {
+        "title": "Figure"
       }
     },
     "gallery": {
@@ -225,7 +228,6 @@
   "publicationSaved": "Your advertisement has been saved. It now needs admin approval.",
   "selectArea": "Select your area",
   "selectServices": "Select offered services",
-  "body": "Figure",
   "extraFreeWorning": "To get a free lifetime advertisement you still have to select {missingExtra} special services.",
   "languages": "Languages",
   "selectLevel": "Select your level",

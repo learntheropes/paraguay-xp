@@ -14,7 +14,39 @@ const validationSchema = {
   },
   nationality: {
     required: true
-  }
+  },
+  height: {
+    required: true,
+    integer: true,
+    between: {
+      min: 100,
+      max: 200
+    }
+  },
+  breast: {
+    required: true,
+    integer: true,
+    between: {
+      min: 50,
+      max: 200
+    }
+  },
+  waist: {
+    required: true,
+    integer: true,
+    between: {
+      min: 30,
+      max: 100
+    }
+  },
+  hips: {
+    required: true,
+    integer: true,
+    between: {
+      min: 50,
+      max: 200
+    }
+  },
 }
 
 const category = computed({
@@ -38,6 +70,7 @@ const {
 
 const categoryText = computed(() => (store.registry.basic.category === 'agency') ? t('agency.singolar') : t('agency.indipendent'));
 
+const cm = ref('cm')
 
 const goPrevious = async () => {
   await navigateTo(`/${locale.value}/dashboard/publication/age`)
@@ -139,14 +172,100 @@ const goNext = async () => {
             </VField>
           </div>
         </div>
-
         <div class="column is-one-quarter">
           <div class="box">
             <h2 class="title is-4">{{ $t('dashboard.registry.body.title') }}</h2>
+            <VField
+              name="height"
+              :label="$t('escort.details.height')"
+              v-slot="{ handleChange, handleBlur, value, errors }"
+              v-model="store.registry.body.height"
+            >
+              <OField
+                :label="$t('escort.details.height')"
+                :variant="errors[0] ? 'danger' : null"
+                :message="errors[0] ? errors[0] : ''"
+              >
+                <OInput
+                  :label="$t('escort.details.height')"
+                  :model-value="value"
+                  @update:modelValue="handleChange"
+                  @change="handleChange"
+                  @blur="handleBlur"
+                  expanded
+                />
+                <OInput disabled v-model="cm" class="cm"/>
+              </OField>
+            </VField>
+            <VField
+              name="breast"
+              :label="$t('escort.details.breast')"
+              v-slot="{ handleChange, handleBlur, value, errors }"
+              v-model="store.registry.body.breast"
+            >
+              <OField
+                :label="$t('escort.details.breast')"
+                :variant="errors[0] ? 'danger' : null"
+                :message="errors[0] ? errors[0] : ''"
+              >
+                <OInput
+                  :label="$t('escort.details.breast')"
+                  :model-value="value"
+                  @update:modelValue="handleChange"
+                  @change="handleChange"
+                  @blur="handleBlur"
+                  expanded
+                />
+                <OInput disabled v-model="cm" class="cm"/>
+              </OField>
+            </VField>
+            <VField
+              name="waist"
+              :label="$t('escort.details.waist')"
+              v-slot="{ handleChange, handleBlur, value, errors }"
+              v-model="store.registry.body.waist"
+            >
+              <OField
+                :label="$t('escort.details.waist')"
+                :variant="errors[0] ? 'danger' : null"
+                :message="errors[0] ? errors[0] : ''"
+              >
+                <OInput
+                  :label="$t('escort.details.waist')"
+                  :model-value="value"
+                  @update:modelValue="handleChange"
+                  @change="handleChange"
+                  @blur="handleBlur"
+                  expanded
+                />
+                <OInput disabled v-model="cm" class="cm"/>
+              </OField>
+            </VField>
+            <VField
+              name="hips"
+              :label="$t('escort.details.hips')"
+              v-slot="{ handleChange, handleBlur, value, errors }"
+              v-model="store.registry.body.hips"
+            >
+              <OField
+                :label="$t('escort.details.hips')"
+                :variant="errors[0] ? 'danger' : null"
+                :message="errors[0] ? errors[0] : ''"
+              >
+                <OInput
+                  :label="$t('escort.details.hips')"
+                  :model-value="value"
+                  @update:modelValue="handleChange"
+                  @change="handleChange"
+                  @blur="handleBlur"
+                  expanded
+                />
+                <OInput disabled v-model="cm" class="cm"/>
+              </OField>
+            </VField>
           </div>
         </div>
       </div>
-
       <div class="level is-mobile">
         <div class="level-left">
           <div class="level-item">
@@ -174,3 +293,10 @@ const goNext = async () => {
     </VForm>
   </NuxtLayout>
 </template>
+
+<style>
+.cm {
+  width: 3rem;
+  background-color: lightgrey;
+}
+</style>

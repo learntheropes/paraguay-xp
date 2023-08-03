@@ -2,7 +2,7 @@ import { Form, Field } from 'vee-validate';
 import { defineRule, configure } from "vee-validate";
 import { setLocale } from '@vee-validate/i18n';
 import { localize  } from '@vee-validate/i18n';
-import { required } from '@vee-validate/rules';
+import { required, integer, between } from '@vee-validate/rules';
 
 import en from '@vee-validate/i18n/dist/locale/en.json';
 import es from '@vee-validate/i18n/dist/locale/es.json';
@@ -13,6 +13,8 @@ export default defineNuxtPlugin(nuxtApp => {
   const { t } = nuxtApp.$i18n;
 
   defineRule('required', required);
+  defineRule('integer', integer);
+  defineRule('between', between);
 
   defineRule('code', value => {
     const num = parseInt(value)

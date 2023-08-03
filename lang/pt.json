@@ -195,6 +195,9 @@
         "title": "Cadastro",
         "name": "Nome",
         "category": "Independente ou Agência"
+      },
+      "body": {
+        "title": "Corpo"
       }
     },
     "gallery": {
@@ -226,7 +229,6 @@
   "selectArea": "Selecione seu bairro",
   "services": "Serviços",
   "selectServices": "Selecione os serviços oferecidos",
-  "body": "Corpo",
   "extraFreeWorning": "Para aproveitar uma publicação gratuita vitalícia, você ainda precisa selecionar {missingExtra} serviços especiais.",
   "languages": "Línguas",
   "selectLevel": "Selecione seu nível",
