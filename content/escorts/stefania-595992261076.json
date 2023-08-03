@@ -56,10 +56,11 @@
     "rate": 400000,
     "services": {
       "virtual": false,
-      "incall": true,
+      "incall": false,
       "outcall": true,
       "dinner": true,
-      "travel": true
+      "travel": true,
+       "area": null
     }
   },
   "gallery": {
