@@ -50,14 +50,14 @@
     "title": "Acompanhantes com serviço {extra}",
     "description": "Acompanhantes que oferecem o serviço de {extra} no Paraguai",
     "kiss": "Beijos",
-    "couple": "Atenção aos casais",
+    "couple": "Casais",
     "bdsm": "BDSM",
     "rolePlay": "Mudando de papéis",
     "threesome": "Sexo a três",
     "full": "Completo",
     "fantasy": "Fantasias",
     "pornostar": "Estrela pornô",
-    "massage": "Massagens relaxantes",
+    "massage": "Massagen",
     "whatAbout": "Sobre o que é isso?"
   },
   "agency": {
@@ -111,7 +111,7 @@
     },
     "services": {
       "title": "Serviços",
-      "virtual": "Serviços Virtuais",
+      "virtual": "Virtuais",
       "incall": "Departamento Próprio",
       "outcall": "Hotel, Motel e Domicílio",
       "dinner": "Jantares",

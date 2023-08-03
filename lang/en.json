@@ -50,14 +50,14 @@
     "title": "Escorts offering {extra} service",
     "description": "Escorts that offer {extra} service in Paraguay",
     "kiss": "Kisses",
-    "couple": "Attention to couples",
+    "couple": "Couples",
     "bdsm": "BDSM",
-    "rolePlay": "Role play games",
+    "rolePlay": "Role play",
     "threesome": "Threesomes",
     "full": "Full",
     "fantasy": "Fantasies",
     "pornostar": "Pornostar experince",
-    "massage": "Relaxing massages",
+    "massage": "Massages",
     "whatAbout": "What is it about?"
   },
   "agency": {
@@ -111,7 +111,7 @@
     },
     "services": {
       "title": "Services",
-      "virtual": "Virtual Services",
+      "virtual": "Virtual",
       "incall": "Incall",
       "outcall": "Outcall",
       "dinner": "Dinners",

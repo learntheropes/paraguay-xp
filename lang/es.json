@@ -50,14 +50,14 @@
     "description": "Escort y acompañantes que ofrecen el servicio de {extra} en Paraguay",
     "plural": "Servicios especiales",
     "kiss": "Besos reales",
-    "couple": "Atención a parejas",
+    "couple": "Parejas",
     "bdsm": "BDSM",
     "rolePlay": "Cambio de roles",
     "threesome": "Tríos",
     "full": "Completo",
     "fantasy": "Fantasías",
     "pornostar": "Pornostar",
-    "massage": "Masajes relajantes",
+    "massage": "Masajes",
     "whatAbout": "¿De qué se trata?"
   },
   "agency": {
@@ -111,7 +111,7 @@
     },
     "services": {
       "title": "Servicios",
-      "virtual": "Servicios Virtuales",
+      "virtual": "Virtuales",
       "incall": "Depto Proprio",
       "outcall": "Hotel, Motel y Domicilio",
       "dinner": "Cenas",
