@@ -45,9 +45,7 @@ const idFront = computed({
         const img = document.getElementById('imgFrontId');
         img.src = result
       };
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   }
 });
 
@@ -66,16 +64,14 @@ const idBack = computed({
         const img = document.getElementById('imgBackId');
         img.src = result
       };
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   }
 });
 
 const isLoading = ref(false);
 
 const goNext = async () => {
-  
+
   isLoading.value = true
   const { data: { text: textFront } } = await Tesseract.recognize(store.age.idFront, 'spa');
   const { data: { text: textBack } } = await Tesseract.recognize(store.age.idBack, 'spa');
