@@ -5,18 +5,21 @@ import mongoose from 'mongoose';
 import QRCode from 'qrcode';
 
 let client;
-const defineNitroPlugin = async () => {
+const defineNitroPlugin = async (nitroApp) => {
 
-  const { 
+  // nitroApp.hooks.hook('start', (nuxt) => console.log('nuxt', nuxt));
+
+  const {
     mongodbUri,
-    public :{
+    public: {
       isDeployed
     }
   } = useRuntimeConfig();
-
   await mongoose.connect(mongodbUri);
 
   const store = new MongoStore({ mongoose });
+
+  console.log(mongoose.connection.readyState)
   
   client = new Client({
     puppeteer: {
@@ -32,9 +35,9 @@ const defineNitroPlugin = async () => {
       }
     },
     authStrategy: new RemoteAuth({
-      store: store,
-      backupSyncIntervalMs: 1000 * 60 * 5,
-      dataPath: './temp/'
+      store,
+      backupSyncIntervalMs: 1000 * 60,
+      clientId: (isDeployed) ? 'do' : 'local'
     })
   });
 
@@ -60,7 +63,7 @@ const defineNitroPlugin = async () => {
       statusCode: 500,
     });
   });
-  
+    
   client.on('change_state', async (state) => {
     console.log(state);
   });
@@ -73,6 +76,10 @@ const defineNitroPlugin = async () => {
   
   client.on('ready', async () => {
     console.log('CONNECTED');
+  });
+
+  client.on('remote_session_saved', () => {
+    console.log('REMOTE SESSION SAVED');
   });
 
   console.log('INITIALIZED');
@@ -94,11 +101,12 @@ const defineNitroPlugin = async () => {
     }
     else {
       console.log('WAITING ON STATE', state);
+      console.log('client', client)
       await recursive();
     }
   }
 
-  await recursive();
+  // await recursive();
 }
 
 const getClient = () => {
