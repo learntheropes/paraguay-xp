@@ -108,7 +108,7 @@ const closeConfirm = () => {
         </div>
       </footer>
     </div>
-    <OModal v-model="isConfirmActive" :width="200" scroll="keep">
+    <OModal v-model:active="isConfirmActive" :width="200" scroll="keep">
       <div class="card">
         <div class="card-content">
           <div class="content">{{ $t('dashboard.publication.deleteConfirm')}}</div>

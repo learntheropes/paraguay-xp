@@ -49,6 +49,10 @@ RUN apt-get install -y gconf-service \
     xdg-utils \
     wget
 
+RUN mkdir -p /app/.wwebjs_auth
+RUN mkdir -p /app/.wwebjs_cache
+RUN mkdir -p /app/RemoteAuth
+
 # Set the working directory to /app
 WORKDIR /app
 

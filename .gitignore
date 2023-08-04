@@ -6,7 +6,8 @@ node_modules
 .cache
 .output
 .env
+temp
 .wwebjs_auth
 .wwebjs_cache
-temp
+RemoteAuth
 RemoteAuth.zip

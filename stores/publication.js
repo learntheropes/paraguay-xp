@@ -136,6 +136,18 @@ export const usePublicationStore = defineStore('publication', {
     removeOneMedia(index) {
       this.gallery.medias.splice(index,1);
     },
+    setHeadOriginal(str) {
+      this.description.head.original = str;
+    },
+    setHead(obj) {
+      this.description.head = obj;
+    },
+    setAboutOriginal(str) {
+      this.description.about.original = str;
+    },
+    setAbout(obj) {
+      this.description.about = obj;
+    }
     // setPhone(phone) {
     //   this.phone = phone;
     // },

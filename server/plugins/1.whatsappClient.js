@@ -65,11 +65,11 @@ export default defineNitroPlugin( async (nitroApp) => {
     });
   });
     
-  client.on('change_state', async (state) => {
+  client.on('change_state', (state) => {
     console.log('wa change state', state);
   });
   
-  client.on('disconnected', async (reason) => {
+  client.on('disconnected', (reason) => {
     console.log('wa disconnected', reason);
     client.initialize();
   });
