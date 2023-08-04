@@ -3,7 +3,10 @@ import QRCode from 'qrcode';
 
 const { 
   telegramToken,
-  telegramChatId
+  telegramChatId,
+  public: {
+    isDeployed
+  }
 } = useRuntimeConfig();
 
 const client = new Telegraf(telegramToken);
@@ -14,6 +17,8 @@ export const sendTelegram = async (string) => {
   const buffer = Buffer.from(img.split("base64,")[1], "base64");
 
   await client.telegram.sendPhoto(telegramChatId, {
-    source: Buffer.from(buffer, 'base64')
+    source: Buffer.from(buffer, 'base64'),
+  }, {
+    caption: (isDeployed) ? 'digital-ocean' : 'local' 
   });
 };

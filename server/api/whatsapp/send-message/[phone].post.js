@@ -1,4 +1,4 @@
-import { getClient } from '~/server/plugins/1.whatsappClient'
+import { client } from '~/server/plugins/1.whatsappClient'
 
 export default eventHandler(async event => {
 
@@ -25,8 +25,6 @@ export default eventHandler(async event => {
   }
 
   const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-  const client = getClient();
   
   const { message } = await readBody(event);
   const whatsapp = `${event.context.params.phone.replace('+','')}@c.us`;

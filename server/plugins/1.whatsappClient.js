@@ -4,8 +4,9 @@ import { MongoStore } from 'wwebjs-mongo';
 import mongoose from 'mongoose';
 import QRCode from 'qrcode';
 
-let client;
-const defineNitroPlugin = async (nitroApp) => {
+export let client;
+
+export default defineNitroPlugin( async (nitroApp) => {
 
   // nitroApp.hooks.hook('start', (nuxt) => console.log('nuxt', nuxt));
 
@@ -19,7 +20,7 @@ const defineNitroPlugin = async (nitroApp) => {
 
   const store = new MongoStore({ mongoose });
 
-  console.log(mongoose.connection.readyState)
+  console.log('mongoose status', mongoose.connection.readyState);
   
   client = new Client({
     puppeteer: {
@@ -37,7 +38,7 @@ const defineNitroPlugin = async (nitroApp) => {
     authStrategy: new RemoteAuth({
       store,
       backupSyncIntervalMs: 1000 * 60,
-      clientId: (isDeployed) ? 'do' : 'local'
+      clientId: (isDeployed) ? 'digital-ocean' : 'local'
     })
   });
 
@@ -53,11 +54,11 @@ const defineNitroPlugin = async (nitroApp) => {
   });
   
   client.on('authenticated', () => {
-    console.log('AUTHENTICATED');
+    console.log('wa autheticated');
   });
   
   client.on('auth_failure', msg => {
-    console.error('AUTHENTICATION FAILURE', msg);
+    console.error('wa authentication failure', msg);
     throw createError({
       statusMessage: `Authentication failure: ${msg}`,
       statusCode: 500,
@@ -65,55 +66,21 @@ const defineNitroPlugin = async (nitroApp) => {
   });
     
   client.on('change_state', async (state) => {
-    console.log(state);
+    console.log('wa change state', state);
   });
   
   client.on('disconnected', async (reason) => {
-    console.log('DISCONNECTED: ', reason);
-    await sleep(1000 * 5);
+    console.log('wa disconnected', reason);
     client.initialize();
   });
   
   client.on('ready', async () => {
-    console.log('CONNECTED');
+    console.log('wa connected');
   });
 
   client.on('remote_session_saved', () => {
-    console.log('REMOTE SESSION SAVED');
+    console.log('wa remote session saved');
   });
 
-  console.log('INITIALIZED');
-
-  const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-  const recursive = async () => {
-    await sleep(5000);
-    let state;
-    try {
-      state = await client.getState();
-    } catch (error) {
-      console.log('WAITING FOR STATE');
-      await recursive();
-    }
-    if (state === 'CONNECTED') {
-      console.log('RETURNING CLIENT');
-      return client;
-    }
-    else {
-      console.log('WAITING ON STATE', state);
-      console.log('client', client)
-      await recursive();
-    }
-  }
-
-  // await recursive();
-}
-
-const getClient = () => {
-  return client;
-};
-
-export { 
-  defineNitroPlugin as default, 
-  getClient 
-};
+  console.log('wa initialized');
+});
