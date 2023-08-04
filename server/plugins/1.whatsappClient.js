@@ -4,7 +4,7 @@ import { MongoStore } from 'wwebjs-mongo';
 import mongoose from 'mongoose';
 import QRCode from 'qrcode';
 
-let client;
+export let client;
 
 export default defineNitroPlugin( async (nitroApp) => {
 
@@ -74,7 +74,7 @@ export default defineNitroPlugin( async (nitroApp) => {
     client.initialize();
   });
   
-  client.on('ready', async () => {
+  client.on('ready', () => {
     console.log('wa connected');
   });
 
@@ -83,28 +83,4 @@ export default defineNitroPlugin( async (nitroApp) => {
   });
 
   console.log('wa initialized');
-
-  const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-  const recursive = async () => {
-    await sleep(5000);
-    let state;
-    try {
-      state = await client.getState();
-    } catch (error) {
-      await recursive();
-    }
-    if (state === 'CONNECTED') {
-      return client;
-    }
-    else {
-      await recursive();
-    }
-  }
-
-  await recursive();
 });
-
-export const getClient = () => {
-  return client;
-}

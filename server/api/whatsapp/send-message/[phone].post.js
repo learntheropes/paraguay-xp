@@ -1,8 +1,6 @@
-import { getClient } from '~/server/plugins/1.whatsappClient'
+import { client } from '~/server/plugins/1.whatsappClient'
 
 export default eventHandler(async event => {
-
-  const client = getClient();
 
   const {
     nextAuthSecret,
@@ -39,7 +37,6 @@ export default eventHandler(async event => {
       };
     };
   } catch (error) {
-    console.log('NOT CONNECTED')
     throw new Error(error);
   }
 })
