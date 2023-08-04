@@ -31,6 +31,9 @@ const remove = (index) => {
       <figure class="image is-square">
         <NuxtImg preset="preview" @load="onLoad" :src=image.preview />
       </figure>
+      <div @click.native="remove" class="card-content is-overlay ltr-is-center-center">
+        <OIcon icon="close-circle" size="large"></OIcon>
+      </div>
     </div>
   </div>
 </template>

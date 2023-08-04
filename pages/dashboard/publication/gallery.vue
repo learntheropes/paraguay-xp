@@ -12,7 +12,7 @@ const { t } = useI18n();
 
 const blurText = computed(() => (store.gallery.blur) ? t('dashboard.gallery.yes') : t('dashboard.gallery.no'));
 
-const isLoading = ref(false)
+const isLoading = ref(false);
 
 onMounted(async () => {
 
@@ -24,7 +24,7 @@ onMounted(async () => {
 
   input.addEventListener('change', event => {
 
-    isLoading.value = true
+    isLoading.value = true;
 
     const files = event.target.files;
 
@@ -89,7 +89,7 @@ onMounted(async () => {
           type: 'image'
         });
 
-        isLoading.value = false
+        if (Array.from(files).indexOf(file) === files.length - 1) isLoading.value = false;
       }
     }
   })
@@ -108,7 +108,7 @@ onMounted(async () => {
           <section class="section">
             <OField :label="$t('dashboard.gallery.blur')">
               <OSwitch v-model="store.gallery.blur">
-                {{ $t(blurText) }}
+                {{ blurText }}
               </OSwitch>
             </OField>
             <div class="columns is-mobile is-multiline">
@@ -118,7 +118,6 @@ onMounted(async () => {
               <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
                 <OField class="is-hidden-mobile is-hidden-tablet">
                   <input
-                    :name="$t('media')"
                     id="input"
                     ref="input"
                     style="display:none"
