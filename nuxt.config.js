@@ -212,7 +212,7 @@ export default defineNuxtConfig({
   
   nitro: {
     devStorage: {
-      db: {
+      lang: {
         driver: 'fs',
         base: './lang'
       },
@@ -222,7 +222,7 @@ export default defineNuxtConfig({
       }
     },
     storage: {
-      db: {
+      lang: {
         driver: 'custom-github',
         repo: process.env.GITHUB_REPO,
         token: process.env.GITHUB_TOKEN,
