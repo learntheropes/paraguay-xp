@@ -6,8 +6,6 @@ const publications = await queryContent('escorts')
     phone: data.value.user.email
   })
   .find();
-
-const isPromoPeriod = new Date() <= new Date(Date.parse('01 Oct 2023'))
 </script>
 
 <template>
@@ -20,14 +18,5 @@ const isPromoPeriod = new Date() <= new Date(Date.parse('01 Oct 2023'))
         <DashboardNewPublicationCard class="card-equal-height" />
       </div>
     </div>
-    <!-- <section class="section">
-      <div v-if="isPromoPeriod" class="content has-text-weight-bold">
-        {{ $t('oneMonthFree') }}
-      </div>
-      <div class="content has-text-weight-bold">
-        {{ $t('photoSession') }}
-      </div>  
-    </section>  
-    <account-payments :publications="publications" /> -->
   </div>
 </template>
