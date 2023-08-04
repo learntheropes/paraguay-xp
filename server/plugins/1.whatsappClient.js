@@ -83,6 +83,26 @@ export default defineNitroPlugin( async (nitroApp) => {
   });
 
   console.log('wa initialized');
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  const recursive = async () => {
+    await sleep(5000);
+    let state;
+    try {
+      state = await client.getState();
+    } catch (error) {
+      await recursive();
+    }
+    if (state === 'CONNECTED') {
+      return client;
+    }
+    else {
+      await recursive();
+    }
+  }
+
+  await recursive();
 });
 
 export const getClient = () => {
