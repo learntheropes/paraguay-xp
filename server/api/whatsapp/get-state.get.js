@@ -1,7 +1,9 @@
-import { client } from '~/server/plugins/1.whatsappClient'
+import { getClient } from '~/server/plugins/1.whatsappClient'
 
 
 export default eventHandler(async event => {
+
+  const client = getClient();
 
   try {
 
