@@ -89,13 +89,13 @@ const closeConfirm = () => {
       </div>
       <div class="card-content">
         <div @click="editAdv" class="content">
-          <p class="title is-5 is-capitalized">
-            {{ name }}&nbsp;
+          <p class="title is-5">
+            <span class="is-capitalized">{{ name }}</span>
+            &nbsp;
             <span class="is-hidden-mobile">({{ $dayjs(new Date()).diff(dateOfBirth, 'years') }})</span>
           </p>
-          <p class="subtitle is-6 is-capitalized">
+          <p class="subtitle is-6">
             {{$t('dashboard.publication.activeUntil')}} {{ $dayjs(until).format('DD/MM/YY') }}<br>
-            ({{ $dayjs(until).fromNow(true) }})
           </p>
         </div>
       </div>

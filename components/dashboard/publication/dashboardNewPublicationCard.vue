@@ -17,12 +17,12 @@ const setNewAdv = async () => {
     </div>
     <div class="card-content">
       <div class="content">
-        <div class="title is-5 is-capitalized">
+        <div class="title is-5">
           <div @click="setNewAdv">
             {{ $t('dashboard.publication.newPublication') }}
           </div>
         </div>
-        <div class="subtitle is-6 is-capitalized">
+        <div class="subtitle is-6">
           <div @click="setNewAdv">
             {{ $t('dashboard.publication.addNewPublication') }}
           </div>
