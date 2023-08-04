@@ -1,6 +1,8 @@
-import { client } from '~/server/plugins/1.whatsappClient'
+import { getClient } from '~/server/plugins/1.whatsappClient'
 
 export default eventHandler(async event => {
+
+  const client = getClient();
 
   const {
     nextAuthSecret,
@@ -23,8 +25,6 @@ export default eventHandler(async event => {
       statusCode: 403,
     });
   }
-
-  const sleep = ms => new Promise(r => setTimeout(r, ms));
   
   const { message } = await readBody(event);
   const whatsapp = `${event.context.params.phone.replace('+','')}@c.us`;

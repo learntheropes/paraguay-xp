@@ -4,7 +4,7 @@ import { MongoStore } from 'wwebjs-mongo';
 import mongoose from 'mongoose';
 import QRCode from 'qrcode';
 
-export let client;
+let client;
 
 export default defineNitroPlugin( async (nitroApp) => {
 
@@ -84,3 +84,7 @@ export default defineNitroPlugin( async (nitroApp) => {
 
   console.log('wa initialized');
 });
+
+export const getClient = () => {
+  return client;
+}
