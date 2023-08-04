@@ -49,6 +49,7 @@ RUN apt-get install -y gconf-service \
     xdg-utils \
     wget
 
+# Create the folders for whatsapp bot
 RUN mkdir -p /app/.wwebjs_auth
 RUN mkdir -p /app/.wwebjs_cache
 RUN mkdir -p /app/RemoteAuth
