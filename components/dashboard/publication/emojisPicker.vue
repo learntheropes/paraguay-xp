@@ -40,7 +40,7 @@ const emitAddEmoji = (emoji) => {
     <div v-for="(category, index) in emojiFiltered" :key="index" class="section">
       <div class="title is-6">{{ $t(`emoji.${category.group}`) }}</div>
       <div class="columns is-mobile is-multiline">
-        <div v-for="(emoji, i) in category.emojis" :key="index + i" class="column is-mobile is-narrow" @click="emitAddEmoji(emoji.emoji)">
+        <div v-for="(emoji, i) in category.emojis" :key="index + i" class="column is-mobile is-narrow" @click.native="emitAddEmoji(emoji.emoji)">
           {{ emoji.emoji }}
         </div>
       </div>

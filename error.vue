@@ -50,7 +50,7 @@ const handleError = () => clearError({ redirect: `/${locale}` });
             <div>{{ error.stack }}</div>
           </div>
         </DevOnly>
-        <button @click="handleError" class="button is-primary is-outlined">{{ $t('error.backToTheHomePage') }}</button>
+        <button @click.native="handleError" class="button is-primary is-outlined">{{ $t('error.backToTheHomePage') }}</button>
       </div>
     </div>
   </div>

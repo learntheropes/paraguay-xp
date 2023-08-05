@@ -146,7 +146,7 @@ const goNext = async () => {
                 <figure class="image is-square">
                   <img id="imgFrontId" src="/others/white.jpg" class="contain">
                 </figure>
-                <div @click="$refs.idFront.click()" class="card-content is-overlay ltr-is-center-center">
+                <div @click.native="$refs.idFront.click()" class="card-content is-overlay ltr-is-center-center">
                   <OIcon icon="plus-circle" size="large" />
                 </div>
               </div>
@@ -179,7 +179,7 @@ const goNext = async () => {
                 <figure class="image is-square">
                   <img id="imgBackId" src="/others/white.jpg" class="contain">
                 </figure>
-                <div @click="$refs.idBack.click()" class="card-content is-overlay ltr-is-center-center">
+                <div @click.native="$refs.idBack.click()" class="card-content is-overlay ltr-is-center-center">
                   <OIcon icon="plus-circle" size="large" />
                 </div>
               </div>

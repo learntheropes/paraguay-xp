@@ -13,17 +13,17 @@ const setNewAdv = async () => {
 <template>
   <div class="card card-equal-height">
     <div class="card-image">
-      <figure @click="setNewAdv" :style="'background-color:black;'" class="image is-square" />
+      <figure @click.native="setNewAdv" :style="'background-color:black;'" class="image is-square" />
     </div>
     <div class="card-content">
       <div class="content">
         <div class="title is-5">
-          <div @click="setNewAdv">
+          <div @click.native="setNewAdv">
             {{ $t('dashboard.publication.newPublication') }}
           </div>
         </div>
         <div class="subtitle is-6">
-          <div @click="setNewAdv">
+          <div @click.native="setNewAdv">
             {{ $t('dashboard.publication.addNewPublication') }}
           </div>
         </div>
@@ -31,7 +31,7 @@ const setNewAdv = async () => {
     </div>
     <footer class="card-footer">
       <div class="card-footer-item">
-        <div @click="setNewAdv">
+        <div @click.native="setNewAdv">
           <OIcon icon="plus-circle" size="large" />
         </div>
       </div>

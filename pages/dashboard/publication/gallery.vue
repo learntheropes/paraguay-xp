@@ -141,7 +141,7 @@ await navigateTo(`/${locale.value}/dashboard/publication/ending`);
                     <figure class="image is-square">
                       <img src="/others/white.jpg">
                     </figure>
-                    <div @click="$refs.input.click()" class="card-content is-overlay ltr-is-center-center">
+                    <div @click.native="$refs.input.click()" class="card-content is-overlay ltr-is-center-center">
                       <OIcon icon="plus-circle" size="large" />
                     </div>
                   </div>
@@ -164,7 +164,7 @@ await navigateTo(`/${locale.value}/dashboard/publication/ending`);
                 <div class="level-item">
                   <OField>
                     <OButton
-                      native-type="submit"
+                      @click.native="goNext"
                       variant="primary"
                       outlined
                     >{{  $t('dashboard.publication.next') }}</OButton>

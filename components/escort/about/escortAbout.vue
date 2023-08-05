@@ -40,7 +40,7 @@ const { $dayjs } = useNuxtApp();
         <div class="content has-new-line">{{ about[locale] }}</div>
         <OButton
           v-show="isTranslated"
-          @click="showOriginal"
+          @click.native="showOriginal"
           class="is-text"
           variant="primary"
           inverted
@@ -50,7 +50,7 @@ const { $dayjs } = useNuxtApp();
       <div class="content has-new-line">{{ about.original }}</div>
       <OButton 
         v-show="isTranslated" 
-        @click="showTranslation" 
+        @click.native="showTranslation" 
         class="is-text"
         variant="primary"
         inverted

@@ -72,7 +72,7 @@ const closeConfirm = () => {
 <template>
   <div>
     <div class="card card-equal-height">
-      <div @click="editAdv" class="card-image">
+      <div @click.native="editAdv" class="card-image">
         <figure :style="'background-color:black;'" class="image is-square">
           <OLoading :full-page="false" v-model:active="isLoading" />
           <NuxtImg
@@ -88,7 +88,7 @@ const closeConfirm = () => {
         </figure>
       </div>
       <div class="card-content">
-        <div @click="editAdv" class="content">
+        <div @click.native="editAdv" class="content">
           <p class="title is-5">
             <span class="is-capitalized">{{ name }}</span>
             &nbsp;
@@ -100,10 +100,10 @@ const closeConfirm = () => {
         </div>
       </div>
       <footer class="card-footer">
-        <div @click="confirmRemoveAdv" class="card-footer-item">
+        <div @click.native="confirmRemoveAdv" class="card-footer-item">
           <OIcon icon="close-circle" size="large"></OIcon>
         </div>
-        <div @click="editAdv" class="card-footer-item">
+        <div @click.native="editAdv" class="card-footer-item">
           <OIcon icon="pencil" size="large"></OIcon>
         </div>
       </footer>
@@ -114,8 +114,8 @@ const closeConfirm = () => {
           <div class="content">{{ $t('dashboard.publication.deleteConfirm')}}</div>
         </div>
         <footer class="card-footer">
-          <div @click="closeConfirm" class="card-footer-item">{{ $t('dashboard.publication.cancel')}}</div>
-          <div @click="removeAdv" class="card-footer-item">{{ $t('dashboard.publication.confirm')}}</div>
+          <div @click.native="closeConfirm" class="card-footer-item">{{ $t('dashboard.publication.cancel')}}</div>
+          <div @click.native="removeAdv" class="card-footer-item">{{ $t('dashboard.publication.confirm')}}</div>
         </footer>      
       </div>
     </OModal>

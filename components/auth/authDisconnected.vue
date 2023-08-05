@@ -17,6 +17,6 @@ const goBack = () => {
       &nbsp;
       <NuxtLink :href="'https://wa.me/' + whatsappAdmin.replace('+', '')" target="_blank">{{ whatsappAdmin }}</NuxtLink>
     </div>
-    <OButton @click="goBack" variant="primary" outlined>{{ $t('auth.goBack') }}</OButton>
+    <OButton @click.native="goBack" variant="primary" outlined>{{ $t('auth.goBack') }}</OButton>
   </div>
 </template>

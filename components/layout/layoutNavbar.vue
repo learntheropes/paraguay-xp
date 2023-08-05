@@ -71,7 +71,7 @@ const toggleFilter = (bool) => {
       </div>
       <div v-if="status === 'authenticated'" class="navbar-item">
         <OButton
-          @click="logOut"
+          @click.native="logOut"
         >{{ $t('navbar.logout') }}</OButton>
       </div>
       <div v-else class="navbar-item">

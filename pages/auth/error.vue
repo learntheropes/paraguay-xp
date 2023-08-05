@@ -61,6 +61,6 @@ const tryAgain = async () => {
 <template>
   <NuxtLayout>
       <div class="content ltr-has-new-line">{{ translatedErrorMessage }}</div>
-      <OButton @click="tryAgain" variant="primary" outlined>{{ $t('error.tryAgain') }}</OButton> 
+      <OButton @click.native="tryAgain" variant="primary" outlined>{{ $t('error.tryAgain') }}</OButton> 
   </NuxtLayout>
 </template>
