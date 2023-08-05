@@ -87,7 +87,7 @@ const categoryText = computed(() => (store.registry.basic.category === 'agency')
 
 const cm = ref('cm');
 
-const pyg = ref(t('index.PYG'));
+const currency = ref(t('index.currency'));
 
 const serviceText = (service) => store.registry.services[service] ? t('dashboard.gallery.yes') : t('dashboard.gallery.no');
 
@@ -437,7 +437,7 @@ const goNext = async () => {
                   @blur="handleBlur"
                   expanded
                 />
-                <OInput disabled v-model="pyg" class="cm"/>
+                <OInput disabled v-model="currency" class="cm"/>
               </OField>
             </VField>
           </div>

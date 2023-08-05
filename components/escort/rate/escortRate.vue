@@ -19,6 +19,6 @@ const { $numberWithDots } = useNuxtApp();
 <template>
   <section class="section">
     <h2 class="title is-5">{{$t('escort.rate.title')}}</h2>
-    <span class="is-3">{{ $numberWithDots(rate) }} {{ $t('index.PYG')}}</span>
+    <span class="is-3">{{ $numberWithDots(rate) }} {{ $t('index.currency')}}</span>
   </section>
 </template>

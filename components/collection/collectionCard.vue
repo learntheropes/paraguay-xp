@@ -76,8 +76,8 @@ const {
           />
         </figure>
         <div class="card-content is-overlay ltr-is-top-right">
-          <span class="tag is-success is-hidden-mobile">{{ $numberWithDots(rate) }} {{ $t('index.PYG') }}</span>
-          <span class="tag is-success is-hidden-tablet ltr-is-smaller-top-right">{{ $numberWithDots(rate) }} {{ $t('index.PYG') }}</span>
+          <span class="tag is-success is-hidden-mobile">{{ $numberWithDots(rate) }} {{ $t('index.currency') }}</span>
+          <span class="tag is-success is-hidden-tablet ltr-is-smaller-top-right">{{ $numberWithDots(rate) }} {{ $t('index.currency') }}</span>
         </div>
         <div class="card-content is-overlay ltr-is-bottom-left">
           <span class="tag is-success is-hidden-mobile is-capitalized">{{ agencyName }}</span>

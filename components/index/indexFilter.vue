@@ -168,7 +168,7 @@ watch(filteredEscorts, filteredEscorts => {
                     :min="defaultRate[0]"
                     :max="defaultRate[1]"
                     :step="100000"
-                    :customFormatter="val => $numberWithDots(val) + ' ' + $t('index.PYG')"
+                    :customFormatter="val => $numberWithDots(val) + ' ' + $t('index.currency')"
                     ticks
                     tooltipAlways
                   /> 
@@ -181,7 +181,7 @@ watch(filteredEscorts, filteredEscorts => {
                 :min="defaultRate[0]"
                 :max="defaultRate[1]"
                 :step="100000"
-                :customFormatter="val => $numberWithDots(val) + ' ' + $t('index.PYG')"
+                :customFormatter="val => $numberWithDots(val) + ' ' + $t('index.currency')"
                 ticks
                 tooltipAlways
               /> 
