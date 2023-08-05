@@ -211,6 +211,12 @@
         "title": "Figura"
       }
     },
+    "description": {
+      "head": "Título",
+      "headPlaceholder": "Escribe tu título aquí",
+      "about": "Descripción",
+      "aboutPlaceholder": "Escribe tu descripción aquí. Puede agregar emoji usando el ícono a la derecha"   
+    },
     "gallery": {
       "blur": "Ocultar rostro en fotos",
       "yes": "Sí",
@@ -230,11 +236,7 @@
     "Flags": "Banderas"
   },
   "and": "y",  
-  "head": "Título",
-  "headPlaceholder": "Escribe tu título aquí",
-  "description": "Descripción",
-  "descriptionPlaceholder": "Escribe tu descripción aquí. Puede agregar emoji usando el ícono a la derecha.",
-  "descriptionFreeWorning": "Para aprovechar de una publicación gratis de por vida, aún te falta escibir {missingWords} palabras.",
+"descriptionFreeWorning": "Para aprovechar de una publicación gratis de por vida, aún te falta escibir {missingWords} palabras.",
   "ending": "Finalización",
   "threeMonthsTitle": "Tres meses de publicación gratis",
   "threeMonthsDescription": "Al publicar tu anuncio antes del {limitDate} tienes derecho a 3 meses de publicación gratis.",

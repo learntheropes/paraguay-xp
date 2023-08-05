@@ -23,11 +23,6 @@ const emojiFiltered = computed(() => {
 
 const { $event } = useNuxtApp();
 
-const emitCloseModal = () => {
-
-  $event('closeModal');
-}
-
 const emitAddEmoji = (emoji) => {
   
   $event('addEmoji', emoji);
@@ -35,24 +30,12 @@ const emitAddEmoji = (emoji) => {
 </script>
 
 <template>
-  <section key="emojis-box" class="box">
-    <nav class="level is-mobile">
-      <div class="level-left">
-        <div class="level-item">
-        </div>
-      </div>
-      <div class="level-right">
-        <p class="level-item">
-          <button @click="emitCloseModal" class="delete is-large"></button>
-        </p>
-      </div>
-    </nav>
+  <div class="box">
     <section class="section">
-      <b-input
+      <OInput
         v-model="search"
         :placeholder="$t('emoji.searchEmojisInEnglish')"
-        ref="search"
-      ></b-input>
+      ></OInput>
     </section>
     <div v-for="(category, index) in emojiFiltered" :key="index" class="section">
       <div class="title is-6">{{ $t(`emoji.${category.group}`) }}</div>
@@ -62,5 +45,11 @@ const emitAddEmoji = (emoji) => {
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
+
+<style scoped>
+.box {
+  border-radius: 0px !important;
+}
+</style>

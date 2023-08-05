@@ -210,6 +210,12 @@
         "title": "Figure"
       }
     },
+    "description": {
+      "head": "Title",
+      "headPlaceholder": "Write your title here",
+      "about": "Description",
+      "aboutPlaceholder": "Write your description here. You can add emoji using the icon on the right."
+    },
     "gallery": {
       "blur": "Blur face on photos",
       "yes": "Yes",
@@ -229,10 +235,6 @@
     "Flags": "Flags"
   },
   "and": "&",
-  "head": "Title",
-  "headPlaceholder": "Write your title here",
-  "description": "Description",
-  "descriptionPlaceholder": "Write your description here. You can add emoji using the icon on the right.",
   "descriptionFreeWorning": "To get a free lifetime advertisement you still miss {missingWords} words.",
   "ending": "Ending",
   "threeMonthsTitle": "Three months free advertisement",

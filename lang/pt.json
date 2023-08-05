@@ -210,6 +210,12 @@
         "title": "Corpo"
       }
     },
+    "description": {
+      "head": "Título",
+      "headPlaceholder": "Escreva sua título aqui.",
+      "about": "Descrição",
+      "aboutPlaceholder": "Escreva sua descrição aqui. Você pode adicionar emoji usando o ícone à direita."    
+    },
     "gallery": {
       "blur": "Ocultar rosto nas fotos",
       "yes": "Sim",
@@ -229,10 +235,6 @@
     "Flags": "Bandeiras"
   },
   "and": "e",
-  "head": "Título",
-  "headPlaceholder": "Escreva sua título aqui.",
-  "description": "Descrição",
-  "descriptionPlaceholder": "Escreva sua descrição aqui. Você pode adicionar emoji usando o ícone à direita.",
   "descriptionFreeWorning": "Para aproveitar uma publicação gratuita vitalícia, você ainda precisa escrever {missingWords} palavras.",
   "ending": "Final",
   "threeMonthsTitle": "Três meses de propaganda gratuita",

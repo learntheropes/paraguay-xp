@@ -23,6 +23,17 @@ export default defineNuxtPlugin(nuxtApp => {
     else return true;
   });
 
+  defineRule('betweenCharacters', (value, { min, max}) => {
+    if (value.length < min || value.length > max) return `Between ${min} and ${max}`
+    else return true;
+  })
+
+  defineRule('minWords', (value, { min }) => {
+    const l = value.split(' ').length;
+    if (l < 200) return `Min ${min} words`
+    else return true;
+  })
+
   const { locale } = nuxtApp.$i18n;
 
   configure({

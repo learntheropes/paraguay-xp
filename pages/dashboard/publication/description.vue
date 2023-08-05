@@ -4,6 +4,22 @@ definePageMeta({
   layout: 'dashboard'
 });
 
+const validationSchema = {
+  head: {
+    required: true,
+    betweenCharacters: {
+      min: 25,
+      max: 150
+    }
+  },
+  about: {
+    required: true,
+    minWords: {
+      min: 200
+    }
+  }
+}
+
 const {
   locale,
   locales
@@ -13,8 +29,10 @@ let isModalActive = ref(false);
 let cursorStart = ref(0);
 let cursorEnd = ref(0);
 
-const openModal = () => {
+const openModal = (refs) => {
   isModalActive.value = true;
+  cursorStart.value = refs.about.$refs.textarea.selectionStart;
+  cursorEnd.value = refs.about.$refs.textarea.selectionEnd;
 }
 
 const store = usePublicationStore();
@@ -38,23 +56,19 @@ let computedAbout = computed({
   },
   set(value) {
     aboutChanged.value = true;
-    store.setAboutOriginal(value)
+    store.setAboutOriginal(value);
   }
 });
 
 const { $listen } = useNuxtApp();
 
-$listen('closeModal', () => {
-
-  isModalActive = false
-});
-
 $listen('addEmoji', emoji => {
-  const left = computedAbout.substring(0, cursorStart.value)
-  const right = computedAbout.substring(cursorEnd.value, computedAbout.length)
-  computedAbout = left + emoji + right
-  // this.$refs.about.$refs.textarea.focus()
-  isModalActive.value = false
+  const about = computedAbout.value || '';
+  const left = about.substring(0, cursorStart.value);
+  const right = about.substring(cursorEnd.value, about.length);
+  aboutChanged.value = true;
+  store.setAboutOriginal(left + emoji + right);
+  isModalActive.value = false;
 });
 
 const transalteHead = async () => {
@@ -138,7 +152,7 @@ const goNext = async () => {
 
 <template>
   <NuxtLayout>
-    <OModal v-model:active="isModalActive" :onCancel="closeModal" :canCancel="true">
+    <OModal v-model:active="isModalActive" :canCancel="true">
       <EmojisPicker />
     </OModal>
     <VForm
@@ -150,40 +164,42 @@ const goNext = async () => {
         <div class="column is-one-third">
           <VField
             name="head"
-            :label="$t('dashboard.registry.basic.name')"
+            :label="$t('dashboard.description.head')"
             v-slot="{ handleChange, handleBlur, value, errors }"
             v-model="computedHead"
           >
             <OField
-              :label="$t('dashboard.registry.basic.name')"
+              :label="$t('dashboard.description.head')"
               :variant="errors[0] ? 'danger' : null"
               :message="errors[0] ? errors[0] : ''"
             >
               <OInput
-                :label="$t('dashboard.registry.basic.name')"
+                :label="$t('dashboard.description.head')"
+                :placeholder="$t('dashboard.description.headPlaceholder')"
+                type="textarea"
                 :model-value="value"
                 @update:modelValue="handleChange"
                 @change="handleChange"
                 @blur="handleBlur"
+                autosize
                 expanded
               />
             </OField>
           </VField>
-
           <VField
             name="about"
-            :label="$t('description')"
-            :placeholder="$t('descriptionPlaceholder')"
+            :label="$t('dashboard.description.about')"
             v-slot="{ handleChange, handleBlur, value, errors }"
             v-model="computedAbout"
           >
             <OField
-              :label="$t('description')"
+              :label="$t('dashboard.description.about')"
               :variant="errors[0] ? 'danger' : null"
               :message="errors[0] ? errors[0] : ''"
             >
               <OInput
-                :label="$t('description')"
+                :label="$t('dashboard.description.about')"
+                :placeholder="$t('dashboard.description.aboutPlaceholder')"
                 ref="about"
                 type="textarea"
                 :model-value="value"
@@ -195,11 +211,10 @@ const goNext = async () => {
                 iconPack="mdi"
                 iconRight="emoticon"
                 iconRightClickable
-                @icon-right-click="openModal"
+                @icon-right-click="openModal($refs)"
               />
             </OField>
           </VField>
-
         </div>
       </div>
       <div class="level is-mobile">
@@ -229,121 +244,11 @@ const goNext = async () => {
     </VForm>
   </NuxtLayout>
 </template>
-<!-- 
-<template>
-  <div class="container">
-    <b-field
-      :label="$t('head')"
-      :type="{ 'is-danger': errors.first($t('head')) }"
-      :message="errors.first($t('head'))"
-    >
-      <b-input
-        v-model="head"
-        :name="$t('head')"
-        :placeholder="$t('headPlaceholder')"
-        v-validate="{ required: true, min: 20, max: 65 }"
-      ></b-input>
-    </b-field>
-    <b-field
-      :label="$t('description')"
-      :type="{ 'is-danger': errors.first($t('description')) }"
-      :message="errors.first($t('description')) || descriptionFreeWorning"
-    >
-      <b-input
-        v-model="content"
-        :name="$t('description')"
-        :placeholder="$t('descriptionPlaceholder')"
-        ref="content"
-        v-validate="{ required: true, minWords: 10 }"
-        type="textarea"
-        rows="20"
-        icon-right="emoticon"
-        icon-right-clickable
-        @icon-right-click="activateModal"
-      ></b-input>
-    </b-field>
-    <b-modal
-      v-model="isModalActive"
-      :can-cancel="['escape']"
-      :full-screen="true"
-      scroll="keep"
-    >
-      <emojis-picker
-        @addEmoji="addEmoji"
-        @closeModal="closeModal"
-      />
-    </b-modal>
-    <account-publication-navigator :activeTab="activeTab" @goPrev="goPrev" @goNext="goNext" />
-  </div>
-</template>
 
-<script>
-import cloneDeep from 'lodash.clonedeep'
-import { mapState, mapMutations } from 'vuex'
-import EmojisPicker from '~/components/emojis/picker'
-import AccountPublicationNavigator from '~/components/account/publication/navigator'
-export default {
-  name: 'AccountPublicationDescription',
-  components: {
-    EmojisPicker,
-    AccountPublicationNavigator
-  },
-  props: [
-    'activeTab',
-    'minWords'
-  ],
-  data: () => ({
-    changed: false,
-    isModalActive: false,
-    cursorStart: 0,
-    cursorEnd: 0
-  }),
-  computed: {
-    ...mapState({
-      publication: state => state.publication
-    }),
-    head: {
-      get () {
-        return this.publication.head.original
-      },
-      set (value) {
-        this.changed = true
-        this.setHead({ original: value })
-      }
-    },
-    content: {
-      get () {
-        return this.publication.content.original
-      },
-      set (value) {
-        this.changed = true
-        this.setContent({ original: value })
-      }
-    },
-    wordsCount () {
-      return (this.content) ? this.content.split(' ').length : 0
-    },
-    descriptionFreeWorning () {
-      return (this.wordsCount < this.minWords) ? this.$t('descriptionFreeWorning', { missingWords: this.minWords - this.wordsCount }): null
-    }
-  },
-  methods: {
-    ...mapMutations('publication', ['setHead', 'setContent']),
-    closeModal () {
-      this.isModalActive = false
-    },
-    activateModal () {
-      this.isModalActive = true
-      this.cursorStart = this.$refs.content.$refs.textarea.selectionStart
-      this.cursorEnd = this.$refs.content.$refs.textarea.selectionEnd
-    },
-    addEmoji (emoji) {
-      const left = this.content.substring(0, this.cursorStart)
-      const right = this.content.substring(this.cursorEnd, this.content.length)
-      this.content = left + emoji + right
-      this.$refs.content.$refs.textarea.focus()
-      this.isModalActive = false
-    }
-  }
+<style>
+.o-input__icon-right{
+  bottom: 0;
+  top: unset !important;
+  height: unset !important;
 }
-</script> -->
+</style>
