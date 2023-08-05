@@ -94,6 +94,16 @@ onMounted(async () => {
     }
   })
 })
+
+const goPrevious = async () => {
+
+await navigateTo(`/${locale.value}/dashboard/publication/description`);
+}
+
+const goNext = async () => {
+
+await navigateTo(`/${locale.value}/dashboard/publication/ending`);
+}
 </script>
 
 <template>
@@ -135,6 +145,30 @@ onMounted(async () => {
                       <OIcon icon="plus-circle" size="large" />
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="level is-mobile">
+              <div class="level-left">
+                <div class="level-item">
+                  <OField>
+                    <OButton
+                      @click.native="goPrevious"
+                      variant="primary"
+                      outlined
+                    >{{  $t('dashboard.publication.previous') }}</OButton>
+                  </OField>
+                </div>
+              </div>
+              <div class="level-right">
+                <div class="level-item">
+                  <OField>
+                    <OButton
+                      native-type="submit"
+                      variant="primary"
+                      outlined
+                    >{{  $t('dashboard.publication.next') }}</OButton>
+                  </OField>
                 </div>
               </div>
             </div>

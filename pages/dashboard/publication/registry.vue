@@ -66,7 +66,7 @@ const validationSchema = computed(() => {
 
 const category = computed({
   get() {
-    return store.registry.basic.category
+    return store.registry.basic.category;
   },
   set(value) {
     if (value === 'indipendent')  store.setAgency(value)
@@ -142,11 +142,11 @@ const day = [
 ]
 
 const goPrevious = async () => {
-  await navigateTo(`/${locale.value}/dashboard/publication/age`)
+  await navigateTo(`/${locale.value}/dashboard/publication/age`);
 }
 
 const goNext = async () => {
-  await navigateTo(`/${locale.value}/dashboard/publication/description`)
+  await navigateTo(`/${locale.value}/dashboard/publication/description`);
 }
 </script>
 
