@@ -14,9 +14,9 @@ const validationSchema = {
   },
   about: {
     required: true,
-    minWords: {
-      min: 200
-    }
+    // minWords: {
+    //   min: 200
+    // }
   }
 }
 

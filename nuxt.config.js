@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     mongodbUri: process.env.MONGODB_URI,
     telegramToken: process.env.TELEGRAM_TOKEN,
     telegramChatId: process.env.TELEGRAM_CHAT_ID,
+    googleApiKey: process.env.GOOGLE_API_KEY,
     public: {
       seoTitle: ' 🫦 Paraguay XP',
       isDeployed,
