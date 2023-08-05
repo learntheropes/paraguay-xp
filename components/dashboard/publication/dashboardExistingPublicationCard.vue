@@ -53,18 +53,22 @@ const editAdv = async () => {
 };
 
 const removeAdv = async () => {
+
   await useFetch(`/api/dashboard/publication/${slug}`, {
     method: 'delete'
   });
+
   isConfirmActive.value = false;
   NotificationProgrammatic.open(t('dashboard.publication.publicationDelated'));
 };
 
 const confirmRemoveAdv = () => {
+
   isConfirmActive.value = true;
 };
 
 const closeConfirm = () => {
+  
   isConfirmActive.value = false;
 };
 </script>
