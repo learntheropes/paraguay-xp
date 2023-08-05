@@ -154,7 +154,9 @@
     "accessDenied": "You do not have permission to sign in.",
     "verification": "The sign in code is no longer valid.\n\nIt may have been used already or it may have expired.",
     "generic": "Generic login error.",
-    "disconnected": "Login is temporarily disabled for maintenance.\n\nPlease try again later or contact us on Whatsapp at"
+    "disconnected": "Login is temporarily disabled for maintenance.\n\nPlease try again later or contact us on Whatsapp at",
+    "betweenCharacters": "The title must contain between {min} and {max} characters",
+    "minWords": "The description must contain at least {min} words"
   },
   "auth": {
     "logoutEmail": "Sign out",
@@ -212,9 +214,9 @@
     },
     "description": {
       "head": "Title",
-      "headPlaceholder": "Write your title here",
+      "headPlaceholder": "Write your title here. You can write in any language, we will transalte the message.",
       "about": "Description",
-      "aboutPlaceholder": "Write your description here. You can add emoji using the icon on the right."
+      "aboutPlaceholder": "Write your description here. You can add emoji using the icon on the right. You can write in any language, we will transalte the message."
     },
     "gallery": {
       "blur": "Blur face on photos",

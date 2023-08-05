@@ -24,13 +24,12 @@ export default defineNuxtPlugin(nuxtApp => {
   });
 
   defineRule('betweenCharacters', (value, { min, max}) => {
-    if (value.length < min || value.length > max) return `Between ${min} and ${max}`
+    if (value.length < min || value.length > max) return t('error.betweenCharacters', { min, max })
     else return true;
   })
 
   defineRule('minWords', (value, { min }) => {
-    const l = value.split(' ').length;
-    if (l < 200) return `Min ${min} words`
+    if (value.split(' ').length < min) return t('error.minWords', { min })
     else return true;
   })
 

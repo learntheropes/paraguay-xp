@@ -154,7 +154,9 @@
     "accessDenied": "No tiene permiso para iniciar sesión.",
     "verification": "El código de inicio de sesión ya no es válido.\n\nEs posible que ya se haya utilizado o que haya caducado.",
     "generic": "Generic login error.",
-    "disconnected": "El inicio de sesión está temporalmente desactivado por mantenimiento.\n\nInténtalo de nuevo más tarde o contáctanos por Whatsapp en"
+    "disconnected": "El inicio de sesión está temporalmente desactivado por mantenimiento.\n\nInténtalo de nuevo más tarde o contáctanos por Whatsapp en",
+    "betweenCharacters": "El título debe contener entre {min} y {max} caracteres",
+    "minWords": "La descripción debe contener al menos {min} palabras"
   },
   "auth": {
     "logoutEmail": "Salir",
@@ -213,9 +215,9 @@
     },
     "description": {
       "head": "Título",
-      "headPlaceholder": "Escribe tu título aquí",
+      "headPlaceholder": "Escribe tu título aquí. Puedes escribir en cualquier idioma, nosotros traduciremos el mensaje.",
       "about": "Descripción",
-      "aboutPlaceholder": "Escribe tu descripción aquí. Puede agregar emoji usando el ícono a la derecha"   
+      "aboutPlaceholder": "Escribe tu descripción aquí. Puede agregar emoji usando el ícono a la derecha. Puedes escribir en cualquier idioma, nosotros traduciremos el mensaje."   
     },
     "gallery": {
       "blur": "Ocultar rostro en fotos",

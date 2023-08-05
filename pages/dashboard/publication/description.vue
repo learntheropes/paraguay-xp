@@ -14,9 +14,9 @@ const validationSchema = {
   },
   about: {
     required: true,
-    // minWords: {
-    //   min: 200
-    // }
+    minWords: {
+      min: 20
+    }
   }
 }
 
@@ -71,83 +71,74 @@ $listen('addEmoji', emoji => {
   isModalActive.value = false;
 });
 
-const transalteHead = async () => {
+const translate = async q => {
 
-  let head = {
-    original: store.description.head.original
+  const response = {
+    original: q
   };
 
-  const { data: { language: originalLanguage }} = await useFetch('/api/translation/detect', {
-    q: head.original
+  const { language: originalLanguage } = await useFetch('/api/dashboard/translation/detect', {
+    method: 'POST',
+    body: {
+      q
+    }
   });
 
-  head[originalLanguage] = head.original;
-
+  response[originalLanguage] = head.original;
   const languagesToTranslate = locales.value.filter((loc) => loc !== originalLanguage);
 
-  const transalteOneLanguage = (originalLanguage, languageToTransalte, head) => useFetch('/api/translation/translate', {
-    source: originalLanguage,
-    target: languageToTransalte,
-    q: head.original
+  const transalteOneLanguage = (originalLanguage, languageToTransalte) => useFetch('/api/dashboard/translation/translate', {
+    method: 'POST',
+    body: {
+      source: originalLanguage,
+      target: languageToTransalte,
+      q
+    }
   });
 
-  const promises = languagesToTranslate.map(languageToTransalte => transalteOneLanguage (originalLanguage, languageToTransalte, head));
-
+  const promises = languagesToTranslate.map(languageToTransalte => transalteOneLanguage (originalLanguage, languageToTransalte));
   const translations = await Promise.all(promises);
 
   translations.forEach(translation => {
 
-    head[translation.data.target] = translation.data.translatedText;
+    response[translation.data.target] = translation.data.translatedText;
   });
 
-  store.setHead(head)
+  return body;
+
 }
+
+const transalteHead = async () => {
+
+  if (headChanged.value) {
+    const translations = await translate(store.description.head.original);
+    store.setHead(translations);
+    headChanged.value = false;
+  }
+};
+
 const transalteAbout = async () => {
 
-  let about = {
-    original: store.description.about.original
+  if (aboutChanged.value) {
+    const translations = await translate(store.description.about.original);
+    store.setAbout(translations);
+    aboutChanged.value = false;
   }
-
-  const { data: { language: originalLanguage }} = await useFetch('/api/translation/detect', {
-    q: about.original
-  })
-
-  about[originalLanguage] = about.original
-
-  const languagesToTranslate = locales.value.filter((loc) => loc !== originalLanguage);
-  
-  const transalteOneLanguage = (originalLanguage, languageToTransalte, about) => useFetch('/api/translation/translate', {
-    source: originalLanguage,
-    target: languageToTransalte,
-    q: about.original
-  });
-
-  const promises = languagesToTranslate.map(languageToTransalte => transalteOneLanguage (originalLanguage, languageToTransalte, about));
-
-  const translations = await Promise.all(promises);
-
-  translations.forEach(translation => {
-
-    about[translation.data.target] = translation.data.translatedText;
-  });
-
-  store.setAbout(about);
 }
 
 const goPrevious = async () => {
 
-  if (headChanged.value === true)await transalteHead();
-  if (about.changed.value === true) await transalteAbout();
+  await transalteHead();
+  await transalteAbout();
   await navigateTo(`/${locale.value}/dashboard/publication/registry`);
 }
 
 const goNext = async () => {
 
-  if (headChanged.value === true)await transalteHead();
-  if (about.changed.value === true) await transalteAbout();
+  await transalteHead();
+  await transalteAbout();
   await navigateTo(`/${locale.value}/dashboard/publication/gallery`);
 }
-
 </script>
 
 <template>

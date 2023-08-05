@@ -154,7 +154,9 @@
     "accessDenied": "Você não tem permissão para fazer login.",
     "verification": "A senha não é mais válida.\n\nPode já ter sido usada ou expirado.",
     "generic": "Falha no logon genérico.",
-    "disconnected": "O login está temporariamente desativado para manutenção.\n\nPor favor, tente novamente mais tarde ou entre em contato conosco no Whatsapp em"
+    "disconnected": "O login está temporariamente desativado para manutenção.\n\nPor favor, tente novamente mais tarde ou entre em contato conosco no Whatsapp em",
+    "betweenCharacters": "O título deve conter entre {min} e {max} caracteres",
+    "minWords": "A descrição deve conter pelo menos {min} palavras"
   },
   "auth": {
     "logoutEmail": "Sair",
@@ -212,9 +214,9 @@
     },
     "description": {
       "head": "Título",
-      "headPlaceholder": "Escreva sua título aqui.",
+      "headPlaceholder": "Escreva sua título aqui. Você pode escrever em qualquer idioma, vamos transalte a mensagem.",
       "about": "Descrição",
-      "aboutPlaceholder": "Escreva sua descrição aqui. Você pode adicionar emoji usando o ícone à direita."    
+      "aboutPlaceholder": "Escreva sua descrição aqui. Você pode adicionar emoji usando o ícone à direita. Você pode escrever em qualquer idioma, vamos transalte a mensagem."    
     },
     "gallery": {
       "blur": "Ocultar rosto nas fotos",
