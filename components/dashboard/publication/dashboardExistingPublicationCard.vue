@@ -1,5 +1,4 @@
 <script setup>
-import find from 'lodash.find';
 import merge from 'lodash.merge';
 import { NotificationProgrammatic } from "@oruga-ui/oruga-next";
 
@@ -68,7 +67,7 @@ const confirmRemoveAdv = () => {
 };
 
 const closeConfirm = () => {
-  
+
   isConfirmActive.value = false;
 };
 </script>
