@@ -196,7 +196,7 @@ export default defineNuxtPlugin(nuxtApp => {
           }
         },
 
-        postBreadcrumbList: (_path, title) => {
+        postBreadcrumbList: (_path, title, target) => {
           return {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
@@ -212,8 +212,8 @@ export default defineNuxtPlugin(nuxtApp => {
               {
                 '@type': 'ListItem',
                 'position': 2,
-                'name': t('footer.blog'),
-                'item': `${deploymentDomain}/${locale.value}/blog`
+                'name': (target === 'escort') ? t('blog.forEscorts') : t('blog.forClients'),
+                'item': `${deploymentDomain}/${locale.value}/blog/#${target}`
               },
               {
                 '@type': 'ListItem',

@@ -75,7 +75,6 @@ $listen('level', level => {
 
 <template>
   <NuxtLayout>
-    {{ escort.level }}
     <div class="container">
       <EscortHeader :escort="escort" />
       <EscortAbout :escort="escort" />

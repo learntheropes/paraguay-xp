@@ -64,7 +64,7 @@ useJsonld(() => ([
   $jsonld.website(),
   $jsonld.postWebPage(_path, title, description),
   $jsonld.postArticle(_path, title, description, updatedAt, text, body.toc),
-  $jsonld.postBreadcrumbList(_path, title)
+  $jsonld.postBreadcrumbList(_path, title, target)
 ]));
 </script>
 
