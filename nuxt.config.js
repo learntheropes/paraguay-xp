@@ -106,6 +106,7 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-simple-robots',
     'nuxt-simple-sitemap',
+    'nuxt-jsonld',
     '@nuxtjs/device',
     '@nuxtjs/i18n',
     '@nuxt/content',

@@ -19,9 +19,16 @@ const {
   target,
   body,
   _path,
+  updatedAt
 } = await queryContent('blog', slug).locale(locale.value).findOne();
 
-const text = body.children.map(one => one.children.map(two => (two.type === 'text') ? two.value : two.children[0].value).join('')).join('\n');
+const text = body.children.map(
+  one => (one.type === 'text') ? one.value : one.children.map(
+    two => (two.type === 'text') ? two.value : two.children.map(
+      three => (three.type === 'text') ? three.value : three.children[0].value
+    )
+  ).join('')
+).join('\n');
 
 const {
   public: {
@@ -49,6 +56,16 @@ useHead({
     },
   ],
 });
+
+const { $jsonld } = useNuxtApp();
+useJsonld(() => ([
+  $jsonld.logo(),
+  $jsonld.organization(),
+  $jsonld.website(),
+  $jsonld.postWebPage(_path, title, description),
+  $jsonld.postArticle(_path, title, description, updatedAt, text, body.toc),
+  $jsonld.postBreadcrumbList(_path, title)
+]));
 </script>
 
 <template>
@@ -56,6 +73,7 @@ useHead({
     <div class="container">
       <h1 class="title is-3">{{ title }}</h1>
       <div class="subtitle is-5">{{ description }}</div>
+      <div>{{ $t('blog.published') }} {{ $dayjs(updatedAt).fromNow() }}</div>
       <TableOfContent :toc="body.toc" />
     </div>
     <BannerClients v-if="target === 'client'" />
