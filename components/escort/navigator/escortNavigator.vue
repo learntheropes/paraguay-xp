@@ -1,9 +1,9 @@
 <script setup>
-import find from 'lodash.find';
 import findIndex from 'lodash.findindex';
+import find from 'lodash.find';
 
 const {
-  escort,
+  escort
 } = defineProps({
   escort: {
     type: Object,
@@ -11,11 +11,13 @@ const {
   }
 });
 
-const store = useEscortsStore();
+const { t } = useI18n();
 
-const levelName = Object.keys(store.list).filter(levelName => find(store.list[levelName], { slug: escort.slug }))[0];
-const { $capitalize } = useNuxtApp();
-const escorts = store.list[levelName];
+const store = useEscortsStore();
+const level = Object.keys(store.list).filter(l => find(store.list[l], { slug: escort.slug }))[0];
+const escorts = store.list[level];
+const { $event } = useNuxtApp();
+$event('level', level);
 
 const index = findIndex(escorts, { slug: escort.slug });
 const previousEscortIndex = (index - 1 < 0) ? escorts.length - 1 : index - 1;
@@ -27,7 +29,7 @@ const nextEscort = escorts[nextEscortIndex];
 
 <template>
   <section v-if="escorts.length > 1" class="section">
-    <h2 class="title is-5">{{ $t('escort.navigator.title', { levelName:  $capitalize($t(`level.${levelName}`)) }) }}</h2>
+    <h2 class="title is-5">{{ $t('escort.navigator.title', { levelName: $t(`level.${level}`) }) }}</h2>
     <div class="columns is-12 is-vcentered">
       <div class="column is-half">
         <EscortNavigatorPrevious :escort="previousEscort" />

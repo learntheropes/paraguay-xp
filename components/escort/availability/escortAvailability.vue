@@ -60,7 +60,7 @@ const day = {
 
 <template>
   <section class="section">
-    <h2 class="title is-5">{{$t('availability')}}</h2>
+    <h2 class="title is-5">{{$t('dashboard.registry.availability.title')}}</h2>
     <span class="is-5">
       {{ $t(`escort.availability.${week[fromDay]}`) }}
       &nbsp;-&nbsp;

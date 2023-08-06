@@ -1,4 +1,5 @@
-import { pathExists, readJson, writeJson, remove } from 'fs-extra';
+import fs from 'fs-extra';
+const { pathExists, readJson, writeJson, remove } = fs;
 import klaw from 'klaw';
 import merge from 'lodash.merge';
 

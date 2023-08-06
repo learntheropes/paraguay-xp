@@ -19,7 +19,7 @@ const {
     <div v-if="![].concat(escorts.diamond, escorts.palladium, escorts.platinum, escorts.esmerald, escorts.gold).length">{{ $t('index.noEscort') }}</div>
     <div v-for="(level, index) of levels" :key="level.name" class="block">
       <div v-if="escorts[level.name].length">
-        <h2 class="title is-5 is-capitalized">{{ $t('index.levelName', { level: $t(`level.${level.name}`) }) }} ({{ escorts[level.name].length }})</h2>
+        <h2 :id="level.name" class="title is-5 is-capitalized">{{ $t('index.levelName', { level: $t(`level.${level.name}`) }) }} ({{ escorts[level.name].length }})</h2>
         <p class="subtitle is-7">{{ level.range }} {{ $t('index.currency') }}</p>
         <div class="columns is-mobile is-multiline">
           <div

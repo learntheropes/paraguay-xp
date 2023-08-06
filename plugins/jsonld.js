@@ -39,8 +39,7 @@ export default defineNuxtPlugin(nuxtApp => {
             '@type': 'Organization',
             '@id': `${deploymentDomain}}#organization`,
             'name': 'gfexp',
-            'url': 'gfexp.net',
-            'email': `info@gfexp.net`,
+            'url': 'gfexp.network',
             'telephone': whatsappAdmin,
             'logo': {
               '@id': `${deploymentDomain}#logo`,
@@ -63,8 +62,89 @@ export default defineNuxtPlugin(nuxtApp => {
           }
         },
 
+        escortProfilePage: (escort) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': [
+              'ProfilePage',
+              'WebPAge'
+            ],
+            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`,
+            'url': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`,
+            'name': `${nuxtApp.$capitalize(escort.registry.basic.name)} Profile Page`,
+            'thumbnailUrl': `${escort.gallery.medias[0].preview}`,
+            'dateModified': escort.updatedAt,
+            'description': escort.description.head[locale.value],
+            'inLanguage': inLanguage,
+            'isPartOf': {
+              '@id': `https://${process.env.URL}#website`
+            },
+            'breadcrumb': {
+              '@id': `${deploymentDomain}}/${locale.value}/escort/${escort.slug}#breadcrumb`
+            },
+            'potentialAction': {
+              '@type': 'ReadAction',
+              'url': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`,
+              'target': {
+                '@type': 'EntryPoint',
+                'urlTemplate': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`
+              }
+            }
+          }
+        },
+
+        escortAdvertiserContentArticle: (escort) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'AdvertiserContentArticle',
+            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}#article`,
+            'isPartOf': {
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`
+            },
+            'headline': `${escort.description.head[locale.value]}`,
+            'dateModified': escort.updatedAt,
+            'mainEntityOfPage': {
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`
+            },
+            'articleBody': escort.description.about[locale.value],
+            'wordCount': escort.description.about[locale.value].split(' ').length,
+            'image': escort.gallery.medias[0].modal,
+            'inLanguage': inLanguage
+          }
+        },
+
+        escortBreadcrumbList: (escort) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}#breadcrumb`,
+            'name': `${escort.slug} Breadcrumb`,
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Escorts',
+                'item': `${deploymentDomain}/${locale.value}`
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': t(`level.${escort.level}`),
+                'item': `${deploymentDomain}/${locale.value}#${escort.level}`
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': nuxtApp.$capitalize(escort.registry.basic.name),
+                'item': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`
+              }
+            ]
+          }
+        },
+
         postWebPage: (_path, title, description) => {
           return {
+            '@context': 'https://schema.org',
             '@type': 'WebPage',
             '@id': `${deploymentDomain}/${locale.value}${_path}`,
             'url': `${deploymentDomain}/${locale.value}${_path}`,
@@ -73,7 +153,7 @@ export default defineNuxtPlugin(nuxtApp => {
               '@id': `${deploymentDomain}#website`
             },
             'breadcrumb': {
-              '@id': `https://${deploymentDomain}/${locale.value}${_path}#postbreadcrumb`
+              '@id': `https://${deploymentDomain}/${locale.value}${_path}#breadcrumb`
             },
             'description': description,
             'inLanguage': inLanguage
@@ -118,8 +198,9 @@ export default defineNuxtPlugin(nuxtApp => {
 
         postBreadcrumbList: (_path, title) => {
           return {
+            '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
-            '@id': `${deploymentDomain}/${locale.value}${_path}#postbreadcrumb`,
+            '@id': `${deploymentDomain}/${locale.value}${_path}#breadcrumb`,
             'name': `${title} Breadcrumb`,
             'itemListElement': [
               {

@@ -3,6 +3,8 @@ definePageMeta({
   auth: false,
 });
 
+const { t } = useI18n();
+
 const {
   params: {
     slug
@@ -19,8 +21,6 @@ const {
     seoTitle
   }
 } = useRuntimeConfig();
-
-const { t } = useI18n();
 
 const title = t('escort.title', { escort: $capitalize(escort.registry.basic.name) });
 const description =  escort.description.head[locale.value];
@@ -55,10 +55,27 @@ useHead({
     },
   ],
 });
+
+const { $listen } = useNuxtApp();
+
+$listen('level', level => {
+  escort.level = level;
+
+  const { $jsonld } = useNuxtApp();
+  useJsonld(() => ([
+    $jsonld.logo(),
+    $jsonld.organization(),
+    $jsonld.website(),
+    $jsonld.escortProfilePage(escort),
+    $jsonld.escortAdvertiserContentArticle(escort),
+    $jsonld.escortBreadcrumbList(escort)
+  ]));
+});
 </script>
 
 <template>
   <NuxtLayout>
+    {{ escort.level }}
     <div class="container">
       <EscortHeader :escort="escort" />
       <EscortAbout :escort="escort" />
