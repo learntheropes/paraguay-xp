@@ -84,8 +84,8 @@ onMounted(async () => {
 
         store.addOneMedia({
           id: uuidv4(),
-          modal: modal.toDataURL(),
-          preview: preview.toDataURL(),
+          modal: modal.toDataURL('image/webp', 0.6),
+          preview: preview.toDataURL('image/webp', 0.3),
           type: 'image'
         });
 

@@ -112,7 +112,6 @@ export default defineNuxtConfig({
     'nuxt-content-git',
     '@sidebase/nuxt-auth',
     '@pinia/nuxt',
-    '@nuxt/image',
     'nuxt-delay-hydration',
   ],
 
@@ -182,34 +181,6 @@ export default defineNuxtConfig({
     dirs: ['stores'],
   },
 
-  image: {
-    format: [
-      'webp',
-      'png'
-    ],
-    presets: {
-      navigator: {
-        modifiers: {
-          width: 48,
-          height: 48,
-          quality: 10
-        }
-      },
-      preview: {
-        modifiers: {
-          width: 288,
-          height: 288,
-          quality: 30
-        }
-      },
-      modal: {
-        modifiers: {
-          quality: 50
-        }
-      }
-    }
-  },
-  
   nitro: {
     devStorage: {
       lang: {

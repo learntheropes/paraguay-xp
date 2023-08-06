@@ -82,8 +82,7 @@ const closeConfirm = () => {
       <div @click.native="editAdv" class="card-image">
         <figure :style="'background-color:black;'" class="image is-square">
           <OLoading :full-page="false" v-model:active="isLoading" />
-          <NuxtImg
-            preset="preview"
+          <img
             :src="('/gallery/preview/' + cover.fileName).split('.')[0] + '.webp'"
             :alt="$t('escort.gallery.previewOf') + ' ' + name"
             :title="$t('escort.gallery.previewOf') + ' ' + name"

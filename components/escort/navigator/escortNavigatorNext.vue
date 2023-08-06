@@ -51,8 +51,7 @@ const { $dayjs } = useNuxtApp();
     </div>
     <div class="column is-narrow">
       <figure :style="'background-color:black;'" class="image is-48x48 has-rounded-corners">
-        <NuxtImg
-          preset="navigator"
+        <img
           :src="('/gallery/preview/' + cover.fileName).split('.')[0] + '.webp'"
           :alt="$t('escort.gallery.previewOf') + ' ' + name"
           :title="$t('escort.gallery.previewOf') + ' ' + name"
