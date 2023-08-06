@@ -29,7 +29,7 @@ export default defineNuxtPlugin(nuxtApp => {
             'contentUrl': `${deploymentDomain}/favicon.png`,
             'width': 225,
             'height': 223,
-            'caption': 'gfexp'
+            'caption': 'tgepx'
           }
         },
 
@@ -37,9 +37,9 @@ export default defineNuxtPlugin(nuxtApp => {
           return {
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            '@id': `${deploymentDomain}}#organization`,
-            'name': 'gfexp',
-            'url': 'gfexp.network',
+            '@id': `${deploymentDomain}#organization`,
+            'name': 'tgexp',
+            'url': 'https://tgepx.learntheropes.xyz',
             'telephone': whatsappAdmin,
             'logo': {
               '@id': `${deploymentDomain}#logo`,
@@ -63,6 +63,7 @@ export default defineNuxtPlugin(nuxtApp => {
         },
 
         escortProfilePage: (escort) => {
+          console.log('profile', `${deploymentDomain}/${locale.value}/escort/${escort.slug}#breadcrumb`)
           return {
             '@context': 'https://schema.org',
             '@type': [
@@ -72,15 +73,22 @@ export default defineNuxtPlugin(nuxtApp => {
             '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`,
             'url': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`,
             'name': `${nuxtApp.$capitalize(escort.registry.basic.name)} Profile Page`,
-            'thumbnailUrl': `${escort.gallery.medias[0].preview}`,
+            'thumbnail': `${escort.gallery.medias[0].preview}`,
+            'image': escort.gallery.medias.map(media => {
+              return {
+                '@id': `${deploymentDomain}/${locale.value}/image/${media.id}`,
+                '@type': 'ImageObject',
+                contentUrl: media.modal
+              }
+            }),
             'dateModified': escort.updatedAt,
             'description': escort.description.head[locale.value],
             'inLanguage': inLanguage,
             'isPartOf': {
-              '@id': `https://${process.env.URL}#website`
+              '@id': `${deploymentDomain}#website`
             },
             'breadcrumb': {
-              '@id': `${deploymentDomain}}/${locale.value}/escort/${escort.slug}#breadcrumb`
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}#breadcrumb`
             },
             'potentialAction': {
               '@type': 'ReadAction',
@@ -197,6 +205,7 @@ export default defineNuxtPlugin(nuxtApp => {
         },
 
         postBreadcrumbList: (_path, title, target) => {
+          console.log('bread', `${deploymentDomain}/${locale.value}${_path}#breadcrumb`)
           return {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
