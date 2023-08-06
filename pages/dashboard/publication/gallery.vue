@@ -102,7 +102,7 @@ await navigateTo(`/${locale.value}/dashboard/publication/description`);
 
 const goNext = async () => {
 
-await navigateTo(`/${locale.value}/dashboard/publication/ending`);
+await navigateTo(`/${locale.value}/dashboard/publication/publish`);
 }
 </script>
 

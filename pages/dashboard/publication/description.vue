@@ -20,6 +20,8 @@ const validationSchema = {
   }
 }
 
+const isLoading = ref(false);
+
 const {
   locale,
   locales
@@ -128,21 +130,26 @@ const transalteAbout = async () => {
 
 const goPrevious = async () => {
 
+  isLoading.value = true;
   await transalteHead();
   await transalteAbout();
+  isLoading.value = false;
   await navigateTo(`/${locale.value}/dashboard/publication/registry`);
 }
 
 const goNext = async () => {
 
+  isLoading.value = true;
   await transalteHead();
   await transalteAbout();
+  isLoading.value = false;
   await navigateTo(`/${locale.value}/dashboard/publication/gallery`);
 }
 </script>
 
 <template>
   <NuxtLayout>
+    <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
     <OModal v-model:active="isModalActive" :canCancel="true">
       <EmojisPicker />
     </OModal>
