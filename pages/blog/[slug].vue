@@ -18,8 +18,10 @@ const {
   description,
   target,
   body,
-  _path
+  _path,
 } = await queryContent('blog', slug).locale(locale.value).findOne();
+
+const text = body.children.map(one => one.children.map(two => (two.type === 'text') ? two.value : two.children[0].value).join('')).join('\n');
 
 const {
   public: {
