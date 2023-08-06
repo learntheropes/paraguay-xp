@@ -3,9 +3,8 @@ import { getServerSession } from '#auth';
 export default defineEventHandler(async (event) => {
 
   const targetUrl = event.req.url;
-	const securedUrls = '/api/dashboard/';
   
-  if (targetUrl.startsWith(securedUrls)) {
+  if (targetUrl.startsWith('/api/dashboard/')) {
 
     const session = await getServerSession(event);
 
@@ -15,7 +14,20 @@ export default defineEventHandler(async (event) => {
         statusCode: 403
       });
     };
+  }
 
-    event.session = session;
+  if (targetUrl.startsWith('/api/dashboard/publication')) {
+
+    const session = await getServerSession(event);
+
+    const slug = event.context.params.slug
+
+    if (!slug.containes(session.user.email.replace('+', ''))) {
+  
+      throw createError({
+        statusMessage: 'Unauthorized',
+        statusCode: 403,
+      });
+    };
   }
 });

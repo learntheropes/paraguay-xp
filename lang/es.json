@@ -156,7 +156,8 @@
     "generic": "Generic login error.",
     "disconnected": "El inicio de sesión está temporalmente desactivado por mantenimiento.\n\nInténtalo de nuevo más tarde o contáctanos por Whatsapp en",
     "betweenCharacters": "El título debe contener entre {min} y {max} caracteres",
-    "minWords": "La descripción debe contener al menos {min} palabras"
+    "minWords": "La descripción debe contener al menos {min} palabras",
+    "publish": "Debes aceptar las condiciones de publicación"
   },
   "auth": {
     "logoutEmail": "Salir",
@@ -223,6 +224,10 @@
       "blur": "Ocultar rostro en fotos",
       "yes": "Sí",
       "no": "No"
+    },
+    "publish": {
+      "accept": "Condiciones de publicación",
+      "acceptPubication": "Al enviar esta información, usted permite publicar el contenido en nuestra página web."    
     }
   },
   "emoji": {
@@ -249,9 +254,6 @@
   "fixGallery": "- Debes proporcionar al menos {minGallery} fotos, todavía te faltan {missingGallery}. Puedes agregar mas",
   "fixExtra": "- Debes seleccionar al menos {minExtra} servicios adicionales. Aún te faltan {missingExtra}. Puedes agregar más",
   "here": "aquí",
-  "accept": "Condiciones de publicación",
-  "acceptPubication": "Al enviar esta información, usted permite publicar el contenido en nuestra página web.",  
-  "errorAccept": "Debes aceptar las condiciones de publicación",
   "publicationSaved": "Su anuncio ha sido guardado. Ahora necesita la aprobación del administrador.",
   "selectArea": "Selecciona tu barrio",
   "selectServices": "Seleccione los servicios ofrecidos",

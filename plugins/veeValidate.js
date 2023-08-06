@@ -33,6 +33,11 @@ export default defineNuxtPlugin(nuxtApp => {
     else return true;
   })
 
+  defineRule('acceptPublish', value => {
+    if (value) return t('error.publish')
+    else return true;
+  })
+
   const { locale } = nuxtApp.$i18n;
 
   configure({

@@ -1,17 +1,15 @@
+
 export default eventHandler(async event => {
 
-  const slug = event.context.params.slug
+  const slug = event.context.params.slug;
 
-  if (!slug.containes(event.session.user.email.replace('+', ''))) {
+  await deleteFile({
+    path: `content/escorts/${slug}.json`
+  });
 
-    throw createError({
-      statusMessage: 'Unauthorized',
-      statusCode: 403,
-    });
-  };
-
-  await useStorage(`content:escorts`).deleteItem(`${slug}.json`);
-  await useStorage(`content:ages`).deleteItem(`${slug}.json`);
+  await deleteFile({
+    path: `content/ages/${slug}.json`
+  })
   
   setResponseStatus(event, 201);
   return;

@@ -21,6 +21,8 @@ export default defineNuxtConfig({
     telegramToken: process.env.TELEGRAM_TOKEN,
     telegramChatId: process.env.TELEGRAM_CHAT_ID,
     googleApiKey: process.env.GOOGLE_API_KEY,
+    githubRepo: process.env.GITHUB_REPO,
+    githubToken: process.env.GITHUB_TOKEN,
     public: {
       seoTitle: ' 🫦 Paraguay XP',
       isDeployed,
@@ -151,7 +153,7 @@ export default defineNuxtConfig({
       '/back-links/',
       '/competitors/',
       '/notes/',
-      '/age/'
+      '/ages/'
     ]
   },
 

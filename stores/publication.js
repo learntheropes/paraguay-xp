@@ -72,8 +72,6 @@ export const usePublicationStore = defineStore('publication', {
       phone,
       slug,
       accept,
-      approved,
-      until,
       age, 
       description, 
       registry, 
@@ -86,8 +84,6 @@ export const usePublicationStore = defineStore('publication', {
       this.phone = phone
       this.slug = slug;
       this.accept = accept;
-      this.approved = approved;
-      this.until = until;
     },
     setIdFront(base64) {
       this.age.idFront = base64

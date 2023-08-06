@@ -156,7 +156,8 @@
     "generic": "Generic login error.",
     "disconnected": "Login is temporarily disabled for maintenance.\n\nPlease try again later or contact us on Whatsapp at",
     "betweenCharacters": "The title must contain between {min} and {max} characters",
-    "minWords": "The description must contain at least {min} words"
+    "minWords": "The description must contain at least {min} words",
+    "publish": "You must accept the publication terms"
   },
   "auth": {
     "logoutEmail": "Sign out",
@@ -222,6 +223,10 @@
       "blur": "Blur face on photos",
       "yes": "Yes",
       "no": "No"
+    },
+    "publish": {
+      "accept": "Publication Terms",
+      "acceptPubication": "By submitting this information you allow to publish the content on our website."    
     }
   },
   "emoji": {
@@ -248,9 +253,6 @@
   "fixGallery": "- You need to provide at least {minGallery} photos, you are still missing {missingGallery} of them. You can review your media",
   "fixExtra": "- You need to select at least {minExtra} extra services. You are still missing {missingExtra} of them. You can add more",
   "here": "here",
-  "accept": "Publication Terms",
-  "acceptPubication": "By submitting this information you allow to publish the content on our website.",
-  "errorAccept": "You must accept the publication terms",
   "publicationSaved": "Your advertisement has been saved. It now needs admin approval.",
   "selectArea": "Select your area",
   "selectServices": "Select offered services",

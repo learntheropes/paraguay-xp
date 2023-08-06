@@ -44,9 +44,13 @@ const store = usePublicationStore();
 
 const editAdv = async () => {
 
-  const { data: ids } = await useFetch(`api/dashboard/age/${slug}`);
+  const { data: age } = await useFetch(`api/dashboard/publication/${slug}`, {
+    query: {
+      path: 'content/age'
+    }
+  });
   const escort = await queryContent('escorts', slug).findOne();
-  const publication = merge(escort, { age: { ids }});
+  const publication = merge(escort, { age });
   store.setPublication(publication);
   await navigateTo(`/${locale.value}/dashboard/publication/registry`);
 };
