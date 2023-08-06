@@ -28,8 +28,7 @@ export default defineNuxtPlugin(nuxtApp => {
             'url': `${deploymentDomain}/favicon.png`,
             'contentUrl': `${deploymentDomain}/favicon.png`,
             'width': 225,
-            'height': 223,
-            'caption': 'tgepx'
+            'height': 223
           }
         },
 
@@ -131,7 +130,7 @@ export default defineNuxtPlugin(nuxtApp => {
               {
                 '@type': 'ListItem',
                 'position': 1,
-                'name': 'Escorts',
+                'name': t('index.title'),
                 'item': `${deploymentDomain}/${locale.value}`
               },
               {
@@ -161,7 +160,7 @@ export default defineNuxtPlugin(nuxtApp => {
               '@id': `${deploymentDomain}#website`
             },
             'breadcrumb': {
-              '@id': `https://${deploymentDomain}/${locale.value}${_path}#breadcrumb`
+              '@id': `${deploymentDomain}/${locale.value}${_path}#breadcrumb`
             },
             'description': description,
             'inLanguage': inLanguage
@@ -205,7 +204,6 @@ export default defineNuxtPlugin(nuxtApp => {
         },
 
         postBreadcrumbList: (_path, title, target) => {
-          console.log('bread', `${deploymentDomain}/${locale.value}${_path}#breadcrumb`)
           return {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
@@ -215,7 +213,7 @@ export default defineNuxtPlugin(nuxtApp => {
               {
                 '@type': 'ListItem',
                 'position': 1,
-                'name': 'Escorts',
+                'name': t('index.title'),
                 'item': `${deploymentDomain}/${locale.value}`
               },
               {
@@ -233,7 +231,6 @@ export default defineNuxtPlugin(nuxtApp => {
             ]
           }
         },
-
       }
     }
   }
