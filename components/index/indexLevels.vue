@@ -3,7 +3,12 @@ const store = useEscortsStore();
 const levels = store.levels;
 const escorts = ref(store.list);
 
-const {  $listen } = useNuxtApp();
+const { 
+  $event, 
+  $listen 
+} = useNuxtApp();
+
+$event('indexEscorts', escorts.value)
 
 $listen('filterLevels', obj => {
 

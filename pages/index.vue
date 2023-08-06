@@ -31,6 +31,44 @@ useHead({
     },
   ],
 });
+
+const { 
+  $listen 
+} = useNuxtApp();
+
+let all = ref([]);
+$listen('indexEscorts', escorts => {
+
+  all.value = Object.keys(escorts).reduce((arr, level) => {
+
+    escorts[level].forEach(escort => arr.push(escort));
+    return arr;
+  }, []);
+})
+
+let postClients = ref({
+  text: '',
+  body: {
+    toc: {
+      links: []
+    }
+  },
+  updatedAt: null
+});
+$listen('indexArticleClients', ({ text ,body, updatedAt }) => {
+
+  postClients.value = { text ,body, updatedAt };
+})
+
+const { $jsonld } = useNuxtApp();
+useJsonld(() => ([
+  $jsonld.logo(),
+  $jsonld.organization(),
+  $jsonld.website(),
+  $jsonld.indexWebPage(),
+  $jsonld.indexCollection(all.value),
+  $jsonld.indexArticleClients(postClients.value)
+]));
 </script>
 
 <template>
@@ -39,9 +77,9 @@ useHead({
       <h1 class="title is-3">{{ $t('index.title') }}</h1>
       <div class="subtitle is-5">{{ $t('index.subtitle') }}</div>
       <IndexFilter />
-      <IndexLevels />
+      <IndexLevels id="collection" />
       <CollectionNavigator />
-      <IndexInstructions />
+      <IndexInstructions id="article-for-clients" />
     </div>
   </NuxtLayout>
 </template>

@@ -61,6 +61,85 @@ export default defineNuxtPlugin(nuxtApp => {
           }
         },
 
+        indexWebPage: () => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': `${deploymentDomain}/${locale.value}#webpage`,
+            'url': `${deploymentDomain}/${locale.value}`,
+            'name': `${t('index.title')} WebPage`,
+            'headline': t('index.title'),
+            'description':  t('index.description'),
+
+            'isPartOf': {
+              '@id': `${deploymentDomain}#website`
+            },
+            'inLanguage': inLanguage
+          }
+        },
+
+        indexCollection: (all) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'Collection',
+            '@id': `${deploymentDomain}/${locale.value}#collection`,
+            'url': `${deploymentDomain}/${locale.value}#collection`,
+            'name': `${t('index.title')} Collection`,
+            'collectionSize': all.length,
+            'isPartOf': {
+              '@id': `${deploymentDomain}/${locale.value}#webpage`
+            },
+            'mainEntity': {
+              '@type': 'ItemList',
+              'numberOfItems': all.length,
+              'itemListElement': all.map((item, index) => {
+                return {
+                  '@type': 'ListItem',
+                  'position': index + 1,
+                  'name': nuxtApp.$capitalize(item.registry.basic.name),
+                  'image': {
+                    '@type': 'ImageObject',
+                    'contentUrl': item.gallery.medias[0].modal
+                  },
+                  'url': `${deploymentDomain}/${locale.value}/escort/${item.slug}`
+                }
+              })
+            },
+            'inLanguage': inLanguage
+          }
+        },
+
+        indexArticleClients: ({ text ,body, updatedAt }) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            '@id': `${deploymentDomain}/${locale.value}#article-for-clients`,
+            'url': `${deploymentDomain}/${locale.value}#article-for-clients`,
+            'isPartOf': {
+              '@id': `${deploymentDomain}/${locale.value}#webpage`
+            },
+            'dateModified': updatedAt,
+            'articleBody': text,
+            'wordCount': text.split(' ').length,
+            'articleSection': body.toc.links.map(section => section.text),
+            'publisher': {
+              '@id': `${deploymentDomain}#organization`
+            },
+            'author': {
+              '@id': `${deploymentDomain}#organization`
+            }, 
+            'inLanguage': inLanguage,
+            'potentialAction': {
+              '@type': 'ReadAction',
+              'url': `${deploymentDomain}/${locale.value}#article-for-clients`,
+              'target': {
+                '@type': 'EntryPoint',
+                'urlTemplate': `${deploymentDomain}/${locale.value}#article-for-clients`
+              }
+            }
+          }
+        },
+
         escortProfilePage: (escort) => {
           console.log('profile', `${deploymentDomain}/${locale.value}/escort/${escort.slug}#breadcrumb`)
           return {
