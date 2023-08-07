@@ -28,17 +28,18 @@ export default defineEventHandler(async () => {
     ...agenciesUrls,
     ...areasUrls,
     ...extrasUrls,
-    ...servicesUrls
+    ...servicesUrls,
+    ...['', 'news', 'blog']
   ];
 
   return endpoints.reduce((arr, endpoint) => {
 
-    let alternatives = [{
+    const getAlternatives = (thisLocale) => [{
       hreflang: 'x-default',
       href: `/${defaultLocale}/${endpoint}`
     }]
     .concat(locales
-      // .filter (locale => locale.code !== defaultLocale)
+      // .filter (locale => locale.code !== thisLocale)
       .map(locale => {
         return {
           hreflang: locale.code,
@@ -47,6 +48,7 @@ export default defineEventHandler(async () => {
       })
     )
     .concat(locales
+      // .filter (locale => locale.code !== thisLocale)
       .map(locale => {
         return {
           hreflang: locale.iso,
@@ -60,7 +62,7 @@ export default defineEventHandler(async () => {
       arr.push({
         loc: `/${locale.code}/${endpoint}`,
         lastMod: new Date(),
-        alternatives
+        alternatives: getAlternatives(locale.code)
       })
     });
 

@@ -400,7 +400,6 @@ export default defineNuxtPlugin(nuxtApp => {
         },
 
         escortProfilePage: (escort) => {
-          console.log('profile', `${deploymentDomain}/${locale.value}/escort/${escort.slug}#breadcrumb`)
           return {
             '@context': 'https://schema.org',
             '@type': [

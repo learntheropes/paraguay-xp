@@ -28,7 +28,7 @@ const nextEscort = escorts[nextEscortIndex];
 </script>
 
 <template>
-  <section v-if="escorts.length > 1" class="section">
+  <section v-if="escorts.length > 1" class="section" id="breadcrumb">
     <h2 class="title is-5">{{ $t('escort.navigator.title', { levelName: $t(`level.${level}`) }) }}</h2>
     <div class="columns is-12 is-vcentered">
       <div class="column is-half">
