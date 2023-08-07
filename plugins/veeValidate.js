@@ -26,17 +26,12 @@ export default defineNuxtPlugin(nuxtApp => {
   defineRule('betweenCharacters', (value, { min, max}) => {
     if (value.length < min || value.length > max) return t('error.betweenCharacters', { min, max })
     else return true;
-  })
+  });
 
   defineRule('minWords', (value, { min }) => {
     if (value.split(' ').length < min) return t('error.minWords', { min })
     else return true;
-  })
-
-  defineRule('acceptPublish', value => {
-    if (value) return t('error.publish')
-    else return true;
-  })
+  });
 
   const { locale } = nuxtApp.$i18n;
 

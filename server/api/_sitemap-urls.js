@@ -3,7 +3,7 @@ import uniq from 'lodash.uniq';
 import flatten from 'lodash.flatten';
 import kebabCase from 'lodash.kebabcase';
 import { defaultLocale, locales } from '~/assets/js/locales';
-import services from '~/assets/js/services'
+import services from '~/assets/js/services';
 
 export default defineEventHandler(async () => {
 
