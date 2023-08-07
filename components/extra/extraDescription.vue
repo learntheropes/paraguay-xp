@@ -19,6 +19,7 @@ try {
   } = await queryContent('extra', slug)
     .locale(locale.value)
     .findOne();
+    
   existingBody = body;
 
   const { $parseContentBody } = useNuxtApp();

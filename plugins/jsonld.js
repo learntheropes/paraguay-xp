@@ -277,14 +277,106 @@ export default defineNuxtPlugin(nuxtApp => {
             'inLanguage': inLanguage,
             'potentialAction': {
               '@type': 'ReadAction',
-              'url': `${deploymentDomain}/${locale.value}#article-for-clients`,
+              'url': `${deploymentDomain}/${locale.value}/extra/${slug}#article`,
               'target': {
                 '@type': 'EntryPoint',
-                'urlTemplate': `${deploymentDomain}/${locale.value}#article-for-clients`
+                'urlTemplate': `${deploymentDomain}/${locale.value}/extra/${slug}#article`
               }
             }
           }
         },
+
+
+
+
+
+        serviceWebPage: (slug, title, description) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': `${deploymentDomain}/${locale.value}/service/${slug}#webpage`,
+            'url': `${deploymentDomain}/${locale.value}/service/${slug}`,
+            'name': `${title} WebPage`,
+            'headline': title,
+            'description': description,
+
+            'isPartOf': {
+              '@id': `${deploymentDomain}#website`
+            },
+            'inLanguage': inLanguage
+          }
+        },
+
+        serviceCollection: (slug, title, all) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'Collection',
+            '@id': `${deploymentDomain}/${locale.value}/service/${slug}#collection`,
+            'url': `${deploymentDomain}/${locale.value}/service/${slug}#collection`,
+            'name': `${title} Collection`,
+            'headline': title,
+            'collectionSize': all.length,
+            'isPartOf': {
+              '@id': `${deploymentDomain}/${locale.value}/service/${slug}#webpage`
+            },
+            'mainEntity': {
+              '@type': 'ItemList',
+              'numberOfItems': all.length,
+              'itemListElement': all.map((item, index) => {
+                return {
+                  '@type': 'ListItem',
+                  'position': index + 1,
+                  'name': nuxtApp.$capitalize(item.registry.basic.name),
+                  'image': {
+                    '@type': 'ImageObject',
+                    'contentUrl': item.gallery.medias[0].modal
+                  },
+                  'url': `${deploymentDomain}/${locale.value}/escort/${item.slug}`
+                }
+              })
+            },
+            'inLanguage': inLanguage
+          }
+        },
+
+        serviceArticle: (slug, { text ,body, updatedAt }) => {
+          if (!updatedAt) return null;
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            '@id': `${deploymentDomain}/${locale.value}/service/${slug}#article`,
+            'url': `${deploymentDomain}/${locale.value}/service/${slug}#article`,
+            'isPartOf': {
+              '@id': `${deploymentDomain}/${locale.value}/service/${slug}#webpage`
+            },
+            'dateModified': updatedAt,
+            'articleBody': text,
+            'wordCount': text.split(' ').length,
+            'articleSection': body.toc.links.map(section => section.text),
+            'publisher': {
+              '@id': `${deploymentDomain}#organization`
+            },
+            'author': {
+              '@id': `${deploymentDomain}#organization`
+            }, 
+            'inLanguage': inLanguage,
+            'potentialAction': {
+              '@type': 'ReadAction',
+              'url': `${deploymentDomain}/${locale.value}/service/${slug}#article`,
+              'target': {
+                '@type': 'EntryPoint',
+                'urlTemplate': `${deploymentDomain}/${locale.value}/service/${slug}#article`
+              }
+            }
+          }
+        },
+
+
+
+
+
+
+
 
         escortProfilePage: (escort) => {
           console.log('profile', `${deploymentDomain}/${locale.value}/escort/${escort.slug}#breadcrumb`)
