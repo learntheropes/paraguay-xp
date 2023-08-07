@@ -22,13 +22,8 @@ const {
   updatedAt
 } = await queryContent('blog', slug).locale(locale.value).findOne();
 
-const text = body.children.map(
-  one => (one.type === 'text') ? one.value : one.children.map(
-    two => (two.type === 'text') ? two.value : two.children.map(
-      three => (three.type === 'text') ? three.value : three.children[0].value
-    )
-  ).join('')
-).join('\n');
+const { $parseContentBody } = useNuxtApp();
+const text = $parseContentBody(body);
 
 const {
   public: {

@@ -6,7 +6,11 @@ definePageMeta({
   auth: false,
 });
 
-const { params: { slug }} = useRoute();
+const { 
+  params: { 
+    slug 
+  }
+} = useRoute();
 
 const extra = camelCase(slug);
 
@@ -44,6 +48,42 @@ useHead({
     },
   ],
 });
+
+const { $listen } = useNuxtApp();
+
+let all = ref([]);
+$listen('extraEscorts', escorts => {
+
+  all.value = Object.keys(escorts).reduce((arr, level) => {
+
+    escorts[level].forEach(escort => arr.push(escort));
+    return arr;
+  }, []);
+})
+
+let post = ref({
+  text: '',
+  body: {
+    toc: {
+      links: []
+    }
+  },
+  updatedAt: null
+});
+$listen('extraArticle', ({ text ,body, updatedAt }) => {
+
+  post.value = { text ,body, updatedAt };
+})
+
+const { $jsonld } = useNuxtApp();
+useJsonld(() => ([
+  $jsonld.logo(),
+  $jsonld.organization(),
+  $jsonld.website(),
+  $jsonld.extraWebPage(slug, title, description),
+  $jsonld.extraCollection(slug, title, all.value),
+  $jsonld.extraArticle(slug, post.value)
+]));
 </script>
 
 <template>
@@ -51,8 +91,8 @@ useHead({
     <div class="container">
       <h1 class="title is-3">{{ title }}</h1>
       <div class="subtitle is-5">{{ description }}</div>
-      <ExtraLevels :extra="extra" />
-      <ExtraDescription :slug="slug" />
+      <ExtraLevels :extra="extra" id="collection" />
+      <ExtraDescription :slug="slug" id="article" />
       <CollectionNavigator :slug="slug" />
     </div>
   </NuxtLayout>

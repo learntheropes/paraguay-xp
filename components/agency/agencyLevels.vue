@@ -17,7 +17,7 @@ const escorts = Object.keys(store.list).reduce((obj, levelName) => {
 }, {});
 
 const { $event } = useNuxtApp();
-$event('agencyEscorts', escorts.value);
+$event('agencyEscorts', escorts);
 </script>
 
 <template>

@@ -10,25 +10,32 @@ const {
 
 const { locale } = useI18n();
 
-let text;
+let existingBody, text;
 try {
 
   const {
-    body
+    body,
+    updatedAt
   } = await queryContent('extra', slug)
     .locale(locale.value)
     .findOne();
+  existingBody = body;
 
-  text = body;
+  const { $parseContentBody } = useNuxtApp();
+  text = $parseContentBody(body);
+
+  const { $event } = useNuxtApp();
+  $event('extraArticle', { text, body: existingBody, updatedAt});
 } catch (error) {
 
-  text = null;
+  existingBody = null;
 }
+
 </script>
 
 <template>
-  <section v-if="body" class="section">
+  <section v-if="existingBody" class="section">
     <h2 class="title is-5">{{ $t('extra.whatAbout') }}</h2>
-    <ContentRendererMarkdown :value="{ body: text }" class="content"/>
+    <ContentRendererMarkdown :value="{ body: existingBody }" class="content"/>
   </section>
 </template>

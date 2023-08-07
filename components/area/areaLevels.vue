@@ -17,6 +17,9 @@ const escorts = Object.keys(store.list).reduce((obj, levelName) => {
     : store.list[levelName].filter(escort => escort.registry.services.area === area);
   return obj;
 }, {});
+
+const { $event } = useNuxtApp();
+$event('areaEscorts', escorts);
 </script>
 
 <template>

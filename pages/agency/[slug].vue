@@ -64,7 +64,7 @@ $listen('agencyEscorts', escorts => {
     $jsonld.organization(),
     $jsonld.website(),
     $jsonld.indexWebPage(),
-    $jsonld.agencyCollection(all),
+    $jsonld.agencyCollection(slug, title, all),
   ]));
 })
 </script>

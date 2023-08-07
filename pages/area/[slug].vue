@@ -2,7 +2,11 @@
 import neighbourhoods from '~/assets/js/neighbourhoods'
 import cities from '~/assets/js/cities'
 
-const { params: { slug }} = useRoute();
+const { 
+  params: { 
+    slug 
+  }
+} = useRoute();
 
 definePageMeta({
   auth: false,
@@ -52,6 +56,25 @@ useHead({
 const areas = [].concat(neighbourhoods, cities);
 
 if (!(areas.includes(area)) && (slug !== 'outcall-only')) throw createError({ statusCode: 404 });
+
+const { $listen } = useNuxtApp();
+$listen('areaEscorts', escorts => {
+
+  const all = Object.keys(escorts).reduce((arr, level) => {
+
+    escorts[level].forEach(escort => arr.push(escort));
+    return arr;
+  }, []);
+
+  const { $jsonld } = useNuxtApp();
+  useJsonld(() => ([
+    $jsonld.logo(),
+    $jsonld.organization(),
+    $jsonld.website(),
+    $jsonld.indexWebPage(),
+    $jsonld.areaCollection(slug, title, all),
+  ]));
+})
 </script>
 
 <template>

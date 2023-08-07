@@ -9,18 +9,10 @@ const {
   .locale(locale.value)
   .findOne();
 
-const text = body.children.map(
-  one => (one.type === 'text') ? one.value : one.children.map(
-    two => (two.type === 'text') ? two.value : two.children.map(
-      three => (three.type === 'text') ? three.value : three.children[0].value
-    )
-  ).join('')
-).join('\n');
+const { $parseContentBody } = useNuxtApp();
+const text = $parseContentBody(body);
 
-
-const { 
-  $event 
-} = useNuxtApp();
+const { $event } = useNuxtApp();
 $event('indexArticleClients', { text, body, updatedAt});
 </script>
 
