@@ -77,7 +77,8 @@ export default defineEventHandler(async () => {
         loc: `/${locale.code}/${endpoint}`,
         lastMod: new Date(),
         alternatives: getAlternatives(locale.code),
-        image: getImages(endpoint)
+        // Images can't be added because in base64 format.
+        // image: getImages(endpoint)
       })
     });
 
