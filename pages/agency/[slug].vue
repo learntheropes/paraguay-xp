@@ -48,6 +48,25 @@ useHead({
 const { phone } = await queryContent('escorts').where({ registry: { basic: { agency: decodeURIComponent(slug).replace(/-/g,' ')}}}).findOne();
 const message = encodeURIComponent(`Hola *${$capitalize(title)}*. He visto su pagina en *ParaguayXP*. Me gustaria recibir mas informacion cerca las chicas`);
 const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phone.replace('+','')}&text=${message}`;
+
+const { $listen } = useNuxtApp();
+$listen('agencyEscorts', escorts => {
+
+  const all = Object.keys(escorts).reduce((arr, level) => {
+
+    escorts[level].forEach(escort => arr.push(escort));
+    return arr;
+  }, []);
+
+  const { $jsonld } = useNuxtApp();
+  useJsonld(() => ([
+    $jsonld.logo(),
+    $jsonld.organization(),
+    $jsonld.website(),
+    $jsonld.indexWebPage(),
+    $jsonld.agencyCollection(all),
+  ]));
+})
 </script>
 
 <template>

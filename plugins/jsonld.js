@@ -85,6 +85,7 @@ export default defineNuxtPlugin(nuxtApp => {
             '@id': `${deploymentDomain}/${locale.value}#collection`,
             'url': `${deploymentDomain}/${locale.value}#collection`,
             'name': `${t('index.title')} Collection`,
+            'headline': t('index.title'),	
             'collectionSize': all.length,
             'isPartOf': {
               '@id': `${deploymentDomain}/${locale.value}#webpage`
@@ -137,6 +138,38 @@ export default defineNuxtPlugin(nuxtApp => {
                 'urlTemplate': `${deploymentDomain}/${locale.value}#article-for-clients`
               }
             }
+          }
+        },
+
+        agencyCollection: (slug, title, all) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'Collection',
+            '@id': `${deploymentDomain}/${locale.value}/agency/${slug}#collection`,
+            'url': `${deploymentDomain}/${locale.value}/agency/${slug}#collection`,
+            'name': `${title} Collection`,
+            'headline': title,
+            'collectionSize': all.length,
+            'isPartOf': {
+              '@id': `${deploymentDomain}/${locale.value}#webpage`
+            },
+            'mainEntity': {
+              '@type': 'ItemList',
+              'numberOfItems': all.length,
+              'itemListElement': all.map((item, index) => {
+                return {
+                  '@type': 'ListItem',
+                  'position': index + 1,
+                  'name': nuxtApp.$capitalize(item.registry.basic.name),
+                  'image': {
+                    '@type': 'ImageObject',
+                    'contentUrl': item.gallery.medias[0].modal
+                  },
+                  'url': `${deploymentDomain}/${locale.value}/escort/${item.slug}`
+                }
+              })
+            },
+            'inLanguage': inLanguage
           }
         },
 

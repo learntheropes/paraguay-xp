@@ -15,6 +15,9 @@ const escorts = Object.keys(store.list).reduce((obj, levelName) => {
   obj[levelName] = store.list[levelName].filter(escort => escort.registry.basic.agency.toLowerCase() === agency.toLowerCase());
   return obj;
 }, {});
+
+const { $event } = useNuxtApp();
+$event('agencyEscorts', escorts.value);
 </script>
 
 <template>
