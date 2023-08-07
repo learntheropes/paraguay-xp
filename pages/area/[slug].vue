@@ -74,7 +74,7 @@ $listen('areaEscorts', escorts => {
     $jsonld.indexWebPage(),
     $jsonld.areaCollection(slug, title, all),
   ]));
-})
+});
 </script>
 
 <template>

@@ -31,6 +31,25 @@ useHead({
     },
   ],
 });
+
+const { $listen } = useNuxtApp();
+$listen('newsEscorts', escorts => {
+
+  const all = Object.keys(escorts).reduce((arr, level) => {
+
+    escorts[level].forEach(escort => arr.push(escort));
+    return arr;
+  }, []);
+
+  const { $jsonld } = useNuxtApp();
+  useJsonld(() => ([
+    $jsonld.logo(),
+    $jsonld.organization(),
+    $jsonld.website(),
+    $jsonld.indexWebPage(),
+    $jsonld.newsCollection(all),
+  ]));
+});
 </script>
 
 <template>
