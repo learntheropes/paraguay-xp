@@ -85,7 +85,7 @@ onMounted(async () => {
         const ctxPreview = preview.getContext("2d");
         preview.width = 288;
         preview.height = 288;
-        ctxPreview.drawImage(modal, - parseInt(detections.length ? detections[0].box.x.toString() : 144), - parseInt(detections.length ? detections[0].box.y.toString() : 144));
+        ctxPreview.drawImage(modal, - parseInt(detections.length ? detections[0].box.x.toString() : modal.width / 2), - parseInt(detections.length ? detections[0].box.y.toString() : modal.height / 2));
 
         store.addOneMedia({
           id: uuidv4(),
