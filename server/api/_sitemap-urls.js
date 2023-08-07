@@ -12,13 +12,13 @@ export default defineEventHandler(async () => {
   const escorts = await Promise.all(promises)
   const escortsUrls = escorts.map(escort => `escorts/${escort.slug}`)
 
-  const agencies = uniqBy(escorts, 'agency').map(escort => escort.agency);
-  const agenciesUrls = agencies.map(agency => `agency/${kebabCase(agency)}`)
+  const agencies = uniqBy(escorts, 'agency').filter(escort => escort.registry.basic.agency).map(escort => escort.registry.basic.agency);
+  const agenciesUrls = agencies.map(agency => `agency/${kebabCase(agency)}`).concat([`agency/indipendent`])
   
-  const areas = uniqBy(escorts, 'area').filter(escort => escort.area).map(escort => escort.area);
+  const areas = uniqBy(escorts, 'area').filter(escort => escort.registry.services.area).map(escort => escort.registry.services.area);
   const areasUrls = areas.map(area => `area/${kebabCase(area)}`).concat([`area/outcall-only`]);
 
-  const extras = uniq(flatten(escorts.map(escort => escort.extra))).filter(name => name);
+  const extras = uniq(flatten(escorts.map(escort => escort.registry.extra))).filter(name => name);
   const extrasUrls = extras.map(extra => `extra/${kebabCase(extra)}`);
 
   const servicesUrls = services.map(service => `service/${kebabCase(service)}`);
