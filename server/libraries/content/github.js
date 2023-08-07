@@ -7,9 +7,15 @@ const {
  } = useRuntimeConfig();
 
 const encodeContent = (data) => {
-  const string = JSON.stringify(data, null, 2);
-  const buff = new Buffer.from(string);
-  return buff.toString('base64');
+  let buff;
+  try {
+    const string = JSON.stringify(data, null, 2);
+    const buff = new Buffer.from(string);
+    return buff.toString('base64');
+  } catch (error) {
+    buff = data
+  }
+  return buff
 }
 
 const githubJson = ofetch.create({

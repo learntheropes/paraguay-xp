@@ -85,6 +85,9 @@ export const usePublicationStore = defineStore('publication', {
       this.slug = slug;
       this.accept = accept;
     },
+    setAccept(bool) {
+      this.accept = bool;
+    },
     setIdFront(base64) {
       this.age.idFront = base64
     },

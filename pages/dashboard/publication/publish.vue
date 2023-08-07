@@ -1,12 +1,20 @@
 <script setup>
+definePageMeta({
+  layout: 'dashboard'
+});
+
 const isLoading = ref(false);
 const store = usePublicationStore();
 
-const validationSchema = {
-  accept: {
-    acceptPublish: true
-  }
+const error = () => {
+  if (!store.accept) return t('error.publish')
+  else return null;
 }
+
+const { 
+  locale,
+  t 
+} = useI18n();
 
 const acceptText = computed(() => (store.accept) ? t('dashboard.gallery.yes') : t('dashboard.gallery.no'));
 
@@ -17,67 +25,61 @@ await navigateTo(`/${locale.value}/dashboard/publication/gallery`);
 
 const publish = async () => {
 
+  if (!store.accept) return;
+
   isLoading.value = true;
   const { data } = useAuth();
 
   const age = store.age;
+  const slug = `${store.registry.basic.name.replace(/\s/, '-').toLowerCase()}-${data.value.user.email.replace('+', '')}`;
 
-  await useFetch(`/api/dashboard/publication/${publication.slug}`, {
+  await useFetch(`/api/dashboard/publication/${slug}`, {
     method: 'POST',
-    body: age,
-    query: {
-      path: `content/ages`
-    }
+    body: {
+      content: age,
+      path: `content/ages`,
+      message: `create content/ages/${slug}.json`
+    },
   });
 
   const publication = {
     phone: data.value.user.email,
-    slug: `${store.registry.basic.name.replace(/\s/, '-').toLowerCase()}-${data.value.user.email.replace('+', '')}`,
+    slug: slug,
     accept: store.accept,
-    // age: store.age,
     registry: store.registry,
     description: store.description,
     gallery: store.gallery
   }
 
+  publication.gallery.cover = store.gallery.medias[0];
+
   await useFetch(`/api/dashboard/publication/${publication.slug}`, {
     method: 'POST',
-    body: publication,
-    query: {
-      path: `content/escorts`
-    }
+    body: {
+      content: publication,
+      path: `content/escorts`,
+      message: `create content/escorts/${slug}.json`
+    },
   });
 
   isLoading.value = false;
 }
-</script>´
+</script>
 
 <template>
-  <VForm
-    name="publish"
-    :validation-schema="validationSchema"
-    @submit="publish"
-  >
-    <VField
-      name="head"
-      :label="$t('dashboard.publish.accept')"
-      v-slot="{ handleChange, handleBlur, value, errors }"
-      v-model="store.accept"
-    >
-      <OField
-        :label="$t('dashboard.publish.accept')"
-        :variant="errors[0] ? 'danger' : null"
-        :message="errors[0] ? errors[0] : $t('dashboard.publish.acceptPubication')"
-      >
-        <OSwitch
-          :label="$t('dashboard.publish.accept')"
-          :model-value="value"
-          @update:modelValue="handleChange"
-          @change="handleChange"
-          @blur="handleBlur"
-        >{{ acceptText }}</OSwitch>
-      </OField>
-    </VField>
+  <NuxtLayout>
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+          <OField
+            :label="$t('dashboard.publish.accept')"
+            :variant="error() ? 'danger' : null"
+            :message="error() ? error() : null"
+          >
+            <OSwitch v-model="store.accept">{{ acceptText }}</OSwitch>
+          </OField>
+          <div class="is-7">{{ $t('dashboard.publish.acceptPubication') }}</div>
+      </div>
+    </div>
     <div class="level is-mobile">
       <div class="level-left">
         <div class="level-item">
@@ -102,5 +104,5 @@ const publish = async () => {
         </div>
       </div>
     </div>
-  </VForm>
+  </NuxtLayout>
 </template>

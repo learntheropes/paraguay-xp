@@ -31,13 +31,11 @@ const {
     head
   },
   gallery: {
-    medias
+    cover
   },
   slug,
   updatedAt
 } = escort;
-
-const cover = medias[0];
 
 const {
   locale,

@@ -86,7 +86,7 @@ const translate = async q => {
     }
   });
 
-  response[originalLanguage] = head.original;
+  response[originalLanguage] = q;
   const languagesToTranslate = locales.value.filter((loc) => loc !== originalLanguage);
 
   const transalteOneLanguage = (originalLanguage, languageToTransalte) => useFetch('/api/dashboard/translation/translate', {
@@ -106,8 +106,7 @@ const translate = async q => {
     response[translation.data.target] = translation.data.translatedText;
   });
 
-  return body;
-
+  return response;
 }
 
 const transalteHead = async () => {

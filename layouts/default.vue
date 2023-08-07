@@ -31,7 +31,7 @@ if (!store.init) {
   .only([
     'registry', 
     'slug', 
-    'gallery', 
+    'cover', 
     'age', 
     'blur', 
     'updatedAt', 

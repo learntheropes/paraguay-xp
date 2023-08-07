@@ -8,7 +8,10 @@ definePageMeta({
 
 const store = usePublicationStore();
 
-const { t } = useI18n();
+const { 
+  locale,
+  t 
+} = useI18n();
 
 const blurText = computed(() => (store.gallery.blur) ? t('dashboard.gallery.yes') : t('dashboard.gallery.no'));
 
@@ -35,7 +38,9 @@ onMounted(async () => {
 
       image.onload = async () => {
 
-        let ctxModal = modal.getContext('2d');
+        try {
+
+          let ctxModal = modal.getContext('2d');
         modal.width = image.width;
         modal.height = image.height;
         ctxModal.drawImage(image, 0,0, modal.width, modal.height);
@@ -46,7 +51,7 @@ onMounted(async () => {
 
           detections.forEach(detection => {
 
-            let box = {
+            const box = {
               spread: 10,
               x: parseInt(detection.box.x.toString()),
               y: parseInt(detection.box.y.toString()),
@@ -80,7 +85,7 @@ onMounted(async () => {
         const ctxPreview = preview.getContext("2d");
         preview.width = 288;
         preview.height = 288;
-        ctxPreview.drawImage(modal, - parseInt(detections[0].box.x.toString()), - parseInt(detections[0].box.y.toString()));
+        ctxPreview.drawImage(modal, - parseInt(detections.length ? detections[0].box.x.toString() : 144), - parseInt(detections.length ? detections[0].box.y.toString() : 144));
 
         store.addOneMedia({
           id: uuidv4(),
@@ -90,6 +95,10 @@ onMounted(async () => {
         });
 
         if (Array.from(files).indexOf(file) === files.length - 1) isLoading.value = false;
+          
+        } catch (error) {
+          console.log('error', error)
+        }
       }
     }
   })
