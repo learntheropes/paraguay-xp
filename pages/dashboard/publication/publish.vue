@@ -33,7 +33,7 @@ const publish = async () => {
   const age = store.age;
   const slug = `${store.registry.basic.name.replace(/\s/, '-').toLowerCase()}-${data.value.user.email.replace('+', '')}`;
 
-  await useFetch(`/api/dashboard/publication/${slug}`, {
+  await useFetch(`/api/dashboard/publication/${slug}.json`, {
     method: 'POST',
     body: {
       content: age,
@@ -66,7 +66,7 @@ const publish = async () => {
     }
   }
 
-  await useFetch(`/api/dashboard/publication/${publication.slug}`, {
+  await useFetch(`/api/dashboard/publication/${publication.slug}.json`, {
     method: 'POST',
     body: {
       content: publication,

@@ -12,7 +12,7 @@ const {
 });
 
 const {
-  age: {
+  preview: {
     dateOfBirth
   },
   gallery: {
@@ -58,7 +58,7 @@ const editAdv = async () => {
 const removeAdv = async () => {
 
   await useFetch(`/api/dashboard/publication/${slug}`, {
-    method: 'delete'
+    method: 'DELETE'
   });
 
   isConfirmActive.value = false;
@@ -83,7 +83,7 @@ const closeConfirm = () => {
         <figure :style="'background-color:black;'" class="image is-square">
           <OLoading :full-page="false" v-model:active="isLoading" />
           <img
-            :src="('/gallery/preview/' + cover.fileName).split('.')[0] + '.webp'"
+            :src="cover.preview"
             :alt="$t('escort.gallery.previewOf') + ' ' + name"
             :title="$t('escort.gallery.previewOf') + ' ' + name"
             loading="lazy"

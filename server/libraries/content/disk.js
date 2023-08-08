@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-const { pathExists, readJson, writeJson, remove } = fs;
+const { pathExists, readJson, writeJson, writeFile, remove } = fs;
 import klaw from 'klaw';
 import merge from 'lodash.merge';
 
@@ -30,9 +30,9 @@ export const getDiskFile = async ({ path }) => {
   }
 }
 
-export const addDiskFile = async ({ path, content }) => {
+export const addDiskFile = ({ path, content }) => {
 
-  await writeJson(path, content, {spaces: 2});
+  writeFile(path, content);
 }
 
 export const updateDiskFile = async ({ path, content }) => {

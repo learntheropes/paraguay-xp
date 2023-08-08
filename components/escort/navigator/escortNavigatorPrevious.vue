@@ -11,7 +11,7 @@ const {
 });
 
 const {
-  age: {
+  preview: {
     dateOfBirth
   },
   gallery: {

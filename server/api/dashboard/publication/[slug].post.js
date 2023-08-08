@@ -1,19 +1,26 @@
 export default eventHandler(async event => {
 
   const slug = event.context.params.slug;
-  
-  const {
-    content,
-    path,
-    message
-  } = await readBody(event);
+  const contentType = getHeader(event, 'Content-Type');
+  const { content, path, message } = await readBody(event);
 
-  await updateFile({
-    path: `${path}/${slug}.json`,
-    content,
-    message,
-  })
+  if (contentType === 'image/webp') {
+
+    const contentBuffer = Buffer.from(content.replace(/^data:image\/\w+;base64,/, ''), 'base64');
+    await addFile({
+      path: `${path}/${slug}.webp`,
+      content: contentBuffer,
+      message,
+    });
+  } else {
+
+    await updateFile({
+      path: `${path}/${slug}`,
+      content,
+      message,
+    });
+  }
   
   setResponseStatus(event, 201);
-  return content;
+  return true;
 });

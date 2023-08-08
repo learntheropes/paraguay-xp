@@ -14,8 +14,14 @@ const {
 } = useI18n();
 
 const blurText = computed(() => (store.gallery.blur) ? t('dashboard.gallery.yes') : t('dashboard.gallery.no'));
-
 const isLoading = ref(false);
+let temps = ref([]);
+
+const { $listen } = useNuxtApp();
+
+$listen('removeOneTemp', index => {
+  temps.value.splice(index, 1);
+})
 
 onMounted(async () => {
 
@@ -30,6 +36,7 @@ onMounted(async () => {
     isLoading.value = true;
 
     const files = event.target.files;
+
 
     for (const file of files) {
 
@@ -87,22 +94,44 @@ onMounted(async () => {
         preview.height = 288;
         ctxPreview.drawImage(modal, - parseInt(detections.length ? detections[0].box.x.toString() : modal.width / 2), - parseInt(detections.length ? detections[0].box.y.toString() : modal.height / 2));
 
+        const id = uuidv4();
+
         store.addOneMedia({
-          id: uuidv4(),
-          modal: modal.toDataURL('image/webp', 0.6),
-          preview: preview.toDataURL('image/webp', 0.3),
+          id: `${id}`,
           type: 'image'
         });
+
+        temps.value.push(preview.toDataURL('image/webp', 0.3))
+
+        await postMedia(id, 'modal', modal.toDataURL('image/webp', 0.6));
+        await postMedia(id, 'preview', preview.toDataURL('image/webp', 0.3));
 
         if (Array.from(files).indexOf(file) === files.length - 1) isLoading.value = false;
           
         } catch (error) {
-          console.log('error', error)
+
+          console.log('error', error);
         }
       }
     }
   })
-})
+});
+
+const postMedia = async (id, path, base64String) => {
+  console.log(`post-${path}-${id}`)
+  await useFetch(`/api/dashboard/publication/${id}`, {
+    key: `post-${path}-${id}`,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'image/webp'
+    },
+    body:{ 
+      content: base64String,
+      path: `public/gallery/${path}`,
+      message: `add ${path} image ${id}.webp`
+    },
+  });
+}
 
 const goPrevious = async () => {
 
@@ -117,6 +146,7 @@ await navigateTo(`/${locale.value}/dashboard/publication/publish`);
 
 <template>
   <NuxtLayout>
+    <pre>{{  temps  }}</pre>
     <canvas id="modal" class="is-hidden-tablet is-hidden-mobile" /> 
     <canvas id="preview" class="is-hidden-tablet is-hidden-mobile" /> 
     <div class="full-body">
@@ -132,7 +162,7 @@ await navigateTo(`/${locale.value}/dashboard/publication/publish`);
             </OField>
             <div class="columns is-mobile is-multiline">
               <div v-for="(image, index) in store.gallery.medias" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
-                <DashboardPublicationGalleryCard :image="image" :index="index" />
+                <DashboardPublicationGalleryCard :image="image" :index="index" :temp="temps[index]"/>
               </div>
               <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
                 <OField class="is-hidden-mobile is-hidden-tablet">
