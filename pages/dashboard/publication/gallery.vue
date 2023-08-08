@@ -153,7 +153,6 @@ const goNext = async () => {
 
 <template>
   <NuxtLayout>
-    <pre>{{ temps }}</pre>
     <canvas id="modal" class="is-hidden-tablet is-hidden-mobile" /> 
     <canvas id="preview" class="is-hidden-tablet is-hidden-mobile" /> 
     <div class="full-body">
