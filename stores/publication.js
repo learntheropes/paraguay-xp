@@ -128,6 +128,10 @@ export const usePublicationStore = defineStore('publication', {
     // setGallery(gallery) {
     //   this.gallery = gallery;
     // },
+    concatMedias(temps) {
+      temps.forEach(temp => delete temp.preview);
+      this.gallery.medias = this.gallery.medias.concat(temps);
+    }, 
     addOneMedia(media) {
       this.gallery.medias.push(media);
     },

@@ -19,8 +19,9 @@ let temps = ref([]);
 
 const { $listen } = useNuxtApp();
 
-$listen('removeOneTemp', index => {
-  temps.value.splice(index, 1);
+$listen('removeOne', index => {
+  if (index < store.gallery.medias.length) store.removeOneMedia(index)
+  else temps.value.splice(index - store.gallery.medias.length, 1);
 })
 
 onMounted(async () => {
@@ -48,66 +49,68 @@ onMounted(async () => {
         try {
 
           let ctxModal = modal.getContext('2d');
-        modal.width = image.width;
-        modal.height = image.height;
-        ctxModal.drawImage(image, 0,0, modal.width, modal.height);
+          modal.width = image.width;
+          modal.height = image.height;
+          ctxModal.drawImage(image, 0,0, modal.width, modal.height);
 
-        const detections = await faceapi.detectAllFaces(image, new faceapi.TinyFaceDetectorOptions());
+          const detections = await faceapi.detectAllFaces(image, new faceapi.TinyFaceDetectorOptions());
 
-        if (store.gallery.blur) {
+          if (store.gallery.blur) {
 
-          detections.forEach(detection => {
+            detections.forEach(detection => {
 
-            const box = {
-              spread: 10,
-              x: parseInt(detection.box.x.toString()),
-              y: parseInt(detection.box.y.toString()),
-              width: parseInt(detection.box.width.toString()),
-              height: parseInt(detection.box.height.toString())
-            }
+              const box = {
+                spread: 10,
+                x: parseInt(detection.box.x.toString()),
+                y: parseInt(detection.box.y.toString()),
+                width: parseInt(detection.box.width.toString()),
+                height: parseInt(detection.box.height.toString())
+              }
 
-            ctxModal.filter = 'blur('+ box.spread +'px)';
-            ctxModal.drawImage(modal, box.x, box.y, box.width, box.height, box.x, box.y, box.width, box.height);
-            ctxModal.filter = 'none';
-            ctxModal.fillStyle = 'rgba(255,255,255,0.2)';
-            ctxModal.fillRect(box.x, box.y, box.width, box.height);
-          });
-        }
-
-        const applyWatermark = (txt) => {
-          ctxModal.translate(- modal.width, 0);
-          ctxModal.rotate( - Math.PI / 4);
-          ctxModal.font = "20px Arial";
-          ctxModal.fillStyle = 'rgba(128, 128, 128, 0.5)';
-          var txtHeight = 25;
-          var offset = 25;
-          var w = Math.ceil(ctxModal.measureText(txt).width);
-          var txt = new Array(w * 10).join(txt + '     ');
-          for (var i = 0; i < Math.ceil(modal.height * 2 / txtHeight); i++) {
-            ctxModal.fillText(txt, -(i * offset), i * txtHeight);
+              ctxModal.filter = 'blur('+ box.spread +'px)';
+              ctxModal.drawImage(modal, box.x, box.y, box.width, box.height, box.x, box.y, box.width, box.height);
+              ctxModal.filter = 'none';
+              ctxModal.fillStyle = 'rgba(255,255,255,0.2)';
+              ctxModal.fillRect(box.x, box.y, box.width, box.height);
+            });
           }
-        }
-        applyWatermark('ParaguayXP');
 
-        const ctxPreview = preview.getContext("2d");
-        preview.width = 288;
-        preview.height = 288;
-        ctxPreview.drawImage(modal, - parseInt(detections.length ? detections[0].box.x.toString() : modal.width / 2), - parseInt(detections.length ? detections[0].box.y.toString() : modal.height / 2));
+          const applyWatermark = (txt) => {
+            ctxModal.translate(- modal.width, 0);
+            ctxModal.rotate( - Math.PI / 4);
+            ctxModal.font = "20px Arial";
+            ctxModal.fillStyle = 'rgba(128, 128, 128, 0.5)';
+            var txtHeight = 25;
+            var offset = 25;
+            var w = Math.ceil(ctxModal.measureText(txt).width);
+            var txt = new Array(w * 10).join(txt + '     ');
+            for (var i = 0; i < Math.ceil(modal.height * 2 / txtHeight); i++) {
+              ctxModal.fillText(txt, -(i * offset), i * txtHeight);
+            }
+          }
+          applyWatermark('ParaguayXP');
 
-        const id = uuidv4();
+          const ctxPreview = preview.getContext("2d");
+          preview.width = 288;
+          preview.height = 288;
+          ctxPreview.drawImage(modal, - parseInt(detections.length ? detections[0].box.x.toString() : modal.width / 2), - parseInt(detections.length ? detections[0].box.y.toString() : modal.height / 2));
 
-        store.addOneMedia({
-          id: `${id}`,
-          type: 'image'
-        });
+          const id = uuidv4();
 
-        temps.value.push(preview.toDataURL('image/webp', 0.3))
-
-        await postMedia(id, 'modal', modal.toDataURL('image/webp', 0.6));
-        await postMedia(id, 'preview', preview.toDataURL('image/webp', 0.3));
-
-        if (Array.from(files).indexOf(file) === files.length - 1) isLoading.value = false;
+          const modalDataUrl = modal.toDataURL('image/webp', 0.6);
+          const previewDataUrl = preview.toDataURL('image/webp', 0.3);
           
+          temps.value.push({
+            id,
+            type: 'image',
+            preview: previewDataUrl
+          })
+
+          await postMedia(id, 'modal', modalDataUrl);
+          await postMedia(id, 'preview', previewDataUrl);
+
+          if (Array.from(files).indexOf(file) === files.length - 1) isLoading.value = false;
+            
         } catch (error) {
 
           console.log('error', error);
@@ -118,7 +121,7 @@ onMounted(async () => {
 });
 
 const postMedia = async (id, path, base64String) => {
-  console.log(`post-${path}-${id}`)
+
   await useFetch(`/api/dashboard/publication/${id}`, {
     key: `post-${path}-${id}`,
     method: 'POST',
@@ -128,25 +131,29 @@ const postMedia = async (id, path, base64String) => {
     body:{ 
       content: base64String,
       path: `public/gallery/${path}`,
-      message: `add ${path} image ${id}.webp`
+      message: `add ${path} image ${id}`
     },
   });
 }
 
 const goPrevious = async () => {
 
-await navigateTo(`/${locale.value}/dashboard/publication/description`);
+  store.concatMedias(temps.value);
+  temps.value = [];
+  await navigateTo(`/${locale.value}/dashboard/publication/description`);
 }
 
 const goNext = async () => {
 
-await navigateTo(`/${locale.value}/dashboard/publication/publish`);
+  store.concatMedias(temps.value);
+  temps.value = [];
+  await navigateTo(`/${locale.value}/dashboard/publication/publish`);
 }
 </script>
 
 <template>
   <NuxtLayout>
-    <pre>{{  temps  }}</pre>
+    <pre>{{ temps }}</pre>
     <canvas id="modal" class="is-hidden-tablet is-hidden-mobile" /> 
     <canvas id="preview" class="is-hidden-tablet is-hidden-mobile" /> 
     <div class="full-body">
@@ -162,7 +169,10 @@ await navigateTo(`/${locale.value}/dashboard/publication/publish`);
             </OField>
             <div class="columns is-mobile is-multiline">
               <div v-for="(image, index) in store.gallery.medias" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
-                <DashboardPublicationGalleryCard :image="image" :index="index" :temp="temps[index]"/>
+                <DashboardPublicationGalleryCard :id="image.id" :src="'/gallery/preview/' + image.id + '.webp'" :index="index" />
+              </div>
+              <div v-for="(image, index) in temps" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
+                <DashboardPublicationGalleryCard :id="image.id" :src="image.preview" :index="store.gallery.medias.length + index" />
               </div>
               <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
                 <OField class="is-hidden-mobile is-hidden-tablet">

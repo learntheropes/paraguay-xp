@@ -1,37 +1,38 @@
 <script setup>
 const {
-  image,
-  index,
-  temp
+  id,
+  src,
+  index
 } = defineProps({
-  image: {
-    type: Object,
+  id: {
+    type: String,
+    required: true
+  },
+  src: {
+    type: String,
     required: true
   },
   index: {
     type: Number,
     required: true
-  },
-  temp: {
-    type: String || undefined
   }
 });
 const store = usePublicationStore();
 
-let source = ref(null);
-try {
-  await $fetch(`/gallery/preview/${image.id}.webp`)
-  source.value = `/gallery/preview/${image.id}.webp`
+// let source = ref(null);
+// try {
+//   await $fetch(`/gallery/preview/${image.id}.webp`)
+//   source.value = `/gallery/preview/${image.id}.webp`
 
-} catch (error) {
-  source.value = temp
-};
+// } catch (error) {
+//   source.value = temp
+// };
 
 const { $event } = useNuxtApp();
 
 const remove = async (index) => {
   store.removeOneMedia(index);
-  $event('removeOneTemp', index);
+  $event('removeOne', index);
   await removeMedia('modal', image.id);
   await removeMedia('preview', image.id);
 }
@@ -55,7 +56,7 @@ const removeMedia = async (path, id) => {
   <div class="card">
     <div class="card-image">
       <figure class="image is-square">
-        <img :src="source" />
+        <img :src="src" />
       </figure>
       <div @click.native="remove" class="card-content is-overlay ltr-is-center-center">
         <OIcon icon="close-circle" size="large"></OIcon>
