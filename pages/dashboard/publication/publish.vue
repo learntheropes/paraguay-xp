@@ -58,9 +58,12 @@ const publish = async () => {
     agency: store.registry.basic.agency,
     rate: store.registry.rate,
     title: store.description.title,
-    cover: store.gallery.medias[0],
     services: store.registry.services,
-    extra: store.registry.extra
+    extra: store.registry.extra,
+    cover: {
+      id: store.gallery.medias[0].id,
+      preview: store.gallery.medias[0].preview
+    }
   }
 
   await useFetch(`/api/dashboard/publication/${publication.slug}`, {
