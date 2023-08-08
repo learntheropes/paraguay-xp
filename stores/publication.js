@@ -13,7 +13,7 @@ export const usePublicationStore = defineStore('publication', {
       ageAtRegistration: null
     },
     description: {
-      head: {
+      title: {
         original: null,
         en: null,
         es: null,
@@ -135,11 +135,11 @@ export const usePublicationStore = defineStore('publication', {
     removeOneMedia(index) {
       this.gallery.medias.splice(index,1);
     },
-    setHeadOriginal(str) {
-      this.description.head.original = str;
+    setTitleOriginal(str) {
+      this.description.title.original = str;
     },
-    setHead(obj) {
-      this.description.head = obj;
+    setTitle(obj) {
+      this.description.title = obj;
     },
     setAboutOriginal(str) {
       this.description.about.original = str;

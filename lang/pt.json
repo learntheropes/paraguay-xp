@@ -214,8 +214,8 @@
       }
     },
     "description": {
-      "head": "Título",
-      "headPlaceholder": "Escreva sua título aqui. Você pode escrever em qualquer idioma, vamos transalte a mensagem.",
+      "title": "Título",
+      "titlePlaceholder": "Escreva sua título aqui. Você pode escrever em qualquer idioma, vamos transalte a mensagem.",
       "about": "Descrição",
       "aboutPlaceholder": "Escreva sua descrição aqui. Você pode adicionar emoji usando o ícone à direita. Você pode escrever em qualquer idioma, vamos transalte a mensagem."    
     },

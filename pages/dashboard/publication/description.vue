@@ -5,7 +5,7 @@ definePageMeta({
 });
 
 const validationSchema = {
-  head: {
+  title: {
     required: true,
     betweenCharacters: {
       min: 25,
@@ -39,16 +39,16 @@ const openModal = (refs) => {
 
 const store = usePublicationStore();
 
-let headChanged = ref(false);
+let titleChanged = ref(false);
 let aboutChanged = ref(false);
 
-let computedHead = computed({
+let computedTitle = computed({
   get() {
-    return store.description.head.original;
+    return store.description.title.original;
   },
   set(value) {
-    headChanged.value = true;
-    store.setHeadOriginal(value)
+    titleChanged.value = true;
+    store.setTitleOriginal(value)
   }
 });
 
@@ -109,12 +109,12 @@ const translate = async q => {
   return response;
 }
 
-const transalteHead = async () => {
+const transalteTitle = async () => {
 
-  if (headChanged.value) {
-    const translations = await translate(store.description.head.original);
-    store.setHead(translations);
-    headChanged.value = false;
+  if (titleChanged.value) {
+    const translations = await translate(store.description.title.original);
+    store.setTitle(translations);
+    titleChanged.value = false;
   }
 };
 
@@ -130,7 +130,7 @@ const transalteAbout = async () => {
 const goPrevious = async () => {
 
   isLoading.value = true;
-  await transalteHead();
+  await transalteTitle();
   await transalteAbout();
   isLoading.value = false;
   await navigateTo(`/${locale.value}/dashboard/publication/registry`);
@@ -139,7 +139,7 @@ const goPrevious = async () => {
 const goNext = async () => {
 
   isLoading.value = true;
-  await transalteHead();
+  await transalteTitle();
   await transalteAbout();
   isLoading.value = false;
   await navigateTo(`/${locale.value}/dashboard/publication/gallery`);
@@ -160,19 +160,19 @@ const goNext = async () => {
       <div class="columns is-centered">
         <div class="column is-one-third">
           <VField
-            name="head"
-            :label="$t('dashboard.description.head')"
+            name="title"
+            :label="$t('dashboard.description.title')"
             v-slot="{ handleChange, handleBlur, value, errors }"
-            v-model="computedHead"
+            v-model="computedTitle"
           >
             <OField
-              :label="$t('dashboard.description.head')"
+              :label="$t('dashboard.description.title')"
               :variant="errors[0] ? 'danger' : null"
               :message="errors[0] ? errors[0] : ''"
             >
               <OInput
-                :label="$t('dashboard.description.head')"
-                :placeholder="$t('dashboard.description.headPlaceholder')"
+                :label="$t('dashboard.description.title')"
+                :placeholder="$t('dashboard.description.titlePlaceholder')"
                 type="textarea"
                 :model-value="value"
                 @update:modelValue="handleChange"

@@ -29,13 +29,8 @@ if (!store.init) {
     }
   })
   .only([
-    'registry', 
-    'slug', 
-    'cover', 
-    'age', 
-    'blur', 
-    'updatedAt', 
-    'description'
+    'preview', 
+    'updatedAt' 
   ])
   .find();
 

@@ -23,7 +23,7 @@ const {
 } = useRuntimeConfig();
 
 const title = t('escort.title', { escort: $capitalize(escort.registry.basic.name) });
-const description =  escort.description.head[locale.value];
+const description =  escort.description.title[locale.value];
 
 useHead({
   title: title + seoTitle,

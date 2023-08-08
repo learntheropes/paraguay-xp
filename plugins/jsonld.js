@@ -418,7 +418,7 @@ export default defineNuxtPlugin(nuxtApp => {
               }
             }),
             'dateModified': escort.updatedAt,
-            'description': escort.description.head[locale.value],
+            'description': escort.description.title[locale.value],
             'inLanguage': inLanguage,
             'isPartOf': {
               '@id': `${deploymentDomain}#website`
@@ -445,7 +445,7 @@ export default defineNuxtPlugin(nuxtApp => {
             'isPartOf': {
               '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`
             },
-            'headline': `${escort.description.head[locale.value]}`,
+            'headline': `${escort.description.title[locale.value]}`,
             'dateModified': escort.updatedAt,
             'mainEntityOfPage': {
               '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`

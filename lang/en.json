@@ -214,8 +214,8 @@
       }
     },
     "description": {
-      "head": "Title",
-      "headPlaceholder": "Write your title here. You can write in any language, we will transalte the message.",
+      "title": "Title",
+      "titlePlaceholder": "Write your title here. You can write in any language, we will transalte the message.",
       "about": "Description",
       "aboutPlaceholder": "Write your description here. You can add emoji using the icon on the right. You can write in any language, we will transalte the message."
     },

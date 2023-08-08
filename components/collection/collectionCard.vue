@@ -14,26 +14,16 @@ const {
 });
 
 const {
-  age: {
-    dateOfBirth
-  },
-  registry: {
-    basic: {
-      name,
-      agency
-    },
+  preview: {
+    dateOfBirth,
+    name,
+    agency,
     rate,
-    services: {
-      area
-    }
+    area,
+    title,
+    cover,
+    slug
   },
-  description: {
-    head
-  },
-  gallery: {
-    cover
-  },
-  slug,
   updatedAt
 } = escort;
 
@@ -96,7 +86,7 @@ const {
           {{ $dayjs(updatedAt).fromNow() }}
         </div>
         <div v-else class="subtitle is-7">
-          {{ head[locale] }}
+          {{ title[locale] }}
         </div>
       </div>
     </div>
