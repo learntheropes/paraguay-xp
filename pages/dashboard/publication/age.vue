@@ -22,13 +22,22 @@ const validationSchema = {
 };
 
 const datepickerSetting = {
-  maxDate: new Date($dayjs(new Date()).subtract(18, 'years').toISOString()),
+  maxDate: new Date($dayjs(new Date()).subtract(18, 'years')),
   showWeekNumber: false,
   firstDayOfWeek: 1,
   modelValue: []
 }
 
 const store = usePublicationStore();
+
+const computedDateOfBirth = computed({
+  get() {
+    return new Date(store.age.dateOfBirth);
+  },
+  set(value) {
+    store.setDateOfBirth(value);
+  }
+})
 
 const idFront = computed({
   get() {
@@ -72,18 +81,29 @@ const isLoading = ref(false);
 
 const goNext = async () => {
 
-  isLoading.value = true
+  isLoading.value = true;
+
   const { data: { text: textFront } } = await Tesseract.recognize(store.age.idFront, 'spa');
   const { data: { text: textBack } } = await Tesseract.recognize(store.age.idBack, 'spa');
-  store.setDateMatch(store.age.dateOfBirth, textFront, textBack);
-  store.setAgeAtRegistration(store.age.dateOfBirth);
-  isLoading.value = false
+  
+  const arr = store.age.dateOfBirth.split('/');
+  const dateFront = `${arr[1]}-${arr[0]}-${arr[2]}`;
+  const dateBack = `${arr[2].substring(2, 4)}${arr[0]}${arr[1]}`;
+  const match = (textFront.includes(dateFront) || textBack.includes(dateBack))
+  store.setDateMatch(match);
+
+  const ageAtRegistration = $dayjs(new Date()).diff(new Date(store.age.dateOfBirth), 'years');
+  store.setAgeAtRegistration(ageAtRegistration);
+
+  isLoading.value = false;
+
   await navigateTo(`/${locale.value}/dashboard/publication/registry`);
 }
 </script>
 
 <template>
   <NuxtLayout>
+    {{ new Date(store.age.dateOfBirth).toISOString() }}
     <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
     <div class="notification is-warning has-text-centered">
       <div class="content ltr-has-new-line">{{$t('dashboard.age.warning')}}</div>
@@ -99,7 +119,7 @@ const goNext = async () => {
             name="birthDate"
             :label="$t('dashboard.age.birthDate')"
             v-slot="{ handleChange, handleBlur, value, errors }"
-            v-model="store.age.dateOfBirth"
+            v-model="computedDateOfBirth"
           >
             <OField
               :label="$t('dashboard.age.birthDate')"

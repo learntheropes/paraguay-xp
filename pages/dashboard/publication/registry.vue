@@ -141,10 +141,6 @@ const day = [
   '24:00',
 ]
 
-const goPrevious = async () => {
-  await navigateTo(`/${locale.value}/dashboard/publication/age`);
-}
-
 const goNext = async () => {
   await navigateTo(`/${locale.value}/dashboard/publication/description`);
 }
@@ -554,15 +550,6 @@ const goNext = async () => {
       </div>
       <div class="level is-mobile">
         <div class="level-left">
-          <div class="level-item">
-            <OField>
-              <OButton
-                @click.native="goPrevious"
-                variant="primary"
-                outlined
-              >{{  $t('dashboard.publication.previous') }}</OButton>
-            </OField>
-          </div>
         </div>
         <div class="level-right">
           <div class="level-item">

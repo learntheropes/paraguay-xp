@@ -6,7 +6,7 @@ export const usePublicationStore = defineStore('publication', {
     approved: false,
     until: null,
     age: {
-      dateOfBirth: null,
+      dateOfBirth: '12/16/1974',
       idFront: null,
       idBack: null,
       dateMatch: false,
@@ -94,15 +94,14 @@ export const usePublicationStore = defineStore('publication', {
     setIdBack(base64) {
       this.age.idBack = base64
     },
-    setAgeAtRegistration(dateOfBirth) {
-      const { $dayjs } = useNuxtApp();
-      this.ageAtRegistration = $dayjs(new Date()).diff(dateOfBirth, 'years');
+    setDateOfBirth(value) {
+      this.age.dateOfBirth = value.toLocaleDateString()
     },
-    setDateMatch(dateOfBirth, textFront, textBack) {
-      const arr = dateOfBirth.toLocaleDateString().split('/');
-      const dateFront = `${arr[1]}-${arr[0]}-${arr[2]}`;
-      const dateBack = `${arr[2].substring(2, 4)}${arr[0]}${arr[1]}`;
-      this.dateMatch = (textFront.includes(dateFront) || textBack.includes(dateBack)) ? true : false;
+    setAgeAtRegistration(num) {
+      this.age.ageAtRegistration = num
+    },
+    setDateMatch(bool) {
+      this.age.dateMatch = bool;
     },
     setCategory(category) {
       this.registry.basic.category = category;
