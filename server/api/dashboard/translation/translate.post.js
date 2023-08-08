@@ -11,10 +11,12 @@ export default eventHandler(async event => {
       ]
     }
   } = await googleTranslate('/language/translate/v2', {
-    q,
-    source,
-    target,
-    format: 'text'
+    body: {
+      q,
+      source,
+      target,
+      format: 'text'
+    }
   })
 
   return {

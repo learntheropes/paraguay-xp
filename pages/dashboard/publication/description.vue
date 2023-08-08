@@ -1,4 +1,5 @@
 <script setup>
+import { localeCodes } from '~/assets/js/locales';
 
 definePageMeta({
   layout: 'dashboard'
@@ -24,7 +25,6 @@ const isLoading = ref(false);
 
 const {
   locale,
-  locales
 } = useI18n();
 
 let isModalActive = ref(false);
@@ -79,17 +79,21 @@ const translate = async q => {
     original: q
   };
 
-  const { language: originalLanguage } = await useFetch('/api/dashboard/translation/detect', {
+  const { data } = await useFetch('/api/dashboard/translation/detect', {
     method: 'POST',
     body: {
       q
     }
   });
 
+  const originalLanguage = data.value.language;
+
   response[originalLanguage] = q;
-  const languagesToTranslate = locales.value.filter((loc) => loc !== originalLanguage);
+
+  const languagesToTranslate = localeCodes.filter((code) => code !== originalLanguage);
 
   const transalteOneLanguage = (originalLanguage, languageToTransalte) => useFetch('/api/dashboard/translation/translate', {
+    key: `${languageToTransalte}-${q.replace(/\s/, '-')}`,
     method: 'POST',
     body: {
       source: originalLanguage,
@@ -98,12 +102,13 @@ const translate = async q => {
     }
   });
 
-  const promises = languagesToTranslate.map(languageToTransalte => transalteOneLanguage (originalLanguage, languageToTransalte));
+  const promises = languagesToTranslate.map(languageToTransalte => transalteOneLanguage(originalLanguage, languageToTransalte));
+
   const translations = await Promise.all(promises);
 
   translations.forEach(translation => {
 
-    response[translation.data.target] = translation.data.translatedText;
+    response[translation.data.value.target] = translation.data.value.translatedText;
   });
 
   return response;

@@ -15,8 +15,7 @@ export default eventHandler(async event => {
   } = await googleTranslate('/language/translate/v2/detect', {
     body: {
       q
-    },
-
+    }
   })
 
   return {

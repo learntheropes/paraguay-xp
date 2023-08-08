@@ -7,7 +7,7 @@ export default eventHandler(async event => {
   await updateFile({
     path: `${path}/${slug}.json`,
     content,
-    message: 'update publication'
+    message: `update publication of ${slug}`
   })
   
   setResponseStatus(event, 201);
