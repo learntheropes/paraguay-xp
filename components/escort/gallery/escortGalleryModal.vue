@@ -1,7 +1,6 @@
 <script setup>
   const isModalActive = ref(false);
   const modalGallery = ref([]);
-  const modalType = ref(null)
   const modalIndex = ref(0);
   const modalSrc = ref(null);
   const { $listen } = useNuxtApp();
@@ -10,9 +9,8 @@
 
     isModalActive.value = true;
     modalGallery.value = medias;
-    modalType.value = medias[index].fileType;
     modalIndex.value = index;
-    modalSrc.value = medias[index].fileName;
+    modalSrc.value = medias[index].modal;
   });
 
   const isLoading = ref(true);
@@ -34,16 +32,14 @@
 
     onUnload();
     modalIndex.value = (modalIndex.value - 1 < 0) ? modalGallery.value.length - 1 : modalIndex.value - 1; 
-    modalType.value = modalGallery.value[modalIndex.value].fileType;
-    modalSrc.value = modalGallery.value[modalIndex.value].fileName;
+    modalSrc.value = modalGallery.value[modalIndex.value].modal;
   };
 
   const navigateNext = () => {
 
     onUnload();
     modalIndex.value = (modalIndex.value + 1 >=  modalGallery.value.length) ? 0:  modalIndex.value + 1;
-    modalType.value = modalGallery.value[modalIndex.value].fileType
-    modalSrc.value = modalGallery.value[modalIndex.value].fileName;
+    modalSrc.value = modalGallery.value[modalIndex.value].modal;
   };
 
   const onSwipe = (direction) => {
@@ -100,7 +96,7 @@
             preset="modal"
             loading="lazy"
             @load="onLoad"
-            :src="'/gallery/modal/' + modalSrc"
+            :src="modalSrc"
             class="ltr-fit-tablet"
           />
         </figure>

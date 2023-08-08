@@ -52,14 +52,15 @@ const publish = async () => {
   }
 
   publication.preview = {
+    slug: slug,
     dateOfBirth: store.age.dateOfBirth,
     name: store.registry.basic.name,
     agency: store.registry.basic.agency,
-    area: store.registry.basic.area,
     rate: store.registry.rate,
     title: store.description.title,
     cover: store.gallery.medias[0],
-    slug: store.slug,
+    services: store.registry.services,
+    extra: store.registry.extra
   }
 
   await useFetch(`/api/dashboard/publication/${publication.slug}`, {

@@ -34,8 +34,8 @@ if (!store.init) {
   ])
   .find();
 
-  const min = minBy(escorts, e => e.registry.rate).registry.rate;
-  const max = maxBy(escorts, e => e.registry.rate).registry.rate;
+  const min = minBy(escorts, e => e.preview.rate).preview.rate;
+  const max = maxBy(escorts, e => e.preview.rate).preview.rate;
   store.setMin(min);
   store.setMax(max);
   
@@ -45,11 +45,11 @@ if (!store.init) {
   const palladiumRate = Math.ceil((min + (deltaStep * 3)) / 100000) * 100000;
   const diamondRate = Math.ceil((min + (deltaStep * 4)) / 100000) * 100000;
 
-  const goldEscorts = escorts.filter(escort => escort.registry.rate < esmeraldRate);
-  const esmeraldEscorts = escorts.filter(escort => escort.registry.rate >= esmeraldRate && escort.registry.rate < platinumRate);
-  const platinumEscorts = escorts.filter(escort => escort.registry.rate >= platinumRate && escort.registry.rate < palladiumRate);
-  const palladiumEscorts = escorts.filter(escort => escort.registry.rate >= palladiumRate && escort.registry.rate < diamondRate);
-  const diamondEscorts = escorts.filter(escort => escort.registry.rate >= diamondRate);
+  const goldEscorts = escorts.filter(escort => escort.preview.rate < esmeraldRate);
+  const esmeraldEscorts = escorts.filter(escort => escort.preview.rate >= esmeraldRate && escort.preview.rate < platinumRate);
+  const platinumEscorts = escorts.filter(escort => escort.preview.rate >= platinumRate && escort.preview.rate < palladiumRate);
+  const palladiumEscorts = escorts.filter(escort => escort.preview.rate >= palladiumRate && escort.preview.rate < diamondRate);
+  const diamondEscorts = escorts.filter(escort => escort.preview.rate >= diamondRate);
 
   const {
     $numberWithDots
@@ -82,6 +82,7 @@ if (!store.init) {
       range: `- ${$numberWithDots(esmeraldRate)}`
     },
   ]);
+
   store.setList({
     gold: shuffle(goldEscorts),
     esmerald: shuffle(esmeraldEscorts),
@@ -89,6 +90,7 @@ if (!store.init) {
     palladium: shuffle(palladiumEscorts),
     diamond: shuffle(diamondEscorts)
   });
+
   store.setInit();
 }
 </script>

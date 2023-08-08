@@ -97,10 +97,10 @@ export default defineNuxtPlugin(nuxtApp => {
                 return {
                   '@type': 'ListItem',
                   'position': index + 1,
-                  'name': nuxtApp.$capitalize(item.registry.basic.name),
+                  'name': nuxtApp.$capitalize(item.preview.name),
                   'image': {
                     '@type': 'ImageObject',
-                    'contentUrl': item.gallery.medias[0].modal
+                    'contentUrl': item.preview.cover.modal
                   },
                   'url': `${deploymentDomain}/${locale.value}/escort/${item.slug}`
                 }
@@ -406,8 +406,8 @@ export default defineNuxtPlugin(nuxtApp => {
               'ProfilePage',
               'WebPAge'
             ],
-            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`,
-            'url': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`,
+            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
+            'url': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'name': `${nuxtApp.$capitalize(escort.registry.basic.name)} Profile Page`,
             'thumbnail': `${escort.gallery.medias[0].preview}`,
             'image': escort.gallery.medias.map(media => {
@@ -424,14 +424,14 @@ export default defineNuxtPlugin(nuxtApp => {
               '@id': `${deploymentDomain}#website`
             },
             'breadcrumb': {
-              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}#breadcrumb`
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#breadcrumb`
             },
             'potentialAction': {
               '@type': 'ReadAction',
-              'url': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`,
+              'url': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
               'target': {
                 '@type': 'EntryPoint',
-                'urlTemplate': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`
+                'urlTemplate': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
               }
             }
           }
@@ -441,14 +441,14 @@ export default defineNuxtPlugin(nuxtApp => {
           return {
             '@context': 'https://schema.org',
             '@type': 'AdvertiserContentArticle',
-            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}#article`,
+            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`,
             'isPartOf': {
-              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
             },
             'headline': `${escort.description.title[locale.value]}`,
             'dateModified': escort.updatedAt,
             'mainEntityOfPage': {
-              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
             },
             'articleBody': escort.description.about[locale.value],
             'wordCount': escort.description.about[locale.value].split(' ').length,
@@ -461,8 +461,8 @@ export default defineNuxtPlugin(nuxtApp => {
           return {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
-            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.slug}#breadcrumb`,
-            'name': `${escort.slug} Breadcrumb`,
+            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#breadcrumb`,
+            'name': `${escort.preview.slug} Breadcrumb`,
             'itemListElement': [
               {
                 '@type': 'ListItem',
@@ -480,7 +480,7 @@ export default defineNuxtPlugin(nuxtApp => {
                 '@type': 'ListItem',
                 'position': 3,
                 'name': nuxtApp.$capitalize(escort.registry.basic.name),
-                'item': `${deploymentDomain}/${locale.value}/escort/${escort.slug}`
+                'item': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
               }
             ]
           }

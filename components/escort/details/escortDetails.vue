@@ -9,7 +9,7 @@ const {
 });
 
 const {
-  age: {
+  preview: {
     dateOfBirth
   },
   registry: {

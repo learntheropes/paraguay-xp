@@ -18,9 +18,9 @@ const all = []
   .filter(escort => kebabCase(escort.agency) !== slug);
 
 const paths = sortBy(
-  uniqBy(all, a => a.registry.basic.agency),
-  a => a.registry.basic.agency
-).map(escort => escort.registry.basic.agency);
+  uniqBy(all, a => a.preview.agency),
+  a => a.preview.agency
+).map(escort => escort.preview.agency);
 </script>
 
 <template>

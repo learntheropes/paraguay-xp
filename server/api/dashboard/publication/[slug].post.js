@@ -1,13 +1,17 @@
 export default eventHandler(async event => {
 
   const slug = event.context.params.slug;
-  const path = getQuery(event);
-  const content = await readBody(event);
+  
+  const {
+    content,
+    path,
+    message
+  } = await readBody(event);
 
   await updateFile({
     path: `${path}/${slug}.json`,
     content,
-    message: `update publication of ${slug}`
+    message,
   })
   
   setResponseStatus(event, 201);

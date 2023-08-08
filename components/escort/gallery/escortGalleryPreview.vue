@@ -18,7 +18,7 @@ const {
 
 <template>
   <div class="columns is-mobile is-multiline">
-    <div v-for="(media, index) of medias" :key="media.fileId" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
+    <div v-for="(media, index) of medias" :key="media.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
       <EscortGalleryCard :escort="escort" :index="index" />
     </div>
   </div>

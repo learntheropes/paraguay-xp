@@ -23,7 +23,6 @@ const {
     medias
   }
 } = escort; 
-const media = medias[index];
 
 const { $event } = useNuxtApp();
 
@@ -38,7 +37,7 @@ const openModal = (medias, index) => {
       <figure :style="'background-color:black;'" class="image is-square">
         <img
           @click.native="openModal(medias, index)"
-          :src="('/gallery/preview/' + media.fileName).split('.')[0] + '.webp'"
+          :src="medias[index].preview"
           :alt="$t('escort.gallery.previewOf')+' '+ name"
           :title="$t('escort.gallery.previewOf') +' ' + name"
           loading="eager"

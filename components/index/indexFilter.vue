@@ -38,17 +38,17 @@ const defaultRate =[
 const rate = ref([]);
 
 const defaultAge = [
-  $dayjs().diff(maxBy(all, a => a.age.dateOfBirth).age.dateOfBirth, 'years'),
-  $dayjs().diff(minBy(all,  a => a.age.dateOfBirth).age.dateOfBirth, 'years')
+  $dayjs().diff(new Date(maxBy(all, a => a.preview.dateOfBirth).preview.dateOfBirth), 'years'),
+  $dayjs().diff(new Date (minBy(all,  a => a.preview.dateOfBirth).preview.dateOfBirth), 'years')
 ];
 const age = ref([]);
 
 const areas = sortBy(
-  uniqBy(all, a => a.registry.services.area),
-  a => a.registry.services.area
+  uniqBy(all, a => a.preview.area),
+  a => a.preview.area
 )
-.filter(escort => escort.registry.services.area)
-.map(escort => escort.registry.services.area);
+.filter(escort => escort.preview.area)
+.map(escort => escort.preview.area);
 
 const isIncall = computed(() => service.value === 'incall')
 
@@ -57,32 +57,32 @@ const filteredEscorts = computed(() => {
   let filtered = cloneDeep(store.list);
 
   if (service.value) filtered = Object.keys(store.list).reduce((obj, key )=> {
-    obj[key] = filtered[key].filter(escort => escort.registry.services[service.value]) || [];
+    obj[key] = filtered[key].filter(escort => escort.preview.services[service.value]) || [];
     return obj;
   }, {});
 
   if (area.value) filtered = Object.keys(store.list).reduce((obj, key) => {
-    obj[key] = filtered[key].filter(escort => escort.registry.services.area === area.value) || [];
+    obj[key] = filtered[key].filter(escort => escort.previregistryew.services.area === area.value) || [];
     return obj;
   }, {});
 
   if (rate.value[0]) filtered = Object.keys(store.list).reduce((obj, key) => {
-    obj[key] = filtered[key].filter(escort => escort.registry.rate >= rate.value[0]) || [];
+    obj[key] = filtered[key].filter(escort => escort.preview.rate >= rate.value[0]) || [];
     return obj;
   }, {});
 
   if (rate.value[1]) filtered = Object.keys(store.list).reduce((obj, key) => {
-    obj[key] = filtered[key].filter(escort => escort.registry.rate <= rate.value[1]) || [];
+    obj[key] = filtered[key].filter(escort => escort.preview.rate <= rate.value[1]) || [];
     return obj;
   }, {});
 
   if (age.value[0]) filtered = Object.keys(store.list).reduce((obj, key) => {
-    obj[key] = filtered[key].filter(escort => $dayjs().diff(escort.age.dateOfBirth, 'years') >= age.value[0]) || [];
+    obj[key] = filtered[key].filter(escort => $dayjs().diff(escort.preview.dateOfBirth, 'years') >= age.value[0]) || [];
     return obj;
   }, {});
 
   if (age.value[1]) filtered = Object.keys(store.list).reduce((obj, key) => {
-    obj[key] = filtered[key].filter(escort => $dayjs().diff(escort.age.dateOfBirth, 'years') <= age.value[1]) || [];
+    obj[key] = filtered[key].filter(escort => $dayjs().diff(escort.preview.dateOfBirth, 'years') <= age.value[1]) || [];
     return obj;
   }, {});
 

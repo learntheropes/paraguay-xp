@@ -19,7 +19,9 @@ const {
     name,
     agency,
     rate,
-    area,
+    services: {
+      area
+    },
     title,
     cover,
     slug
@@ -52,7 +54,7 @@ const {
       <NuxtLink :to="localePath({ name: 'escort-slug', params: { slug }})">
         <figure :style="'background-color:black;'" class="image is-square">
           <img
-            :src="('/gallery/preview/' + cover.fileName).split('.')[0] + '.webp'"
+            :src="cover.preview"
             :alt="$t('escort.gallery.previewOf') + ' ' + name"
             :title="$t('escort.gallery.previewOf') + ' ' + name"
             :loading="(index == 0) ? 'eager' : 'lazy'"
@@ -68,7 +70,7 @@ const {
           <span class="tag is-success is-hidden-mobile is-capitalized">{{ agencyName }}</span>
           <span class="tag is-success is-hidden-tablet ltr-is-smaller-bottom-left is-capitalized">{{ agencyName }}</span>
         </div>
-        <div v-if="!isArea" class="card-content is-overlay ltr-is-bottom-right">
+        <div v-if="!isArea && area" class="card-content is-overlay ltr-is-bottom-right">
           <span class="tag is-success is-hidden-mobile is-capitalized">{{ area }}</span>
           <span class="tag is-success is-hidden-tablet ltr-is-smaller-bottom-right is-capitalized">{{ area }}</span>
         </div>

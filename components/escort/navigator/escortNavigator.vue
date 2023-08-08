@@ -14,7 +14,7 @@ const {
 const { t } = useI18n();
 
 const store = useEscortsStore();
-const level = Object.keys(store.list).filter(l => find(store.list[l], { slug: escort.slug }))[0];
+const level = Object.keys(store.list).filter(l => find(store.list[l], e => e.preview.slug === escort.preview.slug))[0];
 const escorts = store.list[level];
 const { $event } = useNuxtApp();
 $event('level', level);

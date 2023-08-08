@@ -15,14 +15,14 @@ const store = useEscortsStore();
 
 const all = []
   .concat(store.list.diamond, store.list.palladium, store.list.platinum, store.list.esmerald, store.list.gold)
-  .filter(escort => escort.registry.services.area && kebabCase(escort.registry.services.area) !== kebabCase(slug));
+  .filter(escort => escort.preview.services.area && kebabCase(escort.preview.services.area) !== kebabCase(slug));
 
 const names = sortBy(
-  uniqBy(all, a => a.registry.services.area),
-  a => a.registry.services.area
+  uniqBy(all, a => a.preview.services.area),
+  a => a.preview.services.area
 )
-.filter(escort => escort.registry.services.area)
-.map(escort => escort.registry.services.area);
+.filter(escort => escort.preview.services.area)
+.map(escort => escort.preview.services.area);
 </script>
 
 <template>

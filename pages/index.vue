@@ -67,7 +67,7 @@ useJsonld(() => ([
   $jsonld.website(),
   $jsonld.indexWebPage(),
   $jsonld.indexCollection(all.value),
-  $jsonld.indexArticleClients(postClients.value)
+  // $jsonld.indexArticleClients(postClients.value)
 ]));
 </script>
 

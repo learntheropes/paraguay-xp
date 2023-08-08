@@ -9,14 +9,10 @@ const {
 });
 
 const {
-  age: {
-    dateOfBirth
-  },
-  registry: {
-    basic: {
-      name,
-      agency
-    }
+  preview: {
+    dateOfBirth,
+    name,
+    agency
   },
   phone,
 } = escort;
