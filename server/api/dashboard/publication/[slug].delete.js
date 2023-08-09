@@ -6,8 +6,6 @@ export default eventHandler(async event => {
 
   if (contentType === 'image/webp') {
 
-    console.log(`public/gallery/preview/${slug}`)
-
     await deleteFile({
       path: `public/gallery/modal/${slug}`,
       message: `delete modal image ${slug}`
@@ -18,6 +16,8 @@ export default eventHandler(async event => {
       message: `delete preview image ${slug}`
     });
   } else {
+
+    await authSlug(event);
 
     await deleteFile({
       path: `content/escorts/${slug}.json`,

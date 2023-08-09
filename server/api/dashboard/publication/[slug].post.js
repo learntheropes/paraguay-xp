@@ -14,6 +14,8 @@ export default eventHandler(async event => {
     });
   } else {
 
+    await authSlug(event);
+
     await updateFile({
       path: `${path}/${slug}`,
       content,
