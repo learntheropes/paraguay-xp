@@ -6,10 +6,7 @@ definePageMeta({
 const isLoading = ref(false);
 const store = usePublicationStore();
 
-const error = () => {
-  if (!store.accept) return t('error.publish')
-  else return null;
-}
+const error = (!store.accept) ? t('error.publish') : null;
 
 const { 
   locale,
@@ -90,8 +87,8 @@ const publish = async () => {
       <div class="column is-one-third">
           <OField
             :label="$t('dashboard.publish.accept')"
-            :variant="error() ? 'danger' : null"
-            :message="error() ? error() : null"
+            :variant="error ? 'danger' : null"
+            :message="error ? error : null"
           >
             <OSwitch v-model="store.accept">{{ acceptText }}</OSwitch>
           </OField>
