@@ -6,7 +6,7 @@ export const usePublicationStore = defineStore('publication', {
     approved: false,
     until: null,
     age: {
-      dateOfBirth: '12/16/1974',
+      dateOfBirth: null,
       idFront: null,
       idBack: null,
       dateMatch: false,
