@@ -32,44 +32,44 @@ export default defineEventHandler(async () => {
     ...['', 'news', 'blog']
   ];
 
-  return endpoints.reduce((arr, endpoint) => {
+  const getAlternatives = thisLocale => [{
+    hreflang: 'x-default',
+    href: `/${defaultLocale}/${endpoint}`
+  }]
+  .concat(locales
+    // .filter (locale => locale.code !== thisLocale)
+    .map(locale => {
+      return {
+        hreflang: locale.code,
+        href: `/${locale.code}/${endpoint}`
+      }
+    })
+  )
+  .concat(locales
+    // .filter (locale => locale.code !== thisLocale)
+    .map(locale => {
+      return {
+        hreflang: locale.iso,
+        href: `/${locale.code}/${endpoint}`
+      }
+    })
+  )
 
-    const getAlternatives = thisLocale => [{
-      hreflang: 'x-default',
-      href: `/${defaultLocale}/${endpoint}`
-    }]
-    .concat(locales
-      // .filter (locale => locale.code !== thisLocale)
-      .map(locale => {
-        return {
-          hreflang: locale.code,
-          href: `/${locale.code}/${endpoint}`
-        }
-      })
-    )
-    .concat(locales
-      // .filter (locale => locale.code !== thisLocale)
-      .map(locale => {
-        return {
-          hreflang: locale.iso,
-          href: `/${locale.code}/${endpoint}`
-        }
-      })
-    )
-
-    const getImages = endpoint => {
-      if (endpoint.startsWith('escort/')) {
-        const slug = endpoint.split('/')[1];
-        const { gallery: { medias }} = useStorage('content:escorts').getItem(`${slug}.json`)
-        if (medias && medias.length) {
-          return medias.map(media => {
-            return {
-              loc: `/gallery/modal/${media.modal}`
-            }
-          })
-        }
+  const getImages = endpoint => {
+    if (endpoint.startsWith('escort/')) {
+      const slug = endpoint.split('/')[1];
+      const { gallery: { medias }} = useStorage('content:escorts').getItem(`${slug}.json`)
+      if (medias && medias.length) {
+        return medias.map(media => {
+          return {
+            loc: `/gallery/modal/${media.modal}`
+          }
+        })
       }
     }
+  }
+
+  return endpoints.reduce((arr, endpoint) => {
 
     locales.map(locale => {
 
