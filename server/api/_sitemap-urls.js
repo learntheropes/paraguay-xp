@@ -64,7 +64,7 @@ export default defineEventHandler(async () => {
         if (medias && medias.length) {
           return medias.map(media => {
             return {
-              loc: media.modal
+              loc: `/gallery/modal/${media.modal}`
             }
           })
         }
@@ -77,8 +77,7 @@ export default defineEventHandler(async () => {
         loc: `/${locale.code}/${endpoint}`,
         lastMod: new Date(),
         alternatives: getAlternatives(locale.code),
-        // Images can't be added because in base64 format.
-        // image: getImages(endpoint)
+        image: getImages(endpoint)
       })
     });
 
