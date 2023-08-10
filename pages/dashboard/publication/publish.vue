@@ -27,16 +27,21 @@ const publish = async () => {
 
   if (!store.accept) return;
 
+  if (!store.age.dateOfBirth || !store.age.idFront || !store.age.idBack) {
+    throw createError({
+      statusCode: 500,
+    });
+  }
+
   isLoading.value = true;
   const { data } = useAuth();
 
-  const age = store.age;
   const slug = `${store.registry.basic.name.replace(/\s/, '-').toLowerCase()}-${data.value.user.email.replace('+', '')}`;
 
   await useFetch(`/api/dashboard/publication/${slug}.json`, {
     method: 'POST',
     body: {
-      content: age,
+      content: store.age,
       path: `content/ages`,
       message: `create content/ages/${slug}.json`
     },
