@@ -10,7 +10,7 @@ import {
   defaultLocale,
   routeRules,
   excludedRoutes,
-} from './assets/js/locales';
+} from './assets/js/localization';
 
 export default defineNuxtConfig({
 

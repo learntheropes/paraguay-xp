@@ -2,7 +2,7 @@ import { NuxtAuthHandler } from '#auth';
 import EmailProvider from 'next-auth/providers/email';
 import faunadb from 'faunadb';
 import { customFaunaAdapter } from '~/assets/js/customFaunaAdapter';
-import { locales, defaultLocale } from '~/assets/js/locales';
+import { locales, defaultLocale } from '~/assets/js/localization';
 import find from 'lodash.find';
 
 const {

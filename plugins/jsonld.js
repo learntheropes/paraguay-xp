@@ -1,5 +1,5 @@
 import find from 'lodash.find';
-import { locales } from '~/assets/js/locales';
+import { locales } from '~/assets/js/localization';
 
 export default defineNuxtPlugin(nuxtApp => {
 

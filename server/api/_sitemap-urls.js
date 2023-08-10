@@ -2,7 +2,7 @@ import uniqBy from 'lodash.uniqby';
 import uniq from 'lodash.uniq';
 import flatten from 'lodash.flatten';
 import kebabCase from 'lodash.kebabcase';
-import { defaultLocale, locales } from '~/assets/js/locales';
+import { defaultLocale, locales } from '~/assets/js/localization';
 import services from '~/assets/js/services';
 
 export default defineEventHandler(async () => {
@@ -39,7 +39,7 @@ export default defineEventHandler(async () => {
   .concat(locales
     // .filter (locale => locale.code !== thisLocale)
     .map(locale => {
-      
+
       return {
         hreflang: locale.code,
         href: `/${locale.code}/${endpoint}`
@@ -55,7 +55,7 @@ export default defineEventHandler(async () => {
         href: `/${locale.code}/${endpoint}`
       }
     })
-  )
+  );
 
   const getImages = endpoint => {
     if (endpoint.startsWith('escort/')) {
@@ -78,7 +78,7 @@ export default defineEventHandler(async () => {
         })
       }
     }
-  }
+  };
 
   return endpoints.reduce((arr, endpoint) => {
 

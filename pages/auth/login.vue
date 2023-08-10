@@ -4,7 +4,7 @@ import sortBy from 'lodash.sortby'
 import {
   locales,
   defaultLocale,
-} from '~/assets/js/locales';
+} from '~/assets/js/localization';
 import phoneCodes from '~/assets/js/countryPhoneCodes'
 
 definePageMeta({

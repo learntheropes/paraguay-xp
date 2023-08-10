@@ -1,5 +1,5 @@
 <script setup>
-import { localeCodes } from '~/assets/js/locales';
+import { localeCodes } from '~/assets/js/localization';
 
 definePageMeta({
   layout: 'dashboard'
