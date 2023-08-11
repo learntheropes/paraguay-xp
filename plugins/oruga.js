@@ -8,10 +8,10 @@ import {
   OModal,
   OSlider,
   OSwitch,
-  ODatepicker
-  // Config,
+  ODatepicker,
+  Config,
 } from '@oruga-ui/oruga-next';
-import { bulmaConfig } from '@oruga-ui/theme-bulma';
+import { bulmaConfig } from "@oruga-ui/theme-bulma";
 
 // const myConfig = Object.assign(bulmaConfig, {
 
@@ -36,5 +36,5 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OSlider', OSlider);
   nuxtApp.vueApp.component('OSwitch', OSwitch);
   nuxtApp.vueApp.component('ODatepicker', ODatepicker);
-  // nuxtApp.vueApp.use(Config, myConfig);
+  nuxtApp.vueApp.use(Config, bulmaConfig);
 });

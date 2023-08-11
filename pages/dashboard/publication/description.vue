@@ -80,6 +80,7 @@ const translate = async q => {
   };
 
   const { data } = await useFetch('/api/dashboard/translation/detect', {
+    key: q.replace(/\s/, '-'),
     method: 'POST',
     body: {
       q

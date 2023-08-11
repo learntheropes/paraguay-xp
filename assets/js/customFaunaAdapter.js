@@ -150,8 +150,7 @@ export const customFaunaAdapter = (f) => {
         )
       );
     },
-    createSession: async (data) =>
-      await q(Create(Sessions, { data: to(data) })),
+    createSession: async (data) => await q(Create(Sessions, { data: to(data) })),
     getSessionAndUser: async (sessionToken) => {
       const session = await q(Get(Match(SessionByToken, sessionToken)));
       if (!session) return null;

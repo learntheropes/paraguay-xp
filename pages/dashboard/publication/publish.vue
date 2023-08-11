@@ -6,12 +6,12 @@ definePageMeta({
 const isLoading = ref(false);
 const store = usePublicationStore();
 
-const error = (!store.accept) ? t('error.publish') : null;
-
 const { 
   locale,
   t 
 } = useI18n();
+
+const error = (!store.accept) ? t('error.publish') : null;
 
 const acceptText = computed(() => (store.accept) ? t('dashboard.gallery.yes') : t('dashboard.gallery.no'));
 
