@@ -33,8 +33,8 @@ const { $event } = useNuxtApp();
 const remove = async (index) => {
   store.removeOneMedia(index);
   $event('removeOne', index);
-  await removeMedia('modal', image.id);
-  await removeMedia('preview', image.id);
+  await removeMedia('modal', id);
+  await removeMedia('preview', id);
 }
 
 const removeMedia = async (path, id) => {

@@ -11,7 +11,9 @@ const {
   t 
 } = useI18n();
 
-const error = (!store.accept) ? t('error.publish') : null;
+const error = computed(() => {
+  return (!store.accept) ? t('error.publish') : null
+});
 
 const acceptText = computed(() => (store.accept) ? t('dashboard.gallery.yes') : t('dashboard.gallery.no'));
 
@@ -78,6 +80,9 @@ const publish = async () => {
   });
 
   isLoading.value = false;
+
+  await navigateTo(`/${locale.value}/dashboard`);
+
 }
 </script>
 

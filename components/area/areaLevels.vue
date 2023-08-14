@@ -13,8 +13,8 @@ const levels = store.levels;
 
 const escorts = Object.keys(store.list).reduce((obj, levelName) => {
   obj[levelName] = (area == 'outcall-only')
-    ? store.list[levelName].filter(escort => !escort.registry.services.area)
-    : store.list[levelName].filter(escort => escort.registry.services.area === area);
+    ? store.list[levelName].filter(escort => !escort.preview.services.area)
+    : store.list[levelName].filter(escort => escort.preview.services.area === area);
   return obj;
 }, {});
 

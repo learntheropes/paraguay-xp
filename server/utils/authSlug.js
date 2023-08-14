@@ -7,7 +7,7 @@ export const authSlug = async (event) => {
   const session = await getServerSession(event);
 
 
-  if (!slug.containes(session.user.email.replace('+', ''))) {
+  if (!slug.includes(session.user.email.replace('+', ''))) {
 
     throw createError({
       statusMessage: 'Unauthorized',

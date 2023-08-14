@@ -23,11 +23,11 @@ const store = useEscortsStore();
 if (!store.init) {
 
   const escorts = await queryContent('escorts')
-  .where({
-    until:{
-      $gte: new Date()
-    }
-  })
+  // .where({
+  //   until:{
+  //     $gte: new Date()
+  //   }
+  // })
   .only([
     'preview', 
     'updatedAt' 
@@ -164,6 +164,9 @@ p a {
 }
 li a {
   text-decoration: underline;
+}
+.button {
+  text-decoration: none !important;
 }
 .content h2 {
   font-size: 1.25rem;

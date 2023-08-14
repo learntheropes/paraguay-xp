@@ -3,7 +3,7 @@ import { getServerSession } from '#auth';
 export default defineEventHandler(async (event) => {
 
   const targetUrl = event.req.url;
-  
+
   if (targetUrl.startsWith('/api/dashboard/')) {
 
     const session = await getServerSession(event);

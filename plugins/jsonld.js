@@ -192,12 +192,12 @@ export default defineNuxtPlugin(nuxtApp => {
                 return {
                   '@type': 'ListItem',
                   'position': index + 1,
-                  'name': nuxtApp.$capitalize(item.registry.basic.name),
+                  'name': nuxtApp.$capitalize(item.preview.name),
                   'image': {
                     '@type': 'ImageObject',
-                    'contentUrl': item.gallery.medias[0].modal
+                    'contentUrl': `/gallery/preview/${item.preview.cover.id}`
                   },
-                  'url': `${deploymentDomain}/${locale.value}/escort/${item.slug}`
+                  'url': `${deploymentDomain}/${locale.value}/escort/${item.preview.slug}`
                 }
               })
             },
@@ -224,12 +224,12 @@ export default defineNuxtPlugin(nuxtApp => {
                 return {
                   '@type': 'ListItem',
                   'position': index + 1,
-                  'name': nuxtApp.$capitalize(item.registry.basic.name),
+                  'name': nuxtApp.$capitalize(item.preview.name),
                   'image': {
                     '@type': 'ImageObject',
-                    'contentUrl': item.gallery.medias[0].modal
+                    'contentUrl': `/gallery/preview/${item.preview.cover.id}`
                   },
-                  'url': `${deploymentDomain}/${locale.value}/escort/${item.slug}`
+                  'url': `${deploymentDomain}/${locale.value}/escort/${item.preview.slug}`
                 }
               })
             },
@@ -273,12 +273,12 @@ export default defineNuxtPlugin(nuxtApp => {
                 return {
                   '@type': 'ListItem',
                   'position': index + 1,
-                  'name': nuxtApp.$capitalize(item.registry.basic.name),
+                  'name': nuxtApp.$capitalize(item.preview.name),
                   'image': {
                     '@type': 'ImageObject',
-                    'contentUrl': item.gallery.medias[0].modal
+                    'contentUrl': `/cover/preview/${item.preview.cover.id}`
                   },
-                  'url': `${deploymentDomain}/${locale.value}/escort/${item.slug}`
+                  'url': `${deploymentDomain}/${locale.value}/escort/${item.preview.slug}`
                 }
               })
             },
@@ -354,12 +354,12 @@ export default defineNuxtPlugin(nuxtApp => {
                 return {
                   '@type': 'ListItem',
                   'position': index + 1,
-                  'name': nuxtApp.$capitalize(item.registry.basic.name),
+                  'name': nuxtApp.$capitalize(item.preview.name),
                   'image': {
                     '@type': 'ImageObject',
-                    'contentUrl': item.gallery.medias[0].modal
+                    'contentUrl': `/gallery/preview/${item.preview.cover.id}`
                   },
-                  'url': `${deploymentDomain}/${locale.value}/escort/${item.slug}`
+                  'url': `${deploymentDomain}/${locale.value}/escort/${item.preview.slug}`
                 }
               })
             },

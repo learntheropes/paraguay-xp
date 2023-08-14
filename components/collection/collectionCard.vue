@@ -54,7 +54,7 @@ const {
       <NuxtLink :to="localePath({ name: 'escort-slug', params: { slug }})">
         <figure :style="'background-color:black;'" class="image is-square">
           <img
-            :src="'/gallery/preview/' + cover.preview.id + '.webp'"
+            :src="'/gallery/preview/' + cover.id + '.webp'"
             :alt="$t('escort.gallery.previewOf') + ' ' + name"
             :title="$t('escort.gallery.previewOf') + ' ' + name"
             :loading="(index == 0) ? 'eager' : 'lazy'"

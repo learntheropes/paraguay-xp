@@ -37,7 +37,7 @@ const openModal = (medias, index) => {
       <figure :style="'background-color:black;'" class="image is-square">
         <img
           @click.native="openModal(medias, index)"
-          :src="medias[index].preview"
+          :src="'/gallery/preview/' + medias[index].id + '.webp'"
           :alt="$t('escort.gallery.previewOf')+' '+ name"
           :title="$t('escort.gallery.previewOf') +' ' + name"
           loading="eager"
