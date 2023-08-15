@@ -51,7 +51,7 @@
 </script>
 
 <template>
-  <OModal v-model:active="isModalActive" :onCancel="closeModal" :canCancel="true">
+  <OModal v-model:active="isModalActive" :canCancel="['x', 'escape']" :onCancel="closeModal">
     <div class="ltr-is-center-left is-hidden-mobile">
       <OIcon 
         icon="chevron-left" 

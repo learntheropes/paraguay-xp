@@ -40,13 +40,8 @@ const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phone.replace('+',''
         <p class="subtitle is-5 is-capitalized">{{ agencyName }}</p>
       </div>
       <div class="column is-narrow is-justify-content-right has-text-righ">
-        <a :href="'tel:' + phone" aria-label="phone">
-          <OIcon customSize="mdi-72px" icon="phone" varian="primary"></OIcon>
-        </a>
-      </div>
-      <div class="column is-narrow is-justify-content-right has-text-righ">
         <a :href="whatsappUrl" target="_blank" aria-label="whatsapp">
-          <OIcon customSize="mdi-72px" icon="whatsapp" variant="primary"></OIcon>
+          <span class="icon is-large"><i class="mdi mdi-72px mdi-whatsapp"></i></span>
         </a>
       </div>
     </div>
@@ -63,7 +58,7 @@ const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phone.replace('+',''
           </div>
           <div class="column is-narrow">
             <a :href="whatsappUrl" target="_blank">
-              <OIcon customSize="mdi-72px" icon="whatsapp"></OIcon>
+              <span class="icon is-large"><i class="mdi mdi-72px mdi-whatsapp"></i></span>
             </a>
           </div>
         </div>     
