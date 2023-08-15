@@ -7,6 +7,12 @@ import services from '~/assets/js/services';
 
 export default defineEventHandler(async () => {
 
+  const {
+    public: {
+      deploymentDomain
+    }
+  } = useRuntimeConfig();
+
   const files = await useStorage('content:escorts').getKeys();
   const promises = files.map(file => useStorage('content:escorts').getItem(`${file}`))
   const escorts = await Promise.all(promises)
@@ -57,7 +63,8 @@ export default defineEventHandler(async () => {
     })
   );
 
-  const getImages = endpoint => {
+  const getImages = async endpoint => {
+
     if (endpoint.startsWith('escort/')) {
 
       const slug = endpoint.split('/')[1];
@@ -66,33 +73,39 @@ export default defineEventHandler(async () => {
         gallery: { 
           medias 
         }
-      } = useStorage('content:escorts').getItem(`${slug}.json`);
+      } = await useStorage('content:escorts').getItem(`${slug}.json`);
 
       if (medias && medias.length) {
 
         return medias.map(media => {
 
           return {
-            loc: `/gallery/modal/${media.modal}`
+            loc: `${deploymentDomain}/gallery/modal/${media.id}.webp`
           }
         })
       }
     }
   };
 
-  return endpoints.reduce((arr, endpoint) => {
+  return endpoints.reduce(async (arrPromise, endpoint) => {
 
-    locales.map(locale => {
+    const arr = await arrPromise;
+
+    for (const locale of locales) {
+
+      const alternatives = getAlternatives(locale.code, endpoint)
+
+      const image = await getImages(endpoint);
 
       arr.push({
         loc: `/${locale.code}/${endpoint}`,
         lastMod: new Date(),
-        alternatives: getAlternatives(locale.code, endpoint),
-        image: getImages(endpoint)
+        alternatives,
+        image
       })
-    });
+    }
 
     return arr;
 
-  }, []);
+  }, Promise.resolve([]));
 })
