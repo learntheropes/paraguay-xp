@@ -20,14 +20,18 @@ export default defineEventHandler(async (event) => {
         statusMessage: 'Unauthenticated',
         statusCode: 401
       });
-    };
+    }
 
-    if (session.user.email !== whatsappAdmin) {
+    const { user: { email }} = session;
+
+    if (email !== whatsappAdmin) {
 
       throw createError({
         statusMessage: 'Unauthorized',
         statusCode: 403,
       }); 
     }
+
+    return;
   }
 });

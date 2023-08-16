@@ -11,6 +11,9 @@ import {
   ODatepicker,
   OTable,
   OTableColumn,
+  OMenu,
+  OMenuList,
+  OMenuItem,
   Config,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from "@oruga-ui/theme-bulma";
@@ -40,5 +43,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('ODatepicker', ODatepicker);
   nuxtApp.vueApp.component('OTable', OTable);
   nuxtApp.vueApp.component('OTableColumn', OTableColumn);
+  nuxtApp.vueApp.component('OMenu', OMenu);
+  nuxtApp.vueApp.component('OMenuList', OMenuList);
+  nuxtApp.vueApp.component('OMenuItem', OMenuItem);
   nuxtApp.vueApp.use(Config, bulmaConfig);
 });

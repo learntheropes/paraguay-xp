@@ -47,6 +47,7 @@ const publish = async () => {
   });
 
   const publication = {
+    approved: false,
     phone: data.value.user.email,
     slug: slug,
     accept: store.accept,

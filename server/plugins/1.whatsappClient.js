@@ -10,8 +10,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms))
 
 export default defineNitroPlugin( async (nitroApp) => {
 
-  // await sleep(1000 * 60);
-  // nitroApp.hooks.hook('start', (nuxt) => console.log('nuxt', nuxt));
+  await sleep(1000 * 60);
 
   const {
     mongodbUri,
@@ -27,7 +26,7 @@ export default defineNitroPlugin( async (nitroApp) => {
   
   client = new Client({
     puppeteer: {
-      headless: true,
+      headless: false,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -41,7 +40,7 @@ export default defineNitroPlugin( async (nitroApp) => {
     authStrategy: new RemoteAuth({
       store, 
       backupSyncIntervalMs: 1000 * 60,
-      clientId: (isDeployed) ? 'digital-ocean' : 'local-3000'
+      clientId: (isDeployed) ? 'paraguayxp_digital-ocean' : 'paraguayxp_local-3000'
     })
   });
 

@@ -155,9 +155,9 @@ const goNext = async () => {
   <NuxtLayout>
     <canvas id="modal" class="is-hidden-tablet is-hidden-mobile" /> 
     <canvas id="preview" class="is-hidden-tablet is-hidden-mobile" /> 
-    <div class="full-body">
+    <div class="ltr-full-body">
       <LayoutNavbar />
-      <main class="main-content">
+      <main class="ltr-main-content">
         <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
         <div class="container">
           <section class="section">

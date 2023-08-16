@@ -15,9 +15,7 @@ useHead({
 });
 
 const {
-  locale: {
-    value: locale
-  },
+  locale,
   t
 } = useI18n();
 
@@ -36,7 +34,7 @@ switch(props.error.statusCode) {
     translatedErrorMessage = t('error.somethingWentWrong')
 }
 
-const handleError = () => clearError({ redirect: `/${locale}` });
+const handleError = () => clearError({ redirect: `/${locale.value}` });
 </script>
 
 <template>

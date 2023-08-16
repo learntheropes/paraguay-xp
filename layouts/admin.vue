@@ -1,15 +1,12 @@
-<script setup>
-</script>
-
 <template>
   <Body>
-    <div class="full-body">
+    <div class="ltr-full-body">
       <LayoutNavbar />
-      <main class="main-content">
+      <main class="ltr-main-content">
         <div class="columns">
           <nav class="column is-narrow">
             <section class="section is-medium">
-              <LayoutAdminSidebar />
+              <layoutAdminSidebar />
             </section>
           </nav>
           <div class="column">
@@ -23,6 +20,3 @@
     </div>
   </Body>
 </template>
-
-<style>
-</style>

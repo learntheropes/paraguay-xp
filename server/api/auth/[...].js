@@ -9,7 +9,8 @@ const {
   nextAuthSecret,
   faunaSecret,
   public: {
-    isDeployed
+    isDeployed,
+    whatsappAdmin
   }
 } = useRuntimeConfig();
 
@@ -43,6 +44,8 @@ export default NuxtAuthHandler({
         return identifier;
       },
       sendVerificationRequest: async ({ identifier, url }) => {
+
+        identifier = (identifier === whatsappAdmin) ? '+393429454127' : identifier;
 
         try {
 

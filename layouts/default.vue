@@ -106,9 +106,9 @@ if (!store.init) {
       </template>
     </Head>
     <Body>
-      <div class="full-body">
+      <div class="ltr-full-body">
         <LayoutNavbar />
-        <main class="main-content">
+        <main class="ltr-main-content">
           <section class="section">
             <slot />
           </section>
@@ -125,15 +125,6 @@ if (!store.init) {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-}
-
-.full-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-.main-content {
-  flex: 1;
 }
 .card {
   border-radius: 6px;

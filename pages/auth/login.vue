@@ -8,7 +8,7 @@ import {
 import phoneCodes from '~/assets/js/countryPhoneCodes'
 
 definePageMeta({
-  layout: "auth",
+  layout: 'auth',
   auth: {
     unauthenticatedOnly: true,
     navigateAuthenticatedTo: (locale) => `/${locale}/dashboard`

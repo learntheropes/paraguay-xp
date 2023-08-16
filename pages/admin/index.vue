@@ -1,10 +1,13 @@
 <script setup>
 definePageMeta({
-  layout: "admin",
-  middleware: 'admin'
+  layout: 'admin',
+  auth: false,
+  // middleware: 'admin'
 });
 </script>
 
 <template>
-  <div>Admin</div>
+  <NuxtLayout>
+    <div>Admin</div>
+  </NuxtLayout>
 </template>

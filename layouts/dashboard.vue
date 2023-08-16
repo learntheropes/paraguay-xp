@@ -8,9 +8,9 @@ const {
 
 <template>
   <Body>
-    <div class="full-body">
+    <div class="ltr-full-body">
       <LayoutNavbar />
-      <main class="main-content">
+      <main class="ltr-main-content">
         <div class="container">
           <section class="section">
             <div class="notification is-warning content has-text-centered">

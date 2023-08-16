@@ -1,4 +1,8 @@
+import { getServerSession } from '#auth';
+
 export default eventHandler(async (event) => {
   
-  return { email: event.session.user.email };
+  const session = await getServerSession(event);
+
+  return session.user.email;
 });

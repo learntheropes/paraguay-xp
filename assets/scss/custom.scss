@@ -11,6 +11,10 @@ $navbar-breakpoint: 0px;
 $section-padding: 3rem 0rem;
 $section-padding-desktop: 3rem 0rem;
 
+// Used for the admin sidebar:
+// reduced horizontal and vertical padding
+$section-padding-medium: 0rem 0.75rem;
+
 // Oruga
 $modal-content-background-color: transparent;
 // $loading-overlay-legacy: #00000000;

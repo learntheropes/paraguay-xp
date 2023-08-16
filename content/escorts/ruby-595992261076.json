@@ -1,4 +1,5 @@
 {
+  "approved": true,
   "phone": "+595992261076",
   "slug": "ruby-595992261076",
   "accept": true,
@@ -145,5 +146,6 @@
     "cover": {
       "id": "62f7a45b-f9dc-42b4-ad15-2bb30f836dea"
     }
-  }
+  },
+  "approve": true
 }
