@@ -9,6 +9,8 @@ import {
   OSlider,
   OSwitch,
   ODatepicker,
+  OTable,
+  OTableColumn,
   Config,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from "@oruga-ui/theme-bulma";
@@ -36,5 +38,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OSlider', OSlider);
   nuxtApp.vueApp.component('OSwitch', OSwitch);
   nuxtApp.vueApp.component('ODatepicker', ODatepicker);
+  nuxtApp.vueApp.component('OTable', OTable);
+  nuxtApp.vueApp.component('OTableColumn', OTableColumn);
   nuxtApp.vueApp.use(Config, bulmaConfig);
 });

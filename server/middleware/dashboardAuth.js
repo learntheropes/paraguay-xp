@@ -4,11 +4,12 @@ export default defineEventHandler(async (event) => {
 
   const targetUrl = event.req.url;
 
-  if (targetUrl.startsWith('/api/dashboard/')) {
+  if (targetUrl.startsWith('/api/dashboard')) {
 
     const session = await getServerSession(event);
 
     if (!session) {
+      
       throw createError({
         statusMessage: 'Unauthenticated',
         statusCode: 403

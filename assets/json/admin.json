@@ -1,0 +1,6 @@
+{
+  "Publications": {
+    "Approved": "/admin/publications/approved",
+    "Unapproved": "/admin/publications/unapproved"
+  }
+}
