@@ -18,7 +18,7 @@
   const publication = await queryContent('escorts', slug).findOne();
 
   const approve = async () => {
-    await useFetch(`/api/admin/approve/${slug}`, {
+    await $fetch(`/api/admin/approve/${slug}`, {
       method: 'POST'
     });
   }
