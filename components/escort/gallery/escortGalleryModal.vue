@@ -3,6 +3,7 @@
   const modalGallery = ref([]);
   const modalIndex = ref(0);
   const modalSrc = ref(null);
+  // const size = ref(null)
   const { $listen } = useNuxtApp();
 
   $listen('openModal', ({ medias, index }) => {
@@ -17,6 +18,7 @@
 
   const onLoad = () => {
     isLoading.value = false;
+    // size.value = document.getElementById('img').offsetWidth;
   };
 
   const onUnload = () => {
@@ -51,7 +53,7 @@
 </script>
 
 <template>
-  <OModal v-model:active="isModalActive" :canCancel="['x', 'escape']" :onCancel="closeModal">
+  <OModal v-model:active="isModalActive" onCancel="closeModal">
     <div class="ltr-is-center-left is-hidden-mobile">
       <OIcon 
         icon="chevron-left" 
@@ -69,40 +71,22 @@
       />
     </div>
     <div class="ltr-is-center-center" v-touch:swipe="onSwipe">
-      <OLoading
+      <!-- <OLoading
         :full-page="false"
         v-model:active="isLoading"
         iconClass="ltr-is-white"
         overlayClass="ltr-is-transparent"
-      />
-      <div class="is-hidden-tablet">
-        <figure 
-          class="image"
-        >
-          <img
-            preset="modal"
-            loading="lazy"
-            @load="onLoad"
-            :src="'/gallery/modal/' + modalSrc + '.webp'"
-            class="ltr-fit-mobile"
-          />
-        </figure>
-      </div>
-
-      <div class="is-hidden-mobile">
-        <figure 
-          class="image"
-        >
-          <img
-            id="image"
-            preset="modal"
-            loading="lazy"
-            @load="onLoad"
-            :src="'/gallery/modal/' + modalSrc + '.webp'"
-            class="ltr-fit-tablet"
-          />
-        </figure>
-      </div>
+      /> -->
+      <figure 
+        class="image"
+      >
+        <img
+          loading="lazy"
+          @load="onLoad"
+          :src="'/gallery/modal/' + modalSrc + '.webp'"
+          :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
+        />
+      </figure>
     </div>
     <div class="ltr-is-center-right is-hidden-mobile">
       <OIcon
@@ -122,6 +106,12 @@
     </div>
   </OModal>
 </template>
+
+<style>
+.mdi-close {
+  color: white;
+}
+</style>
 
 <style scoped>
 .ltr-is-center-center {
