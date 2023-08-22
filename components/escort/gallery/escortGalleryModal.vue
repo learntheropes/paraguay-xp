@@ -3,7 +3,6 @@
   const modalGallery = ref([]);
   const modalIndex = ref(0);
   const modalSrc = ref(null);
-  // const size = ref(null)
   const { $listen } = useNuxtApp();
 
   $listen('openModal', ({ medias, index }) => {

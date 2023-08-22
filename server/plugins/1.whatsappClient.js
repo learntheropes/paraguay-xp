@@ -26,7 +26,7 @@ export default defineNitroPlugin( async (nitroApp) => {
   
   client = new Client({
     puppeteer: {
-      headless: false,
+      headless: true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
