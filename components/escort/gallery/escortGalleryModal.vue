@@ -18,7 +18,6 @@
 
   const onLoad = () => {
     isLoading.value = false;
-    // size.value = document.getElementById('img').offsetWidth;
   };
 
   const onUnload = () => {
@@ -53,7 +52,7 @@
 </script>
 
 <template>
-  <OModal v-model:active="isModalActive" onCancel="closeModal">
+  <OModal v-model:active="isModalActive" :onCancel="closeModal" :canCancel="['escape', 'x']">
     <div class="ltr-is-center-left is-hidden-mobile">
       <OIcon 
         icon="chevron-left" 
@@ -71,12 +70,13 @@
       />
     </div>
     <div class="ltr-is-center-center" v-touch:swipe="onSwipe">
-      <!-- <OLoading
-        :full-page="false"
-        v-model:active="isLoading"
-        iconClass="ltr-is-white"
-        overlayClass="ltr-is-transparent"
-      /> -->
+      <OIcon
+        v-if="isLoading"
+        pack="mdi"
+        icon="loading"
+        size="large"
+        spin
+      />
       <figure 
         class="image"
       >

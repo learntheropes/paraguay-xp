@@ -23,7 +23,6 @@
     "sass-loader": "^13.3.2"
   },
   "dependencies": {
-    "@auth/fauna-adapter": "^1.0.0",
     "@oruga-ui/oruga-next": "^0.6.0",
     "@oruga-ui/theme-bulma": "^0.2.11",
     "@pinia/nuxt": "^0.4.11",
