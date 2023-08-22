@@ -17,8 +17,6 @@ export default eventHandler(async event => {
     });
   } else {
 
-    await authSlug(event);
-
     await deleteFile({
       path: `content/escorts/${slug}.json`,
       message: `delete publication of ${slug}`

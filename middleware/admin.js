@@ -12,7 +12,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 
     const { data } = await useFetch('/api/admin/user');
 
-    if (data.email !== whatsappAdmin) {
+    if (!data.value) {
 
       throw createError({
         statusCode: 403,
