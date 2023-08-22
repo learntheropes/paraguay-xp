@@ -6,7 +6,6 @@ export const authSlug = async (event) => {
 
   const session = await getServerSession(event);
 
-
   if (!slug.includes(session.user.email.replace('+', ''))) {
 
     throw createError({

@@ -183,6 +183,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+
+    compressPublicAssets: true,
+
     devStorage: {
       lang: {
         driver: 'fs',
