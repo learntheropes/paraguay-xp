@@ -10,7 +10,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms))
 
 export default defineNitroPlugin( async (nitroApp) => {
 
-  await sleep(1000 * 30);
+  await sleep(1000 * 60);
 
   const {
     mongodbUri,
