@@ -69,13 +69,6 @@
       />
     </div>
     <div class="ltr-is-center-center" v-touch:swipe="onSwipe">
-      <OIcon
-        v-if="isLoading"
-        pack="mdi"
-        icon="loading"
-        size="large"
-        spin
-      />
       <figure 
         class="image"
       >
@@ -84,6 +77,14 @@
           @load="onLoad"
           :src="'/gallery/modal/' + modalSrc + '.webp'"
           :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
+        />
+        <OIcon
+          v-if="isLoding"
+          pack="mdi"
+          icon="loading"
+          size="large"
+          spin
+          class="is-overlay is-fixed-center"
         />
       </figure>
     </div>
@@ -110,11 +111,23 @@
 .mdi-close {
   color: white;
 }
+.mdi-loading {
+  color: white;
+}
 </style>
 
 <style scoped>
-.ltr-is-center-center {
+/* .ltr-is-center-center {
   min-height: 100px;
   min-width: 100px;
+} */
+.is-fixed-center {
+  min-height: 48px;
+  min-width: 48px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: -24px;
+  margin-left: -24px;
 }
 </style>
