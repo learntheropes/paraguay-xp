@@ -79,7 +79,7 @@
           :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
         />
         <OIcon
-          v-if="isLoding"
+          v-if="isLoading"
           pack="mdi"
           icon="loading"
           size="large"
