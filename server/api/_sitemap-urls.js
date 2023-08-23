@@ -13,10 +13,10 @@ export default defineEventHandler(async () => {
     }
   } = useRuntimeConfig();
 
-  const files = await useStorage('content:escorts').getKeys();
-  const promises = files.map(file => useStorage('content:escorts').getItem(`${file}`))
-  const escorts = await Promise.all(promises)
-  const escortsUrls = escorts.map(escort => `escort/${escort.slug}`)
+  const escortFiles = await useStorage('content:escorts').getKeys();
+  const escortPromises = escortFiles.map(file => useStorage('content:escorts').getItem(`${file}`));
+  const escorts = await Promise.all(escortPromises);
+  const escortsUrls = escorts.map(escort => `escort/${escort.slug}`);
 
   const agencies = uniqBy(escorts, 'agency').filter(escort => escort.registry.basic.agency).map(escort => escort.registry.basic.agency);
   const agenciesUrls = agencies.map(agency => `agency/${kebabCase(agency)}`).concat([`agency/indipendent`])
@@ -29,13 +29,17 @@ export default defineEventHandler(async () => {
 
   const servicesUrls = services.map(service => `service/${kebabCase(service)}`);
 
+  const blogFiles = await useStorage('content:es:blog').getKeys();
+  const blogUrls = blogFiles.map(blog => `blog/${blog.split('.')[0]}`);
+
   const endpoints = [
+    ...['', 'news', 'blog'],
     ...escortsUrls, 
     ...agenciesUrls,
     ...areasUrls,
     ...extrasUrls,
     ...servicesUrls,
-    ...['', 'news', 'blog']
+    ...blogUrls,
   ];
 
   const getAlternatives = (thisLocale, endpoint) => [{

@@ -124,8 +124,7 @@ export default defineNuxtConfig({
     xsl: false,
     exclude: excludedRoutes,
     credits: false,
-    // This doesn't work
-    // autoalternativelangprefixes: ['en-US', 'es-419', 'pt-BR']
+    autoI18n: false
   },
 
   i18n: {
