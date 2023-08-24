@@ -46,18 +46,17 @@ export default defineEventHandler(async () => {
     hreflang: 'x-default',
     href: `/${defaultLocale}/${endpoint}`
   }]
-  .concat(locales
-    // .filter (locale => locale.code !== thisLocale)
-    .map(locale => {
+  // .concat(locales
+  //   // .filter (locale => locale.code !== thisLocale)
+  //   .map(locale => {
 
-      return {
-        hreflang: locale.code,
-        href: `/${locale.code}/${endpoint}`
-      }
-    })
-  )
+  //     return {
+  //       hreflang: locale.code,
+  //       href: `/${locale.code}/${endpoint}`
+  //     }
+  //   })
+  // )
   .concat(locales
-    // .filter (locale => locale.code !== thisLocale)
     .map(locale => {
 
       return {
