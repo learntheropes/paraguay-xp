@@ -1,7 +1,4 @@
-const isDeployed = (
-  process.env.NEXTAUTH_URL === 'http://localhost:3000'
-  || !process.env.NEXTAUTH_URL
-) ? false : true;
+const isDeployed = process.env.NEXTAUTH_URL && process.env.NEXTAUTH_URL !== 'http://localhost:3000'
 const deploymentDomain = process.env.NEXTAUTH_URL || 'http://localhost:3000';
 
 import {
