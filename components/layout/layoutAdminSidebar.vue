@@ -52,5 +52,13 @@ const logOut = async () => {
         inverted
       >Sign out</OButton>
     </OMenu>
+    <OMenu>
+      <OButton
+        :to="localePath('/')"
+        tag="router-link"
+        variant="primary"
+        inverted
+      >Home</OButton>
+    </OMenu>
   </section>
 </template>

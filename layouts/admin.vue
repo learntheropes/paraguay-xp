@@ -1,7 +1,6 @@
 <template>
   <Body>
     <div class="ltr-full-body">
-      <LayoutNavbar />
       <main class="ltr-main-content">
         <div class="columns">
           <nav class="column is-narrow">
