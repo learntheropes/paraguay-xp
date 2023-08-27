@@ -83,14 +83,9 @@ $listen('agencyEscorts', escorts => {
               <p class="title is-3 is-capitalized has-text-right">{{ phone.replace('+595',0) }}</p>
               <p class="subtitle is-5 has-text-right">{{ phone }}</p>
             </div>
-            <div class="column is-narrow is-justify-content-right has-text-righ is-hidden-tablet">
-              <a :href="'tel:' + phone" aria-label="phone">
-                <OIcon customSize="mdi-72px" icon="phone" varian="primary"></OIcon>
-              </a>
-            </div>
-            <div class="column is-narrow is-justify-content-right has-text-righ is-justify-content-right has-text-righ">
-              <a :href="whatsappUrl" target="_blank">
-                <OIcon customSize="mdi-72px" icon="whatsapp"></OIcon>
+            <div class="column is-narrow is-justify-content-right has-text-righ">
+              <a :href="whatsappUrl" target="_blank" aria-label="send whatsapp">
+                <span class="icon is-large"><i class="mdi mdi-72px mdi-whatsapp"></i></span>
               </a>
             </div>
           </div>     
