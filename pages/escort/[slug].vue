@@ -46,12 +46,12 @@ useHead({
     {
       id: 'og:image',
       name: 'og:image',
-      content: `${deploymentDomain}/gallery/modal/${escort.gallery.medias[0].fileName}`
+      content: `${deploymentDomain}/gallery/modal/${escort.gallery.medias[0].id}.webp`
     },
     {
       id: 'twitter:image',
       name: 'twitter:image',
-      content: `${deploymentDomain}/gallery/modal/${escort.gallery.medias[0].fileName}`
+      content: `${deploymentDomain}/gallery/modal/${escort.gallery.medias[0].id}.webp`
     },
   ],
 });
