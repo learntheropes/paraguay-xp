@@ -35,7 +35,8 @@ const openModal = (medias, index) => {
   <div class="card">
     <div class="card-image">
       <figure :style="'background-color:black;'" class="image is-square">
-        <img
+        <NuxtImg
+          preset="preview" 
           @click.native="openModal(medias, index)"
           :src="'/gallery/preview/' + medias[index].id + '.webp'"
           :alt="$t('escort.gallery.previewOf')+' '+ name"

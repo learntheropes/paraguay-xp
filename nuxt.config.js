@@ -107,6 +107,7 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     '@nuxtjs/i18n',
     '@nuxt/content',
+    '@nuxt/image',
     'nuxt-content-git',
     '@sidebase/nuxt-auth',
     '@pinia/nuxt',
@@ -168,6 +169,27 @@ export default defineNuxtConfig({
     },
   },
 
+  image: {
+    presets: {
+      preview: {
+        modifiers: {
+          format: ['webp'],
+          quality: 30,
+          width: 288,
+          height: 288
+        }
+      },
+      navigator: {
+        modifiers: {
+          format: ['webp'],
+          quality: 10,
+          width: 48,
+          height: 48
+        }
+      }
+    }
+  },
+
   pinia: {
     autoImports: [
       'defineStore'
@@ -180,7 +202,7 @@ export default defineNuxtConfig({
 
   nitro: {
 
-    compressPublicAssets: true,
+    // compressPublicAssets: true,
 
     devStorage: {
       lang: {

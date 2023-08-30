@@ -53,7 +53,8 @@ const {
     <div class="card-image">
       <NuxtLink :to="localePath({ name: 'escort-slug', params: { slug }})">
         <figure :style="'background-color:black;'" class="image is-square">
-          <img
+          <NuxtImg
+            preset="preview" 
             :src="'/gallery/preview/' + cover.id + '.webp'"
             :alt="$t('escort.gallery.previewOf') + ' ' + name"
             :title="$t('escort.gallery.previewOf') + ' ' + name"
