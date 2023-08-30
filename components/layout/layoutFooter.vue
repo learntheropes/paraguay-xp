@@ -2,6 +2,7 @@
   const { locale, locales } = useI18n();
   const switchLocalePath = useSwitchLocalePath();
   const availableLocales = computed(() => (locales.value).filter(i => i.code !== locale.value));
+  const year = new Date().getFullYear();
 </script>
 
 <template>
@@ -55,7 +56,7 @@
       </nav>
       <div class="level">
         <div class="level-item has-text-centered">
-          © 2022 - 2050 {{ $t('footer.allRightReserved') }}
+          © 2022 - {{ year }} {{ $t('footer.allRightReserved') }}
         </div>
       </div>
     </div>
