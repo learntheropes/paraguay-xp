@@ -68,16 +68,18 @@ export const usePublicationStore = defineStore('publication', {
   }),
 
   actions: {
+    setAge(age) {
+      console.log('age', JSON.stringify(age, null, 2))
+      this.age = age;
+    },
     setPublication({ 
       phone,
       slug,
       accept,
-      age, 
       description, 
       registry, 
       gallery
     }) {
-      this.age = age;
       this.description = description;
       this.registry = registry;
       this.gallery = gallery;

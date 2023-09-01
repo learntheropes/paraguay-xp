@@ -45,7 +45,7 @@ const idFront = computed({
   },
   set(file) {
     try {
-      var reader = new FileReader();
+      let reader = new FileReader();
       reader.readAsDataURL(file);
 
       reader.onload = function () {
@@ -64,7 +64,7 @@ const idBack = computed({
   },
   set(file) {
     try {
-      var reader = new FileReader();
+      let reader = new FileReader();
       reader.readAsDataURL(file);
 
       reader.onload = function () {

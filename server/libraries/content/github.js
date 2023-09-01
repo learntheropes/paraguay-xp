@@ -82,6 +82,7 @@ export const updateRepoFile = async ({ path, content, message }) => {
   const url = getUrl(path);
   const { content: oldContent, sha } = await getRepoFile({ path });
   const newContent = merge(oldContent, content);
+  console.log('newContent', newContent)
   return await githubJson(url, {
     method: 'PUT',
     body: {

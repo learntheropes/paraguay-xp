@@ -1,5 +1,4 @@
 <script setup>
-import merge from 'lodash.merge';
 import { NotificationProgrammatic } from "@oruga-ui/oruga-next";
 
 const {
@@ -44,14 +43,16 @@ const store = usePublicationStore();
 
 const editAdv = async () => {
 
-  const { data: age } = await useFetch(`api/dashboard/publication/${slug}`, {
+  const { data: age } = await useFetch(`/api/dashboard/publication/${slug}`, {
     query: {
-      path: 'content/age'
+      path: 'content/ages'
     }
   });
+  store.setAge(age.value);
+
   const escort = await queryContent('escorts', slug).findOne();
-  const publication = merge(escort, { age });
-  store.setPublication(publication);
+  store.setPublication(escort);
+
   await navigateTo(`/${locale.value}/dashboard/publication/registry`);
 };
 
