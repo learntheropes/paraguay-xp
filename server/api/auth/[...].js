@@ -8,9 +8,10 @@ import find from 'lodash.find';
 const {
   nextAuthSecret,
   faunaSecret,
+  telegramToken,
   public: {
     isDeployed,
-    whatsappAdmin
+    whatsappDomain
   }
 } = useRuntimeConfig();
 
@@ -45,8 +46,6 @@ export default NuxtAuthHandler({
       },
       sendVerificationRequest: async ({ identifier, url }) => {
 
-        identifier = (identifier === whatsappAdmin) ? '+393429454127' : identifier;
-
         try {
 
           const searchParams = new URLSearchParams(url.split('?')[1]);
@@ -61,14 +60,14 @@ export default NuxtAuthHandler({
           } = await useStorage('lang').getItem(`${locale}.json`);
           const message = `${messageContent} *${token}*`;
          
-          await $fetch(`/api/whatsapp/send-message/${identifier}`, {
+          await $fetch(`${whatsappDomain}/send-message/${identifier}`, {
             method: 'POST',
             body: {
               message
             },
             headers: {
               'content-type': 'application/json',
-              'authorization': `token ${nextAuthSecret}`
+              'authorization': `token ${telegramToken}`
             }
           });
         } catch (error) {

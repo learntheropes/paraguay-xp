@@ -15,7 +15,13 @@ definePageMeta({
   }
 });
 
-const { data } = await useFetch('/api/whatsapp/get-state');
+const {
+  public: {
+    deploymentDomain
+  }
+} = useRuntimeConfig();
+
+const { data } = await useFetch(`/api/get-whatsapp-state`);
 
 const isWhatsappConnected = data.value.state === 'CONNECTED';
 
@@ -54,11 +60,6 @@ if (locale !== 'en' && path === '/en/auth/login') await navigateTo(fullPath.repl
 
 const userLocale = useCookie('userLocale', { maxAge: 60 * 10 });
 userLocale.value = locale;
-const {
-  public: {
-    deploymentDomain
-  }
-} = useRuntimeConfig();
 
 const { signIn } = useAuth();
 

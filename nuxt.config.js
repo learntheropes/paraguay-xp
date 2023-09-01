@@ -11,12 +11,14 @@ import {
 
 export default defineNuxtConfig({
 
+  nitro: {
+    preset: 'digital-ocean'
+  },
+
   runtimeConfig: {
     nextAuthSecret: process.env.NEXTAUTH_SECRET,
     faunaSecret: process.env.FAUNA_SECRET,
-    mongodbUri: process.env.MONGODB_URI,
     telegramToken: process.env.TELEGRAM_TOKEN,
-    telegramChatId: process.env.TELEGRAM_CHAT_ID,
     googleApiKey: process.env.GOOGLE_API_KEY,
     githubRepo: process.env.GITHUB_REPO,
     githubToken: process.env.GITHUB_TOKEN,
@@ -24,7 +26,8 @@ export default defineNuxtConfig({
       seoTitle: ' 🫦 Paraguay XP',
       isDeployed,
       deploymentDomain,
-      whatsappAdmin: process.env.WHATSAPP_ADMIN
+      whatsappAdmin: process.env.WHATSAPP_ADMIN,
+      whatsappDomain: process.env.WHATSAPP_DOMAIN
     }
   },
 
