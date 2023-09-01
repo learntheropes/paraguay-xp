@@ -115,7 +115,11 @@ export default defineNuxtConfig({
   ],
 
   robots: {
-    disallow: ['/', '/$'].concat(excludedRoutes.map(route => route.replace('/**', ''))),
+    disallow: [
+      '/',
+      '/$',
+      ...excludedRoutes.map(route => route.replace('/**', ''))
+    ],
   },
 
   sitemap: {
@@ -190,6 +194,12 @@ export default defineNuxtConfig({
     }
   },
 
+  delayHydration: {
+    mode: 'init',
+    exclude: excludedRoutes,
+    debug: process.env.NODE_ENV === 'development'
+  },
+
   pinia: {
     autoImports: [
       'defineStore'
@@ -231,10 +241,4 @@ export default defineNuxtConfig({
       }
     },
   },
-
-  delayHydration: {
-    mode: 'init',
-    exclude: excludedRoutes,
-    debug: process.env.NODE_ENV === 'development'
-  }
 });
