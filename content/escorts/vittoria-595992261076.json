@@ -1,5 +1,5 @@
 {
-  "approved": true,
+  "approved": false,
   "phone": "+595992261076",
   "slug": "vittoria-595992261076",
   "accept": true,
@@ -23,7 +23,8 @@
       "hips": "90"
     },
     "extra": [
-      "kiss"
+      "kiss",
+      "couple"
     ],
     "languages": {
       "spanish": "basic",
@@ -42,10 +43,10 @@
   },
   "description": {
     "title": {
-      "original": "Top mysterious escort en Paraguay",
-      "es": "Top mysterious escort en Paraguay",
-      "en": "Top mysterious escort in Paraguay",
-      "pt": "A melhor acompanhante misteriosa do Paraguai"
+      "original": "Top class escort in Paraguay",
+      "es": "Escort de primer nivel en Paraguay",
+      "en": "Top class escort in Paraguay",
+      "pt": "Acompanhantes de primeira classe no Paraguai"
     },
     "about": {
       "original": "﻿Per favore prima di contattarmi leggi la mia tariffa.\n\nNaturalmente richiedo educazione, igiene, gentilezza e generosità, per un uomo distinto, profumato e di elevato livello economico e culturale\n\nCiao sono Vittoria, una ragazza bellissima, di Alta Classe.\n\nSono raffinata ed elegante, dal fascino esotico mix perfetto tra Brasile e Giappone. \n\nSono una gatta tenerissima ma all' occorrenza posso trasformarmi in una diavoletta 🙈\n\nMi piace conversare, ridere, sono molto curiosa. \n\nSe vuoi posso accompagnarti a cene o eventi.\n\nSarò sempre adeguata al contesto, nell' abbigliamento, nel trucco, nella conversazione. \n\nAdoro imparare nuove cose e so essere molto SEXY E SENSUALE\n\nModestia a parte SONO UNA DONNA MERAVIGLIOSA e INDIMENTICABILE. \n\nVieni a vivere un momento entusiasmante FATTO DI RELAX eleganza e tanta PASSIONE. Mi dedicherò tutta a te, per farti vivere un incontro UNICO e assaporare un TRIPUDIO DI EMOZIONI\n\nTI FARO' VIVERE IL TUO SOGNO PIU' BELLO grazie al mio sorriso, alla mia energia positiva, alla mia bellezza e al mio corpo profumato e curato da tanta palestra. \n\nTi aspetto.",
@@ -71,10 +72,10 @@
     "agency": "foo bar",
     "rate": 1100000,
     "title": {
-      "original": "Top mysterious escort en Paraguay",
-      "es": "Top mysterious escort en Paraguay",
-      "en": "Top mysterious escort in Paraguay",
-      "pt": "A melhor acompanhante misteriosa do Paraguai"
+      "original": "Top class escort in Paraguay",
+      "es": "Escort de primer nivel en Paraguay",
+      "en": "Top class escort in Paraguay",
+      "pt": "Acompanhantes de primeira classe no Paraguai"
     },
     "services": {
       "virtual": true,
@@ -85,7 +86,8 @@
       "travel": true
     },
     "extra": [
-      "kiss"
+      "kiss",
+      "couple"
     ],
     "cover": {
       "id": "876a72c7-1b32-4b54-bca9-e4e14a6a10fe"
