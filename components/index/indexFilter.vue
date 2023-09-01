@@ -20,13 +20,13 @@ const showFilter = ref(false);
 
 const store = useEscortsStore();
 
-const all = [].concat(
-  store.list.diamond, 
-  store.list.palladium, 
-  store.list.platinum, 
-  store.list.esmerald, 
-  store.list.gold
-);
+const all = [
+  ...store.list.diamond, 
+  ...store.list.palladium, 
+  ...store.list.platinum, 
+  ...store.list.esmerald, 
+  ...store.list.gold
+];
 
 const service = ref(null);
 const area = ref(null);
@@ -62,7 +62,7 @@ const filteredEscorts = computed(() => {
   }, {});
 
   if (area.value) filtered = Object.keys(store.list).reduce((obj, key) => {
-    obj[key] = filtered[key].filter(escort => escort.previregistryew.services.area === area.value) || [];
+    obj[key] = filtered[key].filter(escort => escort.preview.services.area === area.value) || [];
     return obj;
   }, {});
 

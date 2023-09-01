@@ -111,7 +111,7 @@ const week = [
   'friday',
   'saturday',
   'sunday'
-]
+];
 
 const day = [
   '00:00',
@@ -139,11 +139,20 @@ const day = [
   '22:00',
   '23:00',
   '24:00',
-]
+];
+
+const rate = computed({
+  get() {
+    return store.registry.rate;
+  },
+  set(value) {
+    store.setRate(value);
+  }
+})
 
 const goNext = async () => {
   await navigateTo(`/${locale.value}/dashboard/publication/description`);
-}
+};
 </script>
 
 <template>
@@ -418,7 +427,7 @@ const goNext = async () => {
               name="rate"
               :label="$t('escort.rate.title')"
               v-slot="{ handleChange, handleBlur, value, errors }"
-              v-model="store.registry.rate"
+              v-model="rate"
             >
               <OField
                 :label="$t('escort.rate.title')"

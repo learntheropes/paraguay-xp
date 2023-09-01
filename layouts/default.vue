@@ -24,6 +24,9 @@ if (!store.init) {
 
   const escorts = await queryContent('escorts')
   // .where({
+    // approved: {
+    //   $eq: true
+    // },
   //   until:{
   //     $gte: new Date()
   //   }
@@ -34,8 +37,8 @@ if (!store.init) {
   ])
   .find();
 
-  const min = minBy(escorts, e => e.preview.rate).preview.rate;
-  const max = maxBy(escorts, e => e.preview.rate).preview.rate;
+  const min = minBy(escorts, e => parseInt(e.preview.rate)).preview.rate;
+  const max = maxBy(escorts, e => parseInt(e.preview.rate)).preview.rate;
   store.setMin(min);
   store.setMax(max);
   
@@ -82,6 +85,12 @@ if (!store.init) {
       range: `- ${$numberWithDots(esmeraldRate)}`
     },
   ]);
+
+  console.log('goldEscorts', goldEscorts)
+  console.log('esmeraldEscorts', esmeraldEscorts)
+  console.log('platinumEscorts', platinumEscorts)
+  console.log('palladiumEscorts', palladiumEscorts)
+  console.log('diamondEscorts', diamondEscorts)
 
   store.setList({
     gold: shuffle(goldEscorts),

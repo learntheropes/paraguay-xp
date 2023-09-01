@@ -116,18 +116,6 @@ export const usePublicationStore = defineStore('publication', {
       const index = this.registry.extra.indexOf(value);
       this.registry.extra.splice(index,1);
     },
-    // setAge(age) {
-    //   this.age = age;
-    // },
-    // setDescription(description) {
-    //   this.description = description;
-    // },
-    // setRegistry(registry) {
-    //   this.registry = registry;
-    // },
-    // setGallery(gallery) {
-    //   this.gallery = gallery;
-    // },
     concatMedias(temps) {
       temps.forEach(temp => delete temp.preview);
       this.gallery.medias = this.gallery.medias.concat(temps);
@@ -149,21 +137,9 @@ export const usePublicationStore = defineStore('publication', {
     },
     setAbout(obj) {
       this.description.about = obj;
+    },
+    setRate(str) {
+      this.registry.rate = parseInt(str);
     }
-    // setPhone(phone) {
-    //   this.phone = phone;
-    // },
-    // setSlug(slug) {
-    //   this.slug = slug;
-    // },
-    // setAccept(accept) {
-    //   this.accept = accept;
-    // },
-    // setApproved(approved) {
-    //   this.approved = approved;
-    // },
-    // setUntil(until) {
-    //   this.until = until;
-    // }
   }
 })

@@ -32,7 +32,7 @@
       "english": "advanced",
       "portuguese": null
     },
-    "rate": "800000",
+    "rate": 800000,
     "services": {
       "virtual": false,
       "incall": false,
@@ -116,7 +116,7 @@
     "dateOfBirth": "12/16/1974",
     "name": "ruby",
     "agency": "foo bar",
-    "rate": "800000",
+    "rate": 800000,
     "title": {
       "original": "Splendida escort rumena per cambio di ruoli",
       "it": "Splendida escort rumena per cambio di ruoli",
@@ -133,9 +133,6 @@
       "travel": true
     },
     "extra": [
-      "rolePlay",
-      "full",
-      "kiss",
       "rolePlay",
       "full",
       "kiss"

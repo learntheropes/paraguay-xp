@@ -1,5 +1,5 @@
 {
-  "approved": false,
+  "approved": true,
   "phone": "+595992261076",
   "slug": "vittoria-595992261076",
   "accept": true,
@@ -23,7 +23,6 @@
       "hips": "90"
     },
     "extra": [
-      "kiss",
       "kiss"
     ],
     "languages": {
@@ -31,7 +30,7 @@
       "english": "basic",
       "portuguese": "native"
     },
-    "rate": "1100000",
+    "rate": 1100000,
     "services": {
       "virtual": true,
       "incall": true,
@@ -70,7 +69,7 @@
     "dateOfBirth": "12/16/1974",
     "name": "Vittoria",
     "agency": "foo bar",
-    "rate": "1100000",
+    "rate": 1100000,
     "title": {
       "original": "Top mysterious escort en Paraguay",
       "es": "Top mysterious escort en Paraguay",
@@ -86,7 +85,6 @@
       "travel": true
     },
     "extra": [
-      "kiss",
       "kiss"
     ],
     "cover": {
