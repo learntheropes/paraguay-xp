@@ -419,7 +419,7 @@ const goNext = async () => {
               :label="$t(`extra.${extra}`)"
             >
               <OSwitch
-                v-model="providedExtras[index]"
+                v-model="providedExtras[index].value"
               >{{ extraText(extra) }}</OSwitch>
             </OField>
 

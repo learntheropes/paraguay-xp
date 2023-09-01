@@ -69,7 +69,6 @@ export const usePublicationStore = defineStore('publication', {
 
   actions: {
     setAge(age) {
-      console.log('age', JSON.stringify(age, null, 2))
       this.age = age;
     },
     setPublication({ 

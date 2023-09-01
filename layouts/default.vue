@@ -86,12 +86,6 @@ if (!store.init) {
     },
   ]);
 
-  console.log('goldEscorts', goldEscorts)
-  console.log('esmeraldEscorts', esmeraldEscorts)
-  console.log('platinumEscorts', platinumEscorts)
-  console.log('palladiumEscorts', palladiumEscorts)
-  console.log('diamondEscorts', diamondEscorts)
-
   store.setList({
     gold: shuffle(goldEscorts),
     esmerald: shuffle(esmeraldEscorts),
