@@ -13,9 +13,10 @@ const encodeContent = (data) => {
     const buff = new Buffer.from(string);
     return buff.toString('base64');
   } catch (error) {
-    buff = data
+    buff = data;
   }
-  return buff
+  console.log('buff', buff)
+  return buff;
 }
 
 const githubJson = ofetch.create({
