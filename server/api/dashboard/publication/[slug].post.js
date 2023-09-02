@@ -4,12 +4,10 @@ export default eventHandler(async event => {
   const contentType = getHeader(event, 'Content-Type');
   const { content, path, message } = await readBody(event);
 
-  if (contentType === 'image/webp') {
-
-    const contentBuffer = Buffer.from(content.replace(/^data:image\/\w+;base64,/, ''), 'base64');
+  if (contentType === 'image/webp') {    
     await addFile({
       path: `${path}/${slug}.webp`,
-      content: contentBuffer,
+      content,
       message,
     });
   } else {

@@ -6,17 +6,27 @@ const {
   githubToken
  } = useRuntimeConfig();
 
-const encodeContent = (data) => {
-  let buff;
-  try {
-    const string = JSON.stringify(data, null, 2);
-    const buff = new Buffer.from(string);
-    return buff.toString('base64');
-  } catch (error) {
-    buff = data;
+const encodeContent = (path, data) => {
+
+  if (path.startsWith('content/')) {
+
+    let buff;
+    try {
+      const string = JSON.stringify(data, null, 2);
+      const buff = new Buffer.from(string);
+      return buff.toString('base64');
+    } catch (error) {
+      buff = data;
+    }
+    return buff;
   }
-  console.log('buff', buff)
-  return buff;
+
+  else {
+
+    const binaryImageData = atob(data.split(',')[1]);
+    const buff = btoa(binaryImageData);
+    return buff;
+  };
 }
 
 const githubJson = ofetch.create({
@@ -73,7 +83,7 @@ export const addRepoFile = async ({ path, content, message }) => {
     method: 'PUT',
     body: {
       message,
-      content: encodeContent(content)
+      content: encodeContent(path, content)
     }
   });
 }
@@ -88,7 +98,7 @@ export const updateRepoFile = async ({ path, content, message }) => {
     method: 'PUT',
     body: {
       message,
-      content: encodeContent(newContent),
+      content: encodeContent(path, newContent),
       sha
     }
   });

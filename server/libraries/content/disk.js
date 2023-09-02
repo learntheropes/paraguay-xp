@@ -31,7 +31,7 @@ export const getDiskFile = async ({ path }) => {
 }
 
 export const addDiskFile = ({ path, content }) => {
-
+  
   writeFile(path, content);
 }
 

@@ -131,7 +131,7 @@ const postMedia = async (id, path, base64String) => {
     body:{ 
       content: base64String,
       path: `public/gallery/${path}`,
-      message: `add ${path} image ${id}`
+      message: `add ${path} image ${id}`,
     },
   });
 }
