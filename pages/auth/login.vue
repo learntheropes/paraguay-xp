@@ -126,23 +126,12 @@ const verifyCode = () => {
           >
             <OSelect
               v-model="phone.prefix"
-              class="is-hidden-tablet"
-            >
-              <option
-                v-for="phoneCode of sortBy(phoneCodes, 'dial_code')"
-                :key="phoneCode.code"
-                :value="phoneCode.dial_code"
-              >{{ phoneCode.dial_code }}</option>
-            </OSelect>
-            <OSelect
-              v-model="phone.prefix"
-              class="is-hidden-mobile"
             >
               <option
                 v-for="country of $i18nCountries.list()"
                 :key="country.countryCode"
                 :value="country.dialCode"
-              >{{ country.countryName }} | {{ country.dialCode }}</option>
+              >{{ country.dialCode }}</option>
             </OSelect>
             <OInput
               :label="$t('auth.loginNumber')"
