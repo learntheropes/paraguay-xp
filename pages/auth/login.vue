@@ -77,9 +77,10 @@ onMounted(async () => {
 
 const sendWhatsapp = async () => {
   try {
-
+    const email = `${phone.value.prefix}${phone.value.number}`
+      .replace('+5950', '+595')
     await signIn('whatsapp', {
-      email: phone.value.prefix + phone.value.number,
+      email,
       redirect: false,
       callbackUrl: `/${locale}/dashboard`,
     });
