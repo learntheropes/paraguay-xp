@@ -123,6 +123,9 @@ if (!store.init) {
 </template>
 
 <style>
+.mdi {
+  font-display: optional;
+}
 @media screen and (max-width: 768px) {
   .container {
     padding-left: 1rem;
