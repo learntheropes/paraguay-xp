@@ -1,6 +1,7 @@
 <script setup>
 import find from 'lodash.find';
-import sortBy from 'lodash.sortby'
+import sortBy from 'lodash.sortby';
+import uniqBy from 'lodash.uniqby';
 import {
   locales,
   defaultLocale,
@@ -129,7 +130,7 @@ const verifyCode = () => {
               v-model="phone.prefix"
             >
               <option
-                v-for="country of $i18nCountries.list()"
+                v-for="country of uniqBy(sortBy($i18nCountries.list(), 'dialCode'), 'dialCode')"
                 :key="country.countryCode"
                 :value="country.dialCode"
               >{{ country.dialCode }}</option>
