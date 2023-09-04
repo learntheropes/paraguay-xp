@@ -85,7 +85,7 @@ onMounted(async () => {
           preview: base64DataUrl
         });
 
-        await postMedia(id, base64DataUrl, fileType, fileExtension);
+        await postMedia(store.gallery.blur ? `${_id}` : id, base64DataUrl, fileType, fileExtension);
 
         if (Array.from(files).indexOf(file) === files.length - 1) isLoading.value = false;
       };
@@ -99,7 +99,7 @@ onMounted(async () => {
 
 const postMedia = async (id, base64DataUrl, fileType, fileExtension) => {
 
-  await useFetch(`/api/dashboard/publication/_${id}`, {
+  await useFetch(`/api/dashboard/publication/${id}`, {
     key: `post-${id}`,
     method: 'POST',
     headers: {
@@ -108,7 +108,7 @@ const postMedia = async (id, base64DataUrl, fileType, fileExtension) => {
     body:{ 
       content: base64DataUrl,
       path: `public/gallery/modal`,
-      message: `add media _${id}`,
+      message: `add media ${id}`,
     },
   });
 }
