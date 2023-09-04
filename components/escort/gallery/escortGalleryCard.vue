@@ -45,6 +45,9 @@ const openModal = (medias, index) => {
           width="288"
           height="288"
         />
+        <div v-if="medias[index].type === 'video'" @click.native="openModal(medias, index)" class="is-overlay is-center-center">
+          <OIcon icon="play" size="large" variant="info" />
+        </div>
       </figure>
     </div>  
   </div>

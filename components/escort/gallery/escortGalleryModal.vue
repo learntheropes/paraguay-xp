@@ -1,13 +1,25 @@
 <script setup>
+  import { Watermark } from '@watermarkify/vue-watermark'
+
+  const watermarkOptions = ref({
+    content: 'Paraguay XP',
+    gap: [20, 20],
+    offset: [10, 10],
+    zIndex: 5,
+    rotate: -20,
+  })
+
   const isModalActive = ref(false);
+  const modalType = ref(null);
   const modalGallery = ref([]);
   const modalIndex = ref(0);
   const modalSrc = ref(null);
   const { $listen } = useNuxtApp();
 
   $listen('openModal', ({ medias, index }) => {
-
+    console.log('openModal')
     isModalActive.value = true;
+    modalType.value = medias[index].type;
     modalGallery.value = medias;
     modalIndex.value = index;
     modalSrc.value = medias[index].id;
@@ -33,6 +45,7 @@
 
     onUnload();
     modalIndex.value = (modalIndex.value - 1 < 0) ? modalGallery.value.length - 1 : modalIndex.value - 1; 
+    modalType.value = modalGallery.value[modalIndex.value].type;
     modalSrc.value = modalGallery.value[modalIndex.value].id;
   };
 
@@ -40,6 +53,7 @@
 
     onUnload();
     modalIndex.value = (modalIndex.value + 1 >=  modalGallery.value.length) ? 0:  modalIndex.value + 1;
+    modalType.value = modalGallery.value[modalIndex.value].type;
     modalSrc.value = modalGallery.value[modalIndex.value].id;
   };
 
@@ -69,24 +83,39 @@
       />
     </div>
     <div class="ltr-is-center-center" v-touch:swipe="onSwipe">
-      <figure 
-        class="image"
-      >
-        <img
-          loading="lazy"
-          @load="onLoad"
-          :src="'/gallery/modal/' + modalSrc"
+      <Watermark :options="watermarkOptions">
+        <figure 
+          class="image"
+          v-if="modalType === 'image'"
+        >
+          <img
+            loading="lazy"
+            @load="onLoad"
+            :src="'/gallery/modal/' + modalSrc"
+            :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
+          />
+          <OIcon
+            v-if="isLoading"
+            pack="mdi"
+            icon="loading"
+            size="large"
+            spin
+            class="is-overlay is-fixed-center"
+          />
+        </figure>
+        <video
+          v-else
+          @canplay="onLoad"
+          autoplay
+          muted
+          playsInline
           :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
-        />
-        <OIcon
-          v-if="isLoading"
-          pack="mdi"
-          icon="loading"
-          size="large"
-          spin
-          class="is-overlay is-fixed-center"
-        />
-      </figure>
+        >
+          <source
+            :src="'/gallery/modal/' + modalSrc"
+          />
+        </video>
+      </Watermark>
     </div>
     <div class="ltr-is-center-right is-hidden-mobile">
       <OIcon
