@@ -17,7 +17,6 @@
   const { $listen } = useNuxtApp();
 
   $listen('openModal', ({ medias, index }) => {
-    console.log('openModal')
     isModalActive.value = true;
     modalType.value = medias[index].type;
     modalGallery.value = medias;
@@ -103,18 +102,28 @@
             class="is-overlay is-fixed-center"
           />
         </figure>
-        <video
-          v-else
-          @canplay="onLoad"
-          autoplay
-          muted
-          playsInline
-          :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
-        >
-          <source
-            :src="'/gallery/modal/' + modalSrc"
+        <div v-else>
+          <video
+            @canplay="onLoad"
+            :controls="!isLoading"
+            autoplay
+            muted
+            playsInline
+            :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
+          >
+            <source
+              :src="'/gallery/modal/' + modalSrc"
+            />
+          </video>
+          <OIcon
+            v-if="isLoading"
+            pack="mdi"
+            icon="loading"
+            size="large"
+            spin
+            class="is-overlay is-fixed-center"
           />
-        </video>
+        </div>
       </Watermark>
     </div>
     <div class="ltr-is-center-right is-hidden-mobile">
