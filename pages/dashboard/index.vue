@@ -10,7 +10,6 @@ if (publication) {
   const store = usePublicationStore();
   store.setPublication(publication);
 }
-
 </script>
 
 <template>
