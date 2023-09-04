@@ -1,7 +1,28 @@
 import fs from 'fs-extra';
-const { pathExists, readJson, writeJson, writeFile, remove } = fs;
+const { pathExists, readJson, writeJson, writeFile, remove, existsSync, mkdirSync } = fs;
 import klaw from 'klaw';
 import merge from 'lodash.merge';
+
+const getDataFromDataUrl = (dataUrl) => {
+  const matches = dataUrl.match(/^data:(.*?);base64,(.*)$/);
+  if (!matches || matches.length !== 3) {
+    throw new Error('Invalid Data URL');
+  }
+
+  const [, mimeType, base64Data] = matches;
+  return { mimeType, base64Data };
+}
+
+const saveBase64DataToFile = (dataUrl, outputPath) => {
+  const { base64Data } = getDataFromDataUrl(dataUrl);
+  const binaryData = Buffer.from(base64Data, 'base64');
+
+  writeFile(outputPath, binaryData, (err) => {
+    if (err) {
+      console.error('Error saving file:', err);
+    }
+  });
+}
 
 export const getDiskFile = async ({ path }) => {
   try {
@@ -31,11 +52,17 @@ export const getDiskFile = async ({ path }) => {
 }
 
 export const addDiskFile = ({ path, content }) => {
-  
-  writeFile(path, content);
+
+  const directoryPath = path.slice(0, path.lastIndexOf('/'));
+  if (!existsSync(directoryPath)) mkdirSync(directoryPath);
+
+  saveBase64DataToFile(content, path);
 }
 
 export const updateDiskFile = async ({ path, content }) => {
+
+  const directoryPath = path.slice(0, path.lastIndexOf('/'));
+  if (!existsSync(directoryPath)) mkdirSync(directoryPath);
 
   const { content: oldContent } = await getDiskFile({ path });
   const newContent = merge(oldContent, content);

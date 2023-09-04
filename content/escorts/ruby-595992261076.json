@@ -63,18 +63,6 @@
       {
         "id": "75502ad6-317e-4c09-9a64-fe46cb113ae2",
         "type": "image"
-      },
-      {
-        "id": "0add58d8-3889-47c4-8240-95816fe0640d",
-        "type": "image"
-      },
-      {
-        "id": "14f7861e-43e5-4d3f-ac30-5b0ea27c946b",
-        "type": "image"
-      },
-      {
-        "id": "57f896a8-b961-4ae8-8556-c5a15f824d54",
-        "type": "image"
       }
     ],
     "blur": true
@@ -106,10 +94,7 @@
       "kiss"
     ],
     "cover": {
-      "id": {
-        "id": "75502ad6-317e-4c09-9a64-fe46cb113ae2",
-        "type": "image"
-      }
+      "id": "75502ad6-317e-4c09-9a64-fe46cb113ae2"
     }
   }
 }

@@ -14,6 +14,7 @@ const {
 });
 
 const {
+  slug,
   registry: {
     basic: {
       name
@@ -26,8 +27,8 @@ const {
 
 const { $event } = useNuxtApp();
 
-const openModal = (medias, index) => {
-  $event('openModal', { medias, index });
+const openModal = (slug, medias, index) => {
+  $event('openModal', { slug, medias, index });
 };
 </script>
 
@@ -37,15 +38,15 @@ const openModal = (medias, index) => {
       <figure :style="'background-color:black;'" class="image is-square">
         <NuxtImg
           preset="preview" 
-          @click.native="openModal(medias, index)"
-          :src="'/gallery/preview/' + medias[index].id"
+          @click.native="openModal(slug, medias, index)"
+          :src="'/gallery/preview/' + slug + '/' + medias[index].id"
           :alt="$t('escort.gallery.previewOf')+' '+ name"
           :title="$t('escort.gallery.previewOf') +' ' + name"
           loading="eager"
           width="288"
           height="288"
         />
-        <div v-if="medias[index].type === 'video'" @click.native="openModal(medias, index)" class="is-overlay is-center-center">
+        <div v-if="medias[index].type === 'video'" @click.native="openModal(slug, medias, index)" class="is-overlay is-center-center">
           <OIcon icon="play" size="large" variant="info" />
         </div>
       </figure>

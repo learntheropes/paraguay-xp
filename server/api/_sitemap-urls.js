@@ -80,12 +80,40 @@ export default defineEventHandler(async () => {
 
       if (medias && medias.length) {
 
-        return medias.map(media => {
+        return medias
+          .filter(media => media.type === 'image')
+          .map(media => {
 
-          return {
-            loc: `${deploymentDomain}/gallery/modal/${media.id}`
-          }
-        })
+            return {
+              loc: `${deploymentDomain}/gallery/modal/${slug}/${media.id}`
+            }
+          })
+      }
+    }
+  };
+
+  const getVideos = async endpoint => {
+
+    if (endpoint.startsWith('escort/')) {
+
+      const slug = endpoint.split('/')[1];
+
+      const { 
+        gallery: { 
+          medias 
+        }
+      } = await useStorage('content:escorts').getItem(`${slug}.json`);
+
+      if (medias && medias.length) {
+
+        return medias
+          .filter(media => media.type === 'video')
+          .map(media => {
+
+            return {
+              loc: `${deploymentDomain}/gallery/modal/${slug}/${media.id}`
+            }
+          })
       }
     }
   };
@@ -96,15 +124,16 @@ export default defineEventHandler(async () => {
 
     for (const locale of locales) {
 
-      const alternatives = getAlternatives(locale.code, endpoint)
-
+      const alternatives = getAlternatives(locale.code, endpoint);
       const image = await getImages(endpoint);
+      const video = await getVideos(endpoint);
 
       arr.push({
         loc: `/${locale.code}/${endpoint}`,
-        lastMod: new Date(),
+        // lastMod: new Date(),
         alternatives,
-        image
+        image,
+        video
       })
     }
 

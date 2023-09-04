@@ -67,7 +67,7 @@ const publish = async () => {
     services: store.registry.services,
     extra: store.registry.extra,
     cover: {
-      id: find(store.gallery.medias, { type: 'image' })
+      id: find(store.gallery.medias, { type: 'image' }).id
     }
   }
 

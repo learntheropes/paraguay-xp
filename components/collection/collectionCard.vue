@@ -55,7 +55,7 @@ const {
         <figure :style="'background-color:black;'" class="image is-square">
           <NuxtImg
             preset="preview" 
-            :src="'/gallery/preview/' + cover.id"
+            :src="'/gallery/preview/' + slug + '/' + cover.id"
             :alt="$t('escort.gallery.previewOf') + ' ' + name"
             :title="$t('escort.gallery.previewOf') + ' ' + name"
             :loading="(index == 0) ? 'eager' : 'lazy'"

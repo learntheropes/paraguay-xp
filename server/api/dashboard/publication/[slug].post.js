@@ -4,15 +4,16 @@ export default eventHandler(async event => {
   const contentType = getHeader(event, 'Content-Type');
   const { content, path, message } = await readBody(event);
 
-  if (contentType === 'image/webp') {    
-    await addFile({
+  if (contentType === 'application/json') {  
+    
+    await updateFile({
       path: `${path}/${slug}`,
       content,
       message,
     });
   } else {
 
-    await updateFile({
+    await addFile({
       path: `${path}/${slug}`,
       content,
       message,

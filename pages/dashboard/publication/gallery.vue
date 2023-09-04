@@ -40,6 +40,10 @@ const videoExtensions = [
 
 const store = usePublicationStore();
 
+const { data } = useAuth();
+const slug = `${store.registry.basic.name.replace(' ', '-').toLowerCase()}-${data.value.user.email.replace('+', '')}`
+// const slug = 'foobar'
+
 const { 
   locale,
   t 
@@ -85,7 +89,7 @@ onMounted(async () => {
           preview: base64DataUrl
         });
 
-        await postMedia(store.gallery.blur ? `${_id}` : id, base64DataUrl, fileType, fileExtension);
+        await postMedia(id, base64DataUrl, fileType, fileExtension);
 
         if (Array.from(files).indexOf(file) === files.length - 1) isLoading.value = false;
       };
@@ -107,7 +111,7 @@ const postMedia = async (id, base64DataUrl, fileType, fileExtension) => {
     },
     body:{ 
       content: base64DataUrl,
-      path: `public/gallery/modal`,
+      path: `public/gallery/modal/${slug}`,
       message: `add media ${id}`,
     },
   });
@@ -138,7 +142,7 @@ const goNext = async () => {
     </OField>
     <div class="columns is-mobile is-multiline">
       <div v-for="(image, index) in store.gallery.medias" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
-        <DashboardPublicationGalleryCard :id="image.id" :src="'/gallery/preview/' + image.id + '.webp'" :index="index" />
+        <DashboardPublicationGalleryCard :id="image.id" :src="'/gallery/preview/' + slug + '/' + image.id" :index="index" />
       </div>
       <div v-for="(image, index) in temps" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
         <DashboardPublicationGalleryCard :id="image.id" :src="image.preview" :index="store.gallery.medias.length + index" />

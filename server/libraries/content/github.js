@@ -35,7 +35,32 @@ const githubJson = ofetch.create({
   headers: {
     Accept: 'application/vnd.github.v3+json',
     Authorization: `token ${githubToken}`
-  }
+  },
+  async onRequest({ request, options }) {
+    // Log request
+    console.log("[fetch request]", request, options);
+
+    // Add `?t=1640125211170` to query search params
+    options.query = options.query || {};
+    options.query.t = new Date();
+  },
+  async onRequestError({ request, options, error }) {
+    // Log error
+    console.log("[fetch request error]", request, error);
+  },
+  async onResponse({ request, response, options }) {
+    // Log response
+    console.log("[fetch response]", request, response.status, response.body);
+  },
+  async onResponseError({ request, response, options }) {
+    // Log error
+    console.log(
+      "[fetch response error]",
+      request,
+      response.status,
+      response.body
+    );
+  },
 })
 
 const githubRaw = ofetch.create({
@@ -78,12 +103,22 @@ export const getRepoFile = async ({ path }) => {
 
 export const addRepoFile = async ({ path, content, message }) => {
 
+  console.log('addRepoFile')
+  // const binaryImageData = atob(content.split(',')[1]);
+  // content = btoa(binaryImageData);
+
+  const base64Data = content.split(',')[1];
+
+// Convert base64 to binary data
+const binaryData = Buffer.from(base64Data, 'base64')
+content = binaryData.toString('base64')
+  console.log('content', typeof content)
   const url = getUrl(path);
   return await githubJson(url, {
     method: 'PUT',
     body: {
       message,
-      content: encodeContent(path, content)
+      content
     }
   });
 }

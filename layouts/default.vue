@@ -23,14 +23,14 @@ const store = useEscortsStore();
 if (!store.init) {
 
   const escorts = await queryContent('escorts')
-  // .where({
-    // approved: {
-    //   $eq: true
-    // },
-  //   until:{
-  //     $gte: new Date()
-  //   }
-  // })
+  .where({
+    approved: {
+      $eq: true
+    },
+    // until:{
+    //   $gte: new Date()
+    // }
+  })
   .only([
     'preview', 
     'updatedAt' 

@@ -10,18 +10,20 @@
   })
 
   const isModalActive = ref(false);
+  const modalSlug = ref(null);
   const modalType = ref(null);
   const modalGallery = ref([]);
   const modalIndex = ref(0);
   const modalSrc = ref(null);
   const { $listen } = useNuxtApp();
 
-  $listen('openModal', ({ medias, index }) => {
+  $listen('openModal', ({ slug, medias, index }) => {
     isModalActive.value = true;
+    modalSlug.value = slug;
     modalType.value = medias[index].type;
     modalGallery.value = medias;
     modalIndex.value = index;
-    modalSrc.value = medias[index].id;
+    modalSrc.value = `${slug}/${medias[index].id}`;
   });
 
   const isLoading = ref(true);
@@ -45,7 +47,7 @@
     onUnload();
     modalIndex.value = (modalIndex.value - 1 < 0) ? modalGallery.value.length - 1 : modalIndex.value - 1; 
     modalType.value = modalGallery.value[modalIndex.value].type;
-    modalSrc.value = modalGallery.value[modalIndex.value].id;
+    modalSrc.value = `${modalSlug.value}/${modalGallery.value[modalIndex.value].id}`;
   };
 
   const navigateNext = () => {
@@ -53,7 +55,7 @@
     onUnload();
     modalIndex.value = (modalIndex.value + 1 >=  modalGallery.value.length) ? 0:  modalIndex.value + 1;
     modalType.value = modalGallery.value[modalIndex.value].type;
-    modalSrc.value = modalGallery.value[modalIndex.value].id;
+    modalSrc.value = `${modalSlug.value}/${modalGallery.value[modalIndex.value].id}`;
   };
 
   const onSwipe = (direction) => {
