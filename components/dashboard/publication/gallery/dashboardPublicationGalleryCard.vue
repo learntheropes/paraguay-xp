@@ -19,15 +19,6 @@ const {
 });
 const store = usePublicationStore();
 
-// let source = ref(null);
-// try {
-//   await $fetch(`/gallery/preview/${image.id}.webp`)
-//   source.value = `/gallery/preview/${image.id}.webp`
-
-// } catch (error) {
-//   source.value = temp
-// };
-
 const { $event } = useNuxtApp();
 
 const remove = async (index) => {
@@ -38,7 +29,7 @@ const remove = async (index) => {
 }
 
 const removeMedia = async (path, id) => {
-  await useFetch(`/api/dashboard/publication/${id}.webp`, {
+  await useFetch(`/api/dashboard/publication/${id}`, {
     key: `delete-${path}-${id}`,
     method: 'DELETE',
     headers: {
@@ -46,7 +37,7 @@ const removeMedia = async (path, id) => {
     },
     body:{ 
       path: `public/gallery/${path}`,
-      message: `add modal image ${id}.webp`
+      message: `remove modal media ${id}`
     },
   });
 }

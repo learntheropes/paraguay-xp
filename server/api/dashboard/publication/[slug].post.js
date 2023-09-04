@@ -6,7 +6,7 @@ export default eventHandler(async event => {
 
   if (contentType === 'image/webp') {    
     await addFile({
-      path: `${path}/${slug}.webp`,
+      path: `${path}/${slug}`,
       content,
       message,
     });

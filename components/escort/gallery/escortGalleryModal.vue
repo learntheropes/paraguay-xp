@@ -75,7 +75,7 @@
         <img
           loading="lazy"
           @load="onLoad"
-          :src="'/gallery/modal/' + modalSrc + '.webp'"
+          :src="'/gallery/modal/' + modalSrc"
           :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
         />
         <OIcon

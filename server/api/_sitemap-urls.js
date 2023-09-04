@@ -83,7 +83,7 @@ export default defineEventHandler(async () => {
         return medias.map(media => {
 
           return {
-            loc: `${deploymentDomain}/gallery/modal/${media.id}.webp`
+            loc: `${deploymentDomain}/gallery/modal/${media.id}`
           }
         })
       }

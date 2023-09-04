@@ -10,7 +10,8 @@ const {
 
 const {
   preview: {
-    dateOfBirth
+    dateOfBirth,
+    cover
   },
   gallery: {
     medias
@@ -23,8 +24,6 @@ const {
   },
   slug
 } = escort;
-
-const cover = medias[0];
 
 const { t } = useI18n();
 
@@ -53,7 +52,7 @@ const { $dayjs } = useNuxtApp();
       <figure :style="'background-color:black;'" class="image is-48x48 has-rounded-corners">
         <NuxtImg
           preset="navigator" 
-          :src="('/gallery/preview/' + cover.fileName).split('.')[0] + '.webp'"
+          :src="'/gallery/preview/' + cover.id"
           :alt="$t('escort.gallery.previewOf') + ' ' + name"
           :title="$t('escort.gallery.previewOf') + ' ' + name"
           loading="lazy"
