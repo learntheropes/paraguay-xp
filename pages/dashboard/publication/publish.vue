@@ -1,4 +1,5 @@
 <script setup>
+import find from 'lodash.find'
 definePageMeta({
   layout: 'dashboard'
 });
@@ -66,8 +67,7 @@ const publish = async () => {
     services: store.registry.services,
     extra: store.registry.extra,
     cover: {
-      id: store.gallery.medias[0].id,
-      preview: store.gallery.medias[0].preview
+      id: find(store.gallery.medias, { type: 'image' })
     }
   }
 
