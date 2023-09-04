@@ -1,5 +1,5 @@
 {
-  "approved": true,
+  "approved": false,
   "phone": "+595992261076",
   "slug": "ruby-595992261076",
   "accept": true,
@@ -61,38 +61,6 @@
   "gallery": {
     "medias": [
       {
-        "id": "62f7a45b-f9dc-42b4-ad15-2bb30f836dea",
-        "type": "image"
-      },
-      {
-        "id": "06908239-68d1-45e0-8f52-9d26b100d6bb",
-        "type": "image"
-      },
-      {
-        "id": "86f64639-ac64-473b-8e8d-37a13bbee1d6",
-        "type": "image"
-      },
-      {
-        "id": "82c8fade-df47-4c62-9c52-60f4b20f49cd",
-        "type": "image"
-      },
-      {
-        "id": "849846cc-f4a8-493c-92bb-3d52903813bb",
-        "type": "image"
-      },
-      {
-        "id": "bda0b1f9-6c70-464e-8eb8-28aa8b9fcc88",
-        "type": "image"
-      },
-      {
-        "id": "c02d4bf2-f4c4-4cc8-9d00-2800c101779f",
-        "type": "image"
-      },
-      {
-        "id": "a6244b30-7b77-4267-8074-a1df7c70d347",
-        "type": "image"
-      },
-      {
         "id": "75502ad6-317e-4c09-9a64-fe46cb113ae2",
         "type": "image"
       },
@@ -138,8 +106,10 @@
       "kiss"
     ],
     "cover": {
-      "id": "62f7a45b-f9dc-42b4-ad15-2bb30f836dea"
+      "id": {
+        "id": "75502ad6-317e-4c09-9a64-fe46cb113ae2",
+        "type": "image"
+      }
     }
-  },
-  "approve": true
+  }
 }
