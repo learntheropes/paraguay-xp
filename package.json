@@ -54,6 +54,7 @@
     "nodemailer": "^6.9.3",
     "nuxt-content-git": "^3.0.32",
     "nuxt-jsonld": "^2.0.8",
+    "nuxt-storage": "^1.2.2",
     "pinia": "^2.1.4",
     "tesseract.js": "^4.1.1",
     "uuid": "^9.0.0",

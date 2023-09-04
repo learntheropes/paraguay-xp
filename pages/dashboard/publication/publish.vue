@@ -1,5 +1,7 @@
 <script setup>
-import find from 'lodash.find'
+import find from 'lodash.find';
+import nuxtStorage from 'nuxt-storage';
+
 definePageMeta({
   layout: 'dashboard'
 });
@@ -83,6 +85,8 @@ const publish = async () => {
   isLoading.value = false;
 
   await navigateTo(`/${locale.value}/dashboard`);
+
+  nuxtStorage.localStorage.removeItem('publication');
 
 }
 </script>

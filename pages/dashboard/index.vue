@@ -1,7 +1,16 @@
 <script setup>
+import nuxtStorage from 'nuxt-storage';
+
 definePageMeta({
   layout: 'dashboard'
 });
+
+const publication = nuxtStorage.localStorage.getData('publication');
+if (publication) {
+  const store = usePublicationStore();
+  store.setPublication(publication);
+}
+
 </script>
 
 <template>
