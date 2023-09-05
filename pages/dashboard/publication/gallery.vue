@@ -1,5 +1,6 @@
 <script setup>
 import { v4 as uuidv4 } from 'uuid';
+import nuxtStorage from 'nuxt-storage';
 
 definePageMeta({
   layout: 'dashboard'
@@ -18,30 +19,34 @@ const imageExtensions = [
   "ico",
 ];
 
-const videoExtensions = [
-  "mp4",
-  "avi",
-  "mkv",
-  "mov",
-  "wmv",
-  "flv",
-  "webm",
-  "mpg",
-  "mpeg",
-  "rm",
-  "rmvb",
-  "3gp",
-  "ts",
-  "vob",
-  "m2ts",
-  "ogv",
-  "mts"
-];
+// const videoExtensions = [
+//   "mp4",
+//   "avi",
+//   "mkv",
+//   "mov",
+//   "wmv",
+//   "flv",
+//   "webm",
+//   "mpg",
+//   "mpeg",
+//   "rm",
+//   "rmvb",
+//   "3gp",
+//   "ts",
+//   "vob",
+//   "m2ts",
+//   "ogv",
+//   "mts"
+// ];
 
+const publication = nuxtStorage.localStorage.getData('publication');
 const store = usePublicationStore();
+if (publication) store.setPublication(JSON.parse(publication));
 
 const { data } = useAuth();
-const slug = `${store.registry.basic.name.replace(' ', '-').toLowerCase()}-${data.value.user.email.replace('+', '')}`
+const nameSlug = (store.registry.basic.name) ? store.registry.basic.name.replace(' ', '-').toLowerCase() : null;
+const phoneSlug = data.value.user.email.replace('+', '');
+const slug = `${nameSlug}-${phoneSlug}`;
 
 const { 
   locale,
@@ -129,6 +134,16 @@ const goNext = async () => {
   temps.value = [];
   await navigateTo(`/${locale.value}/dashboard/publication/publish`);
 }
+
+// onMounted(() => {
+//   window.addEventListener('beforeunload', _event => {
+//     const publication = nuxtStorage.localStorage.getData('publication');
+//     if (publication) {
+//       const store = usePublicationStore();
+//       store.setPublication(JSON.parse(publication));
+//     }
+//   });
+// })
 </script>
 
 <template>

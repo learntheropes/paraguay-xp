@@ -6,8 +6,11 @@ definePageMeta({
   layout: 'dashboard'
 });
 
-const isLoading = ref(false);
+const publication = nuxtStorage.localStorage.getData('publication');
 const store = usePublicationStore();
+if (publication) store.setPublication(JSON.parse(publication));
+
+const isLoading = ref(false);
 
 const { 
   locale,

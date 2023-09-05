@@ -1,9 +1,14 @@
 <script setup>
 import Tesseract from 'tesseract.js';
+import nuxtStorage from 'nuxt-storage';
 
 definePageMeta({
   layout: 'dashboard'
 });
+
+const publication = nuxtStorage.localStorage.getData('publication');
+const store = usePublicationStore();
+if (publication) store.setPublication(JSON.parse(publication));
 
 const { locale } = useI18n();
 
@@ -27,8 +32,6 @@ const datepickerSetting = {
   firstDayOfWeek: 1,
   modelValue: []
 }
-
-const store = usePublicationStore();
 
 const computedDateOfBirth = computed({
   get() {

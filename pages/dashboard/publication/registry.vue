@@ -4,12 +4,16 @@ import extras from '~/assets/js/extras'
 import neighbourhoods from '~/assets/js/neighbourhoods';
 import cities from '~/assets/js/cities';
 import { languages, levels } from '~/assets/js/languages';
+import nuxtStorage from 'nuxt-storage';
 
 definePageMeta({
   layout: 'dashboard'
 });
 
+const publication = nuxtStorage.localStorage.getData('publication');
 const store = usePublicationStore();
+if (publication) store.setPublication(JSON.parse(publication));
+
 
 const validationSchema = computed(() => {
   return {

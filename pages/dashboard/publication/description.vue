@@ -1,9 +1,14 @@
 <script setup>
 import { localeCodes } from '~/assets/js/localization';
+import nuxtStorage from 'nuxt-storage';
 
 definePageMeta({
   layout: 'dashboard'
 });
+
+const publication = nuxtStorage.localStorage.getData('publication');
+const store = usePublicationStore();
+if (publication) store.setPublication(JSON.parse(publication));
 
 const validationSchema = {
   title: {
@@ -36,8 +41,6 @@ const openModal = (refs) => {
   cursorStart.value = refs.about.$refs.textarea.selectionStart;
   cursorEnd.value = refs.about.$refs.textarea.selectionEnd;
 }
-
-const store = usePublicationStore();
 
 let titleChanged = ref(false);
 let aboutChanged = ref(false);
