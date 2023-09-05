@@ -134,16 +134,6 @@ const goNext = async () => {
   temps.value = [];
   await navigateTo(`/${locale.value}/dashboard/publication/publish`);
 }
-
-// onMounted(() => {
-//   window.addEventListener('beforeunload', _event => {
-//     const publication = nuxtStorage.localStorage.getData('publication');
-//     if (publication) {
-//       const store = usePublicationStore();
-//       store.setPublication(JSON.parse(publication));
-//     }
-//   });
-// })
 </script>
 
 <template>
