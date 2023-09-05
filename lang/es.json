@@ -185,7 +185,14 @@
       "newPublication": "Nuevo anuncio",
       "addNewPublication": "Anadir nuevo anuncio",
       "previous": "Anterior",  
-      "next": "Siguiente"
+      "next": "Siguiente",
+      "steps": {
+        "age": "Verificación de edad",
+        "registry": "Detalles",
+        "description": "Descripción",
+        "gallery": "Fotos y videos",
+        "publish": "Condiciones del servicio"
+      }
     },
     "age": {
       "warning": "Por ley, tenemos que verificar que tienes al menos 18 años para publicar tu anuncio.\n\nSu información y su documento nunca se compartirán con nadie a menos que las autoridades nos lo soliciten.",

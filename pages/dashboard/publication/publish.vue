@@ -96,6 +96,7 @@ const publish = async () => {
 
 <template>
   <NuxtLayout>
+    <dasboardPublicationSteps :activeStep="5" />
     <div class="columns is-centered">
       <div class="column is-one-third">
           <OField

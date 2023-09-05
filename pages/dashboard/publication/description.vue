@@ -161,6 +161,7 @@ const goNext = async () => {
     <OModal v-model:active="isModalActive" :canCancel="true">
       <EmojisPicker />
     </OModal>
+    <dasboardPublicationSteps :activeStep="3" />
     <VForm
       name="registry"
       :validation-schema="validationSchema"

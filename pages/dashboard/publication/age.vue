@@ -106,8 +106,8 @@ const goNext = async () => {
 
 <template>
   <NuxtLayout>
-    {{ new Date(store.age.dateOfBirth).toISOString() }}
     <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
+    <dasboardPublicationSteps :activeStep="1" />
     <div class="notification is-warning has-text-centered">
       <div class="content ltr-has-new-line">{{$t('dashboard.age.warning')}}</div>
     </div>

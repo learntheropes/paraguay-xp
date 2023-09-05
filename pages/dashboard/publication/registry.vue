@@ -161,6 +161,7 @@ const goNext = async () => {
 
 <template>
   <NuxtLayout>
+    <dasboardPublicationSteps :activeStep="2" />
     <VForm
       name="registry"
       :validation-schema="validationSchema"

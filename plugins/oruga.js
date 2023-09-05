@@ -14,6 +14,8 @@ import {
   OMenu,
   OMenuList,
   OMenuItem,
+  OSteps,
+  OStepItem,
   Config,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from "@oruga-ui/theme-bulma";
@@ -46,5 +48,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OMenu', OMenu);
   nuxtApp.vueApp.component('OMenuList', OMenuList);
   nuxtApp.vueApp.component('OMenuItem', OMenuItem);
+  nuxtApp.vueApp.component('OSteps', OSteps);
+  nuxtApp.vueApp.component('OStepItem', OStepItem);
   nuxtApp.vueApp.use(Config, bulmaConfig);
 });

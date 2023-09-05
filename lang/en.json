@@ -185,7 +185,14 @@
       "newPublication": "New adv",
       "addNewPublication": "Add new advertisement",
       "previous": "Previous",
-      "next": "Next"
+      "next": "Next",
+      "steps": {
+        "age": "Age verification",
+        "registry": "Details",
+        "description": "Description",
+        "gallery": "Photos & videos",
+        "publish": "Terms of service"
+      }
     },
     "age": {
       "warning": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.\n\nYour information and your document will be never shared with anyone unless we will be asked by the authorities.",

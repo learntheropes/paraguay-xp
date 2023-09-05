@@ -139,6 +139,7 @@ const goNext = async () => {
 <template>
   <NuxtLayout>
     <OLoading :full-page="true" v-model:active="isLoading" iconSize="large"/>
+    <dasboardPublicationSteps :activeStep="4" />
     <OField :label="$t('dashboard.gallery.blur')">
       <OSwitch v-model="store.gallery.blur">
         {{ blurText }}
