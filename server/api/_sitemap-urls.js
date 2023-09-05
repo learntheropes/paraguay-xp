@@ -85,7 +85,7 @@ export default defineEventHandler(async () => {
           .map(media => {
 
             return {
-              loc: `${deploymentDomain}/gallery/modal/${slug}/${media.id}`
+              loc: `${deploymentDomain}/gallery/${slug}/modal/${media.id}`
             }
           })
       }
@@ -111,7 +111,7 @@ export default defineEventHandler(async () => {
           .map(media => {
 
             return {
-              loc: `${deploymentDomain}/gallery/modal/${slug}/${media.id}`
+              loc: `${deploymentDomain}/gallery/${slug}/modal/${media.id}`
             }
           })
       }

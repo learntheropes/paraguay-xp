@@ -36,7 +36,7 @@
     <div v-for="media in publication.gallery.medias" :key="media.id">
       <div class="box">
         <div>{{ media.id }}</div><br>
-        <img :src="'/gallery/modal/' + slug + '/' + media.id" :alt="media.id" />
+        <img :src="'/gallery/' + slug + '/modal/' + media.id" :alt="media.id" />
       </div>
     </div>
   </NuxtLayout>

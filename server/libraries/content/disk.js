@@ -53,16 +53,24 @@ export const getDiskFile = async ({ path }) => {
 
 export const addDiskFile = ({ path, content }) => {
 
-  const directoryPath = path.slice(0, path.lastIndexOf('/'));
-  if (!existsSync(directoryPath)) mkdirSync(directoryPath);
-
+  const directoryPath = path.slice(0, path.lastIndexOf('/')).split('/');
+  directoryPath.reduce((str, path) => {
+    str = `${str}${path}/`
+    if (!existsSync(str)) mkdirSync(str);
+    return str;
+  }, '');
+  
   saveBase64DataToFile(content, path);
 }
 
 export const updateDiskFile = async ({ path, content }) => {
 
-  const directoryPath = path.slice(0, path.lastIndexOf('/'));
-  if (!existsSync(directoryPath)) mkdirSync(directoryPath);
+  const directoryPath = path.slice(0, path.lastIndexOf('/')).split('/');
+  directoryPath.reduce((str, path) => {
+    str = `${str}${path}/`
+    if (!existsSync(str)) mkdirSync(str);
+    return str;
+  }, '');
 
   const { content: oldContent } = await getDiskFile({ path });
   const newContent = merge(oldContent, content);

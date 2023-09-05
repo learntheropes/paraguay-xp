@@ -23,7 +23,7 @@
     modalType.value = medias[index].type;
     modalGallery.value = medias;
     modalIndex.value = index;
-    modalSrc.value = `${slug}/${medias[index].id}`;
+    modalSrc.value = medias[index].id;
   });
 
   const isLoading = ref(true);
@@ -47,7 +47,7 @@
     onUnload();
     modalIndex.value = (modalIndex.value - 1 < 0) ? modalGallery.value.length - 1 : modalIndex.value - 1; 
     modalType.value = modalGallery.value[modalIndex.value].type;
-    modalSrc.value = `${modalSlug.value}/${modalGallery.value[modalIndex.value].id}`;
+    modalSrc.value = modalGallery.value[modalIndex.value].id;
   };
 
   const navigateNext = () => {
@@ -55,7 +55,7 @@
     onUnload();
     modalIndex.value = (modalIndex.value + 1 >=  modalGallery.value.length) ? 0:  modalIndex.value + 1;
     modalType.value = modalGallery.value[modalIndex.value].type;
-    modalSrc.value = `${modalSlug.value}/${modalGallery.value[modalIndex.value].id}`;
+    modalSrc.value = modalGallery.value[modalIndex.value].id;
   };
 
   const onSwipe = (direction) => {
@@ -92,7 +92,7 @@
           <img
             loading="lazy"
             @load="onLoad"
-            :src="'/gallery/modal/' + modalSrc"
+            :src="'/gallery/' + modalSlug + '/modal/' + modalSrc"
             :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
           />
           <OIcon
@@ -114,7 +114,7 @@
             :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
           >
             <source
-              :src="'/gallery/modal/' + modalSrc"
+              :src="'/gallery/' + modalSlug + '/modal/' + modalSrc"
             />
           </video>
           <OIcon

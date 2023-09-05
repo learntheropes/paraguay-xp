@@ -84,7 +84,7 @@ const closeConfirm = () => {
         <figure :style="'background-color:black;'" class="image is-square">
           <OLoading :full-page="false" v-model:active="isLoading" />
           <img
-            :src="'/gallery/preview/' + slug + '/' + cover.id"
+            :src="'/gallery/' + slug + '/preview/' + cover.id"
             :alt="$t('escort.gallery.previewOf') + ' ' + name"
             :title="$t('escort.gallery.previewOf') + ' ' + name"
             loading="lazy"

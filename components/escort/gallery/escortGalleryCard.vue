@@ -39,7 +39,7 @@ const openModal = (slug, medias, index) => {
         <NuxtImg
           preset="preview" 
           @click.native="openModal(slug, medias, index)"
-          :src="'/gallery/preview/' + slug + '/' + medias[index].id"
+          :src="'/gallery/' + slug + '/preview/' + medias[index].id"
           :alt="$t('escort.gallery.previewOf')+' '+ name"
           :title="$t('escort.gallery.previewOf') +' ' + name"
           loading="eager"
