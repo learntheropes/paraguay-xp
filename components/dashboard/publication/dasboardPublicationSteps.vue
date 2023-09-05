@@ -22,11 +22,11 @@ const columnClass = isMobile ? 'column is-half' : 'column';
         label-position="bottom"
         :vertical="isMobile"
       >
-        <OStepItem step="1" :label="$t('dashboard.publication.steps.age')" />
-        <OStepItem step="2" :label="$t('dashboard.publication.steps.registry')" />
-        <OStepItem step="3" :label="$t('dashboard.publication.steps.description')" />
-        <OStepItem step="4" :label="$t('dashboard.publication.steps.gallery')" />
-        <OStepItem step="5" :label="$t('dashboard.publication.steps.publish')" />
+        <OStepItem step="1" :clickable="false" :label="$t('dashboard.publication.steps.age')" />
+        <OStepItem step="2" :clickable="false" :label="$t('dashboard.publication.steps.registry')" />
+        <OStepItem step="3" :clickable="false" :label="$t('dashboard.publication.steps.description')" />
+        <OStepItem step="4" :clickable="false" :label="$t('dashboard.publication.steps.gallery')" />
+        <OStepItem step="5" :clickable="false" :label="$t('dashboard.publication.steps.publish')" />
       </OSteps>
     </div>
   </div>
