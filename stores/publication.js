@@ -79,7 +79,7 @@ export const usePublicationStore = defineStore('publication', {
         slug: this.slug,
         accept: this.accept
       }
-      nuxtStorage.localStorage.setData('publication', JSON.stringify(publication), 24, 'h');
+      nuxtStorage.localStorage.setData('publication', JSON.stringify(publication), 7, 'd');
     },
     setAge(age) {
       this.age = age;

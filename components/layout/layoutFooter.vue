@@ -7,7 +7,6 @@
 </script>
 
 <template>
-  {{ $isMobile }}
   <footer class="footer">
     <div class="container">
       <nav class="level">
