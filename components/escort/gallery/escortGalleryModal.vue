@@ -151,16 +151,14 @@
 .mdi-close {
   color: white;
 }
-.mdi-loading {
-  color: white;
+.is-fixed-center {
+  .mdi-loading {
+    color: white;
+  }
 }
 </style>
 
 <style scoped>
-/* .ltr-is-center-center {
-  min-height: 100px;
-  min-width: 100px;
-} */
 .is-fixed-center {
   min-height: 48px;
   min-width: 48px;
