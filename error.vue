@@ -34,6 +34,8 @@ switch(props.error.statusCode) {
     translatedErrorMessage = t('error.somethingWentWrong')
 }
 
+if (props.error.statusCode === 404) clearError({ redirect: `/${locale.value}` });
+
 const handleError = () => clearError({ redirect: `/${locale.value}` });
 </script>
 
