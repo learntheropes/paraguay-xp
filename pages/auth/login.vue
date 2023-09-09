@@ -109,8 +109,8 @@ const verifyCode = () => {
 <template>
   <NuxtLayout>
     <section class="section">
-        <div class="title is-4">{{  $t('auth.freePublication') }}</div>
-        <div class="subtitle is-6">{{  $t('auth.daysLeft', { 
+        <div class="title is-5">{{  $t('auth.freePublication') }}</div>
+        <div class="subtitle is-7">{{  $t('auth.daysLeft', { 
           days: $dayjs(new Date('2023-12-31')).diff(new Date(), 'days')
         }) }}</div>
       </section>
