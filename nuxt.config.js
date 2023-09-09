@@ -209,17 +209,11 @@ export default defineNuxtConfig({
     ],
   },
 
-  // piniaPersistedstate: {
-  //   storage: localStorage
-  // },
-
   imports: {
     dirs: ['stores'],
   },
 
   nitro: {
-
-    // compressPublicAssets: true,
 
     devStorage: {
       lang: {

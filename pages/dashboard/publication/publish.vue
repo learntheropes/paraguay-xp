@@ -9,7 +9,7 @@ definePageMeta({
 const store = usePublicationStore();
 
 onMounted(() => {
-  const publication = nuxtStorage.localStorage.getData('publication');
+  const publication = nuxtStorage.sessionStorage.getData('publication');
   if (publication) {
     store.setPublication(JSON.parse(publication));
   }
@@ -35,7 +35,7 @@ await navigateTo(`/${locale.value}/dashboard/publication/gallery`);
 
 const publish = async () => {
 
-  nuxtStorage.localStorage.removeItem('publication');
+  nuxtStorage.sessionStorage.removeItem('publication');
 
   if (!store.accept) return;
 
@@ -111,7 +111,7 @@ const publish = async () => {
 
   await navigateTo(`/${locale.value}/dashboard`);
 
-  nuxtStorage.localStorage.removeItem('publication');
+  nuxtStorage.sessionStorage.removeItem('publication');
 
 }
 </script>

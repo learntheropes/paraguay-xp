@@ -1,7 +1,3 @@
-import nuxtStorage from 'nuxt-storage';
-nuxtStorage.localStorage.getItem = nuxtStorage.localStorage.getData;
-nuxtStorage.localStorage.setItem = nuxtStorage.localStorage.setData;
-
 export const usePublicationStore = defineStore('publication', {
   state: () => ({
     phone: null,
@@ -72,8 +68,8 @@ export const usePublicationStore = defineStore('publication', {
   }),
 
   persist: {
-    key: 'publication',
-    storage: nuxtStorage.localStorage
+    storage: persistedState.sessionStorage,
+    key: 'publication'
   },
 
   actions: {

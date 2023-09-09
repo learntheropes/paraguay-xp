@@ -45,12 +45,12 @@ const handleError = () => clearError({ redirect: `/${locale.value}` });
       <div class="container has-text-centered">
         <p class="title">{{ translatedErrorMessage }}</p>
         <p v-if="props.error.statusCode === 404" class="subtitle">{{ $t('error.youWillBeRedirected') }}</p>
-        <div v-if="props.error.statusCode !== 404"> 
+        <DevOnly v-if="props.error.statusCode !== 404"> 
           <div class="block content">
             <div>{{ error.statusMessage || error.message }}</div>
             <div>{{ error.stack }}</div>
           </div>
-        </div>
+        </DevOnly>
         <button @click.native="handleError" class="button is-primary is-outlined">{{ $t('error.backToTheHomePage') }}</button>
       </div>
     </div>

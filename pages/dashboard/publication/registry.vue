@@ -13,7 +13,7 @@ definePageMeta({
 const store = usePublicationStore();
 
 onMounted(() => {
-  const publication = nuxtStorage.localStorage.getData('publication');
+  const publication = nuxtStorage.sessionStorage.getData('publication');
   if (publication) store.setPublication(JSON.parse(publication));
 });
 
@@ -76,7 +76,7 @@ const category = computed({
     return store.registry.basic.category;
   },
   set(value) {
-    if (value === 'indipendent')  store.setAgency(value)
+    if (value === 'indipendent')  store.setAgency(value);
     else store.setAgency(null);
     store.setCategory(value);
   }

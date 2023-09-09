@@ -21,8 +21,8 @@ const imageExtensions = [
 
 const store = usePublicationStore();
 
-onMounted(() => {
-  const publication = nuxtStorage.localStorage.getData('publication');
+onBeforeMount(() => {
+  const publication = nuxtStorage.sessionStorage.getData('publication');
   if (publication) store.setPublication(JSON.parse(publication));
 });
 
