@@ -192,7 +192,8 @@
         "description": "Description",
         "gallery": "Photos & videos",
         "publish": "Terms of service"
-      }
+      },
+      "publicationSavedWaitingApproval": "Your publication has been saved. It will the published as soon as an admin will approve it. We will send you a new notification as soon as it gets approved."
     },
     "age": {
       "warning": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.\n\nYour information and your document will be never shared with anyone unless we will be asked by the authorities.",

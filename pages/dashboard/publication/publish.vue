@@ -54,6 +54,8 @@ const publish = async () => {
 
   const publication = {
     approved: false,
+    until: new Date('2023-12-31').toISOString(),
+    locale: locale.value,
     phone: data.value.user.email,
     slug: slug,
     accept: store.accept,
@@ -84,6 +86,19 @@ const publish = async () => {
       message: `create content/escorts/${slug}.json`
     },
   });
+
+  const {
+    public: {
+      whatsappDomain
+    }
+  } = useRuntimeConfig();
+  
+  await useFetch(`${whatsappDomain}/send-message/${data.value.user.email}`, {
+    method: 'POST',
+    body: {
+      message: t('dashboard.publicationSavedWaitingApproval')
+    }
+  })
 
   isLoading.value = false;
 

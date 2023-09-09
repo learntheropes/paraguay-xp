@@ -192,7 +192,8 @@
         "description": "Descripción",
         "gallery": "Fotos y videos",
         "publish": "Condiciones del servicio"
-      }
+      },
+      "publicationSavedWaitingApproval": "Su publicación se ha guardado. Se publicará tan pronto como un administrador lo apruebe. Le enviaremos una nueva notificación tan pronto como se apruebe."
     },
     "age": {
       "warning": "Por ley, tenemos que verificar que tienes al menos 18 años para publicar tu anuncio.\n\nSu información y su documento nunca se compartirán con nadie a menos que las autoridades nos lo soliciten.",

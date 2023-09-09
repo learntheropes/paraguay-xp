@@ -59,12 +59,12 @@
             </div>
           </div>
         </div>
-      </nav>
-      <div v-if="isMobile" class="level">
-        <div class="level-item has-text-centered">
-          2022 - {{ year }} {{ $t('footer.allRightReserved') }}
+        <div v-if="isMobile" class="level">
+          <div class="level-item has-text-centered">
+            2022 - {{ year }} {{ $t('footer.allRightReserved') }}
+          </div>
         </div>
-      </div>
+      </nav>
     </div>
   </footer>
 </template>

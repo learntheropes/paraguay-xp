@@ -27,9 +27,9 @@ if (!store.init) {
     approved: {
       $eq: true
     },
-    // until:{
-    //   $gte: new Date()
-    // }
+    until:{
+      $gte: new Date()
+    }
   })
   .only([
     'preview', 
