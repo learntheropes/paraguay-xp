@@ -73,13 +73,13 @@ $listen('agencyEscorts', escorts => {
   <NuxtLayout>
     <div class="container">
       <div class="columns is-vcentered">
-        <div class="column is-half">
+        <div class="column">
           <h1 class="title is-3">{{ title }}</h1>
           <p class="subtitle is-5">{{ description }}</p>
         </div>
         <div v-if="slug !== 'indipendent'" class="column is-half">
-          <div class="columns is-mobile is-justify-content-right is-vcentered">
-            <div class="column is-narrow is-justify-content-right is-hidden-mobile">
+          <div v-if="!$device.isMobile" class="columns is-mobile is-justify-content-right is-vcentered">
+            <div class="column is-narrow is-justify-content-right">
               <p class="title is-3 is-capitalized has-text-right">{{ phone.replace('+595',0) }}</p>
               <p class="subtitle is-5 has-text-right">{{ phone }}</p>
             </div>
@@ -88,7 +88,18 @@ $listen('agencyEscorts', escorts => {
                 <span class="icon is-large"><i class="mdi mdi-72px mdi-whatsapp"></i></span>
               </a>
             </div>
-          </div>     
+          </div> 
+          <div v-if="$device.isMobile" class="columns is-mobile is-vcentered">
+            <div class="column is-narrow">
+              <a :href="whatsappUrl" target="_blank" aria-label="send whatsapp">
+                <span class="icon is-large"><i class="mdi mdi-72px mdi-whatsapp"></i></span>
+              </a>
+            </div>
+            <div class="column is-narrow">
+              <p class="title is-3 is-capitalized">{{ phone.replace('+595',0) }}</p>
+              <p class="subtitle is-5">{{ phone }}</p>
+            </div>
+          </div>    
         </div>
       </div>
       <AgencyLevels :agency="agency" />
