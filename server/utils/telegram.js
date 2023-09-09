@@ -4,7 +4,6 @@ import QRCode from 'qrcode';
 const { 
   telegramToken,
   telegramChatId,
-  whatsappAdmin
 } = useRuntimeConfig();
 
 const client = new Telegraf(telegramToken);
