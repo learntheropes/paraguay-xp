@@ -1,12 +1,12 @@
 import find from 'lodash.find';
 
 export const locales = [
-  {
-    code: 'en',
-    file: 'en.json',
-    iso: 'en-US',
-    name: 'English',
-  }, 
+  // {
+  //   code: 'en',
+  //   file: 'en.json',
+  //   iso: 'en-US',
+  //   name: 'English',
+  // }, 
   {
     code: 'es',
     file: 'es.json',
