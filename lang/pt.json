@@ -193,7 +193,8 @@
         "gallery": "Fotos & Vídeos",
         "publish": "Termos de Serviço"
       },
-      "publicationSavedWaitingApproval": "Sua publicação foi salva. Ele será publicado assim que um administrador aprová-lo. Enviaremos uma nova notificação assim que ela for aprovada."
+      "savedWaitingApproval": "Sua publicação foi salva. Ele será publicado assim que um administrador aprová-lo. Enviaremos uma nova notificação assim que ela for aprovada.",
+      "approvedAndPublished": "Sua publicação foi aprovada e publicada. Ele estará disponível em 15 minutos em {url}"
     },
     "age": {
       "warning": "By law, we have to verify that you are at least 18 years old to publish your advertisemenet.\n\nYour information and your document will be never shared with anyone unless we will be asked by the authorities.",
