@@ -31,12 +31,6 @@
                 variant="primary"
                 inverted
               >{{ $t('footer.blog') }}</OButton>
-              <!-- <OButton
-                :to="localePath('/admin')"
-                tag="router-link"
-                variant="primary"
-                inverted
-              >{{ $t('footer.admin') }}</OButton> -->
             </div>
           </div>
         </div>
@@ -59,7 +53,7 @@
             </div>
           </div>
         </div>
-        <div v-if="isMobile" class="level">
+        <div v-if="isMobile" class="level-center">
           <div class="level-item has-text-centered">
             2022 - {{ year }} {{ $t('footer.allRightReserved') }}
           </div>
