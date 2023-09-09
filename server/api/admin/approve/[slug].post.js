@@ -40,7 +40,7 @@ export default eventHandler(async event => {
     }
   })
 
-
+  await sendTelegram('New publication to approve');
   
   setResponseStatus(event, 201);
   return true;
