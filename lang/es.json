@@ -165,6 +165,8 @@
     "loginCode": "Código",
     "sendWhatsapp": "Enviar código por whatsapp",
     "verifyCode": "Comprueba el código enviado a través de whatsapp",
+    "freePublication": "Su publicación es gratuita hasta finales de 2023",
+    "daysLeft": "Todavía quedan {days}",
     "magicLinkInstructions": "No se requiere contraseña.\n\nLe enviaremos un código para iniciar sesión por whatsapp.",
     "messageWithLoginCode": "Su código de acceso es *{token}*\nNo dudes en escribirnos aquí si necesitas ayuda con tu publicación.",
     "goBack": "Volver",

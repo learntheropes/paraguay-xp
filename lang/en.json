@@ -165,6 +165,8 @@
     "loginCode": "Code",
     "sendWhatsapp": "Send the code by whatsapp",
     "verifyCode": "Verify code sent by whatsapp",
+    "freePublication": "Your publication is free until the end of 2023",
+    "daysLeft": "Still {days} to go",
     "magicLinkInstructions": "No password is required.\n\nWe will send you a code to login by whatsapp.",
     "messageWithLoginCode": "Your login code is *{token}*\nDon't hesistate to write us here if you need help with your publication.",
     "goBack": "Go back",
