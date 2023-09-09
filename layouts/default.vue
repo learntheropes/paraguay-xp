@@ -155,9 +155,13 @@ if (!store.init) {
 }
 p a {
   text-decoration: underline;
+  text-decoration-style: dotted;
+  font-weight: 500;
 }
 li a {
   text-decoration: underline;
+  text-decoration-style: dotted;
+  font-weight: 500;
 }
 .button {
   text-decoration: none !important;
