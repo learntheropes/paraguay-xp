@@ -44,7 +44,8 @@ const handleError = () => clearError({ redirect: `/${locale.value}` });
     <div class="hero-body">
       <div class="container has-text-centered">
         <p class="title">{{ translatedErrorMessage }}</p>
-        <DevOnly> 
+        <p v-if="props.error.statusCode === 404" class="subtitle">{{ $t('error.youWillBeRedirected') }}</p>
+        <DevOnly v-if="props.error.statusCode !== 404"> 
           <div class="block content">
             <div>{{ error.statusMessage || error.message }}</div>
             <div>{{ error.stack }}</div>
