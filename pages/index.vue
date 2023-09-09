@@ -75,7 +75,7 @@ useJsonld(() => ([
   <NuxtLayout>
     <div class="container">
       <h1 class="title is-3">{{ $t('index.title') }}</h1>
-      <div class="subtitle is-5">{{ $t('index.subtitle') }}</div>
+      <div class="subtitle is-5">{{ $t('index.subtitle') }} 🇵🇾</div>
       <IndexFilter />
       <IndexLevels id="collection" />
       <CollectionNavigator />
