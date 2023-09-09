@@ -166,7 +166,7 @@
     "sendWhatsapp": "Send the code by whatsapp",
     "verifyCode": "Verify code sent by whatsapp",
     "magicLinkInstructions": "No password is required.\n\nWe will send you a code to login by whatsapp.",
-    "messageContent": "Your login code is:",
+    "messageWithLoginCode": "Your login code is *{token}*\nDon't hesistate to write us here if you need help with your publication.",
     "goBack": "Go back",
     "notValidCode": "{value} is not a valid code"
   },

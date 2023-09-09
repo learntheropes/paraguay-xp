@@ -166,7 +166,7 @@
     "sendWhatsapp": "Enviar código de acesso no whatsapp",
     "verifyCode": "Confira o código enviado via whatsapp",
     "magicLinkInstructions": "Nenhuma senha é necessária.\n\nEnviaremos uma senha no whatsapp.",
-    "messageContent": "Seu código de acesso é:",
+    "messageWithLoginCode": "Seu código de acesso é *{token}*\nNão hesite em nos escrever aqui se precisar de ajuda com sua publicação.",
     "goBack": "Voltar",
     "notValidCode": "{value} não é um código válido"
   },

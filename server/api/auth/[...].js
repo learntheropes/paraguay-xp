@@ -55,10 +55,10 @@ export default NuxtAuthHandler({
 
           const {
             auth: {
-              messageContent
+              messageWithLoginCode
             }
           } = await useStorage('lang').getItem(`${locale}.json`);
-          const message = `${messageContent} *${token}*`;
+          const message = messageWithLoginCode.replace('{token}', token);
          
           await $fetch(`${whatsappDomain}/send-message/${identifier}`, {
             method: 'POST',
