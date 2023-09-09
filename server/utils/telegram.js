@@ -1,5 +1,4 @@
 import { Telegraf } from 'telegraf';
-import QRCode from 'qrcode';
 
 const { 
   telegramToken,
