@@ -6,9 +6,14 @@ definePageMeta({
   layout: 'dashboard'
 });
 
-const publication = nuxtStorage.localStorage.getData('publication');
 const store = usePublicationStore();
-if (publication) store.setPublication(JSON.parse(publication));
+
+onMounted(() => {
+  const publication = nuxtStorage.localStorage.getData('publication');
+  if (publication) {
+    store.setPublication(JSON.parse(publication));
+  }
+});
 
 const isLoading = ref(false);
 
@@ -29,6 +34,8 @@ await navigateTo(`/${locale.value}/dashboard/publication/gallery`);
 }
 
 const publish = async () => {
+
+  nuxtStorage.localStorage.removeItem('publication');
 
   if (!store.accept) return;
 

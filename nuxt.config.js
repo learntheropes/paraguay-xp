@@ -1,6 +1,5 @@
 const isDeployed = process.env.NEXTAUTH_URL && process.env.NEXTAUTH_URL !== 'http://localhost:3000'
 const deploymentDomain = process.env.NEXTAUTH_URL || 'http://localhost:3000';
-
 import {
   locales,
   localeCodes,
@@ -114,6 +113,7 @@ export default defineNuxtConfig({
     'nuxt-content-git',
     '@sidebase/nuxt-auth',
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
     'nuxt-delay-hydration',
   ],
 
@@ -208,6 +208,10 @@ export default defineNuxtConfig({
       'defineStore'
     ],
   },
+
+  // piniaPersistedstate: {
+  //   storage: localStorage
+  // },
 
   imports: {
     dirs: ['stores'],

@@ -1,4 +1,6 @@
 import nuxtStorage from 'nuxt-storage';
+nuxtStorage.localStorage.getItem = nuxtStorage.localStorage.getData;
+nuxtStorage.localStorage.setItem = nuxtStorage.localStorage.setData;
 
 export const usePublicationStore = defineStore('publication', {
   state: () => ({
@@ -69,18 +71,12 @@ export const usePublicationStore = defineStore('publication', {
     }
   }),
 
+  persist: {
+    key: 'publication',
+    storage: nuxtStorage.localStorage
+  },
+
   actions: {
-    updateStorage() {
-      const publication = {
-        description: this.description,
-        registry: this.registry,
-        gallery: this.gallery,
-        phone: this.phone,
-        slug: this.slug,
-        accept: this.accept
-      }
-      nuxtStorage.localStorage.setData('publication', JSON.stringify(publication), 7, 'd');
-    },
     setAge(age) {
       this.age = age;
     },
@@ -100,6 +96,7 @@ export const usePublicationStore = defineStore('publication', {
       this.age.dateMatch = bool;
     },
     setPublication({ 
+      age,
       phone,
       slug,
       accept,
@@ -107,67 +104,54 @@ export const usePublicationStore = defineStore('publication', {
       registry, 
       gallery
     }) {
+      this.age = age
       this.description = description;
       this.registry = registry;
       this.gallery = gallery;
       this.phone = phone
       this.slug = slug;
       this.accept = accept;
-      this.updateStorage();
     },
     setAccept(bool) {
       this.accept = bool;
-      this.updateStorage();
     },
     setCategory(category) {
       this.registry.basic.category = category;
-      this.updateStorage();
     },
     setAgency(agency) {
       this.registry.basic.agency = agency;
-      this.updateStorage();
     },
     setOneExtra(value) {
       this.registry.extra.push(value);
-      this.updateStorage();
     },
     removeOneExtra(value) {
       const index = this.registry.extra.indexOf(value);
       this.registry.extra.splice(index,1);
-      this.updateStorage();
     },
     concatMedias(temps) {
       temps.forEach(temp => delete temp.preview);
       this.gallery.medias = this.gallery.medias.concat(temps);
-      this.updateStorage();
     }, 
     addOneMedia(media) {
       this.gallery.medias.push(media);
-      this.updateStorage();
     },
     removeOneMedia(index) {
       this.gallery.medias.splice(index,1);
-      this.updateStorage();
     },
     setTitleOriginal(str) {
       this.description.title.original = str;
-      this.updateStorage();
     },
     setTitle(obj) {
       this.description.title = obj;
-      this.updateStorage();
     },
     setAboutOriginal(str) {
       this.description.about.original = str;
-      this.updateStorage();
     },
     setAbout(obj) {
       this.description.about = obj;
-      this.updateStorage();
     },
     setRate(str) {
       this.registry.rate = parseInt(str);
-      this.updateStorage();
     }
   }
 })

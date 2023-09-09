@@ -19,29 +19,12 @@ const imageExtensions = [
   "ico",
 ];
 
-// const videoExtensions = [
-//   "mp4",
-//   "avi",
-//   "mkv",
-//   "mov",
-//   "wmv",
-//   "flv",
-//   "webm",
-//   "mpg",
-//   "mpeg",
-//   "rm",
-//   "rmvb",
-//   "3gp",
-//   "ts",
-//   "vob",
-//   "m2ts",
-//   "ogv",
-//   "mts"
-// ];
-
-const publication = nuxtStorage.localStorage.getData('publication');
 const store = usePublicationStore();
-if (publication) store.setPublication(JSON.parse(publication));
+
+onMounted(() => {
+  const publication = nuxtStorage.localStorage.getData('publication');
+  if (publication) store.setPublication(JSON.parse(publication));
+});
 
 const { data } = useAuth();
 const nameSlug = (store.registry.basic.name) ? store.registry.basic.name.replace(' ', '-').toLowerCase() : null;
