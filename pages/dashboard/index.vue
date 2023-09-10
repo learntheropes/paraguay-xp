@@ -33,9 +33,7 @@ onMounted(() => (activeTab.value = 0));
       <OTabItem v-if="agency" :value="1" :label="$t('agency.singolar')">
         <DashboardAgency :agency="agency" />
       </OTabItem>
-      <OTabItem :value="2" :label="$t('dashboard.payments') + ' (2024)'" disabled>
-        Coming in 2024
-      </OTabItem>
+      <OTabItem :value="2" :label="$t('dashboard.payments') + ' (2024)'" disabled />
       <OTabItem :value="3" label="" disabled />
     </OTabs>
   </NuxtLayout>
