@@ -3,13 +3,34 @@ definePageMeta({
   auth: false,
 });
 
-const { t } = useI18n();
+const { 
+  t,
+  locale
+} = useI18n();
 
 const {
   params: {
     slug
   }
 } = useRoute();
+
+let description;
+try {
+  description = await queryContent('agencies', slug).findOne();
+} catch (error) {
+
+}
+const translated = ref(true);
+
+const isTranslated = (description) ? description.about.original !== description.about[locale.value] : false;
+
+const showOriginal = () => {
+  translated.value = false
+}
+
+const showTranslation = () => {
+  translated.value = true
+}
 
 const { $capitalize } = useNuxtApp();
 
@@ -23,7 +44,11 @@ const {
 
 const title = (agency === 'indipendent') ? t('agency.title') : t('agency.titleAgency', { agency });
 
-const description = (agency === 'indipendent') ? t('agency.description') : t('agency.descriptionAgency', { agency });
+const pageDescription = (agency === 'indipendent') 
+  ? t('agency.description') 
+  : (description) 
+    ? description.title[locale.value] 
+    : t('agency.descriptionAgency', { agency });
 
 useHead({
   title: title + seoTitle,
@@ -31,7 +56,7 @@ useHead({
     {
       id: 'description',
       name: 'description',
-      content: description
+      content: pageDescription
     },
     {
       id: 'og:title',
@@ -41,7 +66,7 @@ useHead({
     {
       id: 'og:description',
       name: 'og:description',
-      content: description
+      content: pageDescription
     },
   ],
 });
@@ -75,7 +100,29 @@ $listen('agencyEscorts', escorts => {
       <div class="columns is-vcentered">
         <div class="column">
           <h1 class="title is-3">{{ title }}</h1>
-          <p class="subtitle is-5">{{ description }}</p>
+          <p class="subtitle is-5">{{ pageDescription }}</p>
+        </div>
+        <div v-if="description">
+          <div v-if="translated">
+            <div class="content has-new-line">{{ description.about[locale] }}</div>
+            <OButton
+              v-show="isTranslated"
+              @click.native="showOriginal"
+              class="is-text"
+              variant="primary"
+              inverted
+            >{{ $t('escort.about.showOriginal') }}</OButton>
+          </div>
+          <div v-else>
+            <div class="content has-new-line">{{ description.about.original }}</div>
+            <OButton 
+              v-show="isTranslated" 
+              @click.native="showTranslation" 
+              class="is-text"
+              variant="primary"
+              inverted
+            >{{ $t('escort.about.showTransaltion') }}</OButton>
+          </div>
         </div>
         <div v-if="slug !== 'indipendent'" class="column is-half">
           <div v-if="!$device.isMobile" class="columns is-mobile is-justify-content-right is-vcentered">

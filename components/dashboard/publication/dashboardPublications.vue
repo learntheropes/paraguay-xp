@@ -1,29 +1,22 @@
 <script setup>
 const {
+  publications,
   name,
   dateOfBirth
 } = defineProps({
+  publications: {
+    type: Array || null,
+  },
   name: {
-    type: String,
+    type: String || null,
   },
   dateOfBirth: {
   }
 });
-
-const { data } = useAuth();
-
-const publications = await queryContent('escorts')
-  .where({
-    phone: data.value.user.email
-  })
-  .find();
-
-const agency = (publications.length) ? publications[0].registry.basic.agency : null;
 </script>
 
 <template>
   <div>
-    <div class="title is-3 is-capitalized">{{ agency }}</div>
     <div class="columns is-mobile is-multiline">
       <div v-for="publication in publications" :key="publication.slug" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
         <DashboardExistingPublicationCard :publication="publication" class="card-equal-height" />
