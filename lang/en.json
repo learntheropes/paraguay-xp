@@ -181,6 +181,7 @@
     "newPayment": "New payment",
     "publication": {
       "publicationDelated": "Your advertisement has been deleted. It now needs admin approval.",
+      "pendindApproval": "Pending approval",
       "activeUntil": "Active until",
       "deleteConfirm": "Do you really want to delete this publication?",
       "cancel": "Cancel",
@@ -196,7 +197,7 @@
         "gallery": "Photos & videos",
         "publish": "Terms of service"
       },
-      "savedWaitingApproval": "Your publication has been saved. It will the published as soon as an admin will approve it. We will send you a new notification as soon as it gets approved.",
+      "savedWaitingApproval": "Your publication has been saved. It will the published as soon as an admin will approve it. We will send you notification as soon as it gets approved.",
       "approvedAndPublished": "Your publication has been approved and published. It will be available in 15 minutes at {url}"
     },
     "age": {

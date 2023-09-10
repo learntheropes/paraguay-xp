@@ -16,21 +16,19 @@ import {
   OMenuItem,
   OSteps,
   OStepItem,
+  OTabs,
+  OTabItem,
   Config,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from "@oruga-ui/theme-bulma";
 
-// const myConfig = Object.assign(bulmaConfig, {
+const customConfig = Object.assign(bulmaConfig, {
 
-//   modal: {
-//     ...bulmaConfig.modal,
-//     scroll: 'clip'
-//   }
-// //   notification: {
-// //       ...bulmaConfig.notification,
-// //       position: 'bottom-right'
-// //   }
-// })
+  notification: {
+      ...bulmaConfig.notification,
+      position: 'middle-center'
+  }
+});
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OField', OField);
@@ -50,5 +48,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OMenuItem', OMenuItem);
   nuxtApp.vueApp.component('OSteps', OSteps);
   nuxtApp.vueApp.component('OStepItem', OStepItem);
-  nuxtApp.vueApp.use(Config, bulmaConfig);
+  nuxtApp.vueApp.component('OTabs', OTabs);
+  nuxtApp.vueApp.component('OTabItem', OTabItem);
+  nuxtApp.vueApp.use(Config, customConfig);
 });

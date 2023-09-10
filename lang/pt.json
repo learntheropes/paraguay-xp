@@ -181,6 +181,7 @@
     "newPayment": "Novo pago",
     "publication": {
       "publicationDelated": "Seu anúncio foi deletado. Agora precisa de aprovação do administrador.",
+      "pendindApproval": "Aprovação pendente",
       "activeUntil": "Ativo até",
       "deleteConfirm": "Deseja mesmo excluir esta publicação?",
       "cancel": "Cancelar",
@@ -196,7 +197,7 @@
         "gallery": "Fotos & Vídeos",
         "publish": "Termos de Serviço"
       },
-      "savedWaitingApproval": "Sua publicação foi salva. Ele será publicado assim que um administrador aprová-lo. Enviaremos uma nova notificação assim que ela for aprovada.",
+      "savedWaitingApproval": "Sua publicação foi salva. Ele será publicado assim que um administrador aprová-lo. Enviaremos uma notificação assim que ela for aprovada.",
       "approvedAndPublished": "Sua publicação foi aprovada e publicada. Ele estará disponível em 15 minutos em {url}"
     },
     "age": {

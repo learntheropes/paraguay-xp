@@ -12,16 +12,9 @@ const {
       <LayoutNavbar />
       <main class="ltr-main-content">
         <div class="container">
-          <!-- <section class="section">
-            <div class="notification is-warning content has-text-centered">
-              <div class="block ltr-has-new-line">
-                <span>{{ $t('dashboard.underDevelopment') }}</span>
-                &nbsp;
-                <NuxtLink :href="'https://wa.me/' + whatsappAdmin.replace('+', '')" target="_blank">{{ whatsappAdmin }}</NuxtLink>
-              </div>
-            </div>
-          </section> -->
-          <slot />
+          <section class="section">
+            <slot />
+          </section>
         </div>
       </main>
       <LayoutFooter />

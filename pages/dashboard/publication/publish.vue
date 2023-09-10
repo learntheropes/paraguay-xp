@@ -1,6 +1,7 @@
 <script setup>
 import find from 'lodash.find';
 import nuxtStorage from 'nuxt-storage';
+import { NotificationProgrammatic } from "@oruga-ui/oruga-next";
 
 definePageMeta({
   layout: 'dashboard'
@@ -34,8 +35,6 @@ await navigateTo(`/${locale.value}/dashboard/publication/gallery`);
 }
 
 const publish = async () => {
-
-  nuxtStorage.sessionStorage.removeItem('publication');
 
   if (!store.accept) return;
 
@@ -105,14 +104,21 @@ const publish = async () => {
     body: {
       message: t('dashboard.publication.savedWaitingApproval')
     }
-  })
-
-  isLoading.value = false;
-
-  await navigateTo(`/${locale.value}/dashboard`);
+  });
 
   nuxtStorage.sessionStorage.removeItem('publication');
 
+  isLoading.value = false;
+
+  NotificationProgrammatic.open({
+    mwssage: t('dashboard.publication.savedWaitingApproval'),
+    duration: 5000
+  });
+
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  await sleep(5000);
+
+  await navigateTo(`/${locale.value}/dashboard?name=${publication.preview.name}&dateOfBirth=${publication.preview.dateOfBirth}`);
 }
 </script>
 

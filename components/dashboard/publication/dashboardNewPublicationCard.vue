@@ -14,6 +14,9 @@ const setNewAdv = async () => {
   <div class="card card-equal-height">
     <div class="card-image">
       <figure @click.native="setNewAdv" :style="'background-color:black;'" class="image is-square" />
+      <div @click.native="setNewAdv" class="is-overlay is-center-center">
+        <OIcon icon="plus" size="large" variant="info" />
+      </div>
     </div>
     <div class="card-content">
       <div class="content">
@@ -32,7 +35,7 @@ const setNewAdv = async () => {
     <footer class="card-footer">
       <div class="card-footer-item">
         <div @click.native="setNewAdv">
-          <OIcon icon="plus-circle" size="large" />
+          <OIcon icon="plus" size="large" />
         </div>
       </div>
     </footer>
@@ -42,5 +45,11 @@ const setNewAdv = async () => {
 <style scoped>
 a {
   text-decoration: none;
+}
+.is-center-center {
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 </style>

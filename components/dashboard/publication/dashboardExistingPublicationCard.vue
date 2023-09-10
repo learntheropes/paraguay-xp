@@ -12,7 +12,8 @@ const {
 
 const {
   preview: {
-    dateOfBirth
+    dateOfBirth,
+    cover
   },
   gallery: {
     medias
@@ -23,17 +24,11 @@ const {
     }
   },
   slug,
-  until
+  until,
+  approved
 } = publication;
 
-const cover = medias[0];
-
-const isLoading = ref(true);
 const isConfirmActive = ref(false);
-
-const onImgLoad = () => {
-  isLoading.value = false;
-};
 
 const { $dayjs } = useNuxtApp();
 
@@ -82,7 +77,6 @@ const closeConfirm = () => {
     <div class="card card-equal-height">
       <div @click.native="editAdv" class="card-image">
         <figure :style="'background-color:black;'" class="image is-square">
-          <OLoading :full-page="false" v-model:active="isLoading" />
           <img
             :src="'/gallery/' + slug + '/preview/' + cover.id"
             :alt="$t('escort.gallery.previewOf') + ' ' + name"
@@ -90,7 +84,6 @@ const closeConfirm = () => {
             loading="lazy"
             width="288"
             height="288"
-            @load="onImgLoad"
           />
         </figure>
       </div>
@@ -101,14 +94,17 @@ const closeConfirm = () => {
             &nbsp;
             <span class="is-hidden-mobile">({{ $dayjs(new Date()).diff(dateOfBirth, 'years') }})</span>
           </p>
-          <p class="subtitle is-6">
-            {{$t('dashboard.publication.activeUntil')}} {{ $dayjs(until).format('DD/MM/YY') }}<br>
+          <p v-if="approved" class="subtitle is-6">
+            {{ $t('dashboard.publication.activeUntil')}} {{ $dayjs(until).format('DD/MM/YY') }}<br>
+          </p>
+          <p v-else class="subtitle is-6">
+            {{ $t('dashboard.publication.pendindApproval') }}
           </p>
         </div>
       </div>
       <footer class="card-footer">
         <div @click.native="confirmRemoveAdv" class="card-footer-item">
-          <OIcon icon="close-circle" size="large"></OIcon>
+          <OIcon icon="close" size="large"></OIcon>
         </div>
         <div @click.native="editAdv" class="card-footer-item">
           <OIcon icon="pencil" size="large"></OIcon>
