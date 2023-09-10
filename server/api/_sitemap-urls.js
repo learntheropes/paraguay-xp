@@ -44,7 +44,7 @@ export default defineEventHandler(async () => {
 
   const getAlternatives = (thisLocale, endpoint) => [{
     hreflang: 'x-default',
-    href: `/${defaultLocale}/${endpoint}`
+    href: `/${endpoint}`
   }]
   // .concat(locales
   //   // .filter (locale => locale.code !== thisLocale)
