@@ -20,7 +20,8 @@ const publications = await queryContent('escorts')
 
 const agency = (publications.length) ? publications[0].registry.basic.agency : null;
 
-const activeTab = ref(0);
+const activeTab = ref(3);
+onMounted(() => (activeTab.value = 0));
 </script>
 
 <template>
@@ -35,6 +36,7 @@ const activeTab = ref(0);
       <OTabItem :value="2" :label="$t('dashboard.payments') + ' (2024)'" disabled>
         Coming in 2024
       </OTabItem>
+      <OTabItem :value="3" label="" disabled />
     </OTabs>
   </NuxtLayout>
 </template>
