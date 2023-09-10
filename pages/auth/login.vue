@@ -22,7 +22,7 @@ const {
   }
 } = useRuntimeConfig();
 
-const { data } = await useFetch(`/api/get-whatsapp-state`);
+const { data } = await useFetch(`/api/whatsapp/state`);
 
 const isWhatsappConnected = data.value.state === 'CONNECTED';
 
