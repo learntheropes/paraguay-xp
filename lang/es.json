@@ -165,7 +165,7 @@
     "loginNumber": "Número de teléfono",
     "loginCode": "Código",
     "sendWhatsapp": "Enviar código por whatsapp",
-    "verifyCode": "Comprueba el código enviado a través de whatsapp",
+    "verifyCode": "Comprueba el código enviado por whatsapp",
     "freePublication": "Publicación gratuita para 2023",
     "daysLeft": "Todavía quedan {days}",
     "magicLinkInstructions": "Al iniciar sesión, podrás gestionar tu publicación en autonomía\n\nNo se requiere contraseña.\n\nLe enviaremos un código para iniciar sesión por whatsapp.",

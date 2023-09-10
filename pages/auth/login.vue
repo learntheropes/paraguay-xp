@@ -49,6 +49,8 @@ const {
   query
 } = useRoute();
 
+console.log(path)
+
 const locale = (
   query
   && query.callbackUrl
@@ -56,8 +58,10 @@ const locale = (
 )
   ? query.callbackUrl.split('/')[3]
   : defaultLocale;
+
+console.log(locale)
   
-if (locale !== 'en' && path === '/en/auth/login') await navigateTo(fullPath.replace(`/en/auth/login`, `/${locale}/auth/login`));
+if (locale !== defaultLocale && path === `/${defaultLocale}/auth/login`) await navigateTo(fullPath.replace(`/${defaultLocale}/auth/login`, `/${locale}/auth/login`));
 
 const userLocale = useCookie('userLocale', { maxAge: 60 * 10 });
 userLocale.value = locale;
@@ -158,7 +162,6 @@ const verifyCode = () => {
           >{{ $t('auth.sendWhatsapp') }}</OButton>
         </OField>
       </VForm>
-
       <VForm
         v-show="!showPhone"
         name="code"
