@@ -99,7 +99,7 @@ const publish = async () => {
     }
   } = useRuntimeConfig();
 
-  await useFetch(`${whatsappDomain}/send-message/${data.value.user.email}`, {
+  await useFetch(`${whatsappDomain}/message/${data.value.user.email}`, {
     method: 'POST',
     body: {
       message: t('dashboard.publication.savedWaitingApproval')

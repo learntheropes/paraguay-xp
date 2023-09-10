@@ -9,7 +9,7 @@ const {
 
 export default defineEventHandler(async () => {
 
-  return await ofetch('/get-state', {
+  return await ofetch('/state', {
     baseURL: whatsappDomain,
     headers: {
       authorization: `token ${telegramToken}`

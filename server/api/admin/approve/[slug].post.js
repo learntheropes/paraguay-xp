@@ -29,7 +29,7 @@ export default eventHandler(async event => {
     }
   } = useRuntimeConfig();
 
-  await ofetch(`${whatsappDomain}/send-message/${phone}`, {
+  await ofetch(`${whatsappDomain}/message/${phone}`, {
     method: 'POST',
     body: {
       message: approvedAndPublished.replace('{url}', `https://paraguayxp.com/${locale}/escort/${slug}`)
