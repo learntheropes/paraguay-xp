@@ -214,7 +214,6 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-
     devStorage: {
       lang: {
         driver: 'fs',

@@ -2,6 +2,7 @@ import uniqBy from 'lodash.uniqby';
 import uniq from 'lodash.uniq';
 import flatten from 'lodash.flatten';
 import kebabCase from 'lodash.kebabcase';
+import find from 'lodash.find';
 import { defaultLocale, locales } from '~/assets/js/localization';
 import services from '~/assets/js/services';
 
@@ -19,8 +20,10 @@ export default defineEventHandler(async () => {
   const escortsUrls = escorts.map(escort => `escort/${escort.slug}`);
 
   const agencies = uniqBy(escorts, 'agency').filter(escort => escort.registry.basic.agency).map(escort => escort.registry.basic.agency);
-  const agenciesUrls = agencies.map(agency => `agency/${kebabCase(agency)}`).concat([`agency/indipendent`])
-  
+  const indipendent = find(escorts, e => e.registry.basic.category === 'indipendent');
+  let agenciesUrls = agencies.map(agency => `agency/${kebabCase(agency)}`);
+  if (indipendent) agenciesUrls = agenciesUrls.concat([`agency/indipendent`]);
+
   const areas = uniqBy(escorts, 'area').filter(escort => escort.registry.services.area).map(escort => escort.registry.services.area);
   const areasUrls = areas.map(area => `area/${kebabCase(area)}`).concat([`area/outcall-only`]);
 

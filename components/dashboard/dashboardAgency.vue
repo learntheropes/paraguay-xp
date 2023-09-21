@@ -223,6 +223,7 @@ const publish = async () => {
                 @update:modelValue="handleChange"
                 @change="handleChange"
                 @blur="handleBlur"
+                :rows="2"
                 autosize
                 expanded
               />
@@ -248,6 +249,7 @@ const publish = async () => {
                 @update:modelValue="handleChange"
                 @change="handleChange"
                 @blur="handleBlur"
+                :rows="10"
                 autosize
                 expanded
                 iconPack="mdi"
