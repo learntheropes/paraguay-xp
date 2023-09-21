@@ -29,45 +29,43 @@ export const defaultLocale = find(locales, { default: true }).code;
 export const routeRules = localeCodes.reduce((obj, code) => {
   obj[`/${code}`] = {
     static: true,
-    prerender: true,
+    // prerender: true,
     headers: {
+      // 'Access-Control-Allow-Origin:': process.env.NEXTAUTH_URL,
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   }
   obj[`/${code}/escort/**`] = {
     static: true,
-    prerender: true,
+    // prerender: true,
     headers: {
-      'Access-Control-Allow-Origin': process.env.NEXTAUTH_URL,
-
-      'x-foo': 'bar',
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
   obj[`/${code}/blog/**`] = {
     static: true,
-    prerender: true,
+    // prerender: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
   obj[`/${code}/area/**`] = {
     static: true,
-    prerender: true,
+    // prerender: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
   obj[`/${code}/agency/**`] = {
     static: true,
-    prerender: true,
+    // prerender: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
   },
   obj[`/${code}/extra/**`] = {
     static: true,
-    prerender: true,
+    // prerender: true,
     headers: {
       'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
     }
@@ -76,15 +74,7 @@ export const routeRules = localeCodes.reduce((obj, code) => {
     static: true
   }
   return obj;
-}, {
-  '/gallery/vittoria-595992261076/modal/9fae3897-5f4c-40e1-91c9-050c049ee9a4': {
-    headers: {
-      'foo': 'bar',
-      'Access-Control-Allow-Origin': process.env.NEXTAUTH_URL,
-      'Cache-Control': `maxage=${60 * 60 * 24 * 365}`
-    }
-  }
-});
+}, {});
 
 export const excludedRoutes = localeCodes.reduce((arr, code) => {
   ['auth', 'dashboard', 'admin', 'legal'].map(endpoint => {

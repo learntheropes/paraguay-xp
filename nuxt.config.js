@@ -9,9 +9,6 @@ import {
 } from './assets/js/localization';
 
 export default defineNuxtConfig({
-
-
-  debug: true,
   
   site: {
     url: deploymentDomain
@@ -89,20 +86,9 @@ export default defineNuxtConfig({
     },
   },
 
-  // $production: {
+  $production: {
 
-    // routeRules,
-  // },
-
-  routeRules: {
-    '/es': {
-      static: true,
-      prerender: true
-    },
-    '/pt': {
-      static: true,
-      prerender: true
-    },  
+    routeRules,
   },
 
   css: [
@@ -180,7 +166,7 @@ export default defineNuxtConfig({
       type: 'authjs',
       addDefaultCallbackUrl: true
     },
-    origin: deploymentDomain,
+    origin: process.env.AUTH_ORIGIN, // deploymentDomain,
     baseUrl: `/api/auth`,
     addDefaultCallbackUrl: true,
     globalAppMiddleware: {
@@ -228,6 +214,10 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    // prerender: {
+    //   crawlLinks: true,
+    //   failOnError: false, 
+    // },
     preset: 'digital-ocean',
     devStorage: {
       lang: {
