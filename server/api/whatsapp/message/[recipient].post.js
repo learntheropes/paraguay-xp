@@ -13,11 +13,17 @@ export default defineEventHandler(async event => {
   if (origin !== 'same-origin') {
     setResponseStatus(event, 403);
     return 'Unauthenticated';
-  };
+  }
 
-  return await ofetch('/state', {
+  const body = await readBody(event);
+  const recipient = getRouterParam(event, 'recipient');
+
+  return await ofetch(`/message/${recipient}`, {
     baseURL: whatsappDomain,
+    method: 'POST',
+    body,
     headers: {
+      'content-type': 'application/json',
       authorization: `token ${telegramToken}`
     }
   })

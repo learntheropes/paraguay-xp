@@ -22,21 +22,10 @@ export default eventHandler(async event => {
     }
   } = await useStorage('content:escorts').getItem(`${slug}.json`);
 
-  const {
-    telegramToken,
-    public: {
-      whatsappDomain
-    }
-  } = useRuntimeConfig();
-
-  await ofetch(`${whatsappDomain}/message/${phone}`, {
+  await ofetch(`/api/whatsapp/message/${phone}`, {
     method: 'POST',
     body: {
       message: approvedAndPublished.replace('{url}', `https://paraguayxp.com/${locale}/escort/${slug}`)
-    },
-    headers: {
-      'content-type': 'application/json',
-      'authorization': `token ${telegramToken}`
     }
   })
 
