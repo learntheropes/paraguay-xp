@@ -6,7 +6,7 @@ import find from 'lodash.find';
 import { defaultLocale, locales } from '~/assets/js/localization';
 import services from '~/assets/js/services';
 
-export default defineEventHandler(async () => {
+export default defineEventHandler(async event => {
 
   const {
     public: {

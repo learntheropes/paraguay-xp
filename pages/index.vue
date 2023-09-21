@@ -69,6 +69,8 @@ useJsonld(() => ([
   $jsonld.indexCollection(all.value),
   // $jsonld.indexArticleClients(postClients.value)
 ]));
+
+onMounted(async () => await $fetch(`/api/test`, { method: 'POST' }))
 </script>
 
 <template>
