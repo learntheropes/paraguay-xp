@@ -1,10 +1,4 @@
-export default defineNuxtRouteMiddleware(async (to, from) => {
-
-  const {
-    public: {
-      whatsappAdmin
-    }
-  } = useRuntimeConfig();
+export default defineNuxtRouteMiddleware(async () => {
 
   const { status } = useAuth();
 
@@ -20,6 +14,6 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       });
     }
 
-    return;
+    return 'ok';
   }
 })

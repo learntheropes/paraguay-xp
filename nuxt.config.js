@@ -10,8 +10,11 @@ import {
 
 export default defineNuxtConfig({
 
-  nitro: {
-    preset: 'digital-ocean'
+
+  debug: true,
+  
+  site: {
+    url: deploymentDomain
   },
 
   runtimeConfig: {
@@ -86,9 +89,20 @@ export default defineNuxtConfig({
     },
   },
 
-  $production: {
+  // $production: {
 
-    routeRules
+    // routeRules,
+  // },
+
+  routeRules: {
+    '/es': {
+      static: true,
+      prerender: true
+    },
+    '/pt': {
+      static: true,
+      prerender: true
+    },  
   },
 
   css: [
@@ -214,6 +228,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    preset: 'digital-ocean',
     devStorage: {
       lang: {
         driver: 'fs',

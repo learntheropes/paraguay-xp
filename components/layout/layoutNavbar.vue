@@ -76,11 +76,16 @@ const toggleFilter = (bool) => {
             >{{ $t('navbar.logout') }}</OButton>
           </div>
           <div v-else class="navbar-item">
-            <OButton
-              :to="localePath('/dashboard')"
-              tag="router-link"
-              variant="primary"
-            >{{ $t('navbar.publish') }}</OButton>
+            <ClientOnly 
+              fallback-tag="span" 
+              :fallback="$t('navbar.publish')"
+            >
+              <OButton
+                :to="localePath('/dashboard')"
+                tag="router-link"
+                variant="primary"
+              >{{ $t('navbar.publish') }}</OButton>
+            </ClientOnly>
           </div>
         </div>
       </div>

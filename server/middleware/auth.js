@@ -15,11 +15,9 @@ export default defineEventHandler(async (event) => {
   if (targetUrl.startsWith('/api/dashboard')) {
 
     if (!session) {
-      
-      throw createError({
-        statusMessage: 'Unauthenticated',
-        statusCode: 403
-      });
+
+      setResponseStatus(event, 403);
+      return 'Unauthenticated';
     };
 
     const params = event.context.params;
@@ -32,10 +30,8 @@ export default defineEventHandler(async (event) => {
       && contentType !== 'image/webp' 
     ) {
 
-      throw createError({
-        statusMessage: 'Unauthorized',
-        statusCode: 403,
-      });
+      setResponseStatus(event, 403);
+      return 'Unauthenticated';
     };
   }
 
@@ -43,10 +39,8 @@ export default defineEventHandler(async (event) => {
 
     if (session.user.email !== whatsappAdmin) {
 
-      throw createError({
-        statusMessage: 'Unauthorized',
-        statusCode: 403,
-      }); 
+      setResponseStatus(event, 403);
+      return 'Unauthenticated';
     }
   }
 });
