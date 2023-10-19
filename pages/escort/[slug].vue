@@ -22,6 +22,14 @@ try {
   });
 }
 
+if (escort.until < new Date()) {
+    // https://github.com/nuxt/nuxt/issues/15432
+    showError({
+    statusCode: 499,
+    statusMessage: 'Escort Not Found',
+  });
+}
+
 const { locale } = useI18n();
 const { $capitalize } = useNuxtApp();
 
