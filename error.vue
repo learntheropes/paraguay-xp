@@ -30,11 +30,14 @@ switch(props.error.statusCode) {
   case 404:
     translatedErrorMessage = t('error.pageNotFound')
     break;
+  case 499:
+    translatedErrorMessage = t('error.escortNotFound')
+    break;
   default:
     translatedErrorMessage = t('error.somethingWentWrong')
 }
 
-if (props.error.statusCode === 404) clearError({ redirect: `/${locale.value}` });
+if (props.error.statusCode === 499) clearError({ redirect: `/${locale.value}` });
 
 const handleError = () => clearError({ redirect: `/${locale.value}` });
 </script>
@@ -44,14 +47,14 @@ const handleError = () => clearError({ redirect: `/${locale.value}` });
     <div class="hero-body">
       <div class="container has-text-centered">
         <p class="title">{{ translatedErrorMessage }}</p>
-        <p v-if="props.error.statusCode === 404" class="subtitle">{{ $t('error.youWillBeRedirected') }}</p>
-        <DevOnly v-if="props.error.statusCode !== 404"> 
+        <p v-if="props.error.statusCode === 499" class="subtitle">{{ $t('error.youWillBeRedirected') }}</p>
+        <DevOnly v-if="props.error.statusCode !== 404 && props.error.statusCode !== 499"> 
           <div class="block content">
             <div>{{ error.statusMessage || error.message }}</div>
             <div>{{ error.stack }}</div>
           </div>
         </DevOnly>
-        <button @click.native="handleError" class="button is-primary is-outlined">{{ $t('error.backToTheHomePage') }}</button>
+        <button v-if="props.error.statusCode !== 499" @click.native="handleError" class="button is-primary is-outlined">{{ $t('error.backToTheHomePage') }}</button>
       </div>
     </div>
   </div>

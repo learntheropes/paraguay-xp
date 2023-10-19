@@ -145,6 +145,7 @@
   },
   "error": {
     "pageNotFound": "Página não encontrada",
+    "escortNotFound": "Acompanhante não encontrada",
     "youWillBeRedirected": "Você será redirecionado para a página inicial",
     "unauthorized": "Não autorizado",
     "unauthenticated": "Não autenticado",

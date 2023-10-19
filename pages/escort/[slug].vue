@@ -10,7 +10,17 @@ const {
     slug
   }
 } = useRoute();
-const escort = await queryContent('escorts', slug).findOne();
+
+let escort;
+try {
+  escort = await queryContent('escorts', slug).findOne();
+} catch (error) {
+  // https://github.com/nuxt/nuxt/issues/15432
+  showError({
+    statusCode: 499,
+    statusMessage: 'Escort Not Found',
+  });
+}
 
 const { locale } = useI18n();
 const { $capitalize } = useNuxtApp();
