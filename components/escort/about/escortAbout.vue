@@ -38,23 +38,23 @@ const { $dayjs } = useNuxtApp();
     <div class="subtitle is-6">{{$t('blog.published')}} {{ $dayjs(updatedAt).fromNow() }}</div>
     <div v-if="translated">
       <div class="content has-new-line">{{ about[locale] }}</div>
-      <OButton
+      <!-- <OButton
         v-show="isTranslated"
         @click.native="showOriginal"
         class="is-text"
         variant="primary"
         inverted
-      >{{ $t('escort.about.showOriginal') }}</OButton>
+      >{{ $t('escort.about.showOriginal') }}</OButton> -->
     </div>
     <div v-else>
       <div class="content has-new-line">{{ about.original }}</div>
-      <OButton 
+      <!-- <OButton 
         v-show="isTranslated" 
         @click.native="showTranslation" 
         class="is-text"
         variant="primary"
         inverted
-      >{{ $t('escort.about.showTransaltion') }}</OButton>
+      >{{ $t('escort.about.showTransaltion') }}</OButton> -->
     </div>
   </section>
 </template>
