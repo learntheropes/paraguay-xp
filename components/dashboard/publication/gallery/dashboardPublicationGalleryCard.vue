@@ -1,9 +1,19 @@
 <script setup>
 const {
+  slug,
+  type,
   id,
   src,
   index
 } = defineProps({
+  slug: {
+    type: String,
+    required: true
+  },
+  type: {
+    type: String,
+    required: true
+  },
   id: {
     type: String,
     required: true
@@ -21,38 +31,52 @@ const store = usePublicationStore();
 
 const { $event } = useNuxtApp();
 
-const remove = async (index) => {
+const removeMedia = async () => {
   store.removeOneMedia(index);
   $event('removeOne', index);
-  await removeMedia('modal', id);
-  await removeMedia('preview', id);
-}
-
-const removeMedia = async (path, id) => {
   await useFetch(`/api/dashboard/publication/${id}`, {
-    key: `delete-${path}-${id}`,
+    key: `delete-${slug}-${id}`,
     method: 'DELETE',
     headers: {
       'Content-Type': 'image/webp'
     },
     body:{ 
-      path: `public/gallery/${path}`,
-      message: `remove modal media ${id}`
+      name: slug,
     },
   });
 }
 </script>
 
 <template>
-  <div class="card">
-    <div class="card-image">
-      <figure class="image is-square">
+  <div class="card ltr-equal-height">
+    <pre>id: {{ id }}</pre>
+    <pre>src: {{ src.length }}</pre>
+    <div v-if="!src" class="card-content">{{ $t('previewNotAvailable') }}</div>
+    <div v-else class="card-image">
+      <figure v-if="type === 'image'" class="image">
         <img :src="src" />
       </figure>
-      <div @click.native="remove" class="card-content is-overlay ltr-is-center-center">
+      <video
+        v-else
+        @canplay="false"
+        :controls="false"
+        muted
+      >
+        <source
+          :src="src"
+        />
+      </video>
+      <div @click.native="removeMedia" class="card-content is-overlay ltr-is-center-center">
         <OIcon icon="close-circle" size="large"></OIcon>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+.square-video {
+  width: auto;
+  aspect-ratio: 1 / 1;
+}
+</style>
 

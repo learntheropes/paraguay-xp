@@ -2,18 +2,19 @@
 export default eventHandler(async event => {
 
   const slug = event.context.params.slug;
+  const { name } = await readBody(event);
   const contentType = getHeader(event, 'Content-Type');
 
   if (contentType === 'image/webp') {
 
     await deleteFile({
-      path: `public/gallery/modal/${slug}`,
-      message: `delete modal image ${slug}`
+      path: `public/gallery/${name}/modal/${slug}`,
+      message: `delete modal image ${slug} of ${name}`
     });
   
     await deleteFile({
-      path: `public/gallery/preview/${slug}`,
-      message: `delete preview image ${slug}`
+      path: `public/gallery/${name}/preview/${slug}`,
+      message: `delete preview image ${slug} of ${name}`
     });
   } else {
 

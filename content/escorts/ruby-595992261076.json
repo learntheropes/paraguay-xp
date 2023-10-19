@@ -62,10 +62,6 @@
   },
   "gallery": {
     "medias": [
-      {
-        "id": "75502ad6-317e-4c09-9a64-fe46cb113ae2",
-        "type": "image"
-      }
     ],
     "blur": true
   },
@@ -96,7 +92,6 @@
       "kiss"
     ],
     "cover": {
-      "id": "75502ad6-317e-4c09-9a64-fe46cb113ae2"
     }
   }
 }
