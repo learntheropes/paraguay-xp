@@ -104,10 +104,10 @@ const closeConfirm = () => {
       </div>
       <footer class="card-footer">
         <div @click.native="confirmRemoveAdv" class="card-footer-item">
-          <OIcon icon="close" size="large"></OIcon>
+          <OIcon icon="close-circle" size="large"></OIcon>
         </div>
         <div @click.native="editAdv" class="card-footer-item">
-          <OIcon icon="pencil" size="large"></OIcon>
+          <OIcon icon="pencil-circle" size="large"></OIcon>
         </div>
       </footer>
     </div>

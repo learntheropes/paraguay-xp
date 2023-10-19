@@ -35,7 +35,7 @@ const setNewAdv = async () => {
     <footer class="card-footer">
       <div class="card-footer-item">
         <div @click.native="setNewAdv">
-          <OIcon icon="plus" size="large" />
+          <OIcon icon="plus-circle" size="large" />
         </div>
       </div>
     </footer>
