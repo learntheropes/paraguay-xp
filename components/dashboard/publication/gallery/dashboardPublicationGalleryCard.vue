@@ -49,10 +49,7 @@ const removeMedia = async () => {
 
 <template>
   <div class="card ltr-equal-height">
-    <pre>id: {{ id }}</pre>
-    <pre>src: {{ src.length }}</pre>
-    <div v-if="!src" class="card-content">{{ $t('previewNotAvailable') }}</div>
-    <div v-else class="card-image">
+    <div class="card-image">
       <figure v-if="type === 'image'" class="image">
         <img :src="src" />
       </figure>

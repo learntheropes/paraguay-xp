@@ -69,9 +69,6 @@ onMounted(async () => {
         const base64DataUrl = event.target.result;
 
         const id = uuidv4();
-
-        console.log(id)
-        console.log(base64DataUrl)
           
         temps.value.push({
           id,
