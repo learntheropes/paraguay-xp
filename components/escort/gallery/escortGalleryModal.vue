@@ -92,7 +92,7 @@
           <img
             loading="lazy"
             @load="onLoad"
-            :src="'/gallery/' + modalSlug + '/modal/' + modalSrc"
+            :src="'/gallery/' + modalSlug + '/modal/' + modalSrc + '.webp'"
             :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
           />
           <OIcon
@@ -114,7 +114,7 @@
             :class="($device.isMobile) ? 'ltr-fit-mobile' : 'ltr-fit-tablet'"
           >
             <source
-              :src="'/gallery/' + modalSlug + '/modal/' + modalSrc"
+              :src="'/gallery/' + modalSlug + '/modal/' + modalSrc + '.mp4'"
             />
           </video>
           <OIcon

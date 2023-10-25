@@ -195,7 +195,7 @@ export default defineNuxtPlugin(nuxtApp => {
                   'name': nuxtApp.$capitalize(item.preview.name),
                   'image': {
                     '@type': 'ImageObject',
-                    'contentUrl': `/gallery/preview/${item.preview.cover.id}`
+                    'contentUrl': `/gallery/preview/${item.preview.cover.id}.webp`
                   },
                   'url': `${deploymentDomain}/${locale.value}/escort/${item.preview.slug}`
                 }
@@ -227,7 +227,7 @@ export default defineNuxtPlugin(nuxtApp => {
                   'name': nuxtApp.$capitalize(item.preview.name),
                   'image': {
                     '@type': 'ImageObject',
-                    'contentUrl': `/gallery/preview/${item.preview.cover.id}`
+                    'contentUrl': `/gallery/preview/${item.preview.cover.id}.webp`
                   },
                   'url': `${deploymentDomain}/${locale.value}/escort/${item.preview.slug}`
                 }
@@ -357,7 +357,7 @@ export default defineNuxtPlugin(nuxtApp => {
                   'name': nuxtApp.$capitalize(item.preview.name),
                   'image': {
                     '@type': 'ImageObject',
-                    'contentUrl': `/gallery/preview/${item.preview.cover.id}`
+                    'contentUrl': `/gallery/preview/${item.preview.cover.id}.webp`
                   },
                   'url': `${deploymentDomain}/${locale.value}/escort/${item.preview.slug}`
                 }

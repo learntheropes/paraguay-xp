@@ -11,9 +11,7 @@ const store = usePublicationStore();
 
 onMounted(() => {
   const publication = nuxtStorage.sessionStorage.getData('publication');
-  if (publication) {
-    store.setPublication(JSON.parse(publication));
-  }
+  if (publication) store.setPublication(JSON.parse(publication));
 });
 
 const isLoading = ref(false);

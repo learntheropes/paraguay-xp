@@ -21,7 +21,7 @@ const imageExtensions = [
 
 const store = usePublicationStore();
 
-onBeforeMount(() => {
+onMounted(() => {
   const publication = nuxtStorage.sessionStorage.getData('publication');
   if (publication) store.setPublication(JSON.parse(publication));
 });
@@ -68,7 +68,9 @@ onMounted(async () => {
 
         const base64DataUrl = event.target.result;
 
-        const id = uuidv4();
+        const extension = (fileType === 'image') ? 'webp' : 'mp4';
+
+        const id = `${uuidv4()}.${extension}`;
           
         temps.value.push({
           id,
@@ -130,7 +132,7 @@ const goNext = async () => {
     </OField>
     <div class="columns is-mobile is-multiline">
       <div v-for="(image, index) in store.gallery.medias" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
-        <DashboardPublicationGalleryCard :slug="slug" :type="image.type" :id="image.id" :src="'/gallery/' + slug + '/preview/' + image.id" :index="index" />
+        <DashboardPublicationGalleryCard :slug="slug" :type="image.type" :id="image.id" :src="'/gallery/' + slug + '/preview/' + image.id + '.webp'" :index="index" />
       </div>
       <div v-for="(image, index) in temps" :key="image.id" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
         <DashboardPublicationGalleryCard :slug="slug" :type="image.type" :id="image.id" :src="image.preview" :index="store.gallery.medias.length + index" />

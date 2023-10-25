@@ -45,7 +45,7 @@ const { $dayjs } = useNuxtApp();
       <figure :style="'background-color:black;'" class="image is-48x48 has-rounded-corners">
         <NuxtImg
           preset="navigator" 
-          :src="'/gallery/' + slug + '/preview/' + cover.id"
+          :src="'/gallery/' + slug + '/preview/' + cover.id + '.webp'"
           :alt="$t('escort.gallery.previewOf') + ' ' + name"
           :title="$t('escort.gallery.previewOf') + ' ' + name"
           loading="lazy"

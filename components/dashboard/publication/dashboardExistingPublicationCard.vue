@@ -43,9 +43,8 @@ const editAdv = async () => {
       path: 'content/ages'
     }
   });
-  store.setAge(age.value);
-
   const escort = await queryContent('escorts', slug).findOne();
+  escort.age = age.value
   store.setPublication(escort);
 
   await navigateTo(`/${locale.value}/dashboard/publication/registry`);
@@ -78,7 +77,7 @@ const closeConfirm = () => {
       <div @click.native="editAdv" class="card-image">
         <figure :style="'background-color:black;'" class="image is-square">
           <img
-            :src="'/gallery/' + slug + '/preview/' + cover.id"
+            :src="'/gallery/' + slug + '/preview/' + cover.id + '.webp'"
             :alt="$t('escort.gallery.previewOf') + ' ' + name"
             :title="$t('escort.gallery.previewOf') + ' ' + name"
             loading="lazy"

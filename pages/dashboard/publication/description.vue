@@ -8,7 +8,7 @@ definePageMeta({
 
 const store = usePublicationStore();
 
-onBeforeMount(() => {
+onMounted(() => {
   const publication = nuxtStorage.sessionStorage.getData('publication');
   if (publication) store.setPublication(JSON.parse(publication));
 })

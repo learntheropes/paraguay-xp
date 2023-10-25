@@ -64,12 +64,12 @@ useHead({
     {
       id: 'og:image',
       name: 'og:image',
-      content: `${deploymentDomain}/gallery/modal/${escort.preview.cover.id}`
+      content: `${deploymentDomain}/gallery/modal/${escort.preview.cover.id}.webp`
     },
     {
       id: 'twitter:image',
       name: 'twitter:image',
-      content: `${deploymentDomain}/gallery/modal/${escort.preview.cover.id}`
+      content: `${deploymentDomain}/gallery/modal/${escort.preview.cover.id}.webp`
     },
   ],
 });
