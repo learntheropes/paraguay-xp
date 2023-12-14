@@ -119,7 +119,6 @@ export default defineNuxtConfig({
 
   robots: {
     disallow: [
-      '/',
       '/$',
       ...excludedRoutes.map(route => route.replace('/**', ''))
     ],
