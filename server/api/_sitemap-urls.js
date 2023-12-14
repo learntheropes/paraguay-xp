@@ -17,7 +17,7 @@ export default defineEventHandler(async event => {
   const escortFiles = await useStorage('content:escorts').getKeys();
   const escortPromises = escortFiles.map(file => useStorage('content:escorts').getItem(`${file}`));
   const escorts = await Promise.all(escortPromises);
-  const escortsUrls = escorts.map(escort => `escort/${escort.slug}`);
+  const escortsUrls = escorts.filter(escort => escort.approved).map(escort => `escort/${escort.slug}`);
 
   const agencies = uniqBy(escorts, 'agency').filter(escort => escort.registry.basic.agency).map(escort => escort.registry.basic.agency);
   const indipendent = find(escorts, e => e.registry.basic.category === 'indipendent');
