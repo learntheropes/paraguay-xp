@@ -114,7 +114,8 @@ export default defineEventHandler(async event => {
           .map(media => {
 
             return {
-              loc: `${deploymentDomain}/gallery/${slug}/modal/${media.id}.mp4`
+              content_loc: `${deploymentDomain}/gallery/${slug}/modal/${media.id}.mp4`,
+              thumbnail_loc: `${deploymentDomain}/gallery/${slug}/preview/${media.id}.webp`
             }
           })
       }
