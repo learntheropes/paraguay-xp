@@ -406,17 +406,19 @@ export default defineNuxtPlugin(nuxtApp => {
               'ProfilePage',
               'WebPAge'
             ],
-            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#webpage`,
+            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'url': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
-            'name': `${nuxtApp.$capitalize(escort.registry.basic.name)} Profile Page`,
+            'name': `${nuxtApp.$capitalize(escort.preview.name)} Profile Page`,
             'thumbnail': `${escort.preview.cover.id}`,
-            'image': escort.gallery.medias.map(media => {
-              return {
-                '@id': `${deploymentDomain}/${locale.value}/image/${media.id}`,
-                '@type': 'ImageObject',
-                contentUrl: media.modal
-              }
-            }),
+            'image': escort.gallery.medias
+              .filter(media => media.type === 'image')
+              .map(media => {
+                return {
+                  '@id': `${deploymentDomain}/${locale.value}/image/${media.id}`,
+                  '@type': 'ImageObject',
+                  contentUrl: media.modal
+                }
+              }),
             'dateModified': escort.updatedAt,
             'description': escort.description.title[locale.value],
             'inLanguage': inLanguage,
@@ -443,13 +445,13 @@ export default defineNuxtPlugin(nuxtApp => {
             '@type': 'AdvertiserContentArticle',
             '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`,
             'isPartOf': {
-              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#webpage`
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
             },
             'headline': `${escort.description.title[locale.value]}`,
             'dateModified': escort.updatedAt,
-            'mainEntityOfPage': {
-              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
-            },
+            // 'mainEntityOfPage': {
+            //   '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#webpage`
+            // },
             'articleBody': escort.description.about[locale.value],
             'wordCount': escort.description.about[locale.value].split(' ').length,
             'image': escort.preview.cover.id,
