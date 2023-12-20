@@ -406,10 +406,10 @@ export default defineNuxtPlugin(nuxtApp => {
               'ProfilePage',
               'WebPAge'
             ],
-            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
+            '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#webpage`,
             'url': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'name': `${nuxtApp.$capitalize(escort.registry.basic.name)} Profile Page`,
-            'thumbnail': `${escort.gallery.medias[0].preview}`,
+            'thumbnail': `${escort.preview.cover.id}`,
             'image': escort.gallery.medias.map(media => {
               return {
                 '@id': `${deploymentDomain}/${locale.value}/image/${media.id}`,
@@ -443,7 +443,7 @@ export default defineNuxtPlugin(nuxtApp => {
             '@type': 'AdvertiserContentArticle',
             '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`,
             'isPartOf': {
-              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#webpage`
             },
             'headline': `${escort.description.title[locale.value]}`,
             'dateModified': escort.updatedAt,
@@ -452,7 +452,7 @@ export default defineNuxtPlugin(nuxtApp => {
             },
             'articleBody': escort.description.about[locale.value],
             'wordCount': escort.description.about[locale.value].split(' ').length,
-            'image': escort.gallery.medias[0].modal,
+            'image': escort.preview.cover.id,
             'inLanguage': inLanguage
           }
         },
