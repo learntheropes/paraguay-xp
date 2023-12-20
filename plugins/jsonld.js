@@ -449,9 +449,6 @@ export default defineNuxtPlugin(nuxtApp => {
             },
             'headline': `${escort.description.title[locale.value]}`,
             'dateModified': escort.updatedAt,
-            // 'mainEntityOfPage': {
-            //   '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#webpage`
-            // },
             'articleBody': escort.description.about[locale.value],
             'wordCount': escort.description.about[locale.value].split(' ').length,
             'image': escort.preview.cover.id,
