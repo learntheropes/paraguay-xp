@@ -89,6 +89,11 @@ export default defineNuxtConfig({
   $production: {
 
     routeRules,
+
+    // Use umami analytics
+    extends: [
+      'nuxt-umami'
+    ],
   },
 
   css: [
@@ -243,6 +248,14 @@ export default defineNuxtConfig({
         branch: 'main',
         dir: '/content',
       }
+    },
+  },
+
+  appConfig: {
+
+    // id and host provided as env variables on production
+    umami: {
+      version: 2,
     },
   },
 });
