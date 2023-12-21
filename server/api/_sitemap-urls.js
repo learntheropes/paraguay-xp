@@ -36,7 +36,7 @@ export default defineEventHandler(async event => {
   const blogUrls = blogFiles.map(blog => `blog/${blog.split('.')[0]}`);
 
   const endpoints = [
-    ...['', 'news', 'blog'],
+    ...['', 'blog'],
     ...escortsUrls, 
     ...agenciesUrls,
     ...areasUrls,

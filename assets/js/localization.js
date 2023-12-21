@@ -77,7 +77,7 @@ export const routeRules = localeCodes.reduce((obj, code) => {
 }, {});
 
 export const excludedRoutes = localeCodes.reduce((arr, code) => {
-  ['auth', 'dashboard', 'admin', 'legal'].map(endpoint => {
+  ['auth', 'dashboard', 'admin', 'legal', 'news'].map(endpoint => {
     arr.push(`/${code}/${endpoint}/**`);
   });
   return arr;
