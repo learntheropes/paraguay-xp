@@ -413,9 +413,7 @@ export default defineNuxtPlugin(nuxtApp => {
             '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'url': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'name': `${nuxtApp.$capitalize(escort.preview.name)} Profile Page`,
-            'mainEntity': {
-              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`
-            },
+
             'thumbnail': `${deploymentDomain}/gallery/${escort.slug}/preview/${escort.preview.cover.id}.webp`,
             'dateModified': escort.updatedAt,
             'description': escort.description.title[locale.value],
@@ -443,6 +441,9 @@ export default defineNuxtPlugin(nuxtApp => {
             '@type': 'AdvertiserContentArticle',
             '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`,
             'isPartOf': {
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
+            },
+            'mainEntity': {
               '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
             },
             // 'mainEntityOfPage': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
