@@ -440,9 +440,9 @@ export default defineNuxtPlugin(nuxtApp => {
             '@context': 'https://schema.org',
             '@type': 'AdvertiserContentArticle',
             '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`,
-            'isPartOf': {
-              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
-            },
+            // 'isPartOf': {
+            //   '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
+            // },
             'mainEntity': {
               '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
             },
