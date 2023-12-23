@@ -16,8 +16,8 @@ export const locales = [
   },
   {
     code: 'pt',
-    iso: 'pt-BR',
     file: 'pt.json',
+    iso: 'pt-BR',
     name: 'Brasileiro',
   }
 ];

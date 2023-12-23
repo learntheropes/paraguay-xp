@@ -141,38 +141,6 @@ export default defineNuxtPlugin(nuxtApp => {
           }
         },
 
-        newsCollection: (all) => {
-          return {
-            '@context': 'https://schema.org',
-            '@type': 'Collection',
-            '@id': `${deploymentDomain}/${locale.value}/news#collection`,
-            'url': `${deploymentDomain}/${locale.value}/news`,
-            'name': `${t('news.title')} Collection`,
-            'headline': t('news.title'),
-            'collectionSize': all.length,
-            'isPartOf': {
-              '@id': `${deploymentDomain}/${locale.value}#webpage`
-            },
-            'mainEntity': {
-              '@type': 'ItemList',
-              'numberOfItems': all.length,
-              'itemListElement': all.map((item, index) => {
-                return {
-                  '@type': 'ListItem',
-                  'position': index + 1,
-                  'name': nuxtApp.$capitalize(item.preview.name),
-                  'image': {
-                    '@type': 'ImageObject',
-                    'contentUrl': item.preview.cover.id
-                  },
-                  'url': `${deploymentDomain}/${locale.value}/escort/${item.slug}`
-                }
-              })
-            },
-            'inLanguage': inLanguage
-          }
-        },
-
         agencyCollection: (slug, title, all) => {
           return {
             '@context': 'https://schema.org',

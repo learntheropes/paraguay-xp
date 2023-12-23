@@ -7,9 +7,6 @@ const escorts = Object.keys(store.list).reduce((obj, levelName) => {
   obj[levelName] = sortBy(store.list[levelName], 'updatedAt').reverse();
   return obj;
 }, {});
-
-const { $event } = useNuxtApp();
-$event('newsEscorts', escorts);
 </script>
 
 <template>
