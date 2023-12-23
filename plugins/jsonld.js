@@ -440,13 +440,9 @@ export default defineNuxtPlugin(nuxtApp => {
             '@context': 'https://schema.org',
             '@type': 'AdvertiserContentArticle',
             '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`,
-            // 'isPartOf': {
-            //   '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
-            // },
             'mainEntity': {
               '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
             },
-            // 'mainEntityOfPage': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'headline': `${escort.description.title[locale.value]}`,
             'dateModified': escort.updatedAt,
             'articleBody': escort.description.about[locale.value],
