@@ -153,9 +153,6 @@ export default defineNuxtPlugin(nuxtApp => {
             'isPartOf': {
               '@id': `${deploymentDomain}#website`
             },
-            'mainEntity': {
-              '@id': `${deploymentDomain}/${locale.value}/agency/${slug}#collection`,
-            },
             'inLanguage': inLanguage
           }
         },
