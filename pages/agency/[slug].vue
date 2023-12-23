@@ -88,7 +88,7 @@ $listen('agencyEscorts', escorts => {
     $jsonld.logo(),
     $jsonld.organization(),
     $jsonld.website(),
-    $jsonld.indexWebPage(),
+    $jsonld.agencyWebPage(slug, title, description),
     $jsonld.agencyCollection(slug, title, all),
   ]));
 })

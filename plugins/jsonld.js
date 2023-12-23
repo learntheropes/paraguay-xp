@@ -141,17 +141,36 @@ export default defineNuxtPlugin(nuxtApp => {
           }
         },
 
+        agencyWebPage: (slug, title, description) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': `${deploymentDomain}/${locale.value}/agency/${slug}#webpage`,
+            'url': `${deploymentDomain}/${locale.value}/agency/${slug}`,
+            'name': `${slug} Agency Web Page`,
+            'headline': title,
+            'description': description,
+            'isPartOf': {
+              '@id': `${deploymentDomain}#website`
+            },
+            'mainEntity': {
+              '@id': `${deploymentDomain}/${locale.value}/agency/${slug}#collection`,
+            },
+            'inLanguage': inLanguage
+          }
+        },
+
         agencyCollection: (slug, title, all) => {
           return {
             '@context': 'https://schema.org',
             '@type': 'Collection',
             '@id': `${deploymentDomain}/${locale.value}/agency/${slug}#collection`,
-            'url': `${deploymentDomain}/${locale.value}/agency/${slug}`,
+            'url': `${deploymentDomain}/${locale.value}/agency/${slug}#collection`,
             'name': `${title} Collection`,
             'headline': title,
             'collectionSize': all.length,
             'isPartOf': {
-              '@id': `${deploymentDomain}/${locale.value}#webpage`
+              '@id': `${deploymentDomain}/${locale.value}/agency/${slug}#webpage`
             },
             'mainEntity': {
               '@type': 'ItemList',
@@ -173,17 +192,36 @@ export default defineNuxtPlugin(nuxtApp => {
           }
         },
 
+        areaWebPage: (slug, title, description) => {
+          return {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': `${deploymentDomain}/${locale.value}/area/${slug}#webpage`,
+            'url': `${deploymentDomain}/${locale.value}/area/${slug}`,
+            'name': `${slug} Area Web Page`,
+            'headline': title,
+            'description': description,
+            'isPartOf': {
+              '@id': `${deploymentDomain}#website`
+            },
+            'mainEntity': {
+              '@id': `${deploymentDomain}/${locale.value}/area/${slug}#collection`,
+            },
+            'inLanguage': inLanguage
+          }
+        },
+
         areaCollection: (slug, title, all) => {
           return {
             '@context': 'https://schema.org',
             '@type': 'Collection',
             '@id': `${deploymentDomain}/${locale.value}/area/${slug}#collection`,
-            'url': `${deploymentDomain}/${locale.value}/area/${slug}`,
+            'url': `${deploymentDomain}/${locale.value}/area/${slug}#collection`,
             'name': `${title} Collection`,
             'headline': title,
             'collectionSize': all.length,
             'isPartOf': {
-              '@id': `${deploymentDomain}/${locale.value}#webpage`
+              '@id': `${deploymentDomain}/${locale.value}/area/${slug}#webpage`
             },
             'mainEntity': {
               '@type': 'ItemList',
@@ -214,6 +252,9 @@ export default defineNuxtPlugin(nuxtApp => {
             'name': `${title} WebPage`,
             'headline': title,
             'description': description,
+            'mainEntity': {
+              '@id': `${deploymentDomain}/${locale.value}/extra/${slug}#article`,
+            },
             'isPartOf': {
               '@id': `${deploymentDomain}#website`
             },
@@ -294,7 +335,9 @@ export default defineNuxtPlugin(nuxtApp => {
             'name': `${title} WebPage`,
             'headline': title,
             'description': description,
-
+            'mainEntity': {
+              '@id': `${deploymentDomain}/${locale.value}/service/${slug}#collection`,
+            },
             'isPartOf': {
               '@id': `${deploymentDomain}#website`
             },

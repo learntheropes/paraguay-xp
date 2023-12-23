@@ -72,6 +72,7 @@ $listen('areaEscorts', escorts => {
     $jsonld.organization(),
     $jsonld.website(),
     $jsonld.indexWebPage(),
+    $jsonld.areaWebPage(slug, title, description),
     $jsonld.areaCollection(slug, title, all),
   ]));
 });
