@@ -413,9 +413,9 @@ export default defineNuxtPlugin(nuxtApp => {
             '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'url': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'name': `${nuxtApp.$capitalize(escort.preview.name)} Profile Page`,
-            'mainEntity': {
-              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`
-            },
+            // 'mainEntity': {
+            //   '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`
+            // },
             'thumbnail': `${escort.preview.cover.id}`,
             'image': escort.gallery.medias
               .filter(media => media.type === 'image')
