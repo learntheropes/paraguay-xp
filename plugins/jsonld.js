@@ -214,7 +214,6 @@ export default defineNuxtPlugin(nuxtApp => {
             'name': `${title} WebPage`,
             'headline': title,
             'description': description,
-
             'isPartOf': {
               '@id': `${deploymentDomain}#website`
             },
@@ -415,6 +414,7 @@ export default defineNuxtPlugin(nuxtApp => {
             'isPartOf': {
               '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
             },
+            'mainEntityOfPage': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'headline': `${escort.description.title[locale.value]}`,
             'dateModified': escort.updatedAt,
             'articleBody': escort.description.about[locale.value],
@@ -483,9 +483,7 @@ export default defineNuxtPlugin(nuxtApp => {
             },
             'headline': description,
             'dateModified': updatedAt,
-            'mainEntityOfPage': {
-              '@id': `${deploymentDomain}/${locale.value}${_path}`
-            },
+            'mainEntityOfPage': `${deploymentDomain}/${locale.value}${_path}`,
             'articleBody': text,
             'wordCount': text.split(' ').length,
             'publisher': {
