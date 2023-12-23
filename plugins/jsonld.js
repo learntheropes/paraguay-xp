@@ -413,19 +413,10 @@ export default defineNuxtPlugin(nuxtApp => {
             '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'url': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'name': `${nuxtApp.$capitalize(escort.preview.name)} Profile Page`,
-            // 'mainEntity': {
-            //   '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`
-            // },
-            'thumbnail': `${escort.preview.cover.id}`,
-            'image': escort.gallery.medias
-              .filter(media => media.type === 'image')
-              .map(media => {
-                return {
-                  '@id': `${deploymentDomain}/${locale.value}/image/${media.id}`,
-                  '@type': 'ImageObject',
-                  contentUrl: media.modal
-                }
-              }),
+            'mainEntity': {
+              '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}#article`
+            },
+            'thumbnail': `${deploymentDomain}/gallery/${escort.slug}/preview/${escort.preview.cover.id}.webp`,
             'dateModified': escort.updatedAt,
             'description': escort.description.title[locale.value],
             'inLanguage': inLanguage,
@@ -454,7 +445,7 @@ export default defineNuxtPlugin(nuxtApp => {
             'isPartOf': {
               '@id': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`
             },
-            'mainEntityOfPage': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
+            // 'mainEntityOfPage': `${deploymentDomain}/${locale.value}/escort/${escort.preview.slug}`,
             'headline': `${escort.description.title[locale.value]}`,
             'dateModified': escort.updatedAt,
             'articleBody': escort.description.about[locale.value],
