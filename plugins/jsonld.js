@@ -165,7 +165,7 @@ export default defineNuxtPlugin(nuxtApp => {
             '@context': 'https://schema.org',
             '@type': 'Collection',
             '@id': `${deploymentDomain}/${locale.value}/agency/${slug}#collection`,
-            'url': `${deploymentDomain}/${locale.value}/agency/${slug}#collection`,
+            'url': `${deploymentDomain}/${locale.value}/agency/${slug}`,
             'name': `${title} Collection`,
             'headline': title,
             'collectionSize': all.length,
@@ -198,7 +198,7 @@ export default defineNuxtPlugin(nuxtApp => {
             '@type': 'WebPage',
             '@id': `${deploymentDomain}/${locale.value}/area/${slug}#webpage`,
             'url': `${deploymentDomain}/${locale.value}/area/${slug}`,
-            'name': `${slug} Area Web Page`,
+            'name': `${title} Area Web Page`,
             'headline': title,
             'description': description,
             'isPartOf': {
@@ -216,8 +216,8 @@ export default defineNuxtPlugin(nuxtApp => {
             '@context': 'https://schema.org',
             '@type': 'Collection',
             '@id': `${deploymentDomain}/${locale.value}/area/${slug}#collection`,
-            'url': `${deploymentDomain}/${locale.value}/area/${slug}#collection`,
-            'name': `${title} Collection`,
+            'url': `${deploymentDomain}/${locale.value}/area/${slug}`,
+            'name': `${title} Area Collection`,
             'headline': title,
             'collectionSize': all.length,
             'isPartOf': {
