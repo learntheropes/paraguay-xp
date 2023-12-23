@@ -466,6 +466,9 @@ export default defineNuxtPlugin(nuxtApp => {
             'isPartOf': {
               '@id': `${deploymentDomain}#website`
             },
+            'mainEntity': {
+              '@id': `${deploymentDomain}/${locale.value}${_path}#article`
+            },
             'breadcrumb': {
               '@id': `${deploymentDomain}/${locale.value}${_path}#breadcrumb`
             },
