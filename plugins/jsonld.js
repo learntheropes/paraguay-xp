@@ -329,9 +329,6 @@ export default defineNuxtPlugin(nuxtApp => {
             'name': `${title} WebPage`,
             'headline': title,
             'description': description,
-            'mainEntity': {
-              '@id': `${deploymentDomain}/${locale.value}/service/${slug}#collection`,
-            },
             'isPartOf': {
               '@id': `${deploymentDomain}#website`
             },
