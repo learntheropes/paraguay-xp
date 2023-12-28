@@ -369,7 +369,6 @@ export default defineNuxtPlugin(nuxtApp => {
         },
 
         serviceArticle: (slug, { text ,body, updatedAt }) => {
-          if (!updatedAt) return null;
           return {
             '@context': 'https://schema.org',
             '@type': 'Article',
