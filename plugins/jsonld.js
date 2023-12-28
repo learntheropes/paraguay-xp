@@ -37,8 +37,8 @@ export default defineNuxtPlugin(nuxtApp => {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             '@id': `${deploymentDomain}#organization`,
-            'name': 'tgexp',
-            'url': 'https://tgepx.learntheropes.xyz',
+            'name': 'Latam XP',
+            // 'url': 'https://tgepx.learntheropes.xyz',
             'telephone': whatsappAdmin,
             'logo': {
               '@id': `${deploymentDomain}#logo`,
